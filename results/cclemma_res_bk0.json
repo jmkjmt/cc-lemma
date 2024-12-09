@@ -314,17 +314,5 @@
             "status": true,
             "info": 0.009
         }
-    },
-    "lambda": {
-        "lambda": {
-            "status": true,
-            "info": 0.01
-        }
-    },
-    "nat": {
-        "nat": {
-            "status": true,
-            "info": 0.004
-        }
     }
 }

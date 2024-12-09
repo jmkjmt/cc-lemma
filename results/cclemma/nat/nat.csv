@@ -1,0 +1,10 @@
+name,result,time,num_lemmas,num_lemmas_attempted,num_lemmas_proven,result_cyclic,time_cyclic,num_lemmas_cyclic,num_attempted_lemmas_cyclic,num_proven_lemmas_cyclic
+add1-add2,Valid,4.2758284,0,0,0,Unknown,0,0,0,0
+add1-add3,Valid,3.6686609,0,0,0,Unknown,0,0,0,0
+add1-add4,Valid,11.841586,2,1,1,Unknown,0,0,0,0
+mul1-mul2,Valid,18.989603,5,2,2,Unknown,0,0,0,0
+mul1-mul3,Valid,11.468372,2,1,1,Unknown,0,0,0,0
+mul1-mul4,Valid,23.972654,7,3,3,Unknown,0,0,0,0
+mul1-mul5,Timeout,63301.043,11,9,5,Unknown,0,0,0,0
+mul1-mul6,Timeout,61139.582,33,18,3,Unknown,0,0,0,0
+mul1-mul7,Valid,146.20259,2,2,2,Unknown,0,0,0,0

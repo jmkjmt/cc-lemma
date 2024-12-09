@@ -2,7 +2,34 @@ Proving begin sol1-sol2: (solution1 l) === (solution2 l)
 Property accepted by cvec analysis
 proved lemma forall l: Lambda. (solution1 l) === (solution2 l) (solution1 (P l_50 l_51)) === (solution2 (P l_50 l_51))
 (uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
-sol1-sol2 uncyclic: VALID (11 ms)
+sol1-sol2 uncyclic: VALID (10 ms)
 Proving begin sol1-sol3: (solution1 l) === (solution3 l)
 Property accepted by cvec analysis
 proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
+(uncyclic) Theorized 8 lemmas, fully attempted 6 lemmas, proved 1 lemmas
+sol1-sol3 uncyclic: TIMEOUT (68918 ms)
+Proving begin sol1-sol4: (solution1 l) === (solution4 l)
+Property accepted by cvec analysis
+proved lemma forall v0: Lambda. (check4 v0 Nil) === (solution4 v0) (check4 (P v0_40 v0_41) Nil) === (solution4 (P v0_40 v0_41))
+proved lemma forall v0: Bool. v0 === (or v0 False) True === (or True False)
+proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
+proved lemma forall v0: Bool. v0 === (and v0 True) True === (and True True)
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+(uncyclic) Theorized 24 lemmas, fully attempted 20 lemmas, proved 4 lemmas
+sol1-sol4 uncyclic: TIMEOUT (70875 ms)
+Attempted 3 goals:
+  1 solved (no cyclic)

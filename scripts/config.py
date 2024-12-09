@@ -1,12 +1,12 @@
 timeout = 60
 memory_limit = 16
 
-dataset_root = "/home/mingyu809/cc-lemma/oh_bench"
-cclemma_path = "/home/mingyu809/cc-lemma"
-hipspec_path = "/home/mingyu809/hipspec"
-thesy_path = "/home/mingyu809/TheSy"
+dataset_root = "/home/mingyujo/cc-lemma/oh_bench"
+cclemma_path = "/home/mingyujo/cc-lemma"
+hipspec_path = "/home/mingyujo/hipspec"
+thesy_path = "/home/mingyujo/TheSy"
 cvc4_bin_name = "cvc4-vmcai2015"
-output_path = "/home/mingyu809/cc-lemma/results"
+output_path = "/home/mingyujo/cc-lemma/results"
 
 # dataset_root = "/home/artifact/cc-lemma/benchmarks"
 # cclemma_path = "/home/artifact/cc-lemma"
