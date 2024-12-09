@@ -1,0 +1,59 @@
+(
+(data Nat (Z S))
+(:: Z Nat)
+(:: S (-> (Nat) Nat))
+
+(:: add1 (-> (Nat Nat) Nat))
+(let add1 (Z ?y) ?y)
+(let add1 ((S ?x) ?y) (S (add1 ?x ?y)))
+
+(:: add2 (-> (Nat Nat) Nat))
+(let add2 (?n1 Z) ?n1)
+(let add2 (?n1 (S ?n)) (S (add2 ?n1 ?n)))
+
+(:: add3 (-> (Nat Nat) Nat))
+(let add3 (Z ?n2) ?n2)
+(let add3 ((S ?n) ?n2) (add3 ?n (S ?n2)))
+
+(:: add4 (-> (Nat Nat) Nat))
+(let add4 (?n1 Z) ?n1)
+(let add4 (?n1 (S ?n)) (add4 (S ?n1) ?n))
+
+(:: mul1 (-> (Nat Nat) Nat))
+(let mul1 (Z ?n2) Z)
+(let mul1 ((S ?n) ?n2) (add1 ?n2 (mul1 ?n ?n2)))
+
+(:: mul2 (-> (Nat Nat) Nat))
+(let mul2 (Z ?n2) Z)
+(let mul2 ((S ?n) ?n2) (add1 (mul2 ?n ?n2) ?n2))
+
+(:: mul3 (-> (Nat Nat) Nat))
+(let mul3 (Z ?n2) Z)
+(let mul3 ((S ?n) ?n2) (add3 ?n2 (mul3 ?n ?n2)))
+
+(:: mul4 (-> (Nat Nat) Nat))
+(let mul4 (Z ?n2) Z)
+(let mul4 ((S ?n) ?n2) (add3 (mul4 ?n ?n2) ?n2))
+
+(:: mul5 (-> (Nat Nat) Nat))
+(let mul5 (?n1 Z) Z)
+(let mul5 (?n1 (S ?n)) (add2 ?n1 (mul5 ?n1 ?n)))
+
+(:: mul6 (-> (Nat Nat) Nat))
+(let mul6 (?n1 Z) Z)
+(let mul6 (?n1 (S ?n)) (add4 ?n1 (mul6 ?n1 ?n)))
+
+(:: mul7 (-> (Nat Nat) Nat))
+(let mul7 (?n1 Z) Z)
+(let mul7 (?n1 (S ?n)) (add1 ?n1 (mul7 ?n1 ?n)))
+
+
+(=== addtest (n m) (Nat Nat)
+  (mul6 n m)
+  (mul7 n m)
+)
+(=== addtest (n) (Nat)
+  (add4 Z n)
+  n
+)
+)
