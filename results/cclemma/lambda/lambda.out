@@ -1,0 +1,8 @@
+Proving begin sol1-sol2: (solution1 l) === (solution2 l)
+Property accepted by cvec analysis
+proved lemma forall l: Lambda. (solution1 l) === (solution2 l) (solution1 (P l_50 l_51)) === (solution2 (P l_50 l_51))
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+sol1-sol2 uncyclic: VALID (11 ms)
+Proving begin sol1-sol3: (solution1 l) === (solution3 l)
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
