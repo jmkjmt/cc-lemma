@@ -6,7 +6,7 @@
 (data Nat (Z S))
 (:: Z Nat)
 (:: S (-> (Nat) Nat))
-(:: eq (-> (Nat Nat) Bool))
+
 
 (data Lambda (V P C))
 (:: V (-> (Nat) Lambda))
@@ -22,6 +22,7 @@
 (let ite (True ?x ?y ) ?x)
 (let ite (False ?x ?y) ?y)
 
+(:: eq (-> (Nat Nat) Bool))
 (let eq (Z      Z     ) True      )
 (let eq (Z      (S ?y)) False     )
 (let eq ((S ?x) Z     ) False     )
@@ -56,13 +57,21 @@
 (let solution2 ((P ?x ?e)) (check1 ?e (Cons ?x Nil)))
 (let solution2 ((C ?e1 ?e2)) (and (check1 ?e1 Nil) (check1 ?e2 Nil)))
 
+(:: check3 (-> (Lmabda (List Nat)) Bool))
+(let check3 ((P ?st ?k) ?li) (ite (mem ?st ?li) (check3 ?k ?li) (check3 ?k (Cons ?st ?li))))
+(let check3 ((C ?me1 ?me2) ?li) (and (check3 ?me1 ?li) (check3 ?me2 ?li)))
+(let check3 ((V ?na) ?li) (mem ?na ?li))
+
+(:: solution3 (-> (Lambda) Bool))
+(let solution3 (?lambda) (check3 ?lambda Nil))
+
 (:: exist (-> ((-> (Nat) Bool) (List Nat)) Bool))
 (let exist (?p Nil) False)
 (let exist (?p (Cons ?hd ?tl)) (or ($ ?p ?hd) (exist ?p ?tl)))
 
 (:: check4 (-> (Lambda (List Nat)) Bool))
 (let check4 ((P ?st ?k) ?li) (check4 ?k (Cons ?st ?li)))
-(let check4 ((C ?me1 ?m32) ?li) (and (check4 ?me1 ?li) (check4 ?m32 ?li)))
+(let check4 ((C ?me1 ?me2) ?li) (and (check4 ?me1 ?li) (check4 ?me2 ?li)))
 (let check4 ((V ?na) ?li) (exist (eq ?na) ?li))
 
 (:: solution4 (-> (Lambda) Bool))
@@ -70,15 +79,15 @@
 (let solution4 ((C ?me1 ?me2)) (and (check4 ?me1 Nil) (check4 ?me2 Nil)))
 (let solution4 ((V ?na)) False)
 
-(=== checkcheck (l lst) (Lambda (List Nat))
-    (check1 l lst)
-    (check4 l lst)
+(=== sol1-sol2 (l) (Lambda)
+    (solution1 l)
+    (solution2 l)
 )
-(=== checkcheck2 (n lst) (Nat (List Nat))
-    (mem n lst)
-    (exist (eq n) lst)
+(=== sol1-sol3 (l) (Lambda)
+    (solution1 l)
+    (solution3 l)
 )
-(=== equal (l) (Lambda)
+(=== sol1-sol4 (l) (Lambda)
     (solution1 l)
     (solution4 l)
 )
