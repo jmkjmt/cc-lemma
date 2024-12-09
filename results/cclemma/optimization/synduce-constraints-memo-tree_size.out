@@ -1,0 +1,11 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: TreeMemo. v0 === (tf6 v0) (Mnode v0_20 v0_21 v0_22 v0_23) === (tf6 (Mnode v0_20 v0_21 v0_22 v0_23))
+proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
+proved lemma forall v0: TreeMemo. (and True (tf2 v0)) === (tf2 v0) (and True (tf2 v0)) === (tf2 v0)
+proved lemma forall v0: Bool. v0 === (and v0 True) True === (and True True)
+proved lemma forall v0: Nat. (and (nateq v0 (Succ (Succ (Succ Zero)))) True) === (nateq v0 (Succ (Succ (Succ Zero)))) (and (nateq v0 (Succ (Succ (Succ Zero)))) True) === (nateq v0 (Succ (Succ (Succ Zero))))
+(uncyclic) Theorized 43 lemmas, fully attempted 36 lemmas, proved 5 lemmas
+optimize uncyclic: TIMEOUT (2023 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

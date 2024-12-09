@@ -1,0 +1,15 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
+proved lemma forall v0: TreeMemo. v1: Nat. v0 === (ite5 (lq v1 (Succ (Succ Zero))) v0 v0) v0 === (ite5 (lq (Succ (Succ v1_100_160)) (Succ (Succ Zero))) v0 v0)
+proved lemma forall v0: TreeMemo. v0 === (tf8 v0 v0)
+proved lemma forall v0: Nat. Zero === (ite4 (ite3 (lq v0 (Succ (Succ Zero))) False True) Zero Zero) Zero === (ite4 (ite3 (lq (Succ (Succ v0_130_210)) (Succ (Succ Zero))) False True) Zero Zero)
+proved lemma forall v0: Nat. Zero === (ite4 (ite3 (lq v0 (Succ Zero)) False True) Zero Zero) Zero === (ite4 (ite3 (lq (Succ v0_120) (Succ Zero)) False True) Zero Zero)
+proved lemma forall v0: Bool. Zero === (ite4 v0 Zero Zero) Zero === (ite4 True Zero Zero)
+proved lemma forall v0: Bool. v1: Nat. (ite4 v0 Zero Zero) === (ite4 (ite3 (lq v1 (Succ Zero)) False True) Zero (ite4 v0 Zero Zero))
+proved lemma forall v0: Bool. v1: Nat. (ite4 v0 Zero Zero) === (ite4 (ite3 (lq v1 (Succ Zero)) False True) (ite4 v0 Zero Zero) Zero) (ite4 v0 Zero Zero) === (ite4 (ite3 (lq v1 (Succ Zero)) False True) (ite4 v0 Zero Zero) Zero)
+proved lemma forall v0: Nat. False === (ite3 (lq v0 (Succ Zero)) False False) False === (ite3 (lq (Succ v0_110) (Succ Zero)) False False)
+(uncyclic) Theorized 35 lemmas, fully attempted 32 lemmas, proved 9 lemmas
+optimize uncyclic: TIMEOUT (2043 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

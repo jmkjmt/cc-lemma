@@ -1,0 +1,8 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: List. (snd3 (tf3 v0)) === (tf1 v0) (snd3 (tf3 (Elt (Succ v0_40_100)))) === (tf1 (Elt (Succ v0_40_100)))
+proved lemma forall v0: Nat. v1: List. (plus v0 (snd3 (tf3 v1))) === (plus v0 (tf1 v1)) (plus v0 (snd3 (tf3 v1))) === (plus v0 (tf1 v1))
+(uncyclic) Theorized 34 lemmas, fully attempted 14 lemmas, proved 2 lemmas
+optimize uncyclic: TIMEOUT (2017 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

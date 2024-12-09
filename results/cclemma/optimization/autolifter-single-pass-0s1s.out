@@ -1,0 +1,12 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
+proved lemma forall v0: Bool. True === (or (not v0) (and True v0)) True === (or (not True) (and True True))
+proved lemma forall v0: List. v0 === (tf1 v0 v0) (Cons v0_20 v0_21) === (tf1 (Cons v0_20 v0_21) (Cons v0_20 v0_21))
+proved lemma forall v0: Bool. v0 === (or False v0) True === (or False True)
+proved lemma forall v0: Bool. v1: Bool. v0 === (ite1 (or (not v1) (and True v1)) v0) v0 === (ite1 (or (not v1) (and True v1)) v0)
+proved lemma forall v0: Bool. v0 === (or v0 False) True === (or True False)
+(uncyclic) Theorized 7 lemmas, fully attempted 6 lemmas, proved 6 lemmas
+optimize uncyclic: TIMEOUT (2842 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

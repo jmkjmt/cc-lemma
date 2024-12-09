@@ -1,0 +1,16 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: List. v0 === (tf1 v0 v0) (Cons v0_20 v0_21) === (tf1 (Cons v0_20 v0_21) (Cons v0_20 v0_21))
+proved lemma forall v0: Nat. v0 === (ite1 (lq Zero v0) v0 Zero) (Succ v0_40) === (ite1 (lq Zero (Succ v0_40)) (Succ v0_40) Zero)
+proved lemma forall v0: Bool. v0 === (or False v0) True === (or False True)
+proved lemma forall v0: Bool. v0 === (lq Zero (ite1 (not v0) Zero (Succ Zero))) True === (lq Zero (ite1 (not True) Zero (Succ Zero)))
+proved lemma forall v0: Bool. v0 === (not (not v0)) True === (not (not True))
+proved lemma forall v0: Bool. v0 === (not (not (or False v0))) v0 === (not (not (or False v0)))
+proved lemma forall v0: Bool. (not (not v0)) === (or False v0) (not (not v0)) === (or False v0)
+proved lemma forall v0: Bool. v0 === (not (not (not (not v0)))) v0 === (not (not (not (not v0))))
+proved lemma forall v0: Bool. (not (not (or False v0))) === (or False v0) (not (not (or False v0))) === (or False v0)
+proved lemma forall v0: Bool. v0 === (not (not (not (not (or False v0))))) v0 === (not (not (not (not (or False v0)))))
+(uncyclic) Theorized 17 lemmas, fully attempted 16 lemmas, proved 10 lemmas
+optimize uncyclic: TIMEOUT (2055 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

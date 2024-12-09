@@ -1,0 +1,10 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
+proved lemma forall v0: Bool. v0 === (and v0 True) True === (and True True)
+proved lemma forall v0: Bool. v1: Bool. (and v0 v1) === (and v1 v0) (and True True) === (and True True)
+proved lemma forall inp0: NnfFormula. (main inp0) === (mainNew inp0) (main (Nfand (Nfand inp0_120_450 inp0_120_451) inp0_121)) === (mainNew (Nfand (Nfand inp0_120_450 inp0_120_451) inp0_121))
+(uncyclic) Theorized 4 lemmas, fully attempted 3 lemmas, proved 3 lemmas
+optimize uncyclic: VALID (53 ms)
+Attempted 1 goals:
+  1 solved (no cyclic)

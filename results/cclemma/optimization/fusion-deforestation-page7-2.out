@@ -1,0 +1,7 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall inp0: Tree. (main inp0) === (mainNew inp0) (main (Branch inp0_120 inp0_121)) === (mainNew (Branch inp0_120 inp0_121))
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+optimize uncyclic: VALID (12 ms)
+Attempted 1 goals:
+  1 solved (no cyclic)

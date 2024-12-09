@@ -1,0 +1,11 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (plus v0 Zero) (Succ v0_30) === (plus (Succ v0_30) Zero)
+proved lemma forall v0: List. (snd2 (tf9 v0)) === (tf5 v0) (snd2 (tf9 (Cons v0_40 v0_41))) === (tf5 (Cons v0_40 v0_41))
+proved lemma forall v0: Nat. v1: List. (times v0 (snd2 (tf9 v1))) === (times v0 (tf5 v1)) (times v0 (snd2 (tf9 v1))) === (times v0 (tf5 v1))
+proved lemma forall v0: Nat. v1: Nat. (plus v0 v1) === (plus v1 v0) (plus (Succ v0_100) (Succ v1_190)) === (plus (Succ v1_190) (Succ v0_100))
+proved lemma forall inp0: List. (main inp0) === (mainNew inp0) (main (Cons (Succ inp0_160_510) (Cons inp0_161_990 inp0_161_991))) === (mainNew (Cons (Succ inp0_160_510) (Cons inp0_161_990 inp0_161_991)))
+(uncyclic) Theorized 7 lemmas, fully attempted 4 lemmas, proved 4 lemmas
+optimize uncyclic: VALID (209 ms)
+Attempted 1 goals:
+  1 solved (no cyclic)

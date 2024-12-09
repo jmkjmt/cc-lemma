@@ -1,0 +1,9 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: CList. v0 === (tf11 v0 v0) (Ctwo v0_20 v0_21) === (tf11 (Ctwo v0_20 v0_21) (Ctwo v0_20 v0_21))
+proved lemma forall v0: CList. (tf3 v0) === (tf3 (tf11 v0 v0))
+proved lemma forall v0: CList. v1: List. (tf1 (tf3 v0) v1) === (tf1 (tf3 (tf11 v0 v0)) v1) (tf1 (tf3 v0) v1) === (tf1 (tf3 (tf11 v0 v0)) v1)
+(uncyclic) Theorized 10 lemmas, fully attempted 7 lemmas, proved 3 lemmas
+optimize uncyclic: TIMEOUT (2258 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

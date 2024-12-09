@@ -1,0 +1,328 @@
+Proving begin clam_1: (double x) === (plus x x)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: Nat. (S (plus v0 v1)) === (plus v0 (S v1)) (S (plus (S v0_60) v1)) === (plus (S v0_60) (S v1))
+proved lemma forall v0: Nat. (S (double v0)) === (plus v0 (S v0))
+proved lemma forall x: Nat. (double x) === (plus x x)
+(uncyclic) Theorized 3 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+clam_1 uncyclic: VALID (36 ms)
+Proving begin clam_2: (len (append x y)) === (len (append y x))
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: (List a). v1: (List a). v2: a. (S (len (append v0 v1))) === (len (append v0 (Cons v2 v1))) (S (len (append (Cons v0_160 v0_161) v1))) === (len (append (Cons v0_160 v0_161) (Cons v2 v1)))
+proved lemma forall x: (List a). y: (List a). (len (append x y)) === (len (append y x))
+(uncyclic) Theorized 3 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+clam_2 uncyclic: VALID (187 ms)
+Proving begin clam_3: (len (append x y)) === (plus (len x) (len y))
+Property accepted by cvec analysis
+proved lemma forall x: (List a). y: (List a). (len (append x y)) === (plus (len x) (len y)) (len (append (Cons x_70 x_71) y)) === (plus (len (Cons x_70 x_71)) (len y))
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+clam_3 uncyclic: VALID (21 ms)
+Proving begin clam_4: (len (append x x)) === (double (len x))
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v1: (List a). v2: a. (S (len (append v0 v1))) === (len (append v0 (Cons v2 v1))) (S (len (append (Cons v0_90 v0_91) v1))) === (len (append (Cons v0_90 v0_91) (Cons v2 v1)))
+proved lemma forall x: (List a). (len (append x x)) === (double (len x)) (len (append (Cons x_50 (Cons x_51_190 x_51_191)) (Cons x_50 (Cons x_51_190 x_51_191)))) === (double (len (Cons x_50 (Cons x_51_190 x_51_191))))
+(uncyclic) Theorized 3 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_4 uncyclic: VALID (139 ms)
+Proving begin clam_5: (len (rev x)) === (len x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v1: a. (S (len v0)) === (len (append v0 (Cons v1 Nil))) (S (len (Cons v0_80 v0_81))) === (len (append (Cons v0_80 v0_81) (Cons v1 Nil)))
+proved lemma forall x: (List a). (len (rev x)) === (len x)
+(uncyclic) Theorized 1 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_5 uncyclic: VALID (31 ms)
+Proving begin clam_6: (len (rev (append x y))) === (plus (len x) (len y))
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v1: a. (S (len v0)) === (len (append v0 (Cons v1 Nil))) (S (len (Cons v0_80 v0_81))) === (len (append (Cons v0_80 v0_81) (Cons v1 Nil)))
+proved lemma forall x: (List a). y: (List a). (len (rev (append x y))) === (plus (len x) (len y)) (len (rev (append Nil (Cons y_110 y_111)))) === (plus (len Nil) (len (Cons y_110 y_111)))
+(uncyclic) Theorized 1 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_6 uncyclic: VALID (89 ms)
+Proving begin clam_7: (len (qreva x y)) === (plus (len x) (len y))
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: Nat. (S (plus v0 v1)) === (plus v0 (S v1)) (S (plus (S v0_60) v1)) === (plus (S v0_60) (S v1))
+proved lemma forall x: (List a). y: (List a). (len (qreva x y)) === (plus (len x) (len y)) (len (qreva (Cons x_70 x_71) (Cons y_210 y_211))) === (plus (len (Cons x_70 x_71)) (len (Cons y_210 y_211)))
+(uncyclic) Theorized 2 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_7 uncyclic: VALID (48 ms)
+Proving begin clam_8: (drop x (drop y z)) === (drop y (drop x z))
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: (List a). (drop (S v0) v1) === (drop (S Z) (drop v0 v1)) (drop (S (S v0_80)) (Cons v1_130 v1_131)) === (drop (S Z) (drop (S v0_80) (Cons v1_130 v1_131)))
+proved lemma forall v0: Nat. v1: Nat. v2: (List a). (drop (S v0) (drop v1 v2)) === (drop (S v1) (drop v0 v2)) (drop (S (S v0_90)) (drop (S v1_150) v2)) === (drop (S (S v1_150)) (drop (S v0_90) v2))
+proved lemma forall x: Nat. y: Nat. z: (List a). (drop x (drop y z)) === (drop y (drop x z))
+(uncyclic) Theorized 6 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+clam_8 uncyclic: VALID (460 ms)
+Proving begin clam_9: (drop w (drop x (drop y z))) === (drop y (drop x (drop w z)))
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: (List a). (drop v0 (drop (S Z) v1)) === (drop (S v0) v1) (drop (S v0_80) (drop (S Z) (Cons v1_150 v1_151))) === (drop (S (S v0_80)) (Cons v1_150 v1_151))
+proved lemma forall v0: Nat. v1: Nat. v2: (List a). (drop v0 (drop (S v1) v2)) === (drop v1 (drop (S v0) v2)) (drop (S v0_90) (drop (S (S v1_150)) v2)) === (drop (S v1_150) (drop (S (S v0_90)) v2))
+proved lemma forall v0: Nat. v1: Nat. v2: (List a). (drop v0 (drop v1 v2)) === (drop v1 (drop v0 v2))
+proved lemma forall w: Nat. x: Nat. y: Nat. z: (List a). (drop w (drop x (drop y z))) === (drop y (drop x (drop w z))) (drop (S w_100) (drop (S x_160) (drop y z))) === (drop y (drop (S x_160) (drop (S w_100) z)))
+(uncyclic) Theorized 7 lemmas, fully attempted 3 lemmas, proved 3 lemmas
+clam_9 uncyclic: VALID (435 ms)
+Proving begin clam_10: (rev (rev x)) === x
+Property accepted by cvec analysis
+proved lemma forall v0: a. v1: (List a). (Cons v0 (rev v1)) === (rev (append v1 (Cons v0 Nil))) (Cons v0 (rev (Cons v1_80 v1_81))) === (rev (append (Cons v1_80 v1_81) (Cons v0 Nil)))
+proved lemma forall x: (List a). (rev (rev x)) === x
+(uncyclic) Theorized 1 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_10 uncyclic: VALID (39 ms)
+Proving begin clam_11: (rev (append (rev x) (rev y))) === (append y x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: a. v1: (List a). (Cons v0 (rev v1)) === (rev (append v1 (Cons v0 Nil))) (Cons v0 (rev (Cons v1_150 v1_151))) === (rev (append (Cons v1_150 v1_151) (Cons v0 Nil)))
+proved lemma forall v0: (List a). v0 === (rev (rev v0))
+(uncyclic) Theorized 11 lemmas, fully attempted 3 lemmas, proved 3 lemmas
+clam_11 uncyclic: TIMEOUT (2171 ms)
+Proving begin clam_12: (qreva x y) === (append (rev x) y)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v1: a. v2: (List a). (append v0 (Cons v1 v2)) === (append (append v0 (Cons v1 Nil)) v2) (append (Cons v0_90 v0_91) (Cons v1 v2)) === (append (append (Cons v0_90 v0_91) (Cons v1 Nil)) v2)
+proved lemma forall x: (List a). y: (List a). (qreva x y) === (append (rev x) y)
+(uncyclic) Theorized 1 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_12 uncyclic: VALID (135 ms)
+Proving begin clam_13: (half (plus x x)) === x
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: Nat. (S (plus v0 v1)) === (plus v0 (S v1)) (S (plus (S v0_60) v1)) === (plus (S v0_60) (S v1))
+proved lemma forall x: Nat. (half (plus x x)) === x
+(uncyclic) Theorized 5 lemmas, fully attempted 4 lemmas, proved 1 lemmas
+clam_13 uncyclic: VALID (104 ms)
+Proving begin clam_14: (sorted (sort x)) === True
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. v0 === (and v0 True) True === (and True True)
+proved lemma forall v0: Nat. v1: Nat. (and (leq v0 v1) True) === (leq v0 v1) (and (leq v0 v1) True) === (leq v0 v1)
+proved lemma forall v0: Nat. v1: Nat. (leq (S v0) v1) === (lt v0 v1) (leq (S (S v0_90)) (S v1_150)) === (lt (S v0_90) (S v1_150))
+(uncyclic) Theorized 19 lemmas, fully attempted 10 lemmas, proved 3 lemmas
+clam_14 uncyclic: TIMEOUT (2013 ms)
+Proving begin clam_15: (plus x (S x)) === (S (plus x x))
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: Nat. (S (plus v0 v1)) === (plus v0 (S v1)) (S (plus (S v0_60) v1)) === (plus (S v0_60) (S v1))
+proved lemma forall x: Nat. (plus x (S x)) === (S (plus x x))
+(uncyclic) Theorized 1 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_15 uncyclic: VALID (17 ms)
+Proving begin clam_16: (even (plus x x)) === True
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. v0 === (not (not v0)) True === (not (not True))
+proved lemma forall v0: Nat. v1: Nat. (S (plus v0 v1)) === (plus v0 (S v1)) (S (plus (S v0_60) v1)) === (plus (S v0_60) (S v1))
+proved lemma forall x: Nat. (even (plus x x)) === True
+(uncyclic) Theorized 3 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+clam_16 uncyclic: VALID (40 ms)
+Proving begin clam_17: (rev (rev (append x y))) === (append (rev (rev x)) (rev (rev y)))
+Property accepted by cvec analysis
+proved lemma forall v0: a. v1: (List a). (Cons v0 (rev v1)) === (rev (append v1 (Cons v0 Nil))) (Cons v0 (rev (Cons v1_80 v1_81))) === (rev (append (Cons v1_80 v1_81) (Cons v0 Nil)))
+proved lemma forall v0: (List a). v0 === (rev (rev v0))
+proved lemma forall v0: a. v1: (List a). (Cons v0 v1) === (rev (append (rev v1) (Cons v0 Nil)))
+proved lemma forall x: (List a). y: (List a). (rev (rev (append x y))) === (append (rev (rev x)) (rev (rev y)))
+(uncyclic) Theorized 4 lemmas, fully attempted 3 lemmas, proved 3 lemmas
+clam_17 uncyclic: VALID (151 ms)
+Proving begin clam_18: (rev (append (rev x) y)) === (append (rev y) x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: a. v1: (List a). (Cons v0 (rev v1)) === (rev (append v1 (Cons v0 Nil))) (Cons v0 (rev (Cons v1_150 v1_151))) === (rev (append (Cons v1_150 v1_151) (Cons v0 Nil)))
+proved lemma forall v0: a. v1: (List a). (Cons v0 v1) === (rev (append (rev v1) (Cons v0 Nil)))
+(uncyclic) Theorized 5 lemmas, fully attempted 3 lemmas, proved 3 lemmas
+clam_18 uncyclic: TIMEOUT (2207 ms)
+Proving begin clam_19: (append (rev (rev x)) y) === (rev (rev (append x y)))
+Property accepted by cvec analysis
+proved lemma forall v0: a. v1: (List a). (Cons v0 (rev v1)) === (rev (append v1 (Cons v0 Nil))) (Cons v0 (rev (Cons v1_80 v1_81))) === (rev (append (Cons v1_80 v1_81) (Cons v0 Nil)))
+proved lemma forall v0: (List a). v0 === (rev (rev v0))
+proved lemma forall v0: a. v1: (List a). (Cons v0 v1) === (rev (append (rev v1) (Cons v0 Nil)))
+proved lemma forall x: (List a). y: (List a). (append (rev (rev x)) y) === (rev (rev (append x y)))
+(uncyclic) Theorized 5 lemmas, fully attempted 3 lemmas, proved 3 lemmas
+clam_19 uncyclic: VALID (253 ms)
+Proving begin clam_20: (even (len (append x x))) === True
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. v0 === (not (not v0)) True === (not (not True))
+proved lemma forall v0: (List a). v1: (List a). v2: a. (S (len (append v0 v1))) === (len (append v0 (Cons v2 v1))) (S (len (append (Cons v0_90 v0_91) v1))) === (len (append (Cons v0_90 v0_91) (Cons v2 v1)))
+proved lemma forall x: (List a). (even (len (append x x))) === True
+(uncyclic) Theorized 5 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+clam_20 uncyclic: VALID (393 ms)
+Proving begin clam_21: (rotate (len x) (append x y)) === (append y x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+(uncyclic) Theorized 23 lemmas, fully attempted 15 lemmas, proved 1 lemmas
+clam_21 uncyclic: TIMEOUT (2001 ms)
+Proving begin clam_22: (even (len (append x y))) === (even (len (append y x)))
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: (List a). v1: a. (S (len v0)) === (len (append v0 (Cons v1 Nil))) (S (len (Cons v0_120 v0_121))) === (len (append (Cons v0_120 v0_121) (Cons v1 Nil)))
+proved lemma forall v0: (List a). v1: (List a). v2: a. (S (len (append v0 v1))) === (len (append v0 (Cons v2 v1))) (S (len (append (Cons v0_160 v0_161) v1))) === (len (append (Cons v0_160 v0_161) (Cons v2 v1)))
+proved lemma forall v0: (List a). v1: (List a). (len (append v0 v1)) === (len (append v1 v0))
+proved lemma forall x: (List a). y: (List a). (even (len (append x y))) === (even (len (append y x)))
+(uncyclic) Theorized 5 lemmas, fully attempted 4 lemmas, proved 4 lemmas
+clam_22 uncyclic: VALID (320 ms)
+Proving begin clam_23: (half (len (append x y))) === (half (len (append y x)))
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: (List a). v1: a. (S (len v0)) === (len (append v0 (Cons v1 Nil))) (S (len (Cons v0_120 v0_121))) === (len (append (Cons v0_120 v0_121) (Cons v1 Nil)))
+proved lemma forall v0: (List a). v1: (List a). v2: a. (S (len (append v0 v1))) === (len (append v0 (Cons v2 v1))) (S (len (append (Cons v0_160 v0_161) v1))) === (len (append (Cons v0_160 v0_161) (Cons v2 v1)))
+proved lemma forall v0: (List a). v1: (List a). (len (append v0 v1)) === (len (append v1 v0))
+proved lemma forall x: (List a). y: (List a). (half (len (append x y))) === (half (len (append y x)))
+(uncyclic) Theorized 5 lemmas, fully attempted 4 lemmas, proved 4 lemmas
+clam_23 uncyclic: VALID (561 ms)
+Proving begin clam_24: (even (plus x y)) === (even (plus y x))
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (plus v0 Z) (S v0_30) === (plus (S v0_30) Z)
+proved lemma forall v0: Nat. v1: Nat. (plus v0 v1) === (plus v1 v0) (plus (S v0_40) (S v1_90)) === (plus (S v1_90) (S v0_40))
+proved lemma forall x: Nat. y: Nat. (even (plus x y)) === (even (plus y x))
+(uncyclic) Theorized 3 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+clam_24 uncyclic: VALID (125 ms)
+Proving begin clam_25: (even (len (append x y))) === (even (plus (len x) (len y)))
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v1: (List a). (len (append v0 v1)) === (plus (len v0) (len v1)) (len (append (Cons v0_70 v0_71) v1)) === (plus (len (Cons v0_70 v0_71)) (len v1))
+proved lemma forall x: (List a). y: (List a). (even (len (append x y))) === (even (plus (len x) (len y)))
+(uncyclic) Theorized 1 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_25 uncyclic: VALID (58 ms)
+Proving begin clam_26: (half (plus x y)) === (half (plus y x))
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (plus v0 Z) (S v0_30) === (plus (S v0_30) Z)
+proved lemma forall v0: Nat. v1: Nat. (plus v0 v1) === (plus v1 v0) (plus (S v0_40) (S v1_90)) === (plus (S v1_90) (S v0_40))
+proved lemma forall x: Nat. y: Nat. (half (plus x y)) === (half (plus y x))
+(uncyclic) Theorized 3 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+clam_26 uncyclic: VALID (38 ms)
+Proving begin clam_27: (rev x) === (qreva x Nil)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v1: a. v2: (List a). (append v0 (Cons v1 v2)) === (append (append v0 (Cons v1 Nil)) v2) (append (Cons v0_90 v0_91) (Cons v1 v2)) === (append (append (Cons v0_90 v0_91) (Cons v1 Nil)) v2)
+proved lemma forall v0: (List a). v1: (List a). (append (qreva v0 Nil) v1) === (qreva v0 v1)
+proved lemma forall v0: (List a). v1: (List a). (append (rev v0) v1) === (qreva v0 v1)
+proved lemma forall v0: (List a). v1: a. v2: (List a). (append (qreva v0 (Cons v1 Nil)) v2) === (qreva v0 (Cons v1 v2))
+proved lemma forall x: (List a). (rev x) === (qreva x Nil)
+(uncyclic) Theorized 6 lemmas, fully attempted 4 lemmas, proved 4 lemmas
+clam_27 uncyclic: VALID (574 ms)
+Proving begin clam_28: (revflat x) === (qrevaflat x Nil)
+Property accepted by cvec analysis
+(uncyclic) Theorized 4 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+clam_28 uncyclic: TIMEOUT (2177 ms)
+Proving begin clam_29: (rev (qreva x Nil)) === x
+Property accepted by cvec analysis
+proved lemma forall v0: a. v1: (List a). v2: (List a). (Cons v0 (qreva v1 v2)) === (qreva (append v1 (Cons v0 Nil)) v2) (Cons v0 (qreva (Cons v1_90 v1_91) v2)) === (qreva (append (Cons v1_90 v1_91) (Cons v0 Nil)) v2)
+proved lemma forall v0: (List a). v0 === (qreva (rev v0) Nil) (Cons v0_40 (Cons v0_41_110 (Cons v0_41_111_220 v0_41_111_221))) === (qreva (rev (Cons v0_40 (Cons v0_41_110 (Cons v0_41_111_220 v0_41_111_221)))) Nil)
+(uncyclic) Theorized 22 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+clam_29 uncyclic: TIMEOUT (2011 ms)
+Proving begin clam_30: (rev (append (rev x) Nil)) === x
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: (List a). (append (rev v0) Nil) === (rev v0) (append (rev v0) Nil) === (rev v0)
+proved lemma forall v0: a. v1: (List a). (Cons v0 (rev v1)) === (rev (append v1 (Cons v0 Nil))) (Cons v0 (rev (Cons v1_150 v1_151))) === (rev (append (Cons v1_150 v1_151) (Cons v0 Nil)))
+proved lemma forall x: (List a). (rev (append (rev x) Nil)) === x
+(uncyclic) Theorized 4 lemmas, fully attempted 3 lemmas, proved 3 lemmas
+clam_30 uncyclic: VALID (67 ms)
+Proving begin clam_31: (qreva (qreva x Nil) Nil) === x
+Property accepted by cvec analysis
+(uncyclic) Theorized 16 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+clam_31 uncyclic: TIMEOUT (2395 ms)
+Proving begin clam_32: (rotate (len x) x) === x
+Property accepted by cvec analysis
+(uncyclic) Theorized 34 lemmas, fully attempted 16 lemmas, proved 0 lemmas
+clam_32 uncyclic: TIMEOUT (2009 ms)
+Proving begin clam_33: (fac x) === (qfac x (S Z))
+Property accepted by cvec analysis
+(uncyclic) Theorized 2 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+clam_33 uncyclic: TIMEOUT (6338 ms)
+Proving begin clam_34: (mult x y) === (qmult x y Z)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: Nat. (S (plus v0 v1)) === (plus v0 (S v1)) (S (plus (S v0_60) v1)) === (plus (S v0_60) (S v1))
+proved lemma forall v0: Nat. v1: Nat. v2: Nat. (plus (qmult v0 v1 (S v2)) v1) === (qmult v0 v1 (S (plus v2 v1))) (plus (qmult (S v0_110) v1 (S v2)) v1) === (qmult (S v0_110) v1 (S (plus v2 v1)))
+proved lemma forall x: Nat. y: Nat. (mult x y) === (qmult x y Z) (mult (S (S (S (S x_50_130_430_1120)))) (S (S y_230_700))) === (qmult (S (S (S (S x_50_130_430_1120)))) (S (S y_230_700)) Z)
+(uncyclic) Theorized 12 lemmas, fully attempted 11 lemmas, proved 2 lemmas
+clam_34 uncyclic: VALID (261 ms)
+Proving begin clam_35: (exp x y) === (qexp x y (S Z))
+Property accepted by cvec analysis
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+clam_35 uncyclic: TIMEOUT (5043 ms)
+Proving begin clam_48: (len (sort x)) === (len x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List Nat). v1: Nat. (S (len v0)) === (len (insort v1 v0)) (S (len (Cons v0_60 v0_61))) === (len (insort v1 (Cons v0_60 v0_61)))
+proved lemma forall x: (List Nat). (len (sort x)) === (len x)
+(uncyclic) Theorized 5 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_48 uncyclic: VALID (548 ms)
+Proving begin clam_49: (mem x (sort y)) === True ==> (mem x y) === True
+Property accepted by cvec analysis
+(uncyclic) Theorized 33 lemmas, fully attempted 23 lemmas, proved 0 lemmas
+clam_49 uncyclic: TIMEOUT (2033 ms)
+Proving begin clam_50: (count x (sort y)) === (count x y)
+Property accepted by cvec analysis
+proved lemma forall v0: (List Nat). (S (count Z v0)) === (count Z (insort Z v0)) (S (count Z (Cons v0_60 v0_61))) === (count Z (insort Z (Cons v0_60 v0_61)))
+proved lemma forall v0: (List Nat). v1: Nat. (count Z v0) === (count Z (insort (S v1) v0)) (count Z (Cons v0_70 v0_71)) === (count Z (insort (S v1) (Cons v0_70 v0_71)))
+proved lemma forall v0: Nat. v1: (List Nat). (count (S v0) v1) === (count (S v0) (insort Z v1)) (count (S v0) (Cons v1_70 v1_71)) === (count (S v0) (insort Z (Cons v1_70 v1_71)))
+(uncyclic) Theorized 27 lemmas, fully attempted 27 lemmas, proved 3 lemmas
+clam_50 uncyclic: TIMEOUT (3523 ms)
+Proving begin clam_75: (append (rev x) y) === (qreva x y)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v1: a. v2: (List a). (append v0 (Cons v1 v2)) === (append (append v0 (Cons v1 Nil)) v2) (append (Cons v0_90 v0_91) (Cons v1 v2)) === (append (append (Cons v0_90 v0_91) (Cons v1 Nil)) v2)
+proved lemma forall x: (List a). y: (List a). (append (rev x) y) === (qreva x y)
+(uncyclic) Theorized 1 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_75 uncyclic: VALID (130 ms)
+Proving begin clam_76: (append (revflat x) y) === (qrevaflat x y)
+Property accepted by cvec analysis
+proved lemma forall v0: (Tree a). v1: a. v2: (List a). v3: (List a). (append (qrevaflat v0 (Cons v1 v2)) v3) === (qrevaflat v0 (Cons v1 (append v2 v3))) (append (qrevaflat (Node v0_100 v0_101 v0_102) (Cons v1 v2)) v3) === (qrevaflat (Node v0_100 v0_101 v0_102) (Cons v1 (append v2 v3)))
+proved lemma forall x: (Tree a). y: (List a). (append (revflat x) y) === (qrevaflat x y)
+(uncyclic) Theorized 1 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_76 uncyclic: VALID (555 ms)
+Proving begin clam_77: (rev (qreva x y)) === (append (rev y) x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: (List a). v1: a. v2: (List a). (append v0 (Cons v1 v2)) === (append (append v0 (Cons v1 Nil)) v2) (append (Cons v0_170 v0_171) (Cons v1 v2)) === (append (append (Cons v0_170 v0_171) (Cons v1 Nil)) v2)
+proved lemma forall x: (List a). y: (List a). (rev (qreva x y)) === (append (rev y) x)
+(uncyclic) Theorized 2 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+clam_77 uncyclic: VALID (212 ms)
+Proving begin clam_78: (rev (qreva x (rev y))) === (append y x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: a. v1: (List a). (Cons v0 (rev v1)) === (rev (append v1 (Cons v0 Nil))) (Cons v0 (rev (Cons v1_150 v1_151))) === (rev (append (Cons v1_150 v1_151) (Cons v0 Nil)))
+proved lemma forall v0: (List a). v0 === (rev (rev v0))
+proved lemma forall v0: a. v1: (List a). (Cons v0 v1) === (rev (append (rev v1) (Cons v0 Nil)))
+(uncyclic) Theorized 11 lemmas, fully attempted 4 lemmas, proved 4 lemmas
+clam_78 uncyclic: TIMEOUT (2006 ms)
+Proving begin clam_79: (rev (append (rev x) y)) === (append (rev y) x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: a. v1: (List a). (Cons v0 (rev v1)) === (rev (append v1 (Cons v0 Nil))) (Cons v0 (rev (Cons v1_150 v1_151))) === (rev (append (Cons v1_150 v1_151) (Cons v0 Nil)))
+proved lemma forall v0: (List a). v0 === (rev (rev v0)) (Cons v0_80 v0_81) === (rev (rev (Cons v0_80 v0_81)))
+(uncyclic) Theorized 11 lemmas, fully attempted 3 lemmas, proved 3 lemmas
+clam_79 uncyclic: TIMEOUT (2027 ms)
+Proving begin clam_80: (rev (append (rev x) (rev y))) === (append y x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: a. v1: (List a). (Cons v0 (rev v1)) === (rev (append v1 (Cons v0 Nil))) (Cons v0 (rev (Cons v1_150 v1_151))) === (rev (append (Cons v1_150 v1_151) (Cons v0 Nil)))
+proved lemma forall v0: (List a). v0 === (rev (rev v0))
+proved lemma forall v0: a. v1: (List a). (Cons v0 v1) === (rev (append (rev v1) (Cons v0 Nil)))
+(uncyclic) Theorized 11 lemmas, fully attempted 4 lemmas, proved 4 lemmas
+clam_80 uncyclic: TIMEOUT (2006 ms)
+Proving begin clam_81: (qreva (qreva x y) Nil) === (append (rev y) x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+proved lemma forall v0: (List a). (append (rev v0) Nil) === (rev v0) (append (rev v0) Nil) === (rev v0)
+proved lemma forall v0: (List a). v1: a. v2: (List a). (append v0 (Cons v1 v2)) === (append (append v0 (Cons v1 Nil)) v2) (append (Cons v0_170 v0_171) (Cons v1 v2)) === (append (append (Cons v0_170 v0_171) (Cons v1 Nil)) v2)
+proved lemma forall v0: (List a). v1: (List a). (append (rev v0) v1) === (qreva v0 v1) (append (rev (Cons v0_120 v0_121)) v1) === (qreva (Cons v0_120 v0_121) v1)
+proved lemma forall x: (List a). y: (List a). (qreva (qreva x y) Nil) === (append (rev y) x)
+(uncyclic) Theorized 4 lemmas, fully attempted 4 lemmas, proved 4 lemmas
+clam_81 uncyclic: VALID (1038 ms)
+Proving begin clam_82: (qreva (qreva x (rev y)) Nil) === (append y x)
+Property accepted by cvec analysis
+proved lemma forall v0: a. v1: (List a). v2: (List a). (Cons v0 (qreva v1 v2)) === (qreva (append v1 (Cons v0 Nil)) v2) (Cons v0 (qreva (Cons v1_90 v1_91) v2)) === (qreva (append (Cons v1_90 v1_91) (Cons v0 Nil)) v2)
+proved lemma forall v0: (List a). v1: (List a). v2: (List a). (append (qreva v0 v1) v2) === (qreva v0 (append v1 v2)) (append (qreva (Cons v0_70 v0_71) v1) v2) === (qreva (Cons v0_70 v0_71) (append v1 v2))
+proved lemma forall v0: (List a). v1: a. v2: (List a). v3: (List a). (append (qreva v0 (Cons v1 (rev v2))) v3) === (qreva v0 (Cons v1 (append (rev v2) v3))) (append (qreva v0 (Cons v1 (rev v2))) v3) === (qreva v0 (Cons v1 (append (rev v2) v3)))
+proved lemma forall x: (List a). y: (List a). (qreva (qreva x (rev y)) Nil) === (append y x) (qreva (qreva Nil (rev (Cons y_90 (Cons y_91_210 y_91_211)))) Nil) === (append (Cons y_90 (Cons y_91_210 y_91_211)) Nil)
+(uncyclic) Theorized 5 lemmas, fully attempted 3 lemmas, proved 3 lemmas
+clam_82 uncyclic: VALID (586 ms)
+Proving begin clam_83: (rotate (len x) (append x y)) === (append y x)
+Property accepted by cvec analysis
+proved lemma forall v0: (List a). v0 === (append v0 Nil) (Cons v0_30 v0_31) === (append (Cons v0_30 v0_31) Nil)
+(uncyclic) Theorized 26 lemmas, fully attempted 18 lemmas, proved 1 lemmas
+clam_83 uncyclic: TIMEOUT (2258 ms)
+Proving begin clam_84: (mult (fac x) y) === (qfac x y)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. Z === (qfac v0 Z) Z === (qfac (S v0_30) Z)
+(uncyclic) Theorized 3 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+clam_84 uncyclic: TIMEOUT (2147 ms)
+Proving begin clam_85: (plus (mult x y) z) === (qmult x y z)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (plus v0 Z) (S v0_30) === (plus (S v0_30) Z)
+proved lemma forall v0: Nat. (S v0) === (plus v0 (S Z)) (S (S v0_100)) === (plus (S v0_100) (S Z))
+proved lemma forall v0: Nat. v1: Nat. (S (plus v0 v1)) === (plus v0 (S v1)) (S (plus (S v0_190) v1)) === (plus (S v0_190) (S v1))
+proved lemma forall v0: Nat. v1: Nat. v2: Nat. (plus v0 (plus v1 v2)) === (plus (plus v0 v2) v1) (plus Z (plus (S v1_90) (S v2_150))) === (plus (plus Z (S v2_150)) (S v1_90))
+proved lemma forall x: Nat. y: Nat. z: Nat. (plus (mult x y) z) === (qmult x y z)
+(uncyclic) Theorized 6 lemmas, fully attempted 4 lemmas, proved 4 lemmas
+clam_85 uncyclic: VALID (654 ms)
+Proving begin clam_86: (mult (exp x y) z) === (qexp x y z)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: Nat. Z === (qexp v0 v1 Z) Z === (qexp v0 (S v1_40) Z)
+(uncyclic) Theorized 3 lemmas, fully attempted 2 lemmas, proved 1 lemmas
+clam_86 uncyclic: TIMEOUT (2456 ms)
+Attempted 50 goals:
+  32 solved (no cyclic)

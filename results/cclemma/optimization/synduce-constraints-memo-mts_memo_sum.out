@@ -1,0 +1,15 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: MList. v0 === (tf9 v0 v0) (Icons v0_20 v0_21 v0_22) === (tf9 (Icons v0_20 v0_21 v0_22) (Icons v0_20 v0_21 v0_22))
+proved lemma forall v0: MList. (tf1 v0) === (tf1 (tf9 v0 v0))
+proved lemma forall v0: MList. (tf3 (tf1 v0)) === (tf3 (tf1 (tf9 v0 v0))) (tf3 (tf1 v0)) === (tf3 (tf1 (tf9 v0 v0)))
+proved lemma forall v0: Nat. v1: Nat. v2: MList. (Icons v0 v1 v2) === (Icons v0 v1 (tf9 v2 v2)) (Icons v0 v1 v2) === (Icons v0 v1 (tf9 v2 v2))
+proved lemma forall v0: Nat. v1: Nat. v0 === (ite2 (lq v1 v1) v0 v0) v0 === (ite2 (lq (Succ v1_40) (Succ v1_40)) v0 v0)
+proved lemma forall v0: Nat. v0 === (ite2 (lq v0 v0) v0 v0)
+proved lemma forall v0: Nat. False === (lq v0 v0) False === (lq (Succ v0_40) (Succ v0_40))
+proved lemma forall v0: Nat. v1: Nat. v2: List. v0 === (ite2 (lq v1 v1) (tf3 v2) v0) (Succ v0_130) === (ite2 (lq v1 v1) (tf3 v2) (Succ v0_130))
+proved lemma forall v0: Nat. v1: List. v0 === (ite2 (lq v0 v0) (tf3 v1) v0)
+(uncyclic) Theorized 42 lemmas, fully attempted 35 lemmas, proved 9 lemmas
+optimize uncyclic: TIMEOUT (2071 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

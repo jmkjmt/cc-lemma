@@ -1,0 +1,17 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (plus v0 Zero) (Succ v0_30) === (plus (Succ v0_30) Zero)
+proved lemma forall v0: Nat. v0 === (ite2 (lq Zero v0) v0 Zero) (Succ v0_70) === (ite2 (lq Zero (Succ v0_70)) (Succ v0_70) Zero)
+proved lemma forall v0: List. (fst3 (tf1 v0)) === (snd3 (tf1 v0)) (fst3 (tf1 (Cons v0_150 v0_151))) === (snd3 (tf1 (Cons v0_150 v0_151)))
+proved lemma forall v0: Nat. v1: Nat. True === (lq Zero (plus v0 (Succ v1))) True === (lq Zero (plus (Succ v0_220) (Succ v1)))
+proved lemma forall v0: Nat. v1: Nat. (Succ (plus v0 v1)) === (plus v0 (Succ v1)) (Succ (plus (Succ v0_320) v1)) === (plus (Succ v0_320) (Succ v1))
+proved lemma forall v0: Nat. v1: Tuple3. (plus v0 (snd3 v1)) === (plus (snd3 v1) v0)
+proved lemma forall v0: Nat. v1: Tuple3. (plus v0 (fst3 v1)) === (plus (fst3 v1) v0)
+proved lemma forall v0: Nat. v1: Nat. (plus v0 v1) === (plus v1 (plus v0 Zero))
+proved lemma forall v0: Nat. v1: Nat. (lq Zero (plus v0 v1)) === (lq Zero (plus v1 v0)) (lq Zero (plus v0 v1)) === (lq Zero (plus v1 v0))
+proved lemma forall v0: Tuple3. v1: Nat. (plus (fst3 v0) v1) === (plus (plus v1 Zero) (fst3 v0)) (plus (fst3 v0) v1) === (plus (plus v1 Zero) (fst3 v0))
+proved lemma forall v0: List. (lq Zero (fst3 (tf1 v0))) === (lq Zero (snd3 (tf1 v0))) (lq Zero (fst3 (tf1 v0))) === (lq Zero (snd3 (tf1 v0)))
+(uncyclic) Theorized 31 lemmas, fully attempted 19 lemmas, proved 11 lemmas
+optimize uncyclic: TIMEOUT (2030 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

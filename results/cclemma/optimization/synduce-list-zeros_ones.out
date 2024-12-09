@@ -1,0 +1,9 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
+proved lemma forall v0: Tuple2. (and True (fst2 v0)) === (fst2 v0) (and True (fst2 v0)) === (fst2 v0)
+proved lemma forall v0: Tuple2. (and True (snd2 v0)) === (snd2 v0) (and True (snd2 v0)) === (snd2 v0)
+(uncyclic) Theorized 8 lemmas, fully attempted 4 lemmas, proved 3 lemmas
+optimize uncyclic: TIMEOUT (2257 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

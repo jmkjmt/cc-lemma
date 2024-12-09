@@ -1,0 +1,23 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: List. v0 === (tf7 v0 v0) (Cons v0_20 v0_21) === (tf7 (Cons v0_20 v0_21) (Cons v0_20 v0_21))
+proved lemma forall v0: List. (tf5 v0) === (tf5 (tf7 v0 v0))
+proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
+proved lemma forall v0: List. (and True (tf1 Zero v0)) === (tf1 Zero v0) (and True (tf1 Zero v0)) === (tf1 Zero v0)
+proved lemma forall v0: List. Zero === (ite1 (tf1 Zero v0) Zero Zero) Zero === (ite1 (tf1 Zero (Cons (Succ v0_50_150) v0_51)) Zero Zero)
+proved lemma forall v0: Nat. v0 === (ite1 (lq Zero v0) v0 Zero) (Succ v0_70) === (ite1 (lq Zero (Succ v0_70)) (Succ v0_70) Zero)
+proved lemma forall v0: Nat. (lq Zero v0) === (lq Zero (ite1 (lq Zero v0) v0 Zero)) (lq Zero v0) === (lq Zero (ite1 (lq Zero v0) v0 Zero))
+proved lemma forall v0: Bool. v1: Nat. v0 === (lq Zero (ite1 v0 (Succ v1) Zero)) True === (lq Zero (ite1 True (Succ v1) Zero))
+proved lemma forall v0: Nat. Zero === (ite1 (geq Zero v0) v0 Zero) Zero === (ite1 (geq Zero (Succ v0_170)) (Succ v0_170) Zero)
+proved lemma forall v0: Nat. Zero === (ite1 (geq Zero v0) Zero Zero) Zero === (ite1 (geq Zero (Succ v0_170)) Zero Zero)
+proved lemma forall v0: Nat. False === (lq Zero (ite1 (geq Zero v0) Zero Zero)) False === (lq Zero (ite1 (geq Zero v0) Zero Zero))
+proved lemma forall v0: Bool. v1: Nat. (ite1 v0 v1 Zero) === (ite1 v0 (ite1 v0 v1 Zero) Zero) (ite1 True v1 Zero) === (ite1 True (ite1 True v1 Zero) Zero)
+proved lemma forall v0: Nat. v1: Nat. v0 === (ite1 (geq Zero v1) v0 v0) (Succ v0_210) === (ite1 (geq Zero (Succ v1_290)) (Succ v0_210) (Succ v0_210))
+proved lemma forall v0: Nat. Zero === (ite1 (geq Zero v0) (ite1 (geq Zero v0) v0 Zero) Zero) Zero === (ite1 (geq Zero v0) (ite1 (geq Zero v0) v0 Zero) Zero)
+proved lemma forall v0: Nat. Zero === (ite1 (geq Zero v0) Zero (ite1 (geq Zero v0) v0 Zero)) Zero === (ite1 (geq Zero v0) Zero (ite1 (geq Zero v0) v0 Zero))
+proved lemma forall v0: Nat. (Succ v0) === (ite1 (lq Zero v0) (Succ v0) (Succ Zero)) (Succ (Succ v0_260)) === (ite1 (lq Zero (Succ v0_260)) (Succ (Succ v0_260)) (Succ Zero))
+proved lemma forall v0: Nat. True === (lq Zero (ite1 (lq (Succ Zero) v0) v0 (Succ Zero)))
+(uncyclic) Theorized 46 lemmas, fully attempted 39 lemmas, proved 17 lemmas
+optimize uncyclic: TIMEOUT (2017 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

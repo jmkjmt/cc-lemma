@@ -1,0 +1,8 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Tree. v0 === (tf5 v0) (Node v0_20 v0_21 v0_22) === (tf5 (Node v0_20 v0_21 v0_22))
+proved lemma forall v0: Nat. Zero === (ite1 (gq v0 Zero) Zero v0) Zero === (ite1 (gq (Succ v0_40) Zero) Zero (Succ v0_40))
+(uncyclic) Theorized 28 lemmas, fully attempted 22 lemmas, proved 2 lemmas
+optimize uncyclic: TIMEOUT (2088 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

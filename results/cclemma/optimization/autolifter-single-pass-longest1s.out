@@ -1,0 +1,17 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: List. v0 === (tf1 v0 v0) (Cons v0_20 v0_21) === (tf1 (Cons v0_20 v0_21) (Cons v0_20 v0_21))
+proved lemma forall v0: Nat. v0 === (ite1 (lq Zero v0) v0 Zero) (Succ v0_40) === (ite1 (lq Zero (Succ v0_40)) (Succ v0_40) Zero)
+proved lemma forall v0: Bool. v0 === (or False v0) True === (or False True)
+proved lemma forall v0: Bool. v0 === (lq Zero (ite1 v0 (Succ Zero) Zero)) True === (lq Zero (ite1 True (Succ Zero) Zero))
+proved lemma forall v0: Bool. v0 === (lq Zero (ite1 v0 (Succ (Succ Zero)) Zero)) True === (lq Zero (ite1 True (Succ (Succ Zero)) Zero))
+proved lemma forall v0: Bool. v0 === (lq Zero (ite1 (or False v0) (Succ Zero) Zero)) v0 === (lq Zero (ite1 (or False v0) (Succ Zero) Zero))
+proved lemma forall v0: Bool. (lq Zero (ite1 v0 (Succ Zero) Zero)) === (or False v0) (lq Zero (ite1 v0 (Succ Zero) Zero)) === (or False v0)
+proved lemma forall v0: Bool. (lq Zero (ite1 v0 (Succ (Succ Zero)) Zero)) === (or False v0) (lq Zero (ite1 v0 (Succ (Succ Zero)) Zero)) === (or False v0)
+proved lemma forall v0: Bool. v0 === (lq Zero (ite1 (or False v0) (Succ (Succ Zero)) Zero)) v0 === (lq Zero (ite1 (or False v0) (Succ (Succ Zero)) Zero))
+proved lemma forall v0: Bool. (lq Zero (ite1 (or False v0) (Succ Zero) Zero)) === (or False v0) (lq Zero (ite1 (or False v0) (Succ Zero) Zero)) === (or False v0)
+proved lemma forall v0: Bool. v1: List. v0 === (lq Zero (ite1 (not v0) Zero (Succ (snd2 (tf6 v1))))) True === (lq Zero (ite1 (not True) Zero (Succ (snd2 (tf6 v1)))))
+(uncyclic) Theorized 19 lemmas, fully attempted 17 lemmas, proved 11 lemmas
+optimize uncyclic: TIMEOUT (2060 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

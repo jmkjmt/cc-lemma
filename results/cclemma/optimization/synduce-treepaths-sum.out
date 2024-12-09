@@ -1,0 +1,8 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (plus v0 Zero) (Succ v0_30) === (plus (Succ v0_30) Zero)
+proved lemma forall v0: Nat. v1: Nat. (plus v0 v1) === (plus v1 v0) (plus (Succ v0_40) (Succ v1_90)) === (plus (Succ v1_90) (Succ v0_40))
+(uncyclic) Theorized 6 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+optimize uncyclic: TIMEOUT (2456 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

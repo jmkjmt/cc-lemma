@@ -1,12 +1,19 @@
-timeout = 2
+timeout = 60
 memory_limit = 16
 
-dataset_root = "/home/artifact/cc-lemma/benchmarks"
-cclemma_path = "/home/artifact/cc-lemma"
-hipspec_path = "/home/artifact/hipspec"
-thesy_path = "/home/artifact/TheSy"
+dataset_root = "/home/mingyu809/cc-lemma/benchmarks"
+cclemma_path = "/home/mingyu809/cc-lemma"
+hipspec_path = "/home/mingyu809/hipspec"
+thesy_path = "/home/mingyu809/TheSy"
 cvc4_bin_name = "cvc4-vmcai2015"
-output_path = "/home/artifact/cc-lemma/results"
+output_path = "/home/mingyu809/cc-lemma/results"
+
+# dataset_root = "/home/artifact/cc-lemma/benchmarks"
+# cclemma_path = "/home/artifact/cc-lemma"
+# hipspec_path = "/home/artifact/hipspec"
+# thesy_path = "/home/artifact/TheSy"
+# cvc4_bin_name = "cvc4-vmcai2015"
+# output_path = "/home/artifact/cc-lemma/results"
 
 hipspec_expensive_props = {
     "clam": [81],
