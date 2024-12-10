@@ -70,9 +70,14 @@
         (unique3 lst1 lst2)
     )
 
-    (=== test (lst1) (List Nat)
+    (=== test2 (lst1) (List Nat)
         (uniqsave4 lst1 Nil)
         (unique3 lst1 Nil)
+    )
+
+    (=== test3 (n lst) (Nat (List Nat))
+        (isin3 (unique3 lst (Cons n Nil)) n)
+        True
     )
 (//
     (=== test (lst) (List Nat)
