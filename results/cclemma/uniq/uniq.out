@@ -1,7 +1,46 @@
-Proving begin sol1-sol2: (solution1 lst) === (solution2 lst)
+Proving begin sol1-sol3: (solution1 lst) === (solution3 lst)
 Property accepted by cvec analysis
-proved lemma forall v0: Nat. v1: Nat. (eq v0 v1) === (eq v1 v0) (eq (S v0_40) (S v1_80)) === (eq (S v1_80) (S v0_40))
-proved lemma forall v0: (List Nat). (drop2 v0 Z) === (drop2 (drop2 v0 Z) Z) (drop2 (Cons v0_40 v0_41) Z) === (drop2 (drop2 (Cons v0_40 v0_41) Z) Z)
-proved lemma forall v0: (List Nat). (solution2 (drop2 v0 Z)) === (solution2 (drop2 (drop2 v0 Z) Z))
-proved lemma forall v0: (List Nat). v1: Nat. (drop2 (drop2 v0 Z) v1) === (drop2 (drop2 (drop2 v0 Z) Z) v1)
-proved lemma forall v0: (List Nat). v1: Nat. (solution2 (drop2 (drop2 v0 Z) v1)) === (solution2 (drop2 (drop2 (drop2 v0 Z) Z) v1)) (solution2 (drop2 (drop2 v0 Z) v1)) === (solution2 (drop2 (drop2 (drop2 v0 Z) Z) v1))
+proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
+proved lemma forall v0: Nat. v1: Nat. (eq v0 v1) === (eq v1 v0) (eq (S v0_140) (S v1_210)) === (eq (S v1_210) (S v0_140))
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+(uncyclic) Theorized 6 lemmas, fully attempted 4 lemmas, proved 2 lemmas
+sol1-sol3 uncyclic: TIMEOUT (60681 ms)
+Proving begin sol1-sol4: (solution1 lst) === (solution4 lst)
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. (ite v0 False True) === (ite v0 False (ite v0 g_33 True)) (ite True False True) === (ite True False (ite True g_33 True))
+proved lemma forall v0: Bool. (ite v0 False True) === (ite v0 False (ite v0 False True)) (ite True False True) === (ite True False (ite True False True))
+proved lemma forall v0: (List Nat). (remove-elem-1 Z v0) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z v0))) (remove-elem-1 Z (Cons v0_50 v0_51)) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (Cons v0_50 v0_51))))
+proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (solution1 v0)))) === (remove-elem-1 Z (solution1 v0))
+proved lemma forall v0: Nat. v1: (List Nat). (remove-elem-1 Z (remove-elem-1 v0 v1)) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 v0 v1))) (remove-elem-1 Z (remove-elem-1 v0 (Cons v1_60 v1_61))) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 v0 (Cons v1_60 v1_61))))
+proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (solution1 v0))) === (remove-elem-1 Z (solution1 v0))
+proved lemma forall v0: Nat. v1: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 (S v0) v1))) === (remove-elem-1 Z (remove-elem-1 (S v0) v1))
+proved lemma forall v0: Bool. v1: Nat. v2: Nat. v0 === (ite (eq (S v1) v2) v0 v0) v0 === (ite (eq (S v1) v2) v0 v0)
+proved lemma forall v0: Nat. True === (ite (eq Z v0) True True) True === (ite (eq Z v0) True True)
+proved lemma forall v0: a. v1: Nat. v0 === (ite (eq Z v1) v0 v0) v0 === (ite (eq Z v1) v0 v0)
+proved lemma forall v0: a. v1: Nat. v2: Nat. v0 === (ite (eq v1 v2) v0 v0) v0 === (ite (eq v1 v2) v0 v0)
+(uncyclic) Theorized 185 lemmas, fully attempted 139 lemmas, proved 11 lemmas
+sol1-sol4 uncyclic: TIMEOUT (60259 ms)
+Attempted 2 goals:
+  0 solved (no cyclic)
