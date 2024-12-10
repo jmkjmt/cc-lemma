@@ -1,0 +1,7 @@
+Proving begin sol1-sol2: (solution1 lst) === (solution2 lst)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: Nat. (eq v0 v1) === (eq v1 v0) (eq (S v0_40) (S v1_80)) === (eq (S v1_80) (S v0_40))
+proved lemma forall v0: (List Nat). (drop2 v0 Z) === (drop2 (drop2 v0 Z) Z) (drop2 (Cons v0_40 v0_41) Z) === (drop2 (drop2 (Cons v0_40 v0_41) Z) Z)
+proved lemma forall v0: (List Nat). (solution2 (drop2 v0 Z)) === (solution2 (drop2 (drop2 v0 Z) Z))
+proved lemma forall v0: (List Nat). v1: Nat. (drop2 (drop2 v0 Z) v1) === (drop2 (drop2 (drop2 v0 Z) Z) v1)
+proved lemma forall v0: (List Nat). v1: Nat. (solution2 (drop2 (drop2 v0 Z) v1)) === (solution2 (drop2 (drop2 (drop2 v0 Z) Z) v1)) (solution2 (drop2 (drop2 v0 Z) v1)) === (solution2 (drop2 (drop2 (drop2 v0 Z) Z) v1))

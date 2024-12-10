@@ -43,6 +43,14 @@
     (let solution1 (Nil) Nil)
     (let solution1 ((Cons ?hd ?tl)) (Cons ?hd (remove-elem-1 ?hd (solution1 ?tl))))
 
+    (:: drop2 (-> ((List Nat) Nat) (List Nat)))
+    (let drop2 (Nil ?n) Nil)
+    (let drop2 ((Cons ?hd ?tl) ?n) (ite (eq ?hd ?n) (drop2 ?tl ?n) (Cons ?hd (drop2 ?tl ?n))))
+
+    (:: solution2 (-> (List Nat) Nat))
+    (let solution2 (Nil) Nil)
+    (let solution2 ((Cons ?hd ?tl)) (Cons ?hd (solution2 (drop2 ?tl ?hd))))
+
     (:: isin3 (-> ((List Nat) Nat) Bool))
     (let isin3 (Nil ?a) False)
     (let isin3 ((Cons ?hd ?tl) ?a) (ite (eq ?a ?hd) True (isin3 ?tl ?a)))
@@ -64,7 +72,10 @@
 
     (:: solution4 (-> (List Nat) (List Nat)))
     (let solution4 (?lst) (uniqsave4 ?lst Nil))
-    
+    (=== sol1-sol2 (lst) ((List Nat))
+        (solution1 lst)
+        (solution2 lst)
+    )
     (=== sol1-sol3 (lst) ((List Nat))
         (solution1 lst)
         (solution3 lst)

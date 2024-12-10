@@ -326,10 +326,5 @@
             "status": true,
             "info": 0.004
         }
-    },
-    "uniq": {
-        "uniq": {
-            "status": false
-        }
     }
 }

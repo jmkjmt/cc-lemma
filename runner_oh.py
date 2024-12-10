@@ -11,7 +11,7 @@ import scripts.cvc_runner as cvc_runner
 import argparse
 
 TOOLS = ['cclemma', 'cvc4', 'hipspec', 'thesy']
-BENCHMARKS = ['lambda', 'nat']
+BENCHMARKS = ['uniq']
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
