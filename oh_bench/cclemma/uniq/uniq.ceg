@@ -64,26 +64,15 @@
 
     (:: solution4 (-> (List Nat) (List Nat)))
     (let solution4 (?lst) (uniqsave4 ?lst Nil))
-
-    (=== test (lst1 lst2) ((List Nat) (List Nat))
-        (uniqsave4 lst1 lst2)
-        (unique3 lst1 lst2)
-    )
-
-    (=== test2 (lst1) (List Nat)
-        (uniqsave4 lst1 Nil)
-        (unique3 lst1 Nil)
-    )
-
-    (=== test3 (n lst) (Nat (List Nat))
-        (isin3 (unique3 lst (Cons n Nil)) n)
-        True
-    )
-(//
-    (=== test (lst) (List Nat)
+    
+    (=== sol1-sol3 (lst) ((List Nat))
+        (solution1 lst)
         (solution3 lst)
+    )
+    (=== sol1-sol4 (lst) ((List Nat))
+        (solution1 lst)
         (solution4 lst)
     )
-//)
+
 
 )
