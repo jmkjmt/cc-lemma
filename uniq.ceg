@@ -31,21 +31,28 @@
     (let remove-elem-1 (?e Nil) Nil)
     (let remove-elem-1 (?e (Cons ?hd ?tl)) (ite (eq ?e ?hd) (remove-elem-1 ?e ?tl) (Cons ?hd (remove-elem-1 ?e ?tl))))
 
+    (:: delete (-> (Nat (List Nat)) (List Nat)))
+    (let delete (?n Nil          ) Nil                                                       )
+    (let delete (?n (Cons ?x ?xs)) (ite (eq ?n ?x) (delete ?n ?xs) (Cons ?x (delete ?n ?xs))))
+
     (:: solution1 (-> (List Nat) (List Nat)))
     (let solution1 (Nil) Nil)
     (let solution1 ((Cons ?hd ?tl)) (Cons ?hd (remove-elem-1 ?hd (solution1 ?tl))))
 
     (:: isin3 (-> ((List Nat) Nat) Bool))
-    (let isin3 (Nil ?a) Nil)
+    (let isin3 (Nil ?a) False)
     (let isin3 ((Cons ?hd ?tl) ?a) (ite (eq ?a ?hd) True (isin3 ?tl ?a)))
 
     (:: unique3 (-> ((List Nat) (List Nat)) (List Nat)))
     (let unique3 (Nil ?lst2) ?lst2)
     (let unique3 ((Cons ?hd ?tl) ?lst2) (ite (isin3 ?lst2 ?hd) (unique3 ?tl ?lst2) (unique3 ?tl (append ?lst2 (Cons ?hd Nil)))))
 
-    (=== test (n) (Nat)
-        (remove-elem-1 (Cons n Nil) n)
-        Nil
+    (:: solution3 (-> (List Nat) (List Nat)))
+    (let solution3 (?lst) (unique3 ?lst Nil))
+
+    (=== test (lst) (List Nat)
+        (unique3 lst lst)
+        (lst)
     )
 
 
