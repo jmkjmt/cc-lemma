@@ -61,6 +61,12 @@
 
     (:: eval (-> (Formula) Nat))
     (let eval ((TTrue)) True)
+    (let eval ((FFalse)) False)
+    (let eval ((Not ?f)) (not (eval ?f)))
+    (let eval ((AndAlso ?f1 ?f2)) (and (eval ?f1) (eval ?f2)))
+    (let eval ((OrElse ?f1 ?f2)) (or (eval ?f1) (eval ?f2)))
+    (let eval ((Imply ?f1 ?f2)) (or (not (eval ?f1)) (eval ?f2)))
+    (let eval ((Equal ?f1 ?f2)) (eq (eval ?f1) (eval ?f2)))
     
-
+    (:: evalsub (-> (Formula) Nat))
 )
