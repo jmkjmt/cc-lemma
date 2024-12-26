@@ -3,5 +3,11 @@
         "uniq": {
             "status": false
         }
+    },
+    "nat": {
+        "nat": {
+            "status": true,
+            "info": 0.004
+        }
     }
 }

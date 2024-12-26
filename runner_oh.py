@@ -9,9 +9,12 @@ import scripts.thesy_runner as thesy_runner
 import scripts.cvc_runner as cvc_runner
 
 import argparse
+# 
+# TOOLS = ['cclemma', 'cvc4', 'hipspec', 'thesy']
+# BENCHMARKS = ['uniq']
 
-TOOLS = ['cclemma', 'cvc4', 'hipspec', 'thesy']
-BENCHMARKS = ['uniq']
+TOOLS = ['thesy']
+BENCHMARKS = ['nat']
 
 def parse_arguments():
     parser = argparse.ArgumentParser(

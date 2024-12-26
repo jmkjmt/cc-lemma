@@ -72,12 +72,12 @@
 
     (:: solution4 (-> (List Nat) (List Nat)))
     (let solution4 (?lst) (uniqsave4 ?lst Nil))
-    (//
+    
     (=== sol1-sol2 (lst) ((List Nat))
         (solution1 lst)
         (solution2 lst)
     )
-    //)
+    
     (=== sol1-sol3 (lst) ((List Nat))
         (solution1 lst)
         (solution3 lst)

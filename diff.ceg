@@ -1,0 +1,116 @@
+ (
+    (data Bool (True False))
+    (:: True Bool)
+    (:: False Bool)
+
+    (data Nat (Z S))
+    (:: Z Nat)
+    (:: S (-> (Nat) Nat))
+
+    (data List (a) (Nil Cons))
+    (:: Nil  (List a))
+    (:: Cons (-> (a (List a)) (List a)))
+
+
+    (data Aexp (Const Var Power Times Sum))
+    (:: Const (-> (Nat) Aexp))
+    (:: Var (-> (List Nat) Aexp))
+    (:: Power (-> ((List Nat) Nat) Aexp))
+    (:: Times (-> (List Aexp) Aexp))
+    (:: Sum (-> (List Aexp) Aexp))
+
+
+    (:: eq (-> (Nat Nat) Bool))
+    (let eq (Z      Z     ) True      )
+    (let eq (Z      (S ?y)) False     )
+    (let eq ((S ?x) Z     ) False     )
+    (let eq ((S ?x) (S ?y)) (eq ?x ?y))
+
+    (:: not (-> (Bool) Bool))
+    (let not (True) False)
+    (let not (False) True)
+
+    (:: neq (-> (Nat Nat) Bool))
+    (let neq (?b1 ?b2) (not (eq ?b1 ?b2)))
+
+    (:: ite (-> (Bool a a) a))
+    (let ite (True ?x ?y ) ?x)
+    (let ite (False ?x ?y) ?y)
+
+    (:: leq (-> (Nat Nat) Bool))
+    (let leq (Z      ?y) True           )
+    (let leq ((S ?x) Z ) False          )
+    (let leq ((S ?x) (S ?y)) (leq ?x ?y))
+
+    (:: lt (-> (Nat Nat) Bool))
+    (let lt (?x     Z     ) False     )
+    (let lt (Z      (S ?y)) True      )
+    (let lt ((S ?x) (S ?y)) (lt ?x ?y))
+
+    (:: mem (-> (Nat (List Nat)) Bool))
+    (let mem (?n Nil          ) False                            )
+    (let mem (?n (Cons ?x ?xs)) (ite (eq ?n ?x) True (mem ?n ?xs)))
+
+    (:: and (-> (Bool Bool) Bool))
+    (let and (False ?y) False)
+    (let and (?x False) False)
+    (let and (True True) True)
+
+    (:: or (-> (Bool Bool) Bool))
+    (let or (True ?y) True)
+    (let or (?x True) True)
+    (let or (False False) False)
+
+    (:: sub (-> (Nat Nat) Nat))
+    (let sub (?x Z)          ?x         )
+    (let sub (Z ?y)          Z          )
+    (let sub ((S ?x) (S ?y)) (sub ?x ?y))
+
+
+
+    (:: diff (-> (Aexp (List Nat)) Aexp))
+    (let diff ((Const ?n) ?x) (Const Z))
+    (let diff ((Var ?a) ?x) (ite (neq ?a ?x) (Const Z) (Const (S Z))))
+    (let diff ((Power ?a ?n) ?x) (ite (lt ?n Z) (Var Z) (ite (or (eq ?n Z) (neq ?a ?x)) (Const Z) (Times (Cons (Const ?n) (Cons (Power ?a (sub ?n (S Z))) Nil))))))
+    (let diff ((Times Nil) ?x) (Var Z))
+    (let diff ((Times (Cons ?hd Nil)) ?x) (diff ?hd ?x))
+    (let diff ((Times (Cons ?hd ?tl)) ?x) (Sum (Cons (Times (Cons (diff ?hd ?x) ?tl)) (Cons (Times (Cons ?hd (Cons (diff (Times ?tl) ?x) Nil))) Nil))))
+    (let diff ((Sum Nil) ?x) (Var Z))
+    (let diff ((Sum (Cons ?hd Nil)) ?x) (diff ?hd ?x))
+    (let diff ((Sum (Cons ?hd ?tl)) ?x) (Sum (Cons (diff ?hd ?x) (Cons (diff (Sum ?tl) ?x) Nil))))
+
+    (:: map (-> ((-> (Aexp (List Nat)) Aexp) (List Aexp) (List Nat)) (List Aexp)))
+    (let map (?f Nil ?x) Nil)
+    (let map (?f (Cons ?hd ?tl) ?x) (Cons ($ ?f ?hd ?x) (map ?f ?tl ?x)))
+
+    (:: diff102 (-> (Aexp (List Nat)) Aexp))
+    (let diff102 ((Const ?n) ?x) (Const Z))
+    (let diff102 ((Var ?a) ?x) (ite (eq ?a ?x) (Const (S Z)) (Const Z)))
+    (let diff102 ((Power ?a ?n) ?x) (ite (lt ?n Z) (Var Z) (ite (or (eq ?n Z) (neq ?a ?x)) (Const Z) (Times (Cons (Const ?n) (Cons (Power ?a (sub ?n (S Z))) Nil))))))
+    (let diff102 ((Times Nil) ?x) (Var Z))
+    (let diff102 ((Times (Cons ?hd Nil)) ?x) (diff102 ?hd ?x))
+    (let diff102 ((Times (Cons ?hd ?tl)) ?x) (Sum (Cons (Times (Cons (diff102 ?hd ?x) ?tl)) (Cons (Times (Cons ?hd (Cons (diff102 (Times ?tl) ?x) Nil))) Nil))))
+    (let diff102 ((Sum Nil) ?x) (Var Z))
+    (let diff102 ((Sum (Cons ?hd ?tl)) ?x) (Sum (map diff (Cons ?hd ?tl) ?x)))
+    
+    (:: foo (-> (Aexp (List Nat)) Aexp))
+    (let foo (?e ?v) (Const Z))
+
+    (=== test (x) (Nat)
+        (diff102 (Sum (Cons (Var x) (Cons (Var x) Nil))) x)
+        (Sum (Cons (Const (S Z)) (Cons (Const (S Z)) Nil)))
+    )
+
+    (=== test2 (e x) (Aexp (List Nat))
+        (map foo (Cons e Nil) x)
+        (Cons (Const Z) Nil)
+    )
+
+    (=== test3 (x) (List Nat)
+        (map foo Nil x)
+        (Nil)
+    )
+    
+
+
+)

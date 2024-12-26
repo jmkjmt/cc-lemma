@@ -3,6 +3,14 @@
 (:: Z Nat)
 (:: S (-> (Nat) Nat))
 
+(data Bool (True False))
+(:: True Bool)
+(:: False Bool)
+
+(:: ite (-> (Bool a a) a))
+(let ite (True ?x ?y ) ?x)
+(let ite (False ?x ?y) ?y)
+
 (:: add1 (-> (Nat Nat) Nat))
 (let add1 (Z ?y) ?y)
 (let add1 ((S ?x) ?y) (S (add1 ?x ?y)))
