@@ -1,0 +1,135 @@
+(
+(data Bool (True False))
+(:: True Bool)
+(:: False Bool)
+
+(data Nat (Z S))
+(:: Z Nat)
+(:: S (-> (Nat) Nat))
+
+
+(data Lambda (V P C))
+(:: V (-> (Nat) Lambda))
+(:: P (-> (Nat Lambda) Lambda))
+(:: C (-> (Lambda Lambda) Lambda))
+
+
+(data List (a) (Nil Cons))
+(:: Nil  (List a))
+(:: Cons (-> (a (List a)) (List a)))
+
+(:: eqlist (-> (List Nat) (List Nat)) Bool)
+(let eqlist ((Cons ?hd ?tl) (Cons ?hd2 ?tl2)) (ite (eq ?hd ?hd2) (eqlist ?tl ?tl2) (False)))
+(let eqlist ((Cons ?hd ?tl) Nil) False)
+(let eqlist (Nil (Cons ?hd ?tl)) False)
+(let eqlist (Nil Nil) True)
+
+(:: ite (-> (Bool a a) a))
+(let ite (True ?x ?y ) ?x)
+(let ite (False ?x ?y) ?y)
+
+(:: eq (-> (Nat Nat) Bool))
+(let eq (Z      Z     ) True      )
+(let eq (Z      (S ?y)) False     )
+(let eq ((S ?x) Z     ) False     )
+(let eq ((S ?x) (S ?y)) (eq ?x ?y))
+
+
+
+(:: mem (-> (Nat (List Nat)) Bool))
+(let mem (?n Nil          ) False                            )
+(let mem (?n (Cons ?x ?xs)) (ite (eq ?n ?x) True (mem ?n ?xs)))
+
+(:: and (-> (Bool Bool) Bool))
+(let and (False ?y) False)
+(let and (?x False) False)
+(let and (True True) True)
+
+(:: or (-> (Bool Bool) Bool))
+(let or (True ?y) True)
+(let or (?x True) True)
+(let or (False False) False)
+
+(:: check1 (-> (Lambda (List Nat)) Bool))
+(let check1 ((V ?x) ?lst) (mem ?x ?lst))
+(let check1 ((P ?x ?e) ?lst) (check1 ?e (Cons ?x ?lst)))
+(let check1 ((C ?e1 ?e2) ?lst) (and (check1 ?e1 ?lst) (check1 ?e2 ?lst)))
+
+(:: ta1 (-> (Lambda) Bool))
+(let ta1 (?lambda) (check1 ?lambda Nil))
+
+(:: ta2 (-> (Lambda) Bool))
+(let ta2 ((V ?x)) False)
+(let ta2 ((P ?x ?e)) (check1 ?e (Cons ?x Nil)))
+(let ta2 ((C ?e1 ?e2)) (and (check1 ?e1 Nil) (check1 ?e2 Nil)))
+
+(:: check3 (-> (Lmabda (List Nat)) Bool))
+(let check3 ((P ?st ?k) ?li) (ite (mem ?st ?li) (check3 ?k ?li) (check3 ?k (Cons ?st ?li))))
+(let check3 ((C ?me1 ?me2) ?li) (and (check3 ?me1 ?li) (check3 ?me2 ?li)))
+(let check3 ((V ?na) ?li) (mem ?na ?li))
+
+(:: ta3 (-> (Lambda) Bool))
+(let ta3 (?lambda) (check3 ?lambda Nil))
+
+(:: exist (-> ((-> (Nat) Bool) (List Nat)) Bool))
+(let exist (?p Nil) False)
+(let exist (?p (Cons ?hd ?tl)) (or ($ ?p ?hd) (exist ?p ?tl)))
+
+(:: check4 (-> (Lambda (List Nat)) Bool))
+(let check4 ((P ?st ?k) ?li) (check4 ?k (Cons ?st ?li)))
+(let check4 ((C ?me1 ?me2) ?li) (and (check4 ?me1 ?li) (check4 ?me2 ?li)))
+(let check4 ((V ?na) ?li) (exist (eq ?na) ?li))
+
+(:: ta4 (-> (Lambda) Bool))
+(let ta4 ((P ?st ?k)) (check4 ?k (Cons ?st Nil)))
+(let ta4 ((C ?me1 ?me2)) (and (check4 ?me1 Nil) (check4 ?me2 Nil)))
+(let ta4 ((V ?na)) False)
+
+(:: sol5 (-> (Lambda) Bool))
+(let sol5 (?lambda) (eqlist (getStn ?lambda) Nil))
+(:: getStn (-> (Lambda) (List Nat)))
+(let getStn ((V ?var)) (Cons ?var Nil))
+(let getStn ((P ?n ?m)) (list-filter aux (getStn ?m)))
+(let getStn ((C ?m1 ?m2)) (append (getStn ?m1) (getStn ?m2)))
+(// we should add definition of list-filter //)
+
+(:: sol50 (-> (Lambda) Bool))
+(let sol50 (?m) (findStation ?m (V Z)))
+(:: findStation (-> (Lambda Lambda) Bool))
+(let findStation ((V ?n) ?covers) (valify ?n ?covers))
+(let findStation ((P ?n ?m) ?covers) (findStation ?m (P ?n ?covers)))
+(let findStation ((C ?m1 ?m2) ?covers) (and (findStation ?m1 ?covers) (findStation ?m2 ?covers)))
+(:: valify (-> (Nat Lambda) Bool))
+(let valify (?var (V ?n)) False)
+(let valify (?var (P ?n ?m)) (ite (eq ?n ?var) True (valify ?var ?m)))
+(let valify (?var (C ?m1 ?m2)) False)
+
+(:: sol57 (-> (Lambda) Bool))
+(let sol57 (?l) (eqlist (listStation ?l) Nil))
+(:: listStation (-> (Lambda) (List Nat)))
+(let listStation ((V ?n)) (Cons ?n Nil))
+(let listStation ((P ?n ?m)) (deleteAll (listStation ?m ?n)))
+(let listStation ((C ?m1 ?m2)) (append (listStation ?m1) (listStation ?m2)))
+(:: deleteAll (-> ((List Nat) Nat) (List Nat)))
+(let deleteAll (Nil ?target) Nil)
+(let deleteAll ((Cons ?l ?remain) ?target) (ite (eq ?l ?target) (deleteAll ?remain ?target) (Cons ?l (deleteAll ?remain ?target))))
+(// sol57 is something wrong....//)
+
+(:: sol101 (-> (Lambda) Bool))
+(let sol101 (?m) (check101 ?m Nil Nil))
+(:: check101 (-> (Lambda (List Nat) (List Nat)) Bool))
+(let check101 ((V ?n) ?al ?nl) (forall101 aux101 ?al (Cons ?n ?nl)))
+(let check101 ((P ?n ?m) ?al ?nl) (check101 ?m (Cons ?n ?al) ?nl))
+(let check101 ((C ?m1 ?m2) ?al ?nl) (and (check101 ?m1 ?al ?nl) (check101 ?m2 ?al ?nl)))
+(:: forall101 (-> ((-> (Nat (List Nat)) Bool) (List Nat) (List Nat)) Bool))
+(let forall101 (?pred ?a Nil) True)
+(let foall101 (?pred ?a (Cons ?hd ?tl)) (ite ($ ?pred ?hd ?a) (forall101 ?pred ?a ?tl) False))
+(:: aux101 (-> (Nat (List Nat)) Bool))
+(let aux101 (?x ?al) (list-mem ?x ?al))
+(// sol101 is something wrong....//)
+
+(=== test (l) (Lambda)
+    (sol101 l)
+    (ta1 l)
+)
+)
