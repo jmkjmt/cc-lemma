@@ -93,7 +93,7 @@ sol329 , sol353 uses integer
 //)
 (=== test (n m) (Nat Nat)
     (sol116 n m)
-    (sol90 n m)
+    (mul1 n m)
 )
 
 )
