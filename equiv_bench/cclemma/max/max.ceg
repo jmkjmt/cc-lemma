@@ -1,0 +1,89 @@
+(
+    (data Bool (True False))
+    (:: True Bool)
+    (:: False Bool)
+
+    (data Nat (Z S))
+    (:: Z Nat)
+    (:: S (-> (Nat) Nat))
+
+    (data List (a) (Nil Cons))
+    (:: Nil  (List a))
+    (:: Cons (-> (a (List a)) (List a)))
+
+    (:: ite (-> (Bool a a) a))
+    (let ite (True ?x ?y ) ?x)
+    (let ite (False ?x ?y) ?y)
+
+    (:: eq (-> (Nat Nat) Bool))
+    (let eq (Z      Z     ) True      )
+    (let eq (Z      (S ?y)) False     )
+    (let eq ((S ?x) Z     ) False     )
+    (let eq ((S ?x) (S ?y)) (eq ?x ?y))
+
+    (:: not (-> (Bool) Bool))
+    (let not (True) False)
+    (let not (False) True)
+
+    (:: and (-> (Bool Bool) Bool))
+    (let and (False ?y) False)
+    (let and (?x False) False)
+    (let and (True True) True)
+
+    (:: or (-> (Bool Bool) Bool))
+    (let or (True ?y) True)
+    (let or (?x True) True)
+    (let or (False False) False)
+
+    (:: plus (-> (Nat Nat) Nat))
+    (let plus (Z      ?y) ?y             )
+    (let plus ((S ?x) ?y) (S (plus ?x ?y)))
+
+    (:: sub (-> (Nat Nat) Nat))
+    (let sub (?x Z)          ?x         )
+    (let sub (Z ?y)          Z          )
+    (let sub ((S ?x) (S ?y)) (sub ?x ?y))
+
+    (:: leq (-> (Nat Nat) Bool))
+    (let leq (Z      ?y) True           )
+    (let leq ((S ?x) Z ) False          )
+    (let leq ((S ?x) (S ?y)) (leq ?x ?y))
+
+    (:: lt (-> (Nat Nat) Bool))
+    (let lt (?x     Z     ) False     )
+    (let lt (Z      (S ?y)) True      )
+    (let lt ((S ?x) (S ?y)) (lt ?x ?y))
+
+    (:: eqlist (-> (List Nat) (List Nat)) Bool)
+    (let eqlist ((Cons ?hd ?tl) (Cons ?hd2 ?tl2)) (ite (eq ?hd ?hd2) (eqlist ?tl ?tl2) (False)))
+    (let eqlist ((Cons ?hd ?tl) Nil) False)
+    (let eqlist (Nil (Cons ?hd ?tl)) False)
+    (let eqlist (Nil Nil) True)
+
+    (:: fold (-> ((-> ((List Nat) Nat) Nat) (List Nat) (Nat)) (Nat)))
+    (let fold (?f Nil ?a) (?a))
+    (let fold (?f (Cons ?hd ?tl) ?a) (ite (eqlist ?tl Nil) (?hd) ($ ?f ?hd (fold ?f ?tl ?a))))
+
+    (:: max (-> (List Nat) Nat))
+    (let max (Nil) Z)
+    (let max ((Cons ?hd Nil)) ?hd)
+    (let max ((Cons ?hd ?tl)) (ite (lt (max ?tl) ?hd) (?hd) (max ?tl)))
+
+    (:: sol118 (-> (List Nat) Nat))
+    (let sol118 (Nil) Z)
+    (let sol118 ((Cons ?h ?t)) (loop ?h ?t))
+
+    (:: loop (-> (Nat (List Nat)) Nat))
+    (let loop (?fir Nil) ?fir)
+    (let loop (?fir (Cons ?h ?t)) (ite (lt (loop ?fir ?t) ?h) (?h) (loop ?fir ?t)))
+
+    (:: fold164 (-> ((-> (Nat Nat) Nat) (List Nat) Nat) Nat))
+    (let fold164 (?f Nil ?a) ?a)
+    (let fold164 (?f (Cons ?hd ?tl) ?a) ($ ?f ?hd (fold ?f ?tl ?a)))
+    (:: sol164 (-> (List Nat) Nat))
+    (let sol164 (Nil) 0)
+    (let sol164 ((Cons ?hd ?tl)) (fold comp (Cons ?hd ?tl) ?hd))
+    (:: comp (-> (Nat Nat) Nat))
+    (let comp (?n1 ?n2) (ite (lt ?n2 ?n1) (?n1) (ite (eq ?n1 ?n2) ?n1 ?n2)))
+    
+)

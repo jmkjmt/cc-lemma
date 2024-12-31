@@ -1,0 +1,164 @@
+(
+    (data Bool (True False))
+    (:: True Bool)
+    (:: False Bool)
+
+    (data Nat (Z S))
+    (:: Z Nat)
+    (:: S (-> (Nat) Nat))
+    
+
+    (data List (a) (Nil Cons))
+    (:: Nil  (List a))
+    (:: Cons (-> (a (List a)) (List a)))
+
+    (:: list-append (-> ((List a) (List a)) (List a)))
+    (let list-append (Nil           ?ys) ?ys                       )
+    (let list-append ((Cons ?x ?xs) ?ys) (Cons ?x (list-append ?xs ?ys)))
+
+    (:: list-rev (-> ((List a)) (List a)))
+    (let list-rev (Nil          ) Nil                             )
+    (let list-rev ((Cons ?x ?xs)) (list-append (list-rev ?xs) (Cons ?x Nil)))
+
+    (:: ite (-> (Bool a a) a))
+    (let ite (True ?x ?y ) ?x)
+    (let ite (False ?x ?y) ?y)
+
+
+    (:: eq (-> (Nat Nat) Bool))
+    (let eq (Z      Z     ) True      )
+    (let eq (Z      (S ?y)) False     )
+    (let eq ((S ?x) Z     ) False     )
+    (let eq ((S ?x) (S ?y)) (eq ?x ?y))
+
+    (:: and (-> (Bool Bool) Bool))
+    (let and (False ?y) False)
+    (let and (?x False) False)
+    (let and (True True) True)
+
+    (:: or (-> (Bool Bool) Bool))
+    (let or (True ?y) True)
+    (let or (?x True) True)
+    (let or (False False) False)
+
+    (:: not (-> (Bool) Bool))
+    (let not (True) False)
+    (let not (False) True)
+
+    (:: remove-elem-1 (-> (Nat (List Nat)) (List Nat)))
+    (let remove-elem-1 (?e Nil) Nil)
+    (let remove-elem-1 (?e (Cons ?hd ?tl)) (ite (eq ?e ?hd) (remove-elem-1 ?e ?tl) (Cons ?hd (remove-elem-1 ?e ?tl))))
+
+
+    (:: ta1 (-> (List Nat) (List Nat)))
+    (let ta1 (Nil) Nil)
+    (let ta1 ((Cons ?hd ?tl)) (Cons ?hd (remove-elem-1 ?hd (ta1 ?tl))))
+
+    (:: drop2 (-> ((List Nat) Nat) (List Nat)))
+    (let drop2 (Nil ?n) Nil)
+    (let drop2 ((Cons ?hd ?tl) ?n) (ite (eq ?hd ?n) (drop2 ?tl ?n) (Cons ?hd (drop2 ?tl ?n))))
+
+    (:: ta2 (-> (List Nat) Nat))
+    (let ta2 (Nil) Nil)
+    (let ta2 ((Cons ?hd ?tl)) (Cons ?hd (ta2 (drop2 ?tl ?hd))))
+
+    (:: isin3 (-> ((List Nat) Nat) Bool))
+    (let isin3 (Nil ?a) False)
+    (let isin3 ((Cons ?hd ?tl) ?a) (ite (eq ?a ?hd) True (isin3 ?tl ?a)))
+
+    (:: unique3 (-> ((List Nat) (List Nat)) (List Nat)))
+    (let unique3 (Nil ?lst2) ?lst2)
+    (let unique3 ((Cons ?hd ?tl) ?lst2) (ite (isin3 ?lst2 ?hd) (unique3 ?tl ?lst2) (unique3 ?tl (list-append ?lst2 (Cons ?hd Nil)))))
+
+    (:: ta3 (-> (List Nat) (List Nat)))
+    (let ta3 (?lst) (unique3 ?lst Nil))
+
+    (:: isnotin4 (-> ((List Nat) Nat) Bool))
+    (let isnotin4 (Nil ?c) True)
+    (let isnotin4 ((Cons ?hd ?tl) ?c) (ite (eq ?hd ?c) False (isnotin4 ?tl ?c)))
+
+    (:: uniqsave4 (-> ((List Nat) (List Nat)) List Nat))
+    (let uniqsave4 (Nil ?l2) ?l2)
+    (let uniqsave4 ((Cons ?hd ?tl) ?l2) (ite (isnotin4 ?l2 ?hd) (uniqsave4 ?tl (list-append ?l2 (Cons ?hd Nil))) (uniqsave4 ?tl ?l2)))
+
+    (:: ta4 (-> (List Nat) (List Nat)))
+    (let ta4 (?lst) (uniqsave4 ?lst Nil))
+
+    (:: sol4 (-> (List Nat) (List Nat)))
+    (let sol4 (?lst) (app ?lst Nil))
+
+    (:: app (-> ((List Nat) (List Nat)) (List Nat)))
+    (let app (Nil ?l2) ?l2)
+    (let app ((Cons ?hd ?tl) ?l2) (app ?tl (comb ?l2 ?hd)))
+
+    (:: comb (-> (List Nat) Nat))
+    (let comb (Nil ?a) (Cons ?a Nil))
+    (let comb ((Cons ?hd ?tl) ?a) (ite (eq ?hd ?a) (Cons ?hd ?tl) (Cons ?hd (comb ?tl ?a))))
+
+    (:: chk (-> ((List Nat) Nat) Bool))
+    (let chk (Nil ?a) True)
+    (let chk ((Cons ?hd ?tl) ?a) (ite (eq ?hd ?a) False (chk ?tl ?a)))
+
+    (:: del (-> ((List Nat) Nat) (List Nat)))
+    (let del (Nil ?a) Nil)
+    (let del ((Cons ?hd ?tl) ?a) (ite (eq ?hd ?a) (del ?tl ?a) (Cons ?hd (del ?tl ?a))))
+
+    (:: sol5 (-> (List Nat) (List Nat)))
+    (let sol5 (Nil) Nil)
+    (let sol5 ((Cons ?hd ?tl)) (ite (chk ?tl ?hd) (Cons ?hd (sol5 ?tl)) (Cons ?hd (sol5 (del ?tl ?hd)))))
+
+    (:: fastrev (-> (List Nat) (List Nat)))
+    (let fastrev (?lst) (rev ?lst Nil))
+    (:: rev (-> ((List Nat) (List Nat)) (List Nat)))
+    (let rev (Nil ?acc) ?acc)
+    (let rev ((Cons ?hd ?tl) ?acc) (rev ?tl (list-append (Cons ?hd Nil) (?acc))))
+    
+    (:: search (-> ((List Nat) Nat) Bool))
+    (let search (Nil ?e) False)
+    (let search ((Cons ?hd ?tl) ?e) (ite (eq ?hd ?e) True (search ?tl ?e)))
+
+    (:: delete9 (-> (List a) (List a)))
+    (let delete9 (Nil) Nil)
+    (let delete9 ((Cons ?hd ?tl)) (ite (search ?tl ?hd) (delete9 ?tl) (list-append (Cons ?hd Nil) (delete9 ?tl))))
+
+    (:: sol9 (-> (List Nat) (List Nat)))
+    (let sol9 (?lst) (fastrev (delete9 (fastrev ?lst))))
+
+    (:: sol20 (-> (List Nat) (List Nat)))
+    (let sol20 (Nil) Nil)
+    (let sol20 ((Cons ?hd ?tl)) (ite (find ?hd ?tl) (uniq (list-rev ?tl)) (append (uniq (list-rev ?tl)) (Cons ?hd Nil))))
+    (:: find (-> (Nat (List Nat)) Bool))
+    (let find (?x Nil) False)
+    (let find (?x (Cons ?hd ?tl)) (or (eq ?x ?hd) (find ?x ?tl)))
+(// sol20 is something wrong... //)
+
+    (:: sol43 (-> (List Nat) (List Nat)))
+    (let sol43 (Nil) Nil)
+    (let sol43 ((Cons ?hd ?tl)) (Cons ?hd (uniq (filter aux43 ?hd ?tl))))
+  
+    (:: aux43 (-> (Nat Nat) Bool))
+    (let aux43 (?x ?hd) (not (eq ?x ?hd)))
+    (:: filter (-> ((-> (Nat Nat) Nat) (Nat) (List Nat)) (List Nat)))
+    (let filter (?f ?a ?l) (aux Nil ?f ?a ?l))
+
+    (:: aux (-> ((List Nat) (-> (Nat Nat) Bool) (Nat) (List Nat) ) (List Nat)))
+    (let aux (?s ?f ?hd Nil) ?s)
+    (let aux (?s ?f ?hd (Cons ?hd ?tl)) (ite ($ ?f ?hd) (append ?s (Cons ?hd (filter ?f ?tl))) (append ?s (filter ?f ?tl))))
+(// sol43 is something wrong... //)
+
+    (:: sol57 (-> (List Nat) (List Nat)))
+    (let sol57 (?lst) (putIn ?lst Nil))
+    (:: putIn (-> ((List Nat) (List Nat)) (List Nat)))
+    (let putIn (Nil ?lst2) ?lst2)
+    (let putIn ((Cons ?hd ?tl) ?lst2) (putIn ?tl (check ?hd ?lst2)))
+    (:: check (-> (Nat (List Nat)) (List Nat)))
+    (let check (?item Nil) (Cons ?item Nil))
+    (let check (?item (Cons ?hd ?tl)) (ite (eq ?hd ?item) (Cons ?hd ?tl) (Cons ?hd (check ?item ?tl))))
+(// sol57 is something wrong... //)
+    (=== sol1-sol2 (lst) (List Nat)
+        (sol57 lst)
+        (ta1 lst)
+    )
+
+
+)
