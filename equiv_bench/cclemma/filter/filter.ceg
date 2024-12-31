@@ -1,0 +1,57 @@
+(
+    (data Bool (True False))
+    (:: True Bool)
+    (:: False Bool)
+
+    (data Nat (Z S))
+    (:: Z Nat)
+    (:: S (-> (Nat) Nat))
+
+    (data List (a) (Nil Cons))
+    (:: Nil  (List a))
+    (:: Cons (-> (a (List a)) (List a)))
+
+    (:: append (-> ((List a) (List a)) (List a)))
+    (let append (Nil           ?ys) ?ys                       )
+    (let append ((Cons ?x ?xs) ?ys) (Cons ?x (append ?xs ?ys)))
+
+    (:: ite (-> (Bool a a) a))
+    (let ite (True ?x ?y ) ?x)
+    (let ite (False ?x ?y) ?y)
+
+    (:: eq (-> (Nat Nat) Bool))
+    (let eq (Z      Z     ) True      )
+    (let eq (Z      (S ?y)) False     )
+    (let eq ((S ?x) Z     ) False     )
+    (let eq ((S ?x) (S ?y)) (eq ?x ?y))
+
+    (:: not (-> (Bool) Bool))
+    (let not (True) False)
+    (let not (False) True)
+
+    (:: filter (-> ((-> (a) Bool) (List a)) (List a)))
+    (let filter (?pred Nil) (Nil))
+    (let filter (?pred (Cons ?hd ?tl)) (ite ($ ?pred ?hd) (Cons ?hd (filter ?pred ?tl)) (filter ?pred ?tl)))
+
+    (:: sol121 (-> ((-> (a) Bool) (List a)) (List a)))
+    (let sol121 (?pred ?lst) (reverse (loop ?pred ?lst Nil) Nil))
+    (:: loop (-> ((-> (a) Bool) (List a) (List a)) (List a)))
+    (let loop (?pred (Nil) ?o) (?o))
+    (let loop (?pred (Cons ?h ?t) ?o) (loop ?t (ite ($ ?pred ?h) (Cons ?h ?o) (?o))))
+    (:: reverse (-> ((List a) (List a)) (Listt a)))
+    (let reverse (Nil ?o) (?o))
+    (let reverse ((Cons ?h ?t) ?o) (reverse ?t (Cons ?h ?o)))
+(// Some thing wrong in sol121...//)
+
+    (:: sol171 (-> ((-> (a) Bool) (List a)) (List a)))
+    (let sol171 (?pred ?lst) (aux ?pred (S Z) ?lst))
+    (:: aux (-> ((-> (a) Bool) Nat (List a)) (List a)))
+    (let aux (?pred ?i Nil) Nil)
+    (let aux (?pred ?i (Cons ?h ?t)) (ite ($ ?pred ?h) (Cons ?h (aux ?pred (S ?i) ?t)) (aux ?pred (S ?i) ?t)))
+
+
+    (=== sol1-sol121 (lst pred) ((List a) (-> (a) Bool))
+        (filter pred lst)
+        (sol121 pred lst)    
+    )
+)
