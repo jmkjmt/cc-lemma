@@ -155,8 +155,31 @@
     (let check (?item Nil) (Cons ?item Nil))
     (let check (?item (Cons ?hd ?tl)) (ite (eq ?hd ?item) (Cons ?hd ?tl) (Cons ?hd (check ?item ?tl))))
 (// sol57 is something wrong... //)
+
+    (:: reverse (-> (List Nat) (List Nat)))
+    (let reverse (Nil) Nil)
+    (let reverse ((Cons ?hd ?tl)) (append (reverse ?tl) (Cons ?hd Nil)))
+
+    (:: insert (-> (Nat (List Nat)) (List Nat)))
+    (let insert (?a Nil) (Cons ?a Nil))
+    (let insert (?a (Cons ?hd ?tl)) (ite (lt ?a ?hd) (Cons ?a (Cons ?hd ?tl)) (Cons ?hd (insert ?a ?tl))))
+
+    (:: checker (-> ((List Nat) Nat) Bool))
+    (let checker (Nil ?a) False)
+    (let checker ((Cons ?k Nil) ?a) (eq ?k ?a))
+    (let checker ((Cons ?hd ?tl) ?a) (ite (eq ?hd ?a) True (checker ?tl ?a)))
+
+    (:: finder (-> ((List Nat) (List Nat)) (List Nat)))
+    (let finder (Nil ?fin) ?fin)
+    (let finder ((Cons ?hd ?tl) ?fin) (ite (checker ?fin ?hd) (finder ?tl ?fin) (finder ?tl (Cons ?hd ?fin))))
+
+    (:: sol75 (-> (List Nat) (List Nat)))
+    (let sol75 (Nil) Nil)
+    (let sol75 (?lst) (reverse (finder ?lst Nil)))
+    (// sol75 is something wrong.... //)
+    
     (=== sol1-sol2 (lst) (List Nat)
-        (sol57 lst)
+        (sol75 lst)
         (ta1 lst)
     )
 
