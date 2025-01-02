@@ -41,7 +41,7 @@
     (:: reverse (-> ((List a) (List a)) (List a)))
     (let reverse (Nil ?o) ?o)
     (let reverse ((Cons ?h ?t) ?o) (reverse ?t (Cons ?h ?o)))
-(// Some thing wrong in sol121...//)
+(// Something wrong in sol121...//)
 
     (:: sol171 (-> ((-> (a) Bool) (List a)) (List a)))
     (let sol171 (?pred ?lst) (aux ?pred (S Z) ?lst))
