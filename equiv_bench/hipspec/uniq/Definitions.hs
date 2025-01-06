@@ -287,3 +287,82 @@ sol20 lst =
             [] -> []
             (hd:tl) -> if sol20_find hd tl then sol20 (list_rev tl) else (sol20 (list_rev tl)) ++ [hd]
 
+sol43_filter :: (a -> Bool) -> [a] -> [a]
+sol43_filter f l =
+    let 
+        aux s f [] = s
+        aux s f (hd:tl) = if f hd then (s ++ (hd:(filter f tl))) else (s ++ (filter f tl))
+    in
+        aux [] f l
+
+sol43 :: [a] -> [a]
+sol43 [] = []
+sol43 (hd:tl) = hd : (sol43 (sol43_filter (\x -> x /= hd) tl)) 
+
+sol57 :: [a] -> [a]
+sol57 lst =
+    let
+        putIn [] lst2 = lst2
+        putIn (hd:tl) lst2 = 
+            let 
+                check item [] = [item]
+                check item (hd:tl) = if item == hd then hd:tl else hd:(check item tl)
+            in
+                putIn tl (check hd lst2)
+    in
+        putIn lst []
+
+sol75_reverse :: [a] -> [a]
+sol75_reverse [] = []
+sol75_reverse (hd:tl) = (sol75_reverse tl) ++ [hd]
+
+sol75_insert :: a -> [a] -> [a]
+sol75_insert a [] = [a]
+sol75_insert a (hd:tl) = if hd > a then a:hd:tl else hd:(sol75_insert a tl)
+
+sol75_checker :: [a] -> a -> Bool
+sol75_checker [] a = False
+sol75_checker [hd] a = hd == a
+sol75_checker (hd:tl) a = if hd == a then True else sol75_checker tl a
+
+sol75_finder :: [a] -> [a] -> [a]
+sol75_finder [] lst2 = lst2
+sol75_finder (hd:tl) lst2 = if sol75_checker lst2 hd then sol75_finder tl lst2 else sol75_finder tl (hd:lst2)
+
+sol75 :: [a] -> [a]
+sol75 [] = []
+sol75 (hd:tl) = sol75_reverse (sol75_finder (hd:tl) [])
+
+sol83_remove :: [a] -> [a]
+sol83_remove [] = []
+sol83_remove (hd:tl) = if ta3_is_in (sol83_remove tl) hd then sol83_remove tl else hd:(sol83_remove tl)
+
+sol83 :: [a] -> [a]
+sol83 [] = []
+sol83 (hd:tl) = sol75_reverse (sol83_remove (sol75_reverse (hd:tl)))
+
+sol89 :: [a] -> [a]
+sol89 lst =
+    let
+        reverse [] a = a
+        reverse (hd:tl) a = reverse tl (hd:a)
+    in
+    let
+        checkdrop [] l = l
+        checkdrop (hd:tl) l =
+            let
+                gtl e [] = False
+                gtl e (hd:tl) = if e == hd then True else gtl e tl
+            in
+                if gtl hd l then checkdrop tl l else checkdrop tl (hd:l)
+    in
+        reverse (checkdrop lst []) []
+
+sol101_fold_left :: (a -> b -> a) -> a -> [b] -> a
+sol101_fold_left f a [] = a
+sol101_fold_left f a (hd:tl) = sol101_fold_left f (f a hd) tl
+
+sol101 :: [a] -> [a]
+sol101 lst =
+    sol101_fold_left (\a x -> if sol20_find x a then a else a ++ [x]) [] lst
+
