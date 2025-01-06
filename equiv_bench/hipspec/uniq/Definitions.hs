@@ -198,106 +198,92 @@ sorted :: [Nat] -> Bool
 sorted (x:y:xs) = x <= y && sorted (y:xs)
 sorted _        = True
 
+ta1_remove_elem :: a -> [a] -> [a]
+ta1_remove_elem e [] = []
+ta1_remove_elem e (hd:tl) = if e == hd then ta1_remove_elem e tl else hd : ta1_remove_elem e tl
 
-ta1_natadd :: Nat -> Nat -> Nat
-ta1_natadd Z n2 = n2
-ta1_natadd (S n) n2 = S (ta1_natadd n n2)
+ta1 :: [a] -> [a]
+ta1 [] = []
+ta1 (hd:tl) = hd : (ta1_remove_elem hd (ta1 tl))
 
-ta1 :: Nat -> Nat -> Nat
-ta1 n1 n2 =
-    case n1 of
-        Z -> Z
-        S n -> ta1_natadd n2 (ta1 n n2)
+ta2 :: [a] -> [a]
+ta2 [] = []
+ta2 (hd:tl) = hd : (ta2 (ta1_remove_elem hd tl))
 
-ta2 :: Nat -> Nat -> Nat
-ta2 n1 n2 = 
-    case n1 of
-        Z -> Z
-        S n -> ta1_natadd (ta1 n n2) n2
+ta3_is_in :: [a] -> a -> Bool
+ta3_is_in [] e = False
+ta3_is_in (hd:tl) e = if e == hd then True else ta3_is_in tl e
 
-ta3_natadd :: Nat -> Nat -> Nat
-ta3_natadd Z n2 = n2
-ta3_natadd (S n) n2 = ta3_natadd n (S n2)
+ta3_uniq :: [a] -> [a] -> [a]
+ta3_uniq [] lst2 = lst2
+ta3_uniqe (hd:tl) lst2 = if ta3_is_in lst2 hd then ta3_uniq tl lst2 else ta3_uniq tl (lst2 ++ [hd])
 
-ta3 :: Nat -> Nat -> Nat
-ta3 n1 n2 = 
-    case n1 of
-        Z -> Z
-        S n -> ta3_natadd n2 (ta3 n n2)
+ta3 :: [a] -> [a]
+ta3 lst = ta3_uniq lst []
 
-ta4 :: Nat -> Nat -> Nat
-ta4 n1 n2 = 
-    case n1 of
-        Z -> Z
-        S n -> ta3_natadd (ta4 n n2) n2
+ta4_isnotin :: [a] -> a -> Bool
+ta4_isnotin [] e = True
+ta4_isnotin (hd:tl) e = if e == hd then False else ta4_isnotin tl e
 
-ta5_natadd :: Nat -> Nat -> Nat
-ta5_natadd n1 Z = n1
-ta5_natadd n1 (S n) = S (ta5_natadd n1 n)
+ta4_uniq :: [a] -> [a] -> [a]
+ta4_uniq [] lst2 = lst2
+ta4_uniq (hd:tl) lst2 = if ta4_isnotin lst2 hd then ta4_uniq tl (lst2 ++ [hd]) else ta4_uniq tl lst2
 
-ta5 :: Nat -> Nat -> Nat
-ta5 n1 n2 = 
-    case n2 of
-        Z -> Z
-        S n -> ta5_natadd n1 (ta5 n1 n)
+ta4 :: [a] -> [a]
+ta4 lst = ta4_uniq lst []
 
-ta6_natadd :: Nat -> Nat -> Nat
-ta6_natadd n1 Z = n1
-ta6_natadd n1 (S n) = ta6_natadd (S n1) n
+sol4_comb :: [a] -> a -> [a]
+sol4_comb [] a = [a]
+sol4_comb (hd:tl) a = if hd == a then hd:tl else hd : (sol4_comb tl a)
 
-ta6 :: Nat -> Nat -> Nat
-ta6 n1 n2 = 
-    case n2 of
-        Z -> Z
-        S n -> ta6_natadd n1 (ta6 n1 n)
+sol4_app :: [a] -> [a] -> [a]
+sol4_app [] lst2 = lst2
+sol4_app (hd:tl) lst2 = sol4_app tl (comb lst2 hd)
 
-ta7 :: Nat -> Nat -> Nat
-ta7 n1 n2 = 
-    case n2 of
-        Z -> Z
-        S n -> ta1_natadd n1 (ta7 n1 n)
+sol4 :: [a] -> [a]
+sol4 lst = sol4_app lst []
 
-sol6_natadd :: Nat -> Nat -> Nat
-sol6_natadd Z n2 = Z
-sol6_natadd (S n) n2 = S (sol6_natadd n2 n)
+sol5_del :: [a] -> a -> [a]
+sol5_del [] a = []
+sol5_del (hd:tl) a = if hd == a then sol4_del tl a else hd:(sol5_del tl a)
 
-sol6 :: Nat -> Nat -> Nat
-sol6 n1 n2 = 
-    case n1 of
-        Z -> Z
-        S n -> sol6_natadd n2 (sol6 n2 n)
---sol22 uses integer
+sol5 :: [a] -> [a]
+sol5 [] = []
+sol5 (hd:tl) = if (ta4_isnotin tl hd) then hd:(sol5 tl) else hd: (sol5 (sol5_del tl hd))
 
-sol32 :: Nat -> Nat -> Nat
-sol32 n1 n2 = 
-    let 
-        natmul_sub Z b c = c
-        natmul_sub (s a) b c = natmul_sub a (ta1_natadd b c) c
-    in
-        natmul_sub n1 Z n2
-
-sol84_natadd :: Nat -> Nat -> Nat
-sol84_natadd n1 Z = n1
-sol84_natadd n1 (S n) = | n == Z = (S n1)
-                        | otherwise = sol84_natadd (S n1) n
-
-sol84 :: Nat -> Nat -> Nat
-sol84 n1 n2 = 
-    case n2 of
-        Z -> Z
-        S n -> | n == Z = n1
-               | otherwise = sol84_natadd (sol84 n1 n) n1
-
-sol90 :: Nat -> Nat -> Nat
-sol90 n1 n2 =
+sol9_fastrev :: [a] -> [a]
+sol9_fastrev lst = 
     let
-        innerLoop (S Z) n2 maintain = n2
-        innerLoop (S sub_count) n2 maintain = innerLoop sub_count (ta1_natadd maintain n2) maintain
+        sol9_rev [] acc = acc
+        sol9_rev (hd:tl) acc = sol9_rev tl ([hd] ++ acc)
     in
-        if (n1 == Z) || (n2 == Z) then Z else innerLoop n1 n2 n2
+        sol9_rev lst []
 
---sol116 uses integer
+sol9_delete :: [a] -> [a]
+sol9_delete [] = []
+sol9_delete (hd:tl) a = if ta3_is_in tl hd then sol9_delete tl else [hd] ++ (sol9_delete tl)
 
---sol329 uses integer
+sol9 :: [a] -> [a]
+sol9 lst = sol9_fastrev (sol9_delete (sol9_fastrev lst))
 
---sol353 uses integer
+sol20_find :: a -> [a] -> Bool
+sol20_find e [] = False
+sol20_find e (hd:tl) = (e==hd)||(sol20_find e tl)
+
+list_rev :: [a] -> [a]
+list_rev lst = 
+    let
+        list_append [] acc = acc
+        list_append (hd:tl) acc = list_append tl ([hd] ++ acc)
+    in
+        list_rev lst []
+
+sol20 :: [a] -> [a]
+sol20 lst =
+    let
+        rev_list = list_rev lst
+    in
+        case rev_list of
+            [] -> []
+            (hd:tl) -> if sol20_find hd tl then sol20 (list_rev tl) else (sol20 (list_rev tl)) ++ [hd]
+
