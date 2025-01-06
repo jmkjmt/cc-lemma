@@ -1,7 +1,7 @@
 timeout = 60
 memory_limit = 16
 
-dataset_root = "/home/mingyujo/cc-lemma/oh_bench"
+dataset_root = "/home/mingyujo/cc-lemma/equiv_bench"
 cclemma_path = "/home/mingyujo/cc-lemma"
 hipspec_path = "/home/mingyujo/hipspec"
 thesy_path = "/home/mingyujo/TheSy"
