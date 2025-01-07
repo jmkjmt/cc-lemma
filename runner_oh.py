@@ -14,7 +14,7 @@ import argparse
 # BENCHMARKS = ['uniq']
 
 TOOLS = ['cclemma']
-BENCHMARKS = ['max']
+BENCHMARKS = ['uniq']
 
 def parse_arguments():
     parser = argparse.ArgumentParser(

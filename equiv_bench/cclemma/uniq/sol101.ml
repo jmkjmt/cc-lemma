@@ -10,3 +10,5 @@ let rec has_element lst e =
 
 let uniq : 'a list -> 'a list
 = fun lst -> fold_left (fun a x -> if has_element a x then a else a @ [x]) [] lst;;
+
+uniq [5;6;5;4] |> List.map string_of_int |> String.concat " " |> print_endline;;

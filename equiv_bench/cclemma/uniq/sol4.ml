@@ -13,4 +13,4 @@ let rec uniq : 'a list -> 'a list
 = fun lst ->  (* TODO *)
   app lst [];;
   
-uniq [5;6;5;4] = [5;6;4];;
+  uniq [5;6;5;4] |> List.map string_of_int |> String.concat " " |> print_endline;;

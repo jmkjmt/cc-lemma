@@ -10,3 +10,5 @@ let rec uniq : 'a list -> 'a list
 = fun lst -> match lst with
   [] -> []
   |hd :: tl -> if (chk tl hd) then hd :: uniq tl else hd :: uniq (del tl hd);;
+  
+  uniq [5;6;5;4] |> List.map string_of_int |> String.concat " " |> print_endline;;

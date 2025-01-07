@@ -11,3 +11,4 @@ let rec checkdrop lt l = match lt with
         in if gtl hd l then checkdrop tl l else checkdrop tl (hd::l)
 in reverse (checkdrop lst []) [];;
 
+uniq [5;6;5;4] |> List.map string_of_int |> String.concat " " |> print_endline;;

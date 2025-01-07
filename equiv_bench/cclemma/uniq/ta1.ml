@@ -11,3 +11,5 @@ let rec uniq : 'a list -> 'a list
   | [] -> []
   | hd::tl -> hd::(remove_elem hd (uniq tl))
 ;;
+
+uniq [5;6;5;4] |> List.map string_of_int |> String.concat " " |> print_endline;;

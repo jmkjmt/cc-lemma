@@ -7,6 +7,12 @@
 (:: True Bool)
 (:: False Bool)
 
+(:: eq (-> (Nat Nat) Bool))
+(let eq (Z      Z     ) True      )
+(let eq (Z      (S ?y)) False     )
+(let eq ((S ?x) Z     ) False     )
+(let eq ((S ?x) (S ?y)) (eq ?x ?y))
+
 (:: ite (-> (Bool a a) a))
 (let ite (True ?x ?y ) ?x)
 (let ite (False ?x ?y) ?y)
@@ -115,10 +121,13 @@ sol329 , sol353 uses integer
     (mul1 n m)
     (mul7 n m)
 )
+(//
+memory overflow in sol6
 (=== ta1-sol6 (n m) (Nat Nat)
     (mul1 n m)
     (sol6 n m)
 )
+//)
 (=== ta1-sol32 (n m) (Nat Nat)
     (mul1 n m)
     (sol32 n m)
@@ -131,6 +140,5 @@ sol329 , sol353 uses integer
     (mul1 n m)
     (sol116 n m)
 )
-
 
 )

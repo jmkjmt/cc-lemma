@@ -7,7 +7,7 @@ Proving begin ta1-ta2: (add1 n m) === (add2 n m)
 Property accepted by cvec analysis
 proved lemma forall n: Nat. m: Nat. (add1 n m) === (add2 n m) (add1 (S n_40) (S m_90)) === (add2 (S n_40) (S m_90))
 (uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
-ta1-ta2 uncyclic: VALID (4 ms)
+ta1-ta2 uncyclic: VALID (3 ms)
 Proving begin ta1-ta3: (add1 n m) === (add3 n m)
 Property accepted by cvec analysis
 proved lemma forall n: Nat. m: Nat. (add1 n m) === (add3 n m) (add1 (S (S n_40_120)) m) === (add3 (S (S n_40_120)) m)
@@ -18,32 +18,33 @@ Property accepted by cvec analysis
 proved lemma forall v0: Nat. v1: Nat. (S (add4 v0 v1)) === (add4 (S v0) v1) (S (add4 v0 (S v1_60))) === (add4 (S v0) (S v1_60))
 proved lemma forall n: Nat. m: Nat. (add1 n m) === (add4 n m) (add1 Z (S (S m_50_110))) === (add4 Z (S (S m_50_110)))
 (uncyclic) Theorized 2 lemmas, fully attempted 1 lemmas, proved 1 lemmas
-ta1-ta4 uncyclic: VALID (11 ms)
+ta1-ta4 uncyclic: VALID (10 ms)
 Proving begin ta1-sol4: (add1 n m) === (sol4 n m)
 Property accepted by cvec analysis
-proved lemma forall v0: Nat. v0 === (sol4 Z v0) (S v0_30) === (sol4 Z (S v0_30))
 proved lemma forall v0: Nat. v1: Nat. (S (add1 v0 v1)) === (add1 v0 (S v1)) (S (add1 (S v0_60) v1)) === (add1 (S v0_60) (S v1))
 proved lemma forall n: Nat. m: Nat. (add1 n m) === (sol4 n m)
-(uncyclic) Theorized 8 lemmas, fully attempted 2 lemmas, proved 2 lemmas
-ta1-sol4 uncyclic: VALID (29 ms)
+(uncyclic) Theorized 6 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+ta1-sol4 uncyclic: VALID (15 ms)
 Proving begin ta1-sol6: (add1 n m) === (sol6 n m)
 Property accepted by cvec analysis
 proved lemma forall v0: Nat. v0 === (sol6 v0 Z) (S v0_30) === (sol6 (S v0_30) Z)
-proved lemma forall v0: Nat. v0 === (add1 v0 Z) (S v0_30) === (add1 (S v0_30) Z)
 proved lemma forall v0: Nat. v1: Nat. (sol6 v0 v1) === (sol6 v1 v0) (sol6 (S v0_40) (S v1_90)) === (sol6 (S v1_90) (S v0_40))
 proved lemma forall n: Nat. m: Nat. (add1 n m) === (sol6 n m)
-(uncyclic) Theorized 12 lemmas, fully attempted 3 lemmas, proved 3 lemmas
-ta1-sol6 uncyclic: VALID (50 ms)
+(uncyclic) Theorized 10 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+ta1-sol6 uncyclic: VALID (35 ms)
 Proving begin ta1-sol11: (add1 n m) === (sol11 n m)
 Property accepted by cvec analysis
 proved lemma forall n: Nat. m: Nat. (add1 n m) === (sol11 n m) (add1 (S n_40) (S m_90)) === (sol11 (S n_40) (S m_90))
 (uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
 ta1-sol11 uncyclic: VALID (3 ms)
 Proving begin ta1-sol143: (add1 n m) === (sol143 n m)
-Property rejected by cvec analysis
-cvec: (S (S Z)),(S (S (S (S (S (S Z)))))),(S (S (S (S Z)))),(S Z),(S (S (S (S (S Z))))),(S (S (S Z))),(S (S (S Z))),(S (S (S (S Z)))),(S (S (S (S Z)))),(S (S Z)),(S Z),Z,(S (S (S Z))),(S Z),(S (S (S (S (S (S Z)))))),Z,(S (S (S (S (S Z))))),(S (S (S Z))),(S (S (S (S (S Z))))),(S (S (S (S Z)))),(S (S Z)),(S (S (S Z))),Z,(S (S (S (S Z)))),Z,(S (S (S (S Z)))),(S (S (S Z))),(S (S Z)),(S (S Z)),Z
-cvec: (ite (eq (S (S Z)) Z) (S (S Z)) (S (S Z))),(ite (eq (S (S (S (S Z)))) Z) (S (S (S (S (S (S Z)))))) (S (S (S (S (S (S Z))))))),(ite (eq (S (S Z)) Z) (S (S (S (S Z)))) (S (S (S (S Z))))),(ite (eq (S Z) Z) (S Z) (S Z)),(ite (eq (S Z) Z) (S (S (S (S (S Z))))) (S (S (S (S (S Z)))))),(ite (eq (S (S Z)) Z) (S (S (S Z))) (S (S (S Z)))),(ite (eq (S (S Z)) Z) (S (S (S Z))) (S (S (S Z)))),(ite (eq (S (S Z)) Z) (S (S (S (S Z)))) (S (S (S (S Z))))),(ite (eq Z Z) (S (S (S (S Z)))) (S (S (S (S Z))))),(ite (eq (S Z) Z) (S (S Z)) (S (S Z))),(ite (eq Z Z) (S Z) (S Z)),(ite (eq Z Z) Z Z),(ite (eq Z Z) (S (S (S Z))) (S (S (S Z)))),(ite (eq (S Z) Z) (S Z) (S Z)),(ite (eq (S (S (S (S Z)))) Z) (S (S (S (S (S (S Z)))))) (S (S (S (S (S (S Z))))))),(ite (eq Z Z) Z Z),(ite (eq (S (S (S Z))) Z) (S (S (S (S (S Z))))) (S (S (S (S (S Z)))))),(ite (eq (S (S (S Z))) Z) (S (S (S Z))) (S (S (S Z)))),(ite (eq (S Z) Z) (S (S (S (S (S Z))))) (S (S (S (S (S Z)))))),(ite (eq (S (S (S (S Z)))) Z) (S (S (S (S Z)))) (S (S (S (S Z))))),(ite (eq (S Z) Z) (S (S Z)) (S (S Z))),(ite (eq Z Z) (S (S (S Z))) (S (S (S Z)))),(ite (eq Z Z) Z Z),(ite (eq (S (S Z)) Z) (S (S (S (S Z)))) (S (S (S (S Z))))),(ite (eq Z Z) Z Z),(ite (eq (S (S Z)) Z) (S (S (S (S Z)))) (S (S (S (S Z))))),(ite (eq (S (S Z)) Z) (S (S (S Z))) (S (S (S Z)))),(ite (eq (S Z) Z) (S (S Z)) (S (S Z))),(ite (eq Z Z) (S (S Z)) (S (S Z))),(ite (eq Z Z) Z Z)
-(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
-ta1-sol143 uncyclic: INVALID (1 ms)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: Nat. (add v0 v1) === (add1 v1 v0) (add v0 (S (S v1_40_120))) === (add1 (S (S v1_40_120)) v0)
+proved lemma forall v0: Nat. v1: Nat. (S (add1 v0 v1)) === (add (S v1) v0) (S (add1 (S v0_80) v1)) === (add (S v1) (S v0_80))
+proved lemma forall v0: Nat. v0 === (add Z v0) (S v0_40) === (add Z (S v0_40))
+proved lemma forall v0: Nat. v1: Nat. (add (S v0) v1) === (add (S v1) v0) (add (S (S v0_80)) v1) === (add (S v1) (S v0_80))
+proved lemma forall n: Nat. m: Nat. (add1 n m) === (sol143 n m) (add1 (S n_110) (S m_340)) === (sol143 (S n_110) (S m_340))
+(uncyclic) Theorized 9 lemmas, fully attempted 6 lemmas, proved 4 lemmas
+ta1-sol143 uncyclic: VALID (73 ms)
 Attempted 8 goals:
-  7 solved (no cyclic)
+  8 solved (no cyclic)

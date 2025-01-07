@@ -7,6 +7,12 @@
 (:: True Bool)
 (:: False Bool)
 
+(:: eq (-> (Nat Nat) Bool))
+(let eq (Z      Z     ) True      )
+(let eq (Z      (S ?y)) False     )
+(let eq ((S ?x) Z     ) False     )
+(let eq ((S ?x) (S ?y)) (eq ?x ?y))
+
 (:: ite (-> (Bool a a) a))
 (let ite (True ?x ?y ) ?x)
 (let ite (False ?x ?y) ?y)
