@@ -75,7 +75,7 @@
     (let eval-help (Falsef) Falsef)
     (let eval-help ((Not Truef)) Falsef)
     (let eval-help ((Not Falsef)) Truef)
-    (let eval-help ((Not ?f)) (Not (eval-help ?f)))
+    (let eval-help ((Not ?f)) (eval-help (Not (eval-help ?f))))
     (let eval-help ((AndAlso Truef Truef)) Truef)
     (let eval-help ((AndAlso Truef Falsef)) Falsef)
     (let eval-help ((AndAlso Falsef ?f1)) Falsef)
@@ -97,8 +97,23 @@
     (:: sol441 (-> (Formula) Bool))
     (let sol441 (?f) (ite (convert (eval-help ?f)) (True) (False)))
 
+(//
+    (=== test (f) (Formula)
+        (ta1 (AndAlso Truef f))
+        (and True (ta1 f))
+    )
+    (=== test2 (b) (Bool)
+        (and True b)
+        b
+    )
+    (=== test2 (f) (Formula)
+        (and True (ta1 f))
+        (ta1 f)
+    )
+//)
     (=== ta1-sol441 (f) (Formula)
         (sol441 f)
         (ta1 f)
     )
+
 )

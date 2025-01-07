@@ -18,6 +18,10 @@
 (:: Nil  (List a))
 (:: Cons (-> (a (List a)) (List a)))
 
+(:: plus (-> (Nat Nat) Nat))
+(let plus (Z      ?y) ?y             )
+(let plus ((S ?x) ?y) (S (plus ?x ?y)))
+
 (:: eqlist (-> (List Nat) (List Nat)) Bool)
 (let eqlist ((Cons ?hd ?tl) (Cons ?hd2 ?tl2)) (ite (eq ?hd ?hd2) (eqlist ?tl ?tl2) (False)))
 (let eqlist ((Cons ?hd ?tl) Nil) False)
@@ -34,7 +38,13 @@
 (let eq ((S ?x) Z     ) False     )
 (let eq ((S ?x) (S ?y)) (eq ?x ?y))
 
+(:: not (-> (Bool) Bool))
+(let not True False)
+(let not (False) True)
 
+(:: append (-> ((List a) (List a)) (List a)))
+(let append (Nil           ?ys) ?ys                       )
+(let append ((Cons ?x ?xs) ?ys) (Cons ?x (append ?xs ?ys)))
 
 (:: mem (-> (Nat (List Nat)) Bool))
 (let mem (?n Nil          ) False                            )
@@ -85,13 +95,18 @@
 (let ta4 ((C ?me1 ?me2)) (and (check4 ?me1 Nil) (check4 ?me2 Nil)))
 (let ta4 ((V ?na)) False)
 
+(:: list-filter (-> ((-> (a a) Bool) a (List a)) (List a)))
+(let list-filter (?p ?x Nil) Nil)
+(let list-filter (?p ?x (Cons ?hd ?tl)) (ite ($ ?p ?x ?hd) (Cons ?hd (list-filter ?p ?x ?tl)) (list-filter ?p ?x ?tl)))
+
 (:: sol5 (-> (Lambda) Bool))
 (let sol5 (?lambda) (eqlist (getStn ?lambda) Nil))
 (:: getStn (-> (Lambda) (List Nat)))
 (let getStn ((V ?var)) (Cons ?var Nil))
-(let getStn ((P ?n ?m)) (list-filter aux (getStn ?m)))
+(let getStn ((P ?n ?m)) (list-filter aux ?n (getStn ?m)))
 (let getStn ((C ?m1 ?m2)) (append (getStn ?m1) (getStn ?m2)))
-(// we should add definition of list-filter //)
+(:: aux (-> (Nat Nat) Bool))
+(let aux (?n ?m) (not (eq ?n ?m)))
 
 (:: sol50 (-> (Lambda) Bool))
 (let sol50 (?m) (findStation ?m (V Z)))
@@ -108,12 +123,12 @@
 (let sol57 (?l) (eqlist (listStation ?l) Nil))
 (:: listStation (-> (Lambda) (List Nat)))
 (let listStation ((V ?n)) (Cons ?n Nil))
-(let listStation ((P ?n ?m)) (deleteAll (listStation ?m ?n)))
+(let listStation ((P ?n ?m)) (deleteAll (listStation ?m) ?n))
 (let listStation ((C ?m1 ?m2)) (append (listStation ?m1) (listStation ?m2)))
 (:: deleteAll (-> ((List Nat) Nat) (List Nat)))
 (let deleteAll (Nil ?target) Nil)
-(let deleteAll ((Cons ?l ?remain) ?target) (ite (eq ?l ?target) (deleteAll ?remain ?target) (Cons ?l (deleteAll ?remain ?target))))
-(// sol57 is something wrong....//)
+(let deleteAll ((Cons ?hd ?tl) ?target) (ite (eq ?hd ?target) (deleteAll ?tl ?target) (Cons ?hd (deleteAll ?tl ?target))))
+
 
 (:: sol101 (-> (Lambda) Bool))
 (let sol101 (?m) (check101 ?m Nil Nil))
@@ -123,9 +138,9 @@
 (let check101 ((C ?m1 ?m2) ?al ?nl) (and (check101 ?m1 ?al ?nl) (check101 ?m2 ?al ?nl)))
 (:: forall101 (-> ((-> (Nat (List Nat)) Bool) (List Nat) (List Nat)) Bool))
 (let forall101 (?pred ?a Nil) True)
-(let foall101 (?pred ?a (Cons ?hd ?tl)) (ite ($ ?pred ?hd ?a) (forall101 ?pred ?a ?tl) False))
+(let forall101 (?pred ?a (Cons ?hd ?tl)) (ite ($ ?pred ?hd ?a) (forall101 ?pred ?a ?tl) False))
 (:: aux101 (-> (Nat (List Nat)) Bool))
-(let aux101 (?x ?al) (list-mem ?x ?al))
+(let aux101 (?x ?al) (mem ?x ?al))
 (// sol101 is something wrong....//)
 
 (:: sol109 (-> (Lambda) Bool))
@@ -145,11 +160,11 @@
 (:: aux123 (-> (Lambda) Bool))
 (let aux123 ((V ?n)) False)
 (let aux123 ((C ?l ?r)) (and (sol123 ?l) (sol123 ?r)))
-(let aux123 ((P ?v ?l)) (aux123-1 ?l ?v))
-(:: aux123-1 (-> (Lambda Nat) Bool))
-(let aux123-1 ((v ?s) ?var) (ite (eq ?var ?s) True False))
-(let aux123-1 ((C ?l1 ?l2) ?var) (and (sol123 (P ?var ?l1)) (sol123 (P ?var ?l2))))
-(let aux123-1 ((P ?v ?l) ?var) (or (sol123 (P ?var ?l)) (sol123 (P ?v ?l))))
+(let aux123 ((P ?v ?l)) (match123 ?l ?v))
+(:: match123 (-> (Lambda Nat) Bool))
+(let match123 ((V ?s) ?var) (ite (eq ?var ?s) True False))
+(let match123 ((C ?l1 ?l2) ?var) (and (sol123 (P ?var ?l1)) (sol123 (P ?var ?l2))))
+(let match123 ((P ?v ?l) ?var) (or (sol123 (P ?var ?l)) (sol123 (P ?v ?l))))
 (:: get-right (-> (Lambda) Lambda))
 (let get-right ((V ?n)) (V ?n))
 (let get-right ((C ?l1 ?l2)) ?l2)
@@ -162,15 +177,14 @@
 (let is-connect ((V ?n)) False)
 (let is-connect ((C ?l1 ?l2)) True)
 (let is-connect ((P ?v ?l)) (is-connect ?l))
-(// sol123 is something wrong.... //)
 
 (:: sol530 (-> (Lambda) Bool))
 (let sol530 (?m) (eq (ck530 ?m Nil) Z))
 (:: ck530 (-> (Lambda (List Nat)) Nat))
-(let ck530 ((V ?va) ?lst) (ite (list-mem ?va ?lst) (Z) (S Z)))
-(let ck530 ((C ?ex1 ?ex2) ?lst) (add (ck ?ex1 ?lst) (ck ?ex2 ?lst)))
-(let ck530 ((P ?va ?ex) ?lst) (ck ?ex (Cons ?va ?lst)))
-(// sol530 is something wrong.... //)
+(let ck530 ((V ?va) ?lst) (ite (mem ?va ?lst) (Z) (S Z)))
+(let ck530 ((C ?ex1 ?ex2) ?lst) (plus (ck530 ?ex1 ?lst) (ck530 ?ex2 ?lst)))
+(let ck530 ((P ?va ?ex) ?lst) (ck530 ?ex (Cons ?va ?lst)))
+
 (=== ta1-ta2 (l) (Lambda)
     (ta1 l)
     (ta2 l)
@@ -211,4 +225,6 @@
     (ta1 l)
     (sol530 l)
 )
+
+
 )
