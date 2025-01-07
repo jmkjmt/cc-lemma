@@ -1,0 +1,13 @@
+{
+    "lambda": {
+        "lambda": {
+            "status": true,
+            "info": 0.017
+        }
+    },
+    "max": {
+        "max": {
+            "status": false
+        }
+    }
+}

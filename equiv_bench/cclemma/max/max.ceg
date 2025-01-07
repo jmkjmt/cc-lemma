@@ -69,13 +69,13 @@
     (let ta1 ((Cons ?hd Nil)) ?hd)
     (let ta1 ((Cons ?hd ?tl)) (ite (lt (ta1 ?tl) ?hd) (?hd) (ta1 ?tl)))
 
-    (:: 1 (-> (List Nat) Nat))
+    (:: sol118 (-> (List Nat) Nat))
     (let sol118 (Nil) Z)
     (let sol118 ((Cons ?h ?t)) (loop ?h ?t))
     (:: loop (-> (Nat (List Nat)) Nat))
     (let loop (?fir Nil) ?fir)
     (let loop (?fir (Cons ?h ?t)) (ite (lt (loop ?fir ?t) ?h) ?h (loop ?fir ?t)))
-(// sol118 is something wrong ....//)
+
     (:: fold164 (-> ((-> (Nat Nat) Nat) (List Nat) Nat) Nat))
     (let fold164 (?f Nil ?a) ?a)
     (let fold164 (?f (Cons ?hd ?tl) ?a) ($ ?f ?hd (fold ?f ?tl ?a)))
@@ -86,13 +86,25 @@
     (let comp (?n1 ?n2) (ite (lt ?n2 ?n1) (?n1) (ite (eq ?n1 ?n2) ?n1 ?n2)))
 (// sol164 is something wrong ....//)
 
-    (=== ta1-sol118 (lst) (List Nat)
+    
+(//
+    (=== test () ()
+        (sol164 (Cons (S Z) (Cons (S (S Z)) (Cons (Z) (Cons (S (S (S Z))) Nil)))))
+        (S (S (S Z)))
+    )
+
+    (=== test () ()
+        (fold164 plus (Cons (Z) (Cons (S Z) (Cons Z Nil))) Z)
+        (S Z)
+    )
+//)
+    (=== ta1-sol118 (lst) ((List Nat))
         (ta1 lst)
         (sol118 lst)
     )
-    (=== ta1-sol164 (lst) (List Nat)
+
+    (=== ta1-sol164 (lst) ((List Nat))
         (ta1 lst)
         (sol164 lst)
     )
-    
 )
