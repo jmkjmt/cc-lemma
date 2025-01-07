@@ -1,6 +1,0 @@
-Proving begin sol1-sol121: (filter pred lst) === (sol121 pred lst)
-Property accepted by cvec analysis
-(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
-sol1-sol121 uncyclic: INVALID (7 ms)
-Attempted 1 goals:
-  0 solved (no cyclic)

@@ -37,11 +37,16 @@
     (let sol121 (?pred ?lst) (reverse (loop ?pred ?lst Nil) Nil))
     (:: loop (-> ((-> (a) Bool) (List a) (List a)) (List a)))
     (let loop (?pred Nil ?o) ?o)
-    (let loop (?pred (Cons ?h ?t) ?o) (loop ?t (ite ($ ?pred ?h) (Cons ?h ?o) ?o)))
+    (let loop (?pred (Cons ?h ?t) ?o) (loop ?pred ?t (ite ($ ?pred ?h) (Cons ?h ?o) ?o)))
     (:: reverse (-> ((List a) (List a)) (List a)))
     (let reverse (Nil ?o) ?o)
     (let reverse ((Cons ?h ?t) ?o) (reverse ?t (Cons ?h ?o)))
 (// Something wrong in sol121...//)
+    
+    (:: even (-> (Nat) Bool))
+    (let even (Z) True)
+    (let even ((S Z)) False)
+    (let even ((S (S ?n))) (even ?n))
 
     (:: sol171 (-> ((-> (a) Bool) (List a)) (List a)))
     (let sol171 (?pred ?lst) (aux ?pred (S Z) ?lst))
@@ -53,4 +58,9 @@
         (filter pred lst)
         (sol121 pred lst)    
     )
+    (=== sol1-sol171 (lst pred) ((List a) (-> (a) Bool))
+        (filter pred lst)
+        (sol171 pred lst)    
+    )
+
 )

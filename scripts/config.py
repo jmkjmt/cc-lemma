@@ -6,7 +6,7 @@ cclemma_path = "/home/mingyujo/cc-lemma"
 hipspec_path = "/home/mingyujo/hipspec"
 thesy_path = "/home/mingyujo/TheSy"
 cvc4_bin_name = "cvc4-vmcai2015"
-output_path = "/home/mingyujo/cc-lemma/results"
+output_path = "/home/mingyujo/cc-lemma/"
 
 # dataset_root = "/home/artifact/cc-lemma/benchmarks"
 # cclemma_path = "/home/artifact/cc-lemma"
