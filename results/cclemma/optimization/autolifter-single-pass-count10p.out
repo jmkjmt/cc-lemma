@@ -1,9 +1,0 @@
-Proving begin optimize: (main inp0) === (mainNew inp0)
-Property accepted by cvec analysis
-proved lemma forall v0: List. v0 === (tf1 v0 v0) (Cons v0_20 v0_21) === (tf1 (Cons v0_20 v0_21) (Cons v0_20 v0_21))
-proved lemma forall v0: Bool. v0 === (or False v0) True === (or False True)
-proved lemma forall v0: Bool. v0 === (and v0 True) True === (and True True)
-proved lemma forall v0: Bool. (and (not v0) True) === (not v0) (and (not v0) True) === (not v0)
-proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
-proved lemma forall v0: Bool. v0 === (or v0 False) True === (or True False)
-proved lemma forall v0: Tuple2. v0 === (MakeTuple2 (fst2 v0) (snd2 v0)) (MakeTuple2 v0_40 v0_41) === (MakeTuple2 (fst2 (MakeTuple2 v0_40 v0_41)) (snd2 (MakeTuple2 v0_40 v0_41)))

@@ -1,6 +1,0 @@
-Proving begin optimize: (main inp0) === (mainNew inp0)
-Property accepted by cvec analysis
-proved lemma forall v0: MyNat. v0 === (tf3 v0 v0) (Myzero v0_20) === (tf3 (Myzero v0_20) (Myzero v0_20))
-proved lemma forall v0: Nat. v0 === (plus v0 Zero) (Succ v0_30) === (plus (Succ v0_30) Zero)
-proved lemma forall v0: MyNat. (plus (tf1 v0) Zero) === (tf1 v0) (plus (tf1 v0) Zero) === (tf1 v0)
-proved lemma forall v0: Nat. v1: Nat. (plus v0 v1) === (plus v1 v0) (plus (Succ v0_40) (Succ v1_90)) === (plus (Succ v1_90) (Succ v0_40))

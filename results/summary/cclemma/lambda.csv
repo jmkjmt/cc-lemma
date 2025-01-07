@@ -1,4 +1,11 @@
 name,result,time,num_lemmas,num_lemmas_attempted,num_lemmas_proven,result_cyclic,time_cyclic,num_lemmas_cyclic,num_attempted_lemmas_cyclic,num_proven_lemmas_cyclic
-sol1-sol2,Valid,10.678118,0,0,0,Unknown,0,0,0,0
-sol1-sol3,Timeout,68918.875,8,6,1,Unknown,0,0,0,0
-sol1-sol4,Timeout,70875.8,24,20,4,Unknown,0,0,0,0
+ta1-ta2,Valid,21.850248,0,0,0,Unknown,0,0,0,0
+ta1-ta3,Timeout,89700.69,12,10,1,Unknown,0,0,0,0
+ta1-ta4,Timeout,91966.81,7,6,3,Unknown,0,0,0,0
+ta1-sol5,Invalid,591.5898,0,0,0,Unknown,0,0,0,0
+ta1-sol50,Timeout,64411.71,7,7,2,Unknown,0,0,0,0
+ta1-sol57,Invalid,160.59364,0,0,0,Unknown,0,0,0,0
+ta1-sol101,Invalid,14.507843,0,0,0,Unknown,0,0,0,0
+ta1-sol109,Timeout,60592.113,11,8,1,Unknown,0,0,0,0
+ta1-sol123,Invalid,161.47166,0,0,0,Unknown,0,0,0,0
+ta1-sol530,Invalid,16.593008,0,0,0,Unknown,0,0,0,0

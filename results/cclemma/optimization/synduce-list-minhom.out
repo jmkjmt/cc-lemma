@@ -1,6 +1,0 @@
-Proving begin optimize: (main inp0) === (mainNew inp0)
-Property accepted by cvec analysis
-(uncyclic) Theorized 13 lemmas, fully attempted 12 lemmas, proved 0 lemmas
-optimize uncyclic: TIMEOUT (2073 ms)
-Attempted 1 goals:
-  0 solved (no cyclic)

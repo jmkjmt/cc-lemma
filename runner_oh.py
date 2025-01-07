@@ -13,8 +13,8 @@ import argparse
 # TOOLS = ['cclemma', 'cvc4', 'hipspec', 'thesy']
 # BENCHMARKS = ['uniq']
 
-TOOLS = ['thesy']
-BENCHMARKS = ['nat']
+TOOLS = ['cclemma']
+BENCHMARKS = ['filter','formula','lambda','max','natadd','natmul','uniq']
 
 def parse_arguments():
     parser = argparse.ArgumentParser(

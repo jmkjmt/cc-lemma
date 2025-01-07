@@ -1,7 +1,0 @@
-Proving begin optimize: (main inp0) === (mainNew inp0)
-Property accepted by cvec analysis
-proved lemma forall v0: Tree. v0 === (tf13 v0) (Node v0_20 v0_21 v0_22) === (tf13 (Node v0_20 v0_21 v0_22))
-(uncyclic) Theorized 3 lemmas, fully attempted 2 lemmas, proved 1 lemmas
-optimize uncyclic: TIMEOUT (2134 ms)
-Attempted 1 goals:
-  0 solved (no cyclic)

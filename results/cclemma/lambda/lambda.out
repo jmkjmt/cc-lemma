@@ -1,35 +1,68 @@
-Proving begin sol1-sol2: (solution1 l) === (solution2 l)
+Proving begin ta1-ta2: (ta1 l) === (ta2 l)
 Property accepted by cvec analysis
-proved lemma forall l: Lambda. (solution1 l) === (solution2 l) (solution1 (P l_50 l_51)) === (solution2 (P l_50 l_51))
+proved lemma forall l: Lambda. (ta1 l) === (ta2 l) (ta1 (P l_50 l_51)) === (ta2 (P l_50 l_51))
 (uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
-sol1-sol2 uncyclic: VALID (10 ms)
-Proving begin sol1-sol3: (solution1 l) === (solution3 l)
+ta1-ta2 uncyclic: VALID (21 ms)
+Proving begin ta1-ta3: (ta1 l) === (ta3 l)
 Property accepted by cvec analysis
 proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
-(uncyclic) Theorized 8 lemmas, fully attempted 6 lemmas, proved 1 lemmas
-sol1-sol3 uncyclic: TIMEOUT (68918 ms)
-Proving begin sol1-sol4: (solution1 l) === (solution4 l)
+(uncyclic) Theorized 12 lemmas, fully attempted 10 lemmas, proved 1 lemmas
+ta1-ta3 uncyclic: TIMEOUT (89700 ms)
+Proving begin ta1-ta4: (ta1 l) === (ta4 l)
 Property accepted by cvec analysis
-proved lemma forall v0: Lambda. (check4 v0 Nil) === (solution4 v0) (check4 (P v0_40 v0_41) Nil) === (solution4 (P v0_40 v0_41))
+proved lemma forall v0: Lambda. (check4 v0 Nil) === (ta4 v0) (check4 (P v0_40 v0_41) Nil) === (ta4 (P v0_40 v0_41))
 proved lemma forall v0: Bool. v0 === (or v0 False) True === (or True False)
 proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
-proved lemma forall v0: Bool. v0 === (and v0 True) True === (and True True)
 Reach the limit
 Reach the limit
 Reach the limit
 Reach the limit
 Reach the limit
 Reach the limit
+(uncyclic) Theorized 7 lemmas, fully attempted 6 lemmas, proved 3 lemmas
+ta1-ta4 uncyclic: TIMEOUT (91966 ms)
+Proving begin ta1-sol5: (ta1 l) === (sol5 l)
+Property rejected by cvec analysis
+cvec: False,True,False,False,True,False,False,True,False,False,False,False,True,True,False,False,False,False,False,False,True,False,True,False,False,True,False,False,False,False
+cvec: (eqlist (append (list-filter aux (Cons (S Z) Nil)) (append (Cons (S Z) Nil) (Cons Z Nil))) Nil),(eqlist (list-filter aux (list-filter aux (append (list-filter aux (Cons Z Nil)) (Cons Z Nil)))) Nil),(eqlist (list-filter aux (Cons (S (S Z)) Nil)) Nil),(eqlist (list-filter aux (Cons (S Z) Nil)) Nil),(eqlist (list-filter aux (list-filter aux (list-filter aux (append (Cons Z Nil) (Cons Z Nil))))) Nil),(eqlist (list-filter aux (append (Cons Z Nil) (Cons (S Z) Nil))) Nil),(eqlist (append (Cons Z Nil) (list-filter aux (append (list-filter aux (Cons Z Nil)) (list-filter aux (Cons Z Nil))))) Nil),(eqlist (list-filter aux (list-filter aux (list-filter aux (append (Cons Z Nil) (Cons Z Nil))))) Nil),(eqlist (append (list-filter aux (Cons (S Z) Nil)) (list-filter aux (append (Cons Z Nil) (Cons Z Nil)))) Nil),False,(eqlist (append (Cons Z Nil) (append (Cons (S Z) Nil) (Cons (S Z) Nil))) Nil),False,(eqlist (list-filter aux (Cons (S Z) Nil)) Nil),(eqlist (list-filter aux (list-filter aux (list-filter aux (append (Cons Z Nil) (Cons Z Nil))))) Nil),(eqlist (append (Cons (S (S Z)) Nil) (Cons (S Z) Nil)) Nil),(eqlist (list-filter aux (append (append (Cons Z Nil) (Cons Z Nil)) (Cons (S Z) Nil))) Nil),(eqlist (append (append (Cons (S Z) Nil) (append (Cons Z Nil) (list-filter aux (Cons Z Nil)))) (list-filter aux (append (append (Cons Z Nil) (Cons Z Nil)) (Cons Z Nil)))) Nil),(eqlist (list-filter aux (Cons Z Nil)) Nil),(eqlist (append (Cons Z Nil) (append (append (append (Cons Z Nil) (Cons Z Nil)) (append (Cons Z Nil) (Cons Z Nil))) (Cons (S Z) Nil))) Nil),(eqlist (list-filter aux (Cons Z Nil)) Nil),(eqlist (list-filter aux (append (append (Cons Z Nil) (append (Cons Z Nil) (Cons Z Nil))) (Cons Z Nil))) Nil),(eqlist (list-filter aux (list-filter aux (append (Cons Z Nil) (Cons Z Nil)))) Nil),(eqlist (append (list-filter aux (Cons (S Z) Nil)) (list-filter aux (list-filter aux (Cons Z Nil)))) Nil),(eqlist (append (Cons (S (S Z)) Nil) (list-filter aux (Cons (S Z) Nil))) Nil),(eqlist (append (Cons Z Nil) (list-filter aux (Cons (S Z) Nil))) Nil),(eqlist (list-filter aux (Cons Z Nil)) Nil),False,(eqlist (append (Cons (S (S Z)) Nil) (Cons Z Nil)) Nil),(eqlist (append (list-filter aux (append (append (Cons Z Nil) (Cons Z Nil)) (Cons Z Nil))) (list-filter aux (list-filter aux (Cons Z Nil)))) Nil),False
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+ta1-sol5 uncyclic: INVALID (591 ms)
+Proving begin ta1-sol50: (ta1 l) === (sol50 l)
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
+proved lemma forall v0: Nat. v1: Nat. (eq v0 v1) === (eq v1 v0) (eq (S v0_140) (S v1_210)) === (eq (S v1_210) (S v0_140))
 Reach the limit
 Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-(uncyclic) Theorized 24 lemmas, fully attempted 20 lemmas, proved 4 lemmas
-sol1-sol4 uncyclic: TIMEOUT (70875 ms)
-Attempted 3 goals:
+(uncyclic) Theorized 7 lemmas, fully attempted 7 lemmas, proved 2 lemmas
+ta1-sol50 uncyclic: TIMEOUT (64411 ms)
+Proving begin ta1-sol57: (ta1 l) === (sol57 l)
+Property rejected by cvec analysis
+cvec: True,False,False,True,False,False,False,False,False,False,False,False,False,True,False,False,False,False,True,True,True,False,False,False,False,False,False,False,True,False
+cvec: (eqlist (deleteAll (listStation (C (C (V Z) (P Z (V Z))) (V Z)) Z)) Nil),False,(eqlist (append (deleteAll (listStation (P (S Z) (V Z)) Z)) (Cons Z Nil)) Nil),(eqlist (append (deleteAll (listStation (C (P Z (V Z)) (C (V Z) (V Z))) Z)) (deleteAll (listStation (P Z (C (V Z) (V Z))) (S (S Z))))) Nil),False,(eqlist (append (Cons (S (S Z)) Nil) (append (deleteAll (listStation (P Z (V Z)) (S Z))) (append (append (Cons Z Nil) (Cons Z Nil)) (append (Cons Z Nil) (Cons Z Nil))))) Nil),(eqlist (deleteAll (listStation (C (V (S Z)) (P Z (C (V Z) (V Z)))) (S (S Z)))) Nil),(eqlist (deleteAll (listStation (V (S (S Z))) (S Z))) Nil),False,(eqlist (append (Cons (S (S Z)) Nil) (append (deleteAll (listStation (V Z) (S Z))) (append (Cons Z Nil) (deleteAll (listStation (V Z) Z))))) Nil),(eqlist (deleteAll (listStation (C (V (S Z)) (C (P Z (V Z)) (V Z))) Z)) Nil),(eqlist (append (append (deleteAll (listStation (V Z) (S Z))) (append (Cons Z Nil) (deleteAll (listStation (V Z) Z)))) (Cons Z Nil)) Nil),(eqlist (append (append (deleteAll (listStation (C (V Z) (V Z)) (S Z))) (deleteAll (listStation (P Z (V Z)) (S Z)))) (deleteAll (listStation (V Z) (S Z)))) Nil),(eqlist (deleteAll (listStation (P Z (V (S Z))) (S Z))) Nil),(eqlist (append (deleteAll (listStation (V Z) (S (S Z)))) (append (Cons Z Nil) (append (deleteAll (listStation (V Z) Z)) (deleteAll (listStation (V Z) Z))))) Nil),(eqlist (deleteAll (listStation (V Z) (S (S (S Z))))) Nil),(eqlist (deleteAll (listStation (V (S Z)) Z)) Nil),(eqlist (deleteAll (listStation (V (S Z)) (S (S Z)))) Nil),(eqlist (deleteAll (listStation (P (S Z) (P Z (C (V Z) (V Z)))) (S Z))) Nil),(eqlist (deleteAll (listStation (V (S Z)) (S Z))) Nil),(eqlist (append (deleteAll (listStation (V (S Z)) (S Z))) (deleteAll (listStation (P (S Z) (P Z (V Z))) Z))) Nil),(eqlist (append (append (append (Cons Z Nil) (append (Cons Z Nil) (Cons Z Nil))) (Cons (S Z) Nil)) (Cons (S Z) Nil)) Nil),(eqlist (append (append (Cons (S Z) Nil) (deleteAll (listStation (C (V Z) (V Z)) (S Z)))) (Cons Z Nil)) Nil),(eqlist (append (append (deleteAll (listStation (P Z (V Z)) Z)) (append (deleteAll (listStation (V Z) Z)) (deleteAll (listStation (V Z) Z)))) (deleteAll (listStation (V Z) (S Z)))) Nil),(eqlist (deleteAll (listStation (C (C (C (V Z) (V Z)) (V Z)) (C (V Z) (C (V Z) (V Z)))) (S (S (S Z))))) Nil),(eqlist (append (deleteAll (listStation (C (C (V Z) (V Z)) (C (V Z) (V Z))) (S (S Z)))) (append (deleteAll (listStation (V Z) (S Z))) (deleteAll (listStation (P Z (V Z)) (S Z))))) Nil),False,(eqlist (deleteAll (listStation (C (V Z) (V (S Z))) (S Z))) Nil),(eqlist (deleteAll (listStation (P Z (P Z (C (V Z) (V Z)))) (S Z))) Nil),(eqlist (append (Cons (S (S Z)) Nil) (deleteAll (listStation (P Z (V Z)) (S Z)))) Nil)
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+ta1-sol57 uncyclic: INVALID (160 ms)
+Proving begin ta1-sol101: (ta1 l) === (sol101 l)
+Property rejected by cvec analysis
+cvec: True,True,False,False,False,False,False,False,False,True,False,False,True,False,False,False,False,True,False,False,True,False,False,False,False,False,False,True,True,False
+cvec: (forall101 aux101 (Cons (S Z) Nil) (Cons (S Z) Nil)),(forall101 aux101 (Cons (S (S Z)) (Cons Z Nil)) (Cons Z Nil)),(forall101 aux101 Nil (Cons (S (S (S Z))) Nil)),(and (forall101 aux101 (Cons (S (S Z)) Nil) (Cons (S Z) Nil)) (and (forall101 aux101 Nil (Cons (S Z) Nil)) (forall101 aux101 (Cons Z (Cons (S Z) Nil)) (Cons Z Nil)))),(and (forall101 aux101 (Cons Z Nil) (Cons (S Z) Nil)) (and (forall101 aux101 (Cons Z (Cons Z Nil)) (Cons Z Nil)) (and (forall101 aux101 (Cons Z Nil) (Cons Z Nil)) (forall101 aux101 (Cons Z Nil) (Cons Z Nil))))),(and (forall101 aux101 Nil (Cons Z Nil)) (forall101 aux101 Nil (Cons (S Z) Nil))),(and (forall101 aux101 (Cons (S Z) Nil) (Cons (S Z) Nil)) (and (and (forall101 aux101 (Cons Z Nil) (Cons Z Nil)) (forall101 aux101 (Cons Z Nil) (Cons Z Nil))) (forall101 aux101 Nil (Cons (S Z) Nil)))),(and (forall101 aux101 (Cons Z (Cons (S Z) (Cons Z Nil))) (Cons Z Nil)) (forall101 aux101 Nil (Cons (S Z) Nil))),(and (and (and (forall101 aux101 Nil (Cons Z Nil)) (forall101 aux101 Nil (Cons Z Nil))) (forall101 aux101 Nil (Cons (S Z) Nil))) (forall101 aux101 Nil (Cons Z Nil))),(forall101 aux101 (Cons (S (S Z)) Nil) (Cons (S (S Z)) Nil)),(and (and (forall101 aux101 Nil (Cons (S Z) Nil)) (and (forall101 aux101 (Cons (S Z) Nil) (Cons Z Nil)) (forall101 aux101 (Cons (S Z) Nil) (Cons Z Nil)))) (and (forall101 aux101 (Cons Z (Cons (S Z) Nil)) (Cons Z Nil)) (and (forall101 aux101 Nil (Cons Z Nil)) (forall101 aux101 Nil (Cons Z Nil))))),(forall101 aux101 (Cons (S (S (S Z))) Nil) (Cons (S (S Z)) Nil)),(and (and (forall101 aux101 (Cons Z Nil) (Cons Z Nil)) (and (forall101 aux101 (Cons Z Nil) (Cons Z Nil)) (forall101 aux101 (Cons Z Nil) (Cons Z Nil)))) (forall101 aux101 (Cons (S Z) (Cons Z Nil)) (Cons Z Nil))),(and (and (forall101 aux101 (Cons Z (Cons (S Z) Nil)) (Cons Z Nil)) (forall101 aux101 (Cons Z (Cons (S Z) Nil)) (Cons Z Nil))) (forall101 aux101 (Cons (S Z) Nil) (Cons Z Nil))),(forall101 aux101 (Cons Z Nil) (Cons (S (S Z)) Nil)),(and (forall101 aux101 Nil (Cons Z Nil)) (and (and (and (forall101 aux101 Nil (Cons Z Nil)) (forall101 aux101 Nil (Cons Z Nil))) (forall101 aux101 (Cons Z Nil) (Cons Z Nil))) (forall101 aux101 (Cons Z Nil) (Cons Z Nil)))),(forall101 aux101 Nil (Cons (S Z) Nil)),(and (and (forall101 aux101 (Cons Z (Cons Z Nil)) (Cons Z Nil)) (forall101 aux101 (Cons Z Nil) (Cons Z Nil))) (forall101 aux101 (Cons (S Z) (Cons Z Nil)) (Cons Z Nil))),(and (forall101 aux101 (Cons (S Z) Nil) (Cons Z Nil)) (and (forall101 aux101 (Cons (S Z) Nil) (Cons Z Nil)) (and (forall101 aux101 (Cons (S Z) Nil) (Cons Z Nil)) (forall101 aux101 (Cons (S Z) Nil) (Cons Z Nil))))),(and (and (forall101 aux101 (Cons Z (Cons Z Nil)) (Cons Z Nil)) (forall101 aux101 (Cons Z Nil) (Cons Z Nil))) (forall101 aux101 Nil (Cons (S Z) Nil))),(and (forall101 aux101 (Cons Z Nil) (Cons Z Nil)) (and (forall101 aux101 (Cons Z (Cons Z Nil)) (Cons Z Nil)) (forall101 aux101 (Cons Z (Cons Z Nil)) (Cons Z Nil)))),(and (forall101 aux101 Nil (Cons Z Nil)) (forall101 aux101 Nil (Cons Z Nil))),(and (and (forall101 aux101 Nil (Cons Z Nil)) (and (forall101 aux101 (Cons (S Z) Nil) (Cons Z Nil)) (forall101 aux101 (Cons (S Z) Nil) (Cons Z Nil)))) (forall101 aux101 Nil (Cons Z Nil))),(and (forall101 aux101 Nil (Cons Z Nil)) (forall101 aux101 Nil (Cons (S (S Z)) Nil))),(forall101 aux101 Nil (Cons (S (S Z)) Nil)),(and (and (and (and (forall101 aux101 Nil (Cons Z Nil)) (forall101 aux101 Nil (Cons Z Nil))) (and (forall101 aux101 Nil (Cons Z Nil)) (forall101 aux101 Nil (Cons Z Nil)))) (and (forall101 aux101 (Cons Z Nil) (Cons Z Nil)) (forall101 aux101 Nil (Cons Z Nil)))) (forall101 aux101 (Cons Z (Cons Z (Cons Z Nil))) (Cons Z Nil))),(and (forall101 aux101 (Cons (S (S Z)) Nil) (Cons Z Nil)) (forall101 aux101 (Cons Z (Cons (S Z) (Cons (S Z) Nil))) (Cons Z Nil))),(forall101 aux101 (Cons Z Nil) (Cons Z Nil)),(forall101 aux101 (Cons Z (Cons (S Z) Nil)) (Cons (S Z) Nil)),(forall101 aux101 Nil (Cons Z Nil))
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+ta1-sol101 uncyclic: INVALID (14 ms)
+Proving begin ta1-sol109: (ta1 l) === (sol109 l)
+Property accepted by cvec analysis
+proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
+(uncyclic) Theorized 11 lemmas, fully attempted 8 lemmas, proved 1 lemmas
+ta1-sol109 uncyclic: TIMEOUT (60592 ms)
+Proving begin ta1-sol123: (ta1 l) === (sol123 l)
+Property rejected by cvec analysis
+cvec: True,False,False,False,True,False,False,True,False,False,False,True,True,False,False,True,False,True,False,False,False,False,False,False,False,True,False,True,False,False
+cvec: (and (or (aux123-1 (V Z) (S (S Z))) (aux123-1 (V Z) Z)) (or (aux123-1 (V Z) Z) (aux123-1 (V Z) (S Z)))),False,(aux123-1 (V Z) (S (S Z))),False,(and (and (or (aux123-1 (V Z) (S Z)) (aux123-1 (V Z) Z)) (or (aux123-1 (V Z) (S Z)) (aux123-1 (V Z) Z))) (and (or (aux123-1 (V Z) Z) (aux123-1 (V Z) Z)) (aux123-1 (V Z) Z))),False,(and (aux123-1 (V (S Z)) Z) (aux123-1 (V (S Z)) Z)),(aux123-1 (V (S Z)) (S Z)),False,False,False,(aux123-1 (V Z) Z),(and (or (or (aux123-1 (V Z) (S (S (S Z)))) (aux123-1 (V Z) Z)) (or (aux123-1 (V Z) Z) (aux123-1 (V Z) Z))) (or (or (aux123-1 (V Z) (S (S (S Z)))) (aux123-1 (V Z) Z)) (or (aux123-1 (V Z) Z) (aux123-1 (V Z) Z)))),False,False,(or (or (aux123-1 (V Z) Z) (aux123-1 (V Z) (S Z))) (or (aux123-1 (V Z) Z) (aux123-1 (V Z) (S Z)))),False,(and (aux123-1 (V Z) Z) (and (and (aux123-1 (V Z) Z) (aux123-1 (V Z) Z)) (and (aux123-1 (V Z) Z) (aux123-1 (V Z) Z)))),False,False,False,False,False,False,(and (and (or (aux123-1 (V Z) Z) (aux123-1 (V Z) (S Z))) (or (aux123-1 (V Z) Z) (aux123-1 (V Z) (S Z)))) (aux123-1 (V (S Z)) Z)),(or (or (or (aux123-1 (V Z) Z) (aux123-1 (V Z) Z)) (or (aux123-1 (V Z) (S Z)) (aux123-1 (V Z) Z))) (or (or (aux123-1 (V Z) Z) (aux123-1 (V Z) Z)) (or (aux123-1 (V Z) (S Z)) (aux123-1 (V Z) Z)))),(and (and (or (aux123-1 (V Z) (S Z)) (aux123-1 (V Z) Z)) (aux123-1 (V Z) (S Z))) (or (aux123-1 (V Z) (S Z)) (aux123-1 (V Z) (S Z)))),(and (or (or (aux123-1 (V Z) (S Z)) (aux123-1 (V Z) Z)) (or (aux123-1 (V Z) Z) (aux123-1 (V Z) Z))) (and (or (aux123-1 (V Z) Z) (aux123-1 (V Z) Z)) (or (aux123-1 (V Z) Z) (aux123-1 (V Z) Z)))),(and (and (and (aux123-1 (V Z) (S (S Z))) (aux123-1 (V Z) (S (S Z)))) (aux123-1 (V Z) (S (S Z)))) (and (or (aux123-1 (V Z) (S (S Z))) (aux123-1 (V Z) Z)) (or (aux123-1 (V Z) (S (S Z))) (aux123-1 (V Z) Z)))),False
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+ta1-sol123 uncyclic: INVALID (161 ms)
+Proving begin ta1-sol530: (ta1 l) === (sol530 l)
+Property rejected by cvec analysis
+cvec: False,False,False,False,False,False,False,True,False,False,True,True,False,True,False,False,False,False,False,False,False,True,True,False,False,False,False,True,False,False
+cvec: (eq (ite (list-mem (S (S Z)) Nil) Z (S Z)) Z),(eq (ck (P (S Z) (P (S Z) (V Z))) (Cons (S (S (S Z))) Nil)) Z),(eq (add (ck (V (S (S Z))) Nil) (ck (P (S (S Z)) (V Z)) Nil)) Z),(eq (add (ck (V Z) Nil) (ck (P (S Z) (V (S Z))) Nil)) Z),(eq (add (ck (V (S Z)) Nil) (ck (C (V Z) (C (P Z (V Z)) (P Z (V Z)))) Nil)) Z),(eq (ite (list-mem (S (S (S Z))) Nil) Z (S Z)) Z),(eq (ck (V Z) (Cons (S Z) Nil)) Z),(eq (ck (P (S Z) (C (C (V Z) (V Z)) (C (V Z) (V Z)))) (Cons Z Nil)) Z),(eq (ck (P (S Z) (V Z)) (Cons (S Z) Nil)) Z),(eq (ck (P (S (S Z)) (V Z)) (Cons (S (S Z)) Nil)) Z),(eq (ck (V (S (S Z))) (Cons (S (S Z)) Nil)) Z),(eq (ck (P (S Z) (V (S Z))) (Cons (S (S Z)) Nil)) Z),(eq (add (ck (V (S (S Z))) Nil) (ck (V (S Z)) Nil)) Z),(eq (ck (P (S Z) (P (S Z) (P Z (V Z)))) (Cons (S Z) Nil)) Z),(eq (add (ck (V (S Z)) Nil) (ck (C (C (P Z (V Z)) (V Z)) (V (S Z))) Nil)) Z),(eq (ck (C (C (P Z (V Z)) (V Z)) (C (C (V Z) (V Z)) (C (V Z) (V Z)))) (Cons (S Z) Nil)) Z),(eq (ck (V (S Z)) (Cons (S (S Z)) Nil)) Z),(eq (add (ck (P Z (C (C (V Z) (V Z)) (P Z (V Z)))) Nil) (ck (V Z) Nil)) Z),(eq (add (ck (P (S (S Z)) (P Z (C (V Z) (V Z)))) Nil) (ck (V Z) Nil)) Z),(eq (ite (list-mem Z Nil) Z (S Z)) Z),(eq (ck (C (C (V Z) (P Z (V Z))) (V (S Z))) (Cons Z Nil)) Z),(eq (ck (P (S Z) (V (S Z))) (Cons (S Z) Nil)) Z),(eq (ck (C (P (S Z) (P Z (V Z))) (V Z)) (Cons Z Nil)) Z),(eq (ck (V (S (S Z))) (Cons Z Nil)) Z),(eq (ck (C (P Z (P Z (V Z))) (V Z)) (Cons (S Z) Nil)) Z),(eq (add (ck (P Z (V (S Z))) Nil) (ck (P (S Z) (V (S Z))) Nil)) Z),(eq (add (ck (P (S (S Z)) (V (S Z))) Nil) (ck (C (V (S Z)) (V Z)) Nil)) Z),(eq (ck (P (S (S Z)) (P (S Z) (P Z (V Z)))) (Cons (S (S Z)) Nil)) Z),(eq (ite (list-mem (S Z) Nil) Z (S Z)) Z),(eq (add (ck (C (P Z (V Z)) (P (S Z) (C (V Z) (V Z)))) Nil) (ck (P Z (V Z)) Nil)) Z)
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+ta1-sol530 uncyclic: INVALID (16 ms)
+Attempted 10 goals:
   1 solved (no cyclic)

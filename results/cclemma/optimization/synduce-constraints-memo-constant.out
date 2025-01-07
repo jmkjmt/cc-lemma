@@ -1,8 +1,0 @@
-Proving begin optimize: (main inp0) === (mainNew inp0)
-Property accepted by cvec analysis
-proved lemma forall v0: TreeMemo. v0 === (tf6 v0) (Mnode v0_20 v0_21 v0_22 v0_23) === (tf6 (Mnode v0_20 v0_21 v0_22 v0_23))
-proved lemma forall inp0: TreeMemo. (main inp0) === (mainNew inp0) (main (Mnode inp0_180 inp0_181 inp0_182 inp0_183)) === (mainNew (Mnode inp0_180 inp0_181 inp0_182 inp0_183))
-(uncyclic) Theorized 2 lemmas, fully attempted 1 lemmas, proved 1 lemmas
-optimize uncyclic: VALID (54 ms)
-Attempted 1 goals:
-  1 solved (no cyclic)

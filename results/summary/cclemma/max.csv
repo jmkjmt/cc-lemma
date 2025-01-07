@@ -1,0 +1,3 @@
+name,result,time,num_lemmas,num_lemmas_attempted,num_lemmas_proven,result_cyclic,time_cyclic,num_lemmas_cyclic,num_attempted_lemmas_cyclic,num_proven_lemmas_cyclic
+ta1-sol118,Invalid,4.361235,0,0,0,Unknown,0,0,0,0
+ta1-sol164,Invalid,5.335473,0,0,0,Unknown,0,0,0,0

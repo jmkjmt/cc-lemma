@@ -97,7 +97,7 @@
     (:: sol441 (-> (Formula) Bool))
     (let sol441 (?f) (ite (convert (eval-help ?f)) (True) (False)))
 
-    (=== test (f) (Formula)
+    (=== ta1-sol441 (f) (Formula)
         (sol441 f)
         (ta1 f)
     )

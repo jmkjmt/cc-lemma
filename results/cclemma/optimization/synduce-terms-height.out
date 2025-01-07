@@ -1,8 +1,0 @@
-Proving begin optimize: (main inp0) === (mainNew inp0)
-Property accepted by cvec analysis
-proved lemma forall v0: Term2. v0 === (tf7 v0) (Bin v0_20 v0_21 v0_22) === (tf7 (Bin v0_20 v0_21 v0_22))
-proved lemma forall inp0: Term2. (main inp0) === (mainNew inp0) (main (Bin (OpPlus inp0_150_680) inp0_151 inp0_152)) === (mainNew (Bin (OpPlus inp0_150_680) inp0_151 inp0_152))
-(uncyclic) Theorized 4 lemmas, fully attempted 1 lemmas, proved 1 lemmas
-optimize uncyclic: VALID (501 ms)
-Attempted 1 goals:
-  1 solved (no cyclic)

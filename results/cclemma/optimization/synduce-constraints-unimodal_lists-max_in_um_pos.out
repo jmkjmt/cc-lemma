@@ -1,8 +1,0 @@
-Proving begin optimize: (main inp0) === (mainNew inp0)
-Property accepted by cvec analysis
-proved lemma forall v0: List. v1: UList. (tf1 v0 v1) === (tf1 v0 (tf11 v1)) (tf1 v0 (Usplit v1_50 v1_51 v1_52 v1_53)) === (tf1 v0 (tf11 (Usplit v1_50 v1_51 v1_52 v1_53)))
-proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
-(uncyclic) Theorized 11 lemmas, fully attempted 4 lemmas, proved 2 lemmas
-optimize uncyclic: TIMEOUT (2059 ms)
-Attempted 1 goals:
-  0 solved (no cyclic)

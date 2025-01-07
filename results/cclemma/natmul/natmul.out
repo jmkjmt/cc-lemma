@@ -1,0 +1,64 @@
+Proving begin ta1-ta2: (mul1 n m) === (mul2 n m)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. Z === (mul2 v0 Z) Z === (mul2 (S v0_30) Z)
+proved lemma forall v0: Nat. v1: Nat. (add1 v0 v1) === (add1 v1 v0) (add1 (S v0_40) (S v1_90)) === (add1 (S v1_90) (S v0_40))
+proved lemma forall n: Nat. m: Nat. (mul1 n m) === (mul2 n m)
+(uncyclic) Theorized 5 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+ta1-ta2 uncyclic: VALID (18 ms)
+Proving begin ta1-ta3: (mul1 n m) === (mul3 n m)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: Nat. (add1 v0 v1) === (add3 v0 v1) (add1 (S (S v0_40_120)) v1) === (add3 (S (S v0_40_120)) v1)
+proved lemma forall n: Nat. m: Nat. (mul1 n m) === (mul3 n m)
+(uncyclic) Theorized 2 lemmas, fully attempted 1 lemmas, proved 1 lemmas
+ta1-ta3 uncyclic: VALID (12 ms)
+Proving begin ta1-ta4: (mul1 n m) === (mul4 n m)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. Z === (mul4 v0 Z) Z === (mul4 (S v0_30) Z)
+proved lemma forall v0: Nat. v1: Nat. (S (add3 v0 v1)) === (add3 v0 (S v1)) (S (add3 (S v0_60) v1)) === (add3 (S v0_60) (S v1))
+proved lemma forall v0: Nat. v1: Nat. (add1 v0 v1) === (add3 v1 v0) (add1 Z (S (S v1_50_110))) === (add3 (S (S v1_50_110)) Z)
+proved lemma forall n: Nat. m: Nat. (mul1 n m) === (mul4 n m)
+(uncyclic) Theorized 7 lemmas, fully attempted 3 lemmas, proved 3 lemmas
+ta1-ta4 uncyclic: VALID (28 ms)
+Proving begin ta1-ta5: (mul1 n m) === (mul5 n m)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (add1 v0 Z) (S v0_30) === (add1 (S v0_30) Z)
+proved lemma forall v0: Nat. Z === (mul5 Z v0) Z === (mul5 Z (S v0_60))
+proved lemma forall v0: Nat. v0 === (add1 v0 (mul5 Z v0))
+proved lemma forall v0: Nat. v0 === (mul5 (S Z) v0) (S (S v0_80_150)) === (mul5 (S Z) (S (S v0_80_150)))
+proved lemma forall v0: Nat. v0 === (mul5 (S (mul5 Z v0)) v0)
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+(uncyclic) Theorized 11 lemmas, fully attempted 9 lemmas, proved 5 lemmas
+ta1-ta5 uncyclic: TIMEOUT (63738 ms)
+Proving begin ta1-ta6: (mul1 n m) === (mul6 n m)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (add1 v0 Z) (S v0_30) === (add1 (S v0_30) Z)
+proved lemma forall v0: Nat. Z === (mul6 Z v0) Z === (mul6 Z (S v0_60))
+proved lemma forall v0: Nat. v0 === (add1 v0 (mul6 Z v0))
+proved lemma forall v0: Nat. (S v0) === (add1 v0 (S Z)) (S (S v0_260)) === (add1 (S v0_260) (S Z))
+Reach the limit
+Reach the limit
+(uncyclic) Theorized 33 lemmas, fully attempted 19 lemmas, proved 4 lemmas
+ta1-ta6 uncyclic: TIMEOUT (61945 ms)
+Proving begin ta1-ta7: (mul1 n m) === (mul7 n m)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v1: Nat. (S (add1 v0 v1)) === (add1 v0 (S v1)) (S (add1 (S v0_60) v1)) === (add1 (S v0_60) (S v1))
+proved lemma forall v0: Nat. v1: Nat. v2: Nat. (add1 v0 (add1 v1 v2)) === (add1 v1 (add1 v0 v2))
+proved lemma forall n: Nat. m: Nat. (mul1 n m) === (mul7 n m)
+(uncyclic) Theorized 2 lemmas, fully attempted 2 lemmas, proved 2 lemmas
+ta1-ta7 uncyclic: VALID (172 ms)
+Proving begin ta1-sol6: (mul1 n m) === (sol6 n m)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (add1 v0 Z) (S v0_30) === (add1 (S v0_30) Z)
+proved lemma forall v0: Nat. v1: Nat. (add-6 v0 v1) === (add-6 v1 v0) (add-6 (S v0_40) (S v1_90)) === (add-6 (S v1_90) (S v0_40))
+proved lemma forall v0: Nat. v1: Nat. (add-6 v0 v1) === (add1 v0 v1)
+proved lemma forall v0: Nat. v1: Nat. (add-6 v0 v1) === (add1 v1 v0)
+Reach the limit
+Reach the limit

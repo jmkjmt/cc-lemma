@@ -1,13 +1,40 @@
 {
-    "uniq": {
-        "uniq": {
+    "filter": {
+        "filter": {
             "status": false
         }
     },
-    "nat": {
-        "nat": {
+    "formula": {
+        "formula": {
+            "status": false
+        }
+    },
+    "lambda": {
+        "lambda": {
+            "status": true,
+            "info": 0.021
+        }
+    },
+    "max": {
+        "max": {
+            "status": false
+        }
+    },
+    "natadd": {
+        "natadd": {
             "status": true,
             "info": 0.004
+        }
+    },
+    "natmul": {
+        "natmul": {
+            "status": true,
+            "info": 0.018
+        }
+    },
+    "uniq": {
+        "uniq": {
+            "status": false
         }
     }
 }
