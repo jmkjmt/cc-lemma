@@ -1,2 +1,3 @@
 ,time,stop_reasons,success,lemma_count,proofs_later_filtered,file_name
-0,0.0016512520000000002,[],True,0,0,ta1_sol310.smt.smt.stats.json
+0,0.001307952,[],True,0,0,ta1_sol441smt.stats.json
+1,0.001321481,[],True,0,0,ta1_sol441.stats.json
