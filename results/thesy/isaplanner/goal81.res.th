@@ -1,0 +1,2 @@
+(=> "(minus (minus (succ ?ts_ph_Nat_0) ?ts_ph_Nat_2) (succ ?ts_ph_Nat_3)) => (minus (minus ?ts_ph_Nat_0 ?ts_ph_Nat_2) ?ts_ph_Nat_3)" (minus (minus (succ ?ts_ph_Nat_0) ?ts_ph_Nat_2) (succ ?ts_ph_Nat_3)) (minus (minus ?ts_ph_Nat_0 ?ts_ph_Nat_2) ?ts_ph_Nat_3))
+(=> "(minus (minus ?ts_ph_Nat_0 ?ts_ph_Nat_2) ?ts_ph_Nat_3) => (minus (minus (succ ?ts_ph_Nat_0) ?ts_ph_Nat_2) (succ ?ts_ph_Nat_3))" (minus (minus ?ts_ph_Nat_0 ?ts_ph_Nat_2) ?ts_ph_Nat_3) (minus (minus (succ ?ts_ph_Nat_0) ?ts_ph_Nat_2) (succ ?ts_ph_Nat_3)))

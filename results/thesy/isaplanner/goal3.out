@@ -1,0 +1,36 @@
+01:40:04 [0m[33m[WARN] [0mCollecting statistics
+(leq ?__x0 ?__y1) => (or (= ?__x0 ?__y1) (less ?__x0 ?__y1))
+(or (= ?__x0 ?__y1) (less ?__x0 ?__y1)) => (leq ?__x0 ?__y1)
+(less ?x zero) => false
+(less zero (succ ?x)) => true
+(less (succ ?x) (succ ?y)) => (less ?x ?y)
+(less ?x ?y) => (less (succ ?x) (succ ?y))
+(append nil ?x2) => ?x2
+(append (cons ?x ?y3) ?z) => (cons ?x (append ?y3 ?z))
+(cons ?x (append ?y3 ?z)) => (append (cons ?x ?y3) ?z)
+(count ?x nil) => zero
+(count ?x (cons ?y ?z)) => (ite (= ?x ?y) (succ (count ?x ?z)) (count ?x ?z))
+(ite (= ?x ?y) (succ (count ?x ?z)) (count ?x ?z)) => (count ?x (cons ?y ?z))
+Searcher: (less ?autovar5 (succ ?autovar1))
+Searcher: (less ?autovar5 (succ ?autovar3))
+Searcher: (less zero ?autovar6)
+Searcher: (less (succ ?autovar4) ?autovar6)
+01:40:04 [0m[33m[WARN] [0m ex is: zero
+01:40:04 [0m[33m[WARN] [0m ex is: (succ zero)
+01:40:04 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+01:40:04 [0m[33m[WARN] [0m ex is: nil
+01:40:04 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+01:40:04 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:40:04 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+01:40:04 [0m[33m[WARN] [0mProof mode: true
+01:40:04 [0m[33m[WARN] [0m ex is: zero
+01:40:04 [0m[33m[WARN] [0m ex is: (succ zero)
+01:40:04 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+01:40:04 [0m[33m[WARN] [0m ex is: nil
+01:40:04 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+01:40:04 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:40:04 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+01:40:04 [0m[33m[WARN] [0mProof mode: true
+01:40:05 [0m[33m[WARN] [0mproved: (leq zero ?ts_ph_Nat_0) => true
+01:40:05 [0m[33m[WARN] [0mproved: (less ?ts_ph_Nat_0 ?ts_ph_Nat_0) => false
+01:40:05 [0m[33m[WARN] [0mproved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0

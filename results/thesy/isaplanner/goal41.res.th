@@ -1,0 +1,2 @@
+(=> "(take ?ts_ph_Nat_0 (lmap ?ts_ph_Lst_1)) => (lmap (take ?ts_ph_Nat_0 ?ts_ph_Lst_1))" (take ?ts_ph_Nat_0 (lmap ?ts_ph_Lst_1)) (lmap (take ?ts_ph_Nat_0 ?ts_ph_Lst_1)))
+(=> "(lmap (take ?ts_ph_Nat_0 ?ts_ph_Lst_1)) => (take ?ts_ph_Nat_0 (lmap ?ts_ph_Lst_1))" (lmap (take ?ts_ph_Nat_0 ?ts_ph_Lst_1)) (take ?ts_ph_Nat_0 (lmap ?ts_ph_Lst_1)))

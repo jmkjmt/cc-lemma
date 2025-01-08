@@ -1,0 +1,64 @@
+,time,stop_reasons,success,lemma_count,proofs_later_filtered,file_name
+0,0.027147183000000002,[],True,0,0,goal9.stats.json
+1,0.004173191000000001,[],True,0,0,goal15.stats.json
+2,0.004382503,[],True,0,0,goal6.stats.json
+3,1.982726143,"['IterationLimit', 'Saturated']",False,6,0,goal75.stats.json
+4,0.005204378,[],True,0,0,goal7.stats.json
+5,10.922052517000001,"['IterationLimit', 'Saturated']",False,4,0,goal49.stats.json
+6,17.397460825,['IterationLimit'],True,7,0,goal20.stats.json
+7,0.126279581,[],True,0,0,goal8.stats.json
+8,48.995889246,['IterationLimit'],False,8,4,goal33.stats.json
+9,48.207379095,['IterationLimit'],True,6,0,goal54.stats.json
+10,0.000298253,[],True,0,0,goal11.stats.json
+11,0.008122421000000001,[],True,0,0,goal86.stats.json
+12,0.004541160000000001,[],True,0,0,goal17.stats.json
+13,10.625147995,"['IterationLimit', 'Saturated']",True,3,0,goal57.stats.json
+14,49.93741442,['IterationLimit'],False,8,3,goal31.stats.json
+15,6.747571909,['IterationLimit'],True,4,0,goal66.stats.json
+16,0.001306655,[],True,0,0,goal43.stats.json
+17,0.013153463,[],True,0,0,goal30.stats.json
+18,0.000335492,[],True,0,0,goal40.stats.json
+19,0.0009913460000000002,[],True,0,0,goal16.stats.json
+20,0.000327536,[],True,0,0,goal46.stats.json
+21,0.874185512,['Saturated'],False,2,0,goal44.stats.json
+22,0.001790183,[],True,0,0,goal14.stats.json
+23,2.918740987,['IterationLimit'],False,6,0,goal67.stats.json
+24,0.101575095,[],True,0,0,goal81.stats.json
+25,0.008432459,[],True,0,0,goal85.stats.json
+26,0.002479073,[],True,0,0,goal39.stats.json
+27,6.151254019,"['IterationLimit', 'Saturated']",False,4,0,goal61.stats.json
+28,0.0011907550000000002,[],True,0,0,goal37.stats.json
+29,0.001748736,[],True,0,0,goal38.stats.json
+30,6.136037644,"['IterationLimit', 'Saturated']",False,4,0,goal62.stats.json
+31,0.001345454,[],True,0,0,goal12.stats.json
+32,0.028508484,[],True,0,0,goal56.stats.json
+33,0.033482315000000006,[],True,0,0,goal18.stats.json
+34,0.482254518,[],True,0,0,goal64.stats.json
+35,0.030240290000000003,[],True,0,0,goal25.stats.json
+36,0.0020670560000000003,[],True,0,0,goal5.stats.json
+37,0.0052815990000000005,[],True,0,0,goal82.stats.json
+38,0.00159424,[],True,0,0,goal63.stats.json
+39,0.0052761610000000006,[],True,0,0,goal29.stats.json
+40,11.032434057,"['IterationLimit', 'Saturated']",False,4,0,goal51.stats.json
+41,48.121619509,['IterationLimit'],False,8,3,goal34.stats.json
+42,0.000520583,[],True,0,0,goal45.stats.json
+43,33.420202777,['IterationLimit'],False,8,0,goal69.stats.json
+44,0.017585388,[],True,0,0,goal19.stats.json
+45,0.0026225650000000003,[],True,0,0,goal48.stats.json
+46,48.904175276,['IterationLimit'],False,8,1,goal32.stats.json
+47,10.934931415,"['IterationLimit', 'Saturated']",False,6,0,goal65.stats.json
+48,30.36104625,['IterationLimit'],False,7,0,goal68.stats.json
+49,0.0005223890000000001,[],True,0,0,goal42.stats.json
+50,0.028580793,['Saturated'],True,1,0,goal60.stats.json
+51,0.002217442,[],True,0,0,goal10.stats.json
+52,0.001519961,[],True,0,0,goal41.stats.json
+53,46.125352376,['IterationLimit'],False,8,6,goal23.stats.json
+54,0.006358887000000001,[],True,0,0,goal28.stats.json
+55,0.00106002,[],True,0,0,goal1.stats.json
+56,1.178068189,['IterationLimit'],False,5,3,goal71.stats.json
+57,0.002175198,[],True,0,0,goal77.stats.json
+58,46.772896584,['IterationLimit'],False,8,7,goal24.stats.json
+59,0.008415558,[],True,0,0,goal27.stats.json
+60,0.002061381,[],True,0,0,goal2.stats.json
+61,0.0009058260000000001,[],True,0,0,goal13.stats.json
+62,0.0018865680000000001,[],True,0,0,goal4.stats.json

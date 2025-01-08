@@ -1,0 +1,27 @@
+01:35:47 [WARN] Collecting statistics
+01:35:47 [WARN]  ex is: zero
+01:35:47 [WARN]  ex is: (succ zero)
+01:35:47 [WARN]  ex is: (succ (succ zero))
+01:35:47 [WARN]  ex is: nil
+01:35:47 [WARN]  ex is: (cons autovar_Nat_0 nil)
+01:35:47 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:35:47 [WARN] Running exploration without proof mode, but goals were given
+01:35:47 [WARN] Proof mode: true
+01:35:47 [WARN]  ex is: zero
+01:35:47 [WARN]  ex is: (succ zero)
+01:35:47 [WARN]  ex is: (succ (succ zero))
+01:35:47 [WARN]  ex is: nil
+01:35:47 [WARN]  ex is: (cons autovar_Nat_0 nil)
+01:35:47 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:35:47 [WARN] Running exploration without proof mode, but goals were given
+01:35:47 [WARN] Proof mode: true
+01:35:47 [WARN] proved: (less ?ts_ph_Nat_0 ?ts_ph_Nat_0) => false
+01:35:47 [WARN] proved: (leq zero ?ts_ph_Nat_0) => true
+01:35:47 [WARN] proved: (insort zero ?ts_ph_Lst_0) => (cons zero ?ts_ph_Lst_0)
+01:35:47 [WARN] proved: (cons zero ?ts_ph_Lst_0) => (insort zero ?ts_ph_Lst_0)
+01:36:04 [WARN] proved: (less (succ ?ts_ph_Nat_0) ?ts_ph_Nat_0) => false
+01:36:04 [WARN] proved: (leq (succ zero) (succ ?ts_ph_Nat_0)) => true
+01:36:04 [WARN] proved: (less ?ts_ph_Nat_0 (succ ?ts_ph_Nat_0)) => (leq (succ zero) (succ ?ts_ph_Nat_0))
+01:36:04 [WARN] proved: (leq (succ zero) (succ ?ts_ph_Nat_0)) => (less ?ts_ph_Nat_0 (succ ?ts_ph_Nat_0))
+01:36:04 [WARN] proved: (len (insort ?ts_ph_Nat_1 ?ts_ph_Lst_0)) => (succ (len ?ts_ph_Lst_0))
+01:36:04 [WARN] Found all lemmas

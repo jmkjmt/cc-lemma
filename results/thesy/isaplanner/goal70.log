@@ -1,0 +1,23 @@
+01:56:02 [WARN] Collecting statistics
+01:56:02 [WARN]  ex is: zero
+01:56:02 [WARN]  ex is: (succ zero)
+01:56:02 [WARN]  ex is: (succ (succ zero))
+01:56:02 [WARN] Running exploration without proof mode, but goals were given
+01:56:02 [WARN] Proof mode: true
+01:56:02 [WARN]  ex is: zero
+01:56:02 [WARN]  ex is: (succ zero)
+01:56:02 [WARN]  ex is: (succ (succ zero))
+01:56:02 [WARN] Running exploration without proof mode, but goals were given
+01:56:02 [WARN] Proof mode: true
+01:56:02 [WARN] proved: (plus ?ts_ph_Nat_0 zero) => ?ts_ph_Nat_0
+01:56:02 [WARN] proved: (less ?ts_ph_Nat_0 ?ts_ph_Nat_0) => false
+01:56:02 [WARN] proved: (leq zero ?ts_ph_Nat_0) => true
+01:56:08 [WARN] proved: (plus ?ts_ph_Nat_0 (succ ?ts_ph_Nat_1)) => (succ (plus ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+01:56:08 [WARN] proved: (succ (plus ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (plus ?ts_ph_Nat_0 (succ ?ts_ph_Nat_1))
+01:56:08 [WARN] proved: (less (plus ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0) => false
+01:56:09 [WARN] proved: (less ?ts_ph_Nat_0 (plus ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (less zero ?ts_ph_Nat_1)
+01:56:09 [WARN] proved: (plus (plus ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1) => (plus ?ts_ph_Nat_0 (plus ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+01:56:09 [WARN] proved: (plus ?ts_ph_Nat_0 (plus ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (plus (plus ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1)
+01:56:09 [WARN] proved: (leq (succ zero) (succ ?ts_ph_Nat_0)) => true
+01:56:09 [WARN] proved: (less zero ?ts_ph_Nat_0) => (less zero (plus ?ts_ph_Nat_0 ?ts_ph_Nat_0))
+01:56:09 [WARN] proved: (less zero (plus ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (less zero ?ts_ph_Nat_0)

@@ -1,0 +1,1 @@
+(=> "(append (take ?ts_ph_Nat_1 ?ts_ph_Lst_0) (drop ?ts_ph_Nat_1 ?ts_ph_Lst_0)) => ?ts_ph_Lst_0" (append (take ?ts_ph_Nat_1 ?ts_ph_Lst_0) (drop ?ts_ph_Nat_1 ?ts_ph_Lst_0)) ?ts_ph_Lst_0)

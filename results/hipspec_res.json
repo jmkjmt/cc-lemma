@@ -1,0 +1,306 @@
+{
+    "uniq": {
+        "prop_1": {
+            "status": false
+        },
+        "prop_2": {
+            "status": false
+        },
+        "prop_3": {
+            "status": false
+        },
+        "prop_4": {
+            "status": false
+        },
+        "prop_5": {
+            "status": false
+        },
+        "prop_6": {
+            "status": false
+        },
+        "prop_7": {
+            "status": false
+        },
+        "prop_8": {
+            "status": false
+        },
+        "prop_9": {
+            "status": false
+        },
+        "prop_10": {
+            "status": false
+        },
+        "prop_11": {
+            "status": false
+        },
+        "prop_12": {
+            "status": false
+        },
+        "prop_13": {
+            "status": false
+        }
+    },
+    "isaplanner": {
+        "prop_1": {
+            "status": false
+        },
+        "prop_2": {
+            "status": false
+        },
+        "prop_3": {
+            "status": false
+        },
+        "prop_4": {
+            "status": false
+        },
+        "prop_5": {
+            "status": false
+        },
+        "prop_6": {
+            "status": false
+        },
+        "prop_7": {
+            "status": false
+        },
+        "prop_8": {
+            "status": false
+        },
+        "prop_9": {
+            "status": false
+        },
+        "prop_10": {
+            "status": false
+        },
+        "prop_11": {
+            "status": false
+        },
+        "prop_12": {
+            "status": false
+        },
+        "prop_13": {
+            "status": false
+        },
+        "prop_14": {
+            "status": false
+        },
+        "prop_15": {
+            "status": false
+        },
+        "prop_16": {
+            "status": false
+        },
+        "prop_17": {
+            "status": false
+        },
+        "prop_18": {
+            "status": false
+        },
+        "prop_19": {
+            "status": false
+        },
+        "prop_20": {
+            "status": false
+        },
+        "prop_21": {
+            "status": false
+        },
+        "prop_22": {
+            "status": false
+        },
+        "prop_23": {
+            "status": false
+        },
+        "prop_24": {
+            "status": false
+        },
+        "prop_25": {
+            "status": false
+        },
+        "prop_26": {
+            "status": false
+        },
+        "prop_27": {
+            "status": false
+        },
+        "prop_28": {
+            "status": false
+        },
+        "prop_29": {
+            "status": false
+        },
+        "prop_30": {
+            "status": false
+        },
+        "prop_31": {
+            "status": false
+        },
+        "prop_32": {
+            "status": false
+        },
+        "prop_33": {
+            "status": false
+        },
+        "prop_34": {
+            "status": false
+        },
+        "prop_35": {
+            "status": false
+        },
+        "prop_36": {
+            "status": false
+        },
+        "prop_37": {
+            "status": false
+        },
+        "prop_38": {
+            "status": false
+        },
+        "prop_39": {
+            "status": false
+        },
+        "prop_40": {
+            "status": false
+        },
+        "prop_41": {
+            "status": false
+        },
+        "prop_42": {
+            "status": false
+        },
+        "prop_43": {
+            "status": false
+        },
+        "prop_44": {
+            "status": false
+        },
+        "prop_45": {
+            "status": false
+        },
+        "prop_46": {
+            "status": false
+        },
+        "prop_47": {
+            "status": false
+        },
+        "prop_48": {
+            "status": false
+        },
+        "prop_49": {
+            "status": false
+        },
+        "prop_50": {
+            "status": false
+        },
+        "prop_51": {
+            "status": false
+        },
+        "prop_52": {
+            "status": false
+        },
+        "prop_53": {
+            "status": false
+        },
+        "prop_54": {
+            "status": false
+        },
+        "prop_55": {
+            "status": false
+        },
+        "prop_56": {
+            "status": false
+        },
+        "prop_57": {
+            "status": false
+        },
+        "prop_58": {
+            "status": false
+        },
+        "prop_59": {
+            "status": false
+        },
+        "prop_60": {
+            "status": false
+        },
+        "prop_61": {
+            "status": false
+        },
+        "prop_62": {
+            "status": false
+        },
+        "prop_63": {
+            "status": false
+        },
+        "prop_64": {
+            "status": false
+        },
+        "prop_65": {
+            "status": false
+        },
+        "prop_66": {
+            "status": false
+        },
+        "prop_67": {
+            "status": false
+        },
+        "prop_68": {
+            "status": false
+        },
+        "prop_69": {
+            "status": false
+        },
+        "prop_70": {
+            "status": false
+        },
+        "prop_71": {
+            "status": false
+        },
+        "prop_72": {
+            "status": false
+        },
+        "prop_73": {
+            "status": false
+        },
+        "prop_74": {
+            "status": false
+        },
+        "prop_75": {
+            "status": false
+        },
+        "prop_76": {
+            "status": false
+        },
+        "prop_77": {
+            "status": false
+        },
+        "prop_78": {
+            "status": false
+        },
+        "prop_79": {
+            "status": false
+        },
+        "prop_80": {
+            "status": false
+        },
+        "prop_81": {
+            "status": false
+        },
+        "prop_82": {
+            "status": false
+        },
+        "prop_83": {
+            "status": false
+        },
+        "prop_84": {
+            "status": false
+        },
+        "prop_85": {
+            "status": false
+        },
+        "prop_86": {
+            "status": false
+        },
+        "prop_87": {
+            "status": false
+        }
+    }
+}

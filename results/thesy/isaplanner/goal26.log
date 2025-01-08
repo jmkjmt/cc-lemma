@@ -1,0 +1,47 @@
+01:52:02 [WARN] Collecting statistics
+01:52:02 [WARN]  ex is: zero
+01:52:02 [WARN]  ex is: (succ zero)
+01:52:02 [WARN]  ex is: (succ (succ zero))
+01:52:02 [WARN]  ex is: nil
+01:52:02 [WARN]  ex is: (cons autovar_Nat_0 nil)
+01:52:02 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:52:02 [WARN] Running exploration without proof mode, but goals were given
+01:52:02 [WARN] Proof mode: true
+01:52:02 [WARN]  ex is: zero
+01:52:02 [WARN]  ex is: (succ zero)
+01:52:02 [WARN]  ex is: (succ (succ zero))
+01:52:02 [WARN]  ex is: nil
+01:52:02 [WARN]  ex is: (cons autovar_Nat_0 nil)
+01:52:02 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:52:02 [WARN] Running exploration without proof mode, but goals were given
+01:52:02 [WARN] Proof mode: true
+01:52:02 [WARN] proved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
+01:52:02 [WARN] proved: (leq zero ?ts_ph_Nat_0) => true
+01:52:03 [WARN] Stopped case split due to node limit
+01:52:04 [WARN] Stopped case split due to node limit
+01:52:04 [WARN] Stopped case split due to node limit
+01:52:05 [WARN] Stopped case split due to node limit
+01:52:06 [WARN] Stopped case split due to node limit
+01:52:07 [WARN] Stopped case split due to node limit
+01:52:07 [WARN] Stopped case split due to node limit
+01:52:08 [WARN] Stopped case split due to node limit
+01:52:09 [WARN] Stopped case split due to node limit
+01:52:10 [WARN] Stopped case split due to node limit
+01:52:11 [WARN] Stopped case split due to node limit
+01:52:12 [WARN] Stopped case split due to node limit
+01:52:12 [WARN] Stopped case split due to node limit
+01:52:13 [WARN] Stopped case split due to node limit
+01:52:14 [WARN] Stopped case split due to node limit
+01:52:15 [WARN] Stopped case split due to node limit
+01:52:16 [WARN] Stopped case split due to node limit
+01:52:16 [WARN] Stopped case split due to node limit
+01:52:17 [WARN] Stopped case split due to node limit
+01:52:18 [WARN] Stopped case split due to node limit
+01:52:19 [WARN] Stopped case split due to node limit
+01:52:20 [WARN] Stopped case split due to node limit
+01:52:21 [WARN] Stopped case split due to node limit
+01:52:22 [WARN] Stopped case split due to node limit
+01:52:23 [WARN] Stopped case split due to node limit
+01:52:23 [WARN] Stopped case split due to node limit
+01:52:24 [WARN] Stopped case split due to node limit
+01:52:25 [WARN] Stopped case split due to node limit

@@ -1,0 +1,22 @@
+01:35:36 [WARN] Collecting statistics
+01:35:36 [WARN]  ex is: zero
+01:35:36 [WARN]  ex is: (succ zero)
+01:35:36 [WARN]  ex is: (succ (succ zero))
+01:35:36 [WARN]  ex is: nil
+01:35:36 [WARN]  ex is: (cons autovar_Nat_0 nil)
+01:35:36 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:35:36 [WARN] Running exploration without proof mode, but goals were given
+01:35:36 [WARN] Proof mode: true
+01:35:36 [WARN]  ex is: zero
+01:35:36 [WARN]  ex is: (succ zero)
+01:35:36 [WARN]  ex is: (succ (succ zero))
+01:35:36 [WARN]  ex is: nil
+01:35:36 [WARN]  ex is: (cons autovar_Nat_0 nil)
+01:35:36 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:35:36 [WARN] Running exploration without proof mode, but goals were given
+01:35:36 [WARN] Proof mode: true
+01:35:36 [WARN] proved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
+01:35:36 [WARN] proved: (leq zero ?ts_ph_Nat_0) => true
+01:35:47 [WARN] proved: (leq (succ zero) (succ ?ts_ph_Nat_0)) => true
+01:35:47 [WARN] proved: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
+01:35:47 [WARN] proved: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) => (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
