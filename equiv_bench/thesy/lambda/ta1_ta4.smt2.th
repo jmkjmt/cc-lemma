@@ -1,0 +1,34 @@
+(datatype Nat () ((succ Nat Nat) (zero Nat)))
+(datatype Lambda () ((V Nat Lambda) (P Nat Lambda Lambda) (C Lambda Lambda Lambda)))
+(datatype Lst () ((nil Lst) (cons Nat Lst Lst)))
+
+(declare-fun append (Lst Lst) Lst)
+(declare-fun mem (Nat Lst) Bool)
+(declare-fun check1 (Lambda (Lst)) Bool)
+(declare-fun ta1 (Lambda) Bool)
+(declare-fun exist ((-> (Nat) Bool) Lst) Bool)
+(declare-fun check4 (Lambda Lst) Bool)
+(declare-fun ta4 (Lambda) Bool)
+
+(=> rule0 (append nil ?x) ?x)
+(=> rule1 (append (cons ?x2 ?y) ?z) (cons ?x2 (append ?y ?z)))
+
+(=> rule2 (mem ?n nil          ) false                            )
+(=> rule3 (mem ?n (cons ?x ?xs)) (ite (= ?n ?x) true (mem ?n ?xs)))
+
+(=> rule4 (check1 (V ?x) ?lst) (mem ?x ?lst))
+(=> rule5 (check1 (P ?x ?e) ?lst) (check1 ?e (cons ?x ?lst)))
+(=> rule6 (check1 (C ?e1 ?e2) ?lst) (and (check1 ?e1 ?lst) (check1 ?e2 ?lst)))
+
+(=> rule7 (ta1 ?lambda) (check1 ?lambda nil))
+
+(=> rule8 (exist ?p nil) false)
+(=> rule9 (exist ?p (cons ?hd ?tl)) (or ($ ?p ?hd) (exist ?p ?tl)))
+
+(=> rule10 (check4 (P ?st ?k) ?li) (check4 ?k (cons ?st ?li)))
+(=> rule11 (check4 (C ?me1 ?me2) ?li) (and (check4 ?me1 ?li) (check4 ?me2 ?li)))
+(=> rule12 (check4 (V ?na) ?li) (exist (= ?na) ?li))
+
+(=> rule13 (ta4 (P ?st ?k)) (check4 ?k (cons ?st nil)))
+(=> rule14 (ta4 (C ?me1 ?me2)) (and (check4 ?me1 nil) (check4 ?me2 nil)))
+(=> rule15 (ta4 (V ?na)) false)

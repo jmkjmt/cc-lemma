@@ -1,0 +1,30 @@
+(datatype Nat () ((succ Nat Nat) (zero Nat)))
+(datatype Lambda () ((V Nat Lambda) (P Nat Lambda Lambda) (C Lambda Lambda Lambda)))
+(datatype Lst () ((nil Lst) (cons Nat Lst Lst)))
+
+(declare-fun append (Lst Lst) Lst)
+(declare-fun mem (Nat Lst) Bool)
+(declare-fun check1 (Lambda (Lst)) Bool)
+(declare-fun ta1 (Lambda) Bool)
+(declare-fun sol57 (Lambda) Bool)
+(declare-fun listStation (Lambda) Lst)
+(declare-fun deleteAll (Lst Nat) Lst)
+
+(=> rule0 (append nil ?x) ?x)
+(=> rule1 (append (cons ?x2 ?y) ?z) (cons ?x2 (append ?y ?z)))
+
+(=> rule2 (mem ?n nil          ) false                            )
+(=> rule3 (mem ?n (cons ?x ?xs)) (ite (= ?n ?x) true (mem ?n ?xs)))
+
+(=> rule4 (check1 (V ?x) ?lst) (mem ?x ?lst))
+(=> rule5 (check1 (P ?x ?e) ?lst) (check1 ?e (cons ?x ?lst)))
+(=> rule6 (check1 (C ?e1 ?e2) ?lst) (and (check1 ?e1 ?lst) (check1 ?e2 ?lst)))
+
+(=> rule7 (ta1 ?lambda) (check1 ?lambda nil))
+
+(=> rule8 (sol57 ?l) (= (listStation ?l) nil))
+(=> rule9 (listStation (V ?n)) (cons ?n nil))
+(=> rule10 (listStation (P ?n ?m)) (deleteAll (listStation ?m) ?n))
+(=> rule11 (listStation (C ?m1 ?m2)) (append (listStation ?m1) (listStation ?m2)))
+(=> rule12 (deleteAll nil ?target) nil)
+(=> rule13 (deleteAll (cons ?hd ?tl) ?target) (ite (= ?hd ?target) (deleteAll ?tl ?target) (cons ?hd (deleteAll ?tl ?target))))

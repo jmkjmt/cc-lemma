@@ -1,0 +1,32 @@
+(datatype Nat () ((succ Nat Nat) (zero Nat)))
+(datatype Lambda () ((V Nat Lambda) (P Nat Lambda Lambda) (C Lambda Lambda Lambda)))
+(datatype Lst () ((nil Lst) (cons Nat Lst Lst)))
+
+(declare-fun append (Lst Lst) Lst)
+(declare-fun mem (Nat Lst) Bool)
+(declare-fun check1 (Lambda (Lst)) Bool)
+(declare-fun ta1 (Lambda) Bool)
+(declare-fun sol101 (Lambda) Bool)
+(declare-fun check101 (Lambda Lst Lst) Bool)
+(declare-fun forall101 ((-> (Nat Lst) Bool) Lst Lst) Bool)
+(declare-fun aux101 (Nat Lst) Bool)
+
+(=> rule0 (append nil ?x) ?x)
+(=> rule1 (append (cons ?x2 ?y) ?z) (cons ?x2 (append ?y ?z)))
+
+(=> rule2 (mem ?n nil          ) false                            )
+(=> rule3 (mem ?n (cons ?x ?xs)) (ite (= ?n ?x) true (mem ?n ?xs)))
+
+(=> rule4 (check1 (V ?x) ?lst) (mem ?x ?lst))
+(=> rule5 (check1 (P ?x ?e) ?lst) (check1 ?e (cons ?x ?lst)))
+(=> rule6 (check1 (C ?e1 ?e2) ?lst) (and (check1 ?e1 ?lst) (check1 ?e2 ?lst)))
+
+(=> rule7 (ta1 ?lambda) (check1 ?lambda nil))
+
+(=> rule8 (sol101 ?m) (check101 ?m nil nil))
+(=> rule9 (check101 (V ?n) ?al ?nl) (forall101 aux101 ?al (cons ?n ?nl)))
+(=> rule10 (check101 (P ?n ?m) ?al ?nl) (check101 ?m (cons ?n ?al) ?nl))
+(=> rule11 (check101 (C ?m1 ?m2) ?al ?nl) (and (check101 ?m1 ?al ?nl) (check101 ?m2 ?al ?nl)))
+(=> rule12 (forall101 ?pred ?a nil) true)
+(=> rule13 (forall101 ?pred ?a (cons ?hd ?tl)) (ite ($ ?pred ?hd ?a) (forall101 ?pred ?a ?tl) false))
+(=> rule14 (aux101 ?x ?al) (mem ?x ?al))

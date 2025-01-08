@@ -1,0 +1,33 @@
+(datatype Nat () ((succ Nat Nat) (zero Nat)))
+(datatype Lambda () ((V Nat Lambda) (P Nat Lambda Lambda) (C Lambda Lambda Lambda)))
+(datatype Lst () ((nil Lst) (cons Nat Lst Lst)))
+
+(declare-fun append (Lst Lst) Lst)
+(declare-fun mem (Nat Lst) Bool)
+(declare-fun check1 (Lambda (Lst)) Bool)
+(declare-fun ta1 (Lambda) Bool)
+(declare-fun list_filter ((-> (Nat Nat) Bool) Nat Lst) Lst)
+(declare-fun sol5 (Lambda) Bool)
+(declare-fun getStn (Lambda) Lst)
+
+(=> rule0 (append nil ?x) ?x)
+(=> rule1 (append (cons ?x2 ?y) ?z) (cons ?x2 (append ?y ?z)))
+
+(=> rule2 (mem ?n nil          ) false                            )
+(=> rule3 (mem ?n (cons ?x ?xs)) (ite (= ?n ?x) true (mem ?n ?xs)))
+
+(=> rule4 (check1 (V ?x) ?lst) (mem ?x ?lst))
+(=> rule5 (check1 (P ?x ?e) ?lst) (check1 ?e (cons ?x ?lst)))
+(=> rule6 (check1 (C ?e1 ?e2) ?lst) (and (check1 ?e1 ?lst) (check1 ?e2 ?lst)))
+
+(=> rule7 (ta1 ?lambda) (check1 ?lambda nil))
+
+(=> rule8 (list_filter ?p ?x nil) nil)
+(=> rule9 (list_filter ?p ?x (cons ?hd ?tl)) (ite ($ ?p ?x ?hd) (cons ?hd (list_filter ?p ?x ?tl)) (list_filter ?p ?x ?tl)))
+
+(=> rule10 (sol5 ?lambda) (= (getStn ?lambda) nil))
+(=> rule11 (getStn (V ?var)) (cons ?var nil))
+(=> rule12 (getStn (P ?n ?m)) (list_filter aux ?n (getStn ?m)))
+(=> rule13 (getStn (C ?m1 ?m2)) (append (getStn ?m1) (getStn ?m2)))
+(=> rule14 (aux ?n ?m) (not (= ?n ?m)))
+
