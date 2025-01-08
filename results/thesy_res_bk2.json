@@ -1,6 +1,6 @@
 {
-    "formula": {
-        "ta1_sol310.smt": {
+    "filter": {
+        "ta1_sol121": {
             "status": false
         }
     }

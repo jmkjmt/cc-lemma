@@ -70,11 +70,6 @@
     (let ta1 ((Imply ?f1 ?f2)) (or (not (ta1 ?f1)) (ta1 ?f2)))
     (let ta1 ((Equal ?e1 ?e2)) (eq (exp-eval ?e1) (exp-eval ?e2)))
 
-(//
-
-sol301 uses integer
-
-//)
     (:: eval-help (-> (Formula) Formula))
     (let eval-help (Truef) Truef)
     (let eval-help (Falsef) Falsef)

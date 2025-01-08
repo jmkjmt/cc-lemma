@@ -1,0 +1,314 @@
+{
+    "isaplanner": {
+        "goal42": {
+            "status": true,
+            "info": 0.0005223890000000001
+        },
+        "goal37": {
+            "status": true,
+            "info": 0.0011907550000000002
+        },
+        "goal51": {
+            "status": false
+        },
+        "goal28": {
+            "status": true,
+            "info": 0.006358887000000001
+        },
+        "goal20": {
+            "status": true,
+            "info": 17.397460825
+        },
+        "goal41": {
+            "status": true,
+            "info": 0.001519961
+        },
+        "goal30": {
+            "status": true,
+            "info": 0.013153463
+        },
+        "goal47": {
+            "status": false
+        },
+        "goal78": {
+            "status": false
+        },
+        "goal50": {
+            "status": false
+        },
+        "goal201": {
+            "status": false
+        },
+        "goal27": {
+            "status": true,
+            "info": 0.008415558
+        },
+        "goal8": {
+            "status": true,
+            "info": 0.126279581
+        },
+        "goal3": {
+            "status": false
+        },
+        "goal65": {
+            "status": false
+        },
+        "goal14": {
+            "status": true,
+            "info": 0.001790183
+        },
+        "goal53": {
+            "status": false
+        },
+        "goal84": {
+            "status": false
+        },
+        "goal9": {
+            "status": true,
+            "info": 0.027147183000000002
+        },
+        "goal31": {
+            "status": false
+        },
+        "goal21": {
+            "status": false
+        },
+        "goal79": {
+            "status": false
+        },
+        "goal23": {
+            "status": false
+        },
+        "goal18": {
+            "status": true,
+            "info": 0.033482315000000006
+        },
+        "goal75": {
+            "status": false
+        },
+        "goal38": {
+            "status": true,
+            "info": 0.001748736
+        },
+        "goal66": {
+            "status": true,
+            "info": 6.747571909
+        },
+        "goal17": {
+            "status": true,
+            "info": 0.004541160000000001
+        },
+        "goal52": {
+            "status": false
+        },
+        "goal34": {
+            "status": false
+        },
+        "goal77": {
+            "status": true,
+            "info": 0.002175198
+        },
+        "goal57": {
+            "status": true,
+            "info": 10.625147995
+        },
+        "goal19": {
+            "status": true,
+            "info": 0.017585388
+        },
+        "goal12": {
+            "status": true,
+            "info": 0.001345454
+        },
+        "goal25": {
+            "status": true,
+            "info": 0.030240290000000003
+        },
+        "goal36": {
+            "status": false
+        },
+        "goal32": {
+            "status": false
+        },
+        "goal80": {
+            "status": false
+        },
+        "goal6": {
+            "status": true,
+            "info": 0.004382503
+        },
+        "goal46": {
+            "status": true,
+            "info": 0.000327536
+        },
+        "goal62": {
+            "status": false
+        },
+        "goal40": {
+            "status": true,
+            "info": 0.000335492
+        },
+        "goal55": {
+            "status": false
+        },
+        "goal71": {
+            "status": false
+        },
+        "goal61": {
+            "status": false
+        },
+        "goal26": {
+            "status": false
+        },
+        "goal1": {
+            "status": true,
+            "info": 0.00106002
+        },
+        "goal60": {
+            "status": true,
+            "info": 0.028580793
+        },
+        "goal74": {
+            "status": false
+        },
+        "goal4": {
+            "status": true,
+            "info": 0.0018865680000000001
+        },
+        "goal83": {
+            "status": false
+        },
+        "goal58": {
+            "status": false
+        },
+        "goal29": {
+            "status": true,
+            "info": 0.0052761610000000006
+        },
+        "goal70": {
+            "status": false
+        },
+        "goal67": {
+            "status": false
+        },
+        "goal13": {
+            "status": true,
+            "info": 0.0009058260000000001
+        },
+        "goal64": {
+            "status": true,
+            "info": 0.482254518
+        },
+        "goal24": {
+            "status": false
+        },
+        "goal72": {
+            "status": false
+        },
+        "goal69": {
+            "status": false
+        },
+        "goal49": {
+            "status": false
+        },
+        "goal76": {
+            "status": false
+        },
+        "goal73": {
+            "status": false
+        },
+        "goal44": {
+            "status": false
+        },
+        "goal59": {
+            "status": false
+        },
+        "goal87": {
+            "status": false
+        },
+        "goal7": {
+            "status": true,
+            "info": 0.005204378
+        },
+        "goal22": {
+            "status": false
+        },
+        "goal2": {
+            "status": true,
+            "info": 0.002061381
+        },
+        "goal81": {
+            "status": true,
+            "info": 0.101575095
+        },
+        "goal39": {
+            "status": true,
+            "info": 0.002479073
+        },
+        "goal16": {
+            "status": true,
+            "info": 0.0009913460000000002
+        },
+        "goal85": {
+            "status": true,
+            "info": 0.008432459
+        },
+        "goal48": {
+            "status": true,
+            "info": 0.0026225650000000003
+        },
+        "goal45": {
+            "status": true,
+            "info": 0.000520583
+        },
+        "goal33": {
+            "status": false
+        },
+        "goal5": {
+            "status": true,
+            "info": 0.0020670560000000003
+        },
+        "goal86": {
+            "status": true,
+            "info": 0.008122421000000001
+        },
+        "goal82": {
+            "status": true,
+            "info": 0.0052815990000000005
+        },
+        "goal10": {
+            "status": true,
+            "info": 0.002217442
+        },
+        "goal56": {
+            "status": true,
+            "info": 0.028508484
+        },
+        "goal63": {
+            "status": true,
+            "info": 0.00159424
+        },
+        "goal11": {
+            "status": true,
+            "info": 0.000298253
+        },
+        "goal35": {
+            "status": false
+        },
+        "goal54": {
+            "status": true,
+            "info": 48.207379095
+        },
+        "goal15": {
+            "status": true,
+            "info": 0.004173191000000001
+        },
+        "goal68": {
+            "status": false
+        },
+        "goal43": {
+            "status": true,
+            "info": 0.001306655
+        }
+    }
+}

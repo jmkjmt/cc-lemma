@@ -1,0 +1,58 @@
+06:51:48 [WARN] Collecting statistics
+06:51:48 [WARN]  ex is: zero
+06:51:48 [WARN]  ex is: (succ zero)
+06:51:48 [WARN]  ex is: (succ (succ zero))
+06:51:48 [WARN]  ex is: True
+06:51:48 [WARN]  ex is: False
+06:51:48 [WARN]  ex is: (Equal autovar_Exp_0 autovar_Exp_1)
+06:51:48 [WARN]  ex is: (Not (Equal autovar_Exp_0 autovar_Exp_1))
+06:51:48 [WARN]  ex is: (AndAlso (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+06:51:48 [WARN]  ex is: (OrElse (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+06:51:48 [WARN]  ex is: (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+06:51:48 [WARN]  ex is: (Not (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+06:51:48 [WARN]  ex is: (AndAlso (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+06:51:48 [WARN]  ex is: (OrElse (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+06:51:48 [WARN]  ex is: (Imply (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+06:51:48 [WARN]  ex is: (Num autovar_Nat_0)
+06:51:48 [WARN]  ex is: (Plus (Num autovar_Nat_0) (Num autovar_Nat_0))
+06:51:48 [WARN]  ex is: (Plus (Num autovar_Nat_0) (Num autovar_Nat_0))
+06:51:48 [WARN]  ex is: (Plus (Plus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Plus (Num autovar_Nat_0) (Num autovar_Nat_0)))
+06:51:48 [WARN]  ex is: (Plus (Plus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Plus (Num autovar_Nat_0) (Num autovar_Nat_0)))
+06:51:48 [WARN] Running exploration without proof mode, but goals were given
+06:51:48 [WARN] Proof mode: true
+06:51:48 [WARN]  ex is: zero
+06:51:48 [WARN]  ex is: (succ zero)
+06:51:48 [WARN]  ex is: (succ (succ zero))
+06:51:48 [WARN]  ex is: True
+06:51:48 [WARN]  ex is: False
+06:51:48 [WARN]  ex is: (Equal autovar_Exp_0 autovar_Exp_1)
+06:51:48 [WARN]  ex is: (Not (Equal autovar_Exp_0 autovar_Exp_1))
+06:51:48 [WARN]  ex is: (AndAlso (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+06:51:48 [WARN]  ex is: (OrElse (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+06:51:48 [WARN]  ex is: (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+06:51:48 [WARN]  ex is: (Not (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+06:51:48 [WARN]  ex is: (AndAlso (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+06:51:48 [WARN]  ex is: (OrElse (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+06:51:48 [WARN]  ex is: (Imply (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+06:51:48 [WARN]  ex is: (Num autovar_Nat_0)
+06:51:48 [WARN]  ex is: (Plus (Num autovar_Nat_0) (Num autovar_Nat_0))
+06:51:48 [WARN]  ex is: (Plus (Num autovar_Nat_0) (Num autovar_Nat_0))
+06:51:48 [WARN]  ex is: (Plus (Plus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Plus (Num autovar_Nat_0) (Num autovar_Nat_0)))
+06:51:48 [WARN]  ex is: (Plus (Plus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Plus (Num autovar_Nat_0) (Num autovar_Nat_0)))
+06:51:48 [WARN] Running exploration without proof mode, but goals were given
+06:51:48 [WARN] Proof mode: true
+06:51:48 [WARN] Duplicated rule names may affect rule reporting and scheduling.
+06:51:48 [WARN] Rule 'apply Plus' appears 2 times
+06:51:48 [WARN] Duplicated rule names may affect rule reporting and scheduling.
+06:51:48 [WARN] Rule 'apply Plus' appears 2 times
+06:51:48 [WARN] Duplicated rule names may affect rule reporting and scheduling.
+06:51:48 [WARN] Rule 'apply Plus' appears 2 times
+06:51:48 [WARN] Duplicated rule names may affect rule reporting and scheduling.
+06:51:48 [WARN] Rule 'apply Plus' appears 2 times
+06:51:48 [WARN] Duplicated rule names may affect rule reporting and scheduling.
+06:51:48 [WARN] Rule 'apply Plus' appears 2 times
+06:51:48 [WARN] Duplicated rule names may affect rule reporting and scheduling.
+06:51:48 [WARN] Rule 'apply Plus' appears 2 times
+06:51:48 [WARN] Duplicated rule names may affect rule reporting and scheduling.
+06:51:48 [WARN] Rule 'apply Plus' appears 2 times
+06:51:48 [WARN] Found all lemmas

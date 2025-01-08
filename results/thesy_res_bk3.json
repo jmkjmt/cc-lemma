@@ -1,0 +1,10 @@
+{
+    "filter": {
+        "ta1_sol121": {
+            "status": false
+        },
+        "ta1_sol171.stm2": {
+            "status": false
+        }
+    }
+}
