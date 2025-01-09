@@ -51,11 +51,6 @@
 (let oneadd (Z) Z)
 (let oneadd ((S ?a1)) (S (oneadd ?a1)))
 
-
-(//
-    sol22 uses integer.......
-//)
-
 (:: sol143 (-> (Nat Nat) Nat))
 (let sol143 (?n1 ?n2) (ite (eq ?n1 Z) (add ?n2 ?n1) (add ?n1 ?n2)))
 (:: add (-> (Nat Nat) Nat))

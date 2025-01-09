@@ -68,10 +68,6 @@
 (let sol6 (Z ?n2) Z)
 (let sol6 ((S ?x) ?n2) (add-6 ?n2 (sol6 ?n2 ?x)))
 
-(//
-    sol22 uses integer....
-//)
-
 (:: sol32 (-> (Nat Nat) Nat))
 (let sol32 (?n1 ?n2) (natmul-sub ?n1 Z ?n2))
 (:: natmul-sub (-> (Nat Nat Nat) Nat))
@@ -93,10 +89,6 @@
 (let natmul-helper (Z ?n2 ?result) ?result)
 (let natmul-helper ((S ?v1) ?n2 ?result) (natmul-helper ?v1 ?n2 (add1 ?result ?n2)))
 
-
-(//
-sol329 , sol353 uses integer
-//)
 (=== ta1-ta2 (n m) (Nat Nat)
     (mul1 n m)
     (mul2 n m)
