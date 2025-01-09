@@ -50,7 +50,7 @@
     (let remove-elem-1 (?e (Cons ?hd ?tl)) (ite (eq ?e ?hd) (remove-elem-1 ?e ?tl) (Cons ?hd (remove-elem-1 ?e ?tl))))
 
 
-    (:: ta1 (-> (List Nat) (List Nat)))
+    (:: ta1 (-> ((List Nat)) (List Nat)))
     (let ta1 (Nil) Nil)
     (let ta1 ((Cons ?hd ?tl)) (Cons ?hd (remove-elem-1 ?hd (ta1 ?tl))))
 
@@ -58,7 +58,7 @@
     (let drop2 (Nil ?n) Nil)
     (let drop2 ((Cons ?hd ?tl) ?n) (ite (eq ?hd ?n) (drop2 ?tl ?n) (Cons ?hd (drop2 ?tl ?n))))
 
-    (:: ta2 (-> (List Nat) Nat))
+    (:: ta2 (-> ((List Nat)) Nat))
     (let ta2 (Nil) Nil)
     (let ta2 ((Cons ?hd ?tl)) (Cons ?hd (ta2 (drop2 ?tl ?hd))))
 
@@ -70,7 +70,7 @@
     (let unique3 (Nil ?lst2) ?lst2)
     (let unique3 ((Cons ?hd ?tl) ?lst2) (ite (isin3 ?lst2 ?hd) (unique3 ?tl ?lst2) (unique3 ?tl (list-append ?lst2 (Cons ?hd Nil)))))
 
-    (:: ta3 (-> (List Nat) (List Nat)))
+    (:: ta3 (-> ((List Nat)) (List Nat)))
     (let ta3 (?lst) (unique3 ?lst Nil))
 
     (:: isnotin4 (-> ((List Nat) Nat) Bool))
@@ -81,17 +81,17 @@
     (let uniqsave4 (Nil ?l2) ?l2)
     (let uniqsave4 ((Cons ?hd ?tl) ?l2) (ite (isnotin4 ?l2 ?hd) (uniqsave4 ?tl (list-append ?l2 (Cons ?hd Nil))) (uniqsave4 ?tl ?l2)))
 
-    (:: ta4 (-> (List Nat) (List Nat)))
+    (:: ta4 (-> ((List Nat)) (List Nat)))
     (let ta4 (?lst) (uniqsave4 ?lst Nil))
 
-    (:: sol4 (-> (List Nat) (List Nat)))
+    (:: sol4 (-> ((List Nat)) (List Nat)))
     (let sol4 (?lst) (app ?lst Nil))
 
     (:: app (-> ((List Nat) (List Nat)) (List Nat)))
     (let app (Nil ?l2) ?l2)
     (let app ((Cons ?hd ?tl) ?l2) (app ?tl (comb ?l2 ?hd)))
 
-    (:: comb (-> (List Nat) Nat))
+    (:: comb (-> ((List Nat)) Nat))
     (let comb (Nil ?a) (Cons ?a Nil))
     (let comb ((Cons ?hd ?tl) ?a) (ite (eq ?hd ?a) (Cons ?hd ?tl) (Cons ?hd (comb ?tl ?a))))
 
@@ -103,11 +103,11 @@
     (let del (Nil ?a) Nil)
     (let del ((Cons ?hd ?tl) ?a) (ite (eq ?hd ?a) (del ?tl ?a) (Cons ?hd (del ?tl ?a))))
 
-    (:: sol5 (-> (List Nat) (List Nat)))
+    (:: sol5 (-> ((List Nat)) (List Nat)))
     (let sol5 (Nil) Nil)
     (let sol5 ((Cons ?hd ?tl)) (ite (chk ?tl ?hd) (Cons ?hd (sol5 ?tl)) (Cons ?hd (sol5 (del ?tl ?hd)))))
 
-    (:: fastrev (-> (List Nat) (List Nat)))
+    (:: fastrev (-> ((List Nat)) (List Nat)))
     (let fastrev (?lst) (rev ?lst Nil))
     (:: rev (-> ((List Nat) (List Nat)) (List Nat)))
     (let rev (Nil ?acc) ?acc)
@@ -117,23 +117,23 @@
     (let search (Nil ?e) False)
     (let search ((Cons ?hd ?tl) ?e) (ite (eq ?hd ?e) True (search ?tl ?e)))
 
-    (:: delete9 (-> (List a) (List a)))
+    (:: delete9 (-> ((List a)) (List a)))
     (let delete9 (Nil) Nil)
     (let delete9 ((Cons ?hd ?tl)) (ite (search ?tl ?hd) (delete9 ?tl) (list-append (Cons ?hd Nil) (delete9 ?tl))))
 
-    (:: sol9 (-> (List Nat) (List Nat)))
+    (:: sol9 (-> ((List Nat)) (List Nat)))
     (let sol9 (?lst) (fastrev (delete9 (fastrev ?lst))))
 
-    (:: sol20 (-> (List Nat) (List Nat)))
+    (:: sol20 (-> ((List Nat)) (List Nat)))
     (let sol20 (?lst) (aux20 (list-rev ?lst)))
-    (:: aux20 (-> (List Nat) (List Nat)))
+    (:: aux20 (-> ((List Nat)) (List Nat)))
     (let aux20 (Nil) Nil)
     (let aux20 ((Cons ?hd ?tl)) (ite (find ?hd ?tl) (sol20 (list-rev ?tl)) (list-append (sol20 (list-rev ?tl)) (Cons ?hd Nil))))
     (:: find (-> (Nat (List Nat)) Bool))
     (let find (?x Nil) False)
     (let find (?x (Cons ?hd ?tl)) (or (eq ?x ?hd) (find ?x ?tl)))
 
-    (:: sol43 (-> (List Nat) (List Nat)))
+    (:: sol43 (-> ((List Nat)) (List Nat)))
     (let sol43 (Nil) Nil)
     (let sol43 ((Cons ?hd ?tl)) (Cons ?hd (sol43 (filter43 aux43 ?hd ?tl))))
   
@@ -147,7 +147,7 @@
     (let sub-aux43 (?s ?f ?a (Cons ?hd ?tl)) (ite ($ ?f ?hd ?a) (list-append ?s (Cons ?hd (filter43 ?f ?a ?tl))) (list-append ?s (filter43 ?f ?a ?tl))))
 (// sol43 is something wrong... //)
 
-    (:: sol57 (-> (List Nat) (List Nat)))
+    (:: sol57 (-> ((List Nat)) (List Nat)))
     (let sol57 (?lst) (putIn ?lst Nil))
     (:: putIn (-> ((List Nat) (List Nat)) (List Nat)))
     (let putIn (Nil ?lst2) ?lst2)
@@ -156,7 +156,7 @@
     (let check (?item Nil) (Cons ?item Nil))
     (let check (?item (Cons ?hd ?tl)) (ite (eq ?hd ?item) (Cons ?hd ?tl) (Cons ?hd (check ?item ?tl))))
 
-    (:: reverse (-> (List Nat) (List Nat)))
+    (:: reverse (-> ((List Nat)) (List Nat)))
     (let reverse (Nil) Nil)
     (let reverse ((Cons ?hd ?tl)) (list-append (reverse ?tl) (Cons ?hd Nil)))
     (:: insert (-> (Nat (List Nat)) (List Nat)))
@@ -169,11 +169,11 @@
     (:: finder (-> ((List Nat) (List Nat)) (List Nat)))
     (let finder (Nil ?fin) ?fin)
     (let finder ((Cons ?hd ?tl) ?fin) (ite (checker ?fin ?hd) (finder ?tl ?fin) (finder ?tl (Cons ?hd ?fin))))
-    (:: sol75 (-> (List Nat) (List Nat)))
+    (:: sol75 (-> ((List Nat)) (List Nat)))
     (let sol75 (Nil) Nil)
     (let sol75 (?lst) (reverse (finder ?lst Nil)))
     
-    (:: sol89 (-> (List Nat) (List Nat)))
+    (:: sol89 (-> ((List Nat)) (List Nat)))
     (let sol89 (?lst) (reverse89 (checkdrop89 ?lst Nil) Nil))
     (:: reverse89 (-> ((List Nat) (List Nat)) (List Nat)))
     (let reverse89 (Nil ?a) ?a)
@@ -185,7 +185,7 @@
     (let gtl (?e Nil) False)
     (let gtl (?e (Cons ?h ?t)) (ite (eq ?e ?h) True (gtl ?e ?t)))
 
-    (:: sol101 (-> (List Nat) (List Nat)))
+    (:: sol101 (-> ((List Nat)) (List Nat)))
     (let sol101 (?lst) (fold-left aux101 Nil ?lst))
     (:: aux101 (-> ((List Nat) (Nat)) (List Nat)))
     (let aux101 (?a ?x) (ite (has-element ?a ?x) ?a (list-append ?a (Cons ?x Nil))))

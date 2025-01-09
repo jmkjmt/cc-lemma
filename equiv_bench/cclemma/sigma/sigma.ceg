@@ -1,0 +1,115 @@
+(
+    (data Bool (True False))
+    (:: True Bool)
+    (:: False Bool)
+
+    (data Nat (Z S))
+    (:: Z Nat)
+    (:: S (-> (Nat) Nat))
+
+    (data List (a) (Nil Cons))
+    (:: Nil  (List a))
+    (:: Cons (-> (a (List a)) (List a)))
+
+    (:: ite (-> (Bool a a) a))
+    (let ite (True ?x ?y ) ?x)
+    (let ite (False ?x ?y) ?y)
+
+    (:: eq (-> (Nat Nat) Bool))
+    (let eq (Z      Z     ) True      )
+    (let eq (Z      (S ?y)) False     )
+    (let eq ((S ?x) Z     ) False     )
+    (let eq ((S ?x) (S ?y)) (eq ?x ?y))
+
+    (:: and (-> (Bool Bool) Bool))
+    (let and (False ?y) False)
+    (let and (?x False) False)
+    (let and (True True) True)
+
+    (:: or (-> (Bool Bool) Bool))
+    (let or (True ?y) True)
+    (let or (?x True) True)
+    (let or (False False) False)
+
+    (:: not (-> (Bool) Bool))
+    (let not (True) False)
+    (let not (False) True)
+
+    (:: plus (-> (Nat Nat) Nat))
+    (let plus (Z      ?y) ?y             )
+    (let plus ((S ?x) ?y) (S (plus ?x ?y)))
+
+    (:: sub (-> (Nat Nat) Nat))
+    (let sub (?x Z)          ?x         )
+    (let sub (Z ?y)          Z          )
+    (let sub ((S ?x) (S ?y)) (sub ?x ?y))
+
+    (:: lt (-> (Nat Nat) Bool))
+    (let lt (?x     Z     ) False     )
+    (let lt (Z      (S ?y)) True      )
+    (let lt ((S ?x) (S ?y)) (lt ?x ?y))
+
+    (:: map (-> ((-> (a) b) (List a)) (List b)))
+    (let map (?f Nil          ) Nil                          )
+    (let map (?f (Cons ?x ?xs)) (Cons ($ ?f ?x) (map ?f ?xs)))
+
+    (:: ta1 (-> ((-> (Nat) Nat) Nat Nat) Nat))
+    (let ta1 (?f ?a ?b) (ite (lt ?b ?a) (Z) (ite (eq ?a ?b) ($ ?f ?a) (plus ($ ?f ?a) (ta1 ?f (S ?a) ?b)))))
+
+    (:: ta2 (-> ((-> (Nat) Nat) Nat Nat) Nat))
+    (let ta2 (?f ?a ?b) (ite (lt ?b ?a) (Z) (ite (eq ?a ?b) ($ ?f ?a) (plus ($ ?f ?a) (ta2 ?f ?a) (sub ?b (S Z))))))
+
+    (:: ta3 (-> ((-> (Nat) Nat) Nat Nat) Nat))
+    (let ta3 (?f ?a ?b) (aux3 ?a ?b ?f Z))
+    (:: aux3 (-> (Nat Nat (-> (Nat) Nat) Nat) Nat))
+    (let aux3 (?a ?b ?f ?acc) (ite (lt ?b ?a) (?acc) (aux3 (S ?a) ?b ?f (plus (?acc) ($ ?f ?a)))))
+
+    (:: sol8 (-> ((-> (Nat) Nat) Nat Nat) Nat))
+    (let sol8 (?f ?a ?b) (ite (lt ?b ?a) (Z) (sum3 (map ?f (range3 ?a ?b)) (Z))))
+    (:: sum3 (-> ((List Nat) Nat) Nat))
+    (let sum3 (Nil ?acc) ?acc)
+    (let sum3 ((Cons ?hd ?tl) ?acc) (sum3 ?tl (plus ?hd ?acc)))
+    (:: range3 (-> (Nat Nat) (List Nat)))
+    (let range3 (?a ?b) (ite (lt ?b ?a) (Nil) (Cons ?a (range3 (S ?a) ?b))))
+    
+    (:: sol225 (-> ((-> (Nat) Nat) Nat Nat) Nat))
+    (let sol225 (?f ?a ?b) (ite (lt ?b ?a) (Z) (aux225 ?f ?b ?a ($ ?f ?a))))
+    (:: aux225 (-> ((-> (Nat) Nat) Nat Nat Nat) Nat))
+    (let aux225 (?f ?b ?c ?d) (ite (lt ?c ?b) (aux225 (S ?c) (plus ?d ($ ?f (S ?c)))) (?d)))
+
+    (:: sol573 (-> ((-> (Nat) Nat) Nat Nat) Nat))
+    (let sol573 (?f ?a ?b) (sum573 (map ?f (helper573 ?a ?b)) (Z)))
+    (:: helper573 (-> (Nat Nat) (List Nat)))
+    (let helper573 (?start ?halt) (helper-aux ?start ?halt Nil))
+    (:: helper-aux (-> (Nat Nat (List Nat)) (List Nat)))
+    (let helper-aux (?start ?n ?acc) (ite (lt ?start ?n) (?acc) (helper-aux (sub ?n (S Z)) (Cons ?n ?acc))))
+    (:: sum573 (-> ((List Nat) Nat) Nat))
+    (let sum573 (Nil ?acc) ?acc)
+    (let sum573 ((Cons ?hd ?tl) ?acc) (sum573 ?tl (plus ?hd ?acc)))
+
+    (=== ta1-ta2 (f a b) ((-> (Nat) Nat) Nat Nat)
+        (ta1 f a b)
+        (ta2 f a b)
+    )
+
+    (=== ta1-ta3 (f a b) ((-> (Nat) Nat) Nat Nat)
+        (ta1 f a b)
+        (ta3 f a b)
+    )
+    
+    (=== ta1-sol8 (f a b) ((-> (Nat) Nat) Nat Nat)
+        (ta1 f a b)
+        (sol8 f a b)
+    )
+    
+    (=== ta1-sol225 (f a b) ((-> (Nat) Nat) Nat Nat)
+        (ta1 f a b)
+        (sol225 f a b)
+    )
+    
+    (=== ta1-sol573 (f a b) ((-> (Nat) Nat) Nat Nat)
+        (ta1 f a b)
+        (sol573 f a b)
+    )
+
+)

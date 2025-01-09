@@ -1,0 +1,32 @@
+(datatype Nat () ((S Nat Nat) (Z Nat)))
+(datatype Lst () ((cons Nat Lst Lst) (nil Lst)))
+
+(declare-fun plus (Nat Nat) Nat)
+(declare-fun sub (Nat Nat) Nat)
+(declare-fun lt (Nat Nat) Bool)
+(declare-fun map ((-> (a) b) (List a)) (List b))
+(declare-fun sol573 ((-> (Nat) Nat) Nat Nat) Nat)
+(declare-fun helper573 (Nat Nat) Lst)
+(declare-fun helper_aux (Nat Nat Lst) Lst)
+(declare-fun sum573 (Lst Nat) Nat)
+
+(=> rule0 (plus Z      ?y) ?y             )
+(=> rule1 (plus (S ?x) ?y) (S (plus ?x ?y)))
+(=> rule2 (sub ?x Z)          ?x         )
+(=> rule3 (sub Z ?y)          Z          )
+(=> rule4 (sub (S ?x) (S ?y)) (sub ?x ?y))
+(=> rule5 (lt ?x     Z     ) false     )
+(=> rule6 (lt Z      (S ?y)) true      )
+(=> rule7 (lt (S ?x) (S ?y)) (lt ?x ?y))
+(=> rule8 (map ?f nil          ) nil                          )
+(=> rule9 (map ?f (cons ?x ?xs)) (cons (?f ?x) (map ?f ?xs)))
+
+(=> rule10 (ta1 ?f ?a ?b) (ite (lt ?b ?a) (Z) (ite (eq ?a ?b) (?f ?a) (plus (?f ?a) (ta1 ?f (S ?a) ?b)))))
+
+(=> rule11 (sol573 ?f ?a ?b) (sum573 (map ?f (helper573 ?a ?b)) (Z)))
+(=> rule12 (helper573 ?start ?halt) (helper_aux ?start ?halt nil))
+(=> rule13 (helper_aux ?start ?n ?acc) (ite (lt ?start ?n) (?acc) (helper_aux (sub ?n (S Z)) (cons ?n ?acc))))
+(=> rule14 (sum573 nil ?acc) ?acc)
+(=> rule15 (sum573 (cons ?hd ?tl) ?acc) (sum573 ?tl (plus ?hd ?acc)))
+
+(prove (forall ((f (-> (Nat) Nat)) (a Nat) (b Nat)) (= (ta1 f a b) (sol573 f a b))))
