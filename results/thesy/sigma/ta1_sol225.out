@@ -1,0 +1,35 @@
+07:33:38 [0m[33m[WARN] [0mCollecting statistics
+(plus Z ?y) => ?y
+(plus (S ?x) ?y) => (S (plus ?x ?y))
+(sub ?x Z) => ?x
+(sub Z ?y) => Z
+(sub (S ?x) (S ?y)) => (sub ?x ?y)
+(lt ?x Z) => false
+(lt Z (S ?y)) => true
+(lt (S ?x) (S ?y)) => (lt ?x ?y)
+(map ?f nil) => nil
+Searcher: (sub ?autovar4 (S ?autovar2))
+Searcher: (sub (S ?autovar3) ?autovar5)
+Searcher: (lt ?autovar5 (S ?autovar1))
+Searcher: (lt ?autovar5 (S ?autovar3))
+Searcher: (lt Z ?autovar6)
+Searcher: (lt (S ?autovar4) ?autovar6)
+07:33:38 [0m[33m[WARN] [0m ex is: Z
+07:33:38 [0m[33m[WARN] [0m ex is: (S Z)
+07:33:38 [0m[33m[WARN] [0m ex is: (S (S Z))
+07:33:38 [0m[33m[WARN] [0m ex is: nil
+07:33:38 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+07:33:38 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+07:33:38 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+07:33:38 [0m[33m[WARN] [0mProof mode: true
+07:33:38 [0m[33m[WARN] [0m ex is: Z
+07:33:38 [0m[33m[WARN] [0m ex is: (S Z)
+07:33:38 [0m[33m[WARN] [0m ex is: (S (S Z))
+07:33:38 [0m[33m[WARN] [0m ex is: nil
+07:33:38 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+07:33:38 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+07:33:38 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+07:33:38 [0m[33m[WARN] [0mProof mode: true
+07:33:38 [0m[33m[WARN] [0mproved: (sub ?ts_ph_Nat_0 ?ts_ph_Nat_0) => Z
+07:33:38 [0m[33m[WARN] [0mproved: (plus ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+07:33:38 [0m[33m[WARN] [0mproved: (lt ?ts_ph_Nat_0 ?ts_ph_Nat_0) => false

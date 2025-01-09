@@ -1,0 +1,6 @@
+name,result,time,num_lemmas,num_lemmas_attempted,num_lemmas_proven,result_cyclic,time_cyclic,num_lemmas_cyclic,num_attempted_lemmas_cyclic,num_proven_lemmas_cyclic
+ta1-ta2,Timeout,60041.113,392,392,0,Unknown,0,0,0,0
+ta1-ta3,Invalid,60139.164,392,392,0,Unknown,0,0,0,0
+ta1-sol8,Timeout,60022.75,122,122,0,Unknown,0,0,0,0
+ta1-sol225,Timeout,60025.703,392,392,0,Unknown,0,0,0,0
+ta1-sol573,Timeout,60042.51,482,482,0,Unknown,0,0,0,0

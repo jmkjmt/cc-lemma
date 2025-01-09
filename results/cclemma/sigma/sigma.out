@@ -1,0 +1,22 @@
+Proving begin ta1-ta2: (ta1 f a b) === (ta2 f a b)
+Property accepted by cvec analysis
+(uncyclic) Theorized 392 lemmas, fully attempted 392 lemmas, proved 0 lemmas
+ta1-ta2 uncyclic: TIMEOUT (60041 ms)
+Proving begin ta1-ta3: (ta1 f a b) === (ta3 f a b)
+Property accepted by cvec analysis
+(uncyclic) Theorized 392 lemmas, fully attempted 392 lemmas, proved 0 lemmas
+ta1-ta3 uncyclic: INVALID (60139 ms)
+Proving begin ta1-sol8: (ta1 f a b) === (sol8 f a b)
+Property accepted by cvec analysis
+(uncyclic) Theorized 122 lemmas, fully attempted 122 lemmas, proved 0 lemmas
+ta1-sol8 uncyclic: TIMEOUT (60022 ms)
+Proving begin ta1-sol225: (ta1 f a b) === (sol225 f a b)
+Property accepted by cvec analysis
+(uncyclic) Theorized 392 lemmas, fully attempted 392 lemmas, proved 0 lemmas
+ta1-sol225 uncyclic: TIMEOUT (60025 ms)
+Proving begin ta1-sol573: (ta1 f a b) === (sol573 f a b)
+Property accepted by cvec analysis
+(uncyclic) Theorized 482 lemmas, fully attempted 482 lemmas, proved 0 lemmas
+ta1-sol573 uncyclic: TIMEOUT (60042 ms)
+Attempted 5 goals:
+  0 solved (no cyclic)
