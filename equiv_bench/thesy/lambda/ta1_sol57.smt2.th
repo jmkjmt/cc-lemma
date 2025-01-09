@@ -28,3 +28,5 @@
 (=> rule11 (listStation (C ?m1 ?m2)) (append (listStation ?m1) (listStation ?m2)))
 (=> rule12 (deleteAll nil ?target) nil)
 (=> rule13 (deleteAll (cons ?hd ?tl) ?target) (ite (= ?hd ?target) (deleteAll ?tl ?target) (cons ?hd (deleteAll ?tl ?target))))
+
+(prove (forall ((l Lambda)) (= (ta1 l) (sol57 l))))

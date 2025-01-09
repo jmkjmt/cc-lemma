@@ -1,0 +1,7 @@
+,time,stop_reasons,success,lemma_count,proofs_later_filtered,file_name
+0,0.10089671800000001,['Saturated'],True,4,1,ta1_ta4.stats.json
+1,0.095310168,['Saturated'],True,4,1,ta1_ta3.stats.json
+2,0.036866688,"['IterationLimit', 'Saturated']",True,8,4,ta1_sol11.stats.json
+3,6.802050046,['Saturated'],True,7,5,ta1_sol143.stats.json
+4,0.54534271,"['IterationLimit', 'Saturated']",False,17,85,ta1_sol6.stats.json
+5,0.020487838,['Saturated'],True,5,2,ta1_ta2.stats.json

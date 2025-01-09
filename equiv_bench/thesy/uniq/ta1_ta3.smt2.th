@@ -1,0 +1,34 @@
+(datatype Nat () ((S Nat Nat) (Z Nat)))
+(datatype Lst () ((nil Lst) (cons Nat Lst Lst)))
+
+(declare-fun list_append (Lst Lst) Lst)
+(declare-fun list_rev (Lst) Lst)
+(declare-fun remove_elem_1 (Nat Lst) Lst)
+(declare-fun ta1 (Lst) Lst)
+(declare-fun isin3 (Lst Nat) Bool)
+(declare-fun unique3 (Lst Lst) Lst)
+(declare-fun ta3 (Lst) Lst)
+
+(=> rule0 (list_append nil           ?ys) ?ys                       )
+(=> rule1 (list_append (cons ?x ?xs) ?ys) (cons ?x (list_append ?xs ?ys)))
+
+(=> rule2 (list_rev nil          ) nil                             )
+(=> rule3 (list_rev (cons ?x ?xs)) (list_append (list_rev ?xs) (cons ?x nil)))
+
+
+(=> rule4 (remove_elem_1 ?e nil) nil)
+(=> rule5 (remove_elem_1 ?e (cons ?hd ?tl)) (ite (= ?e ?hd) (remove_elem_1 ?e ?tl) (cons ?hd (remove_elem_1 ?e ?tl))))
+
+
+(=> rule6 (ta1 nil) nil)
+(=> rule7 (ta1 (cons ?hd ?tl)) (cons ?hd (remove_elem_1 ?hd (ta1 ?tl))))
+
+(=> rule8 (isin3 nil ?a) false)
+(=> rule9 (isin3 (cons ?hd ?tl) ?a) (ite (= ?a ?hd) true (isin3 ?tl ?a)))
+
+(=> rule10 (unique3 nil ?lst2) ?lst2)
+(=> rule11 (unique3 (cons ?hd ?tl) ?lst2) (ite (isin3 ?lst2 ?hd) (unique3 ?tl ?lst2) (unique3 ?tl (list_append ?lst2 (cons ?hd nil)))))
+
+(=> rule12 (ta3 ?lst) (unique3 ?lst nil))
+
+(prove (forall ((lst Lst)) (= (ta1 lst) (ta3 lst))))

@@ -1,0 +1,32 @@
+05:30:07 [0m[33m[WARN] [0mCollecting statistics
+(list_append nil ?ys) => ?ys
+(list_append (cons ?x ?xs) ?ys) => (cons ?x (list_append ?xs ?ys))
+(list_rev nil) => nil
+(list_rev (cons ?x ?xs)) => (list_append (list_rev ?xs) (cons ?x nil))
+(remove_elem_1 ?e nil) => nil
+(remove_elem_1 ?e (cons ?hd ?tl)) => (ite (= ?e ?hd) (remove_elem_1 ?e ?tl) (cons ?hd (remove_elem_1 ?e ?tl)))
+(ta1 nil) => nil
+(ta1 (cons ?hd ?tl)) => (cons ?hd (remove_elem_1 ?hd (ta1 ?tl)))
+(sol43 nil) => nil
+(sol43 (cons ?hd ?tl)) => (cons ?hd (sol43 (filter43 aux43 ?hd ?tl)))
+(aux43 ?x ?hd) => (not (= ?x ?hd))
+(filter43 ?f ?a ?l) => (sub_aux43 nil ?f ?a ?l)
+(sub_aux43 ?s ?f ?a nil) => ?s
+(sub_aux43 ?s ?f ?a (cons ?hd ?tl)) => (ite ($ ?f ?hd ?a) (list_append ?s (cons ?hd (filter43 ?f ?a ?tl))) (list_append ?s (filter43 ?f ?a ?tl)))
+05:30:07 [0m[33m[WARN] [0m ex is: Z
+05:30:07 [0m[33m[WARN] [0m ex is: (S Z)
+05:30:07 [0m[33m[WARN] [0m ex is: (S (S Z))
+05:30:07 [0m[33m[WARN] [0m ex is: nil
+05:30:07 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+05:30:07 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+05:30:07 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+05:30:07 [0m[33m[WARN] [0mProof mode: true
+05:30:07 [0m[33m[WARN] [0m ex is: Z
+05:30:07 [0m[33m[WARN] [0m ex is: (S Z)
+05:30:07 [0m[33m[WARN] [0m ex is: (S (S Z))
+05:30:07 [0m[33m[WARN] [0m ex is: nil
+05:30:07 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+05:30:07 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+05:30:07 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+05:30:07 [0m[33m[WARN] [0mProof mode: true
+05:30:07 [0m[33m[WARN] [0mproved: (list_append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0

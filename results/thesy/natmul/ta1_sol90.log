@@ -1,0 +1,14 @@
+04:39:53 [WARN] Collecting statistics
+04:39:53 [WARN]  ex is: Z
+04:39:53 [WARN]  ex is: (S Z)
+04:39:53 [WARN]  ex is: (S (S Z))
+04:39:53 [WARN] Running exploration without proof mode, but goals were given
+04:39:53 [WARN] Proof mode: true
+04:39:53 [WARN]  ex is: Z
+04:39:53 [WARN]  ex is: (S Z)
+04:39:53 [WARN]  ex is: (S (S Z))
+04:39:53 [WARN] Running exploration without proof mode, but goals were given
+04:39:53 [WARN] Proof mode: true
+04:39:53 [WARN] proved: (mul1 ?ts_ph_Nat_0 Z) => Z
+04:39:53 [WARN] proved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+04:39:53 [WARN] proved: (innerLoop ?ts_ph_Nat_0 ?ts_ph_Nat_1 Z) => ?ts_ph_Nat_1

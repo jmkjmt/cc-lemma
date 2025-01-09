@@ -1,8 +1,40 @@
 {
-    "formula": {
-        "ta1_sol441": {
-            "status": true,
-            "info": 0.001321481
+    "uniq": {
+        "ta1_sol43": {
+            "status": false
+        },
+        "ta1_ta2": {
+            "status": false
+        },
+        "ta1_ta4": {
+            "status": false
+        },
+        "ta1_sol57": {
+            "status": false
+        },
+        "ta1_sol4": {
+            "status": false
+        },
+        "ta1_ta3": {
+            "status": false
+        },
+        "ta1_sol75": {
+            "status": false
+        },
+        "ta1_sol20": {
+            "status": false
+        },
+        "ta1_sol5": {
+            "status": false
+        },
+        "ta1_sol89": {
+            "status": false
+        },
+        "ta1_sol101": {
+            "status": false
+        },
+        "ta1_sol9": {
+            "status": false
         }
     }
 }

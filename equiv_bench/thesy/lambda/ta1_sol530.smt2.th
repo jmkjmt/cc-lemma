@@ -25,3 +25,5 @@
 (=> rule9 (ck530 (V ?va) ?lst) (ite (mem ?va ?lst) (z) (s z)))
 (=> rule10 (ck530 (C ?ex1 ?ex2) ?lst) (plus (ck530 ?ex1 ?lst) (ck530 ?ex2 ?lst)))
 (=> rule11 (ck530 (P ?va ?ex) ?lst) (ck530 ?ex (cons ?va ?lst)))
+
+(prove (forall ((l Lambda)) (= (ta1 l) (sol530 l))))

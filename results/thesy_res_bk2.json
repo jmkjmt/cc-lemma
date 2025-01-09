@@ -1,7 +1,30 @@
 {
-    "filter": {
-        "ta1_sol121": {
+    "natadd": {
+        "ta1_sol11": {
+            "status": true,
+            "info": 0.036866688
+        },
+        "ta1_ta2": {
+            "status": true,
+            "info": 0.020487838
+        },
+        "ta1_ta4": {
+            "status": true,
+            "info": 0.10089671800000001
+        },
+        "ta1_sol6": {
             "status": false
+        },
+        "ta1_sol143": {
+            "status": true,
+            "info": 6.802050046
+        },
+        "ta1_sol4": {
+            "status": false
+        },
+        "ta1_ta3": {
+            "status": true,
+            "info": 0.095310168
         }
     }
 }

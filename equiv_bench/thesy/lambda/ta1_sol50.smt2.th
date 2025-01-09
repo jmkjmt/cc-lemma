@@ -30,3 +30,4 @@
 (=> rule13 (valify (?var P ?n ?m)) (ite (= ?n ?var) true (valify ?var ?m)))
 (=> rule14 (valify (?var C ?m1 ?m2)) false)
 
+(prove (forall ((l Lambda)) (= (ta1 l) (sol50 l))))

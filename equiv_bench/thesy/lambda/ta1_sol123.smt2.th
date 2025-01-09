@@ -40,3 +40,5 @@
 (=> rule21 (is_connect (V ?n)) false)
 (=> rule22 (is_connect (C ?l1 ?l2)) true)
 (=> rule23 (is_connect (P ?v ?l)) (is_connect ?l))
+
+(prove (forall ((l Lambda)) (= (ta1 l) (sol123 l))))

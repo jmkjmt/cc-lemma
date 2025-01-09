@@ -1,0 +1,12 @@
+(datatype Nat () ((S Nat Nat) (Z Nat)))
+
+(declare-fun add1 (Nat Nat) Nat)
+(declare-fun sol6 (Nat Nat) Nat)
+
+(=> rule1 (add1 Z ?y) ?y)
+(=> rule2 (add1 (S ?x) ?y) (S (add1 ?x ?y)))
+
+(=> rule3 (sol6 Z ?y) ?y)
+(=> rule4 (sol6 (S ?x) ?y) (S (sol6 ?y ?x)))
+
+(prove (forall ((n Nat) (m Nat)) (= (add1 n m) (sol6 n m))))

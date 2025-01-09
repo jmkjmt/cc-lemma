@@ -1,0 +1,2 @@
+(=> "(ta1 ?ts_ph_Lambda_0) => (ta2 ?ts_ph_Lambda_0)" (ta1 ?ts_ph_Lambda_0) (ta2 ?ts_ph_Lambda_0))
+(=> "(ta2 ?ts_ph_Lambda_0) => (ta1 ?ts_ph_Lambda_0)" (ta2 ?ts_ph_Lambda_0) (ta1 ?ts_ph_Lambda_0))

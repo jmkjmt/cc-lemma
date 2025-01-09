@@ -1,0 +1,19 @@
+(datatype Nat () ((S Nat Nat) (Z Nat)))
+
+(declare-fun add1 (Nat Nat) Nat)
+(declare-fun mul1 (Nat Nat) Nat)
+(declare-fun sol116 (Nat Nat) Nat)
+(declare-fun natmul-helper (Nat Nat Nat) Nat)
+
+(=> rule1 (add1 Z ?y) ?y)
+(=> rule2 (add1 (S ?x) ?y) (S (add1 ?x ?y)))
+
+(=> rule3 (mul1 Z ?n2) Z)
+(=> rule4 (mul1 (S ?n) ?n2) (add1 ?n2 (mul1 ?n ?n2)))
+
+(=> rule5 (sol116 ?n1 ?n2) (natmul-helper ?n1 ?n2 Z))
+(=> rule6 (natmul-helper ?n1 Z ?result) ?result)
+(=> rule7 (natmul-helper Z ?n2 ?result) ?result)
+(=> rule8 (natmul-helper (S ?v1) ?n2 ?result) (natmul-helper ?v1 ?n2 (add1 ?result ?n2)))
+
+(prove (forall ((n Nat) (m Nat)) (= (mul1 n m) (sol116 n m))))

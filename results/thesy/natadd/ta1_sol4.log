@@ -1,0 +1,35 @@
+03:20:39 [WARN] Collecting statistics
+03:20:39 [WARN]  ex is: Z
+03:20:39 [WARN]  ex is: (S Z)
+03:20:39 [WARN]  ex is: (S (S Z))
+03:20:39 [WARN] Running exploration without proof mode, but goals were given
+03:20:39 [WARN] Proof mode: true
+03:20:39 [WARN]  ex is: Z
+03:20:39 [WARN]  ex is: (S Z)
+03:20:39 [WARN]  ex is: (S (S Z))
+03:20:39 [WARN] Running exploration without proof mode, but goals were given
+03:20:39 [WARN] Proof mode: true
+03:20:39 [WARN] proved: (sol4 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+03:20:39 [WARN] proved: (sol4 Z ?ts_ph_Nat_0) => ?ts_ph_Nat_0
+03:21:32 [WARN] proved: (sol4 ?ts_ph_Nat_0 (S Z)) => (S ?ts_ph_Nat_0)
+03:21:32 [WARN] proved: (S ?ts_ph_Nat_0) => (sol4 ?ts_ph_Nat_0 (S Z))
+03:21:32 [WARN] proved: (sol4 (S Z) ?ts_ph_Nat_0) => (S ?ts_ph_Nat_0)
+03:21:32 [WARN] proved: (S ?ts_ph_Nat_0) => (sol4 (S Z) ?ts_ph_Nat_0)
+03:21:32 [WARN] proved: (sol4 (S ?ts_ph_Nat_0) ?ts_ph_Nat_0) => (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
+03:21:32 [WARN] proved: (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (sol4 (S ?ts_ph_Nat_0) ?ts_ph_Nat_0)
+03:21:32 [WARN] proved: (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0)) => (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
+03:21:32 [WARN] proved: (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0))
+03:21:32 [WARN] proved: (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+03:21:32 [WARN] proved: (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+03:21:32 [WARN] proved: (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+03:21:32 [WARN] proved: (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
+03:21:32 [WARN] proved: (sol4 ?ts_ph_Nat_1 (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) => (sol4 ?ts_ph_Nat_0 (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
+03:21:32 [WARN] proved: (sol4 ?ts_ph_Nat_0 (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (sol4 ?ts_ph_Nat_1 (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_2))
+03:21:35 [WARN] Stopped case split due to node limit
+03:21:36 [WARN] Stopped case split due to node limit
+03:21:36 [WARN] Stopped case split due to node limit
+03:21:36 [WARN] Stopped case split due to node limit
+03:21:37 [WARN] Stopped case split due to node limit
+03:21:37 [WARN] Stopped case split due to node limit
+03:21:38 [WARN] Stopped case split due to node limit
+03:21:38 [WARN] Stopped case split due to node limit

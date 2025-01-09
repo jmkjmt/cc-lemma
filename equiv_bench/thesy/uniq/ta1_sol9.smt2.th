@@ -1,0 +1,40 @@
+(datatype Nat () ((S Nat Nat) (Z Nat)))
+(datatype Lst () ((nil Lst) (cons Nat Lst Lst)))
+
+(declare-fun list_append (Lst Lst) Lst)
+(declare-fun list_rev (Lst) Lst)
+(declare-fun remove_elem_1 (Nat Lst) Lst)
+(declare-fun ta1 (Lst) Lst)
+(declare-fun fastrev (Lst) Lst)
+(declare-fun rev (Lst Lst) Lst)
+(declare-fun search (Lst Nat) Bool)
+(declare-fun delete9 (Lst) Lst)
+(declare-fun sol9 (Lst) Lst)
+
+(=> rule0 (list_append nil           ?ys) ?ys                       )
+(=> rule1 (list_append (cons ?x ?xs) ?ys) (cons ?x (list_append ?xs ?ys)))
+
+(=> rule2 (list_rev nil          ) nil                             )
+(=> rule3 (list_rev (cons ?x ?xs)) (list_append (list_rev ?xs) (cons ?x nil)))
+
+
+(=> rule4 (remove_elem_1 ?e nil) nil)
+(=> rule5 (remove_elem_1 ?e (cons ?hd ?tl)) (ite (= ?e ?hd) (remove_elem_1 ?e ?tl) (cons ?hd (remove_elem_1 ?e ?tl))))
+
+
+(=> rule6 (ta1 nil) nil)
+(=> rule7 (ta1 (cons ?hd ?tl)) (cons ?hd (remove_elem_1 ?hd (ta1 ?tl))))
+
+(=> rule8 (fastrev ?lst) (rev ?lst nil))
+(=> rule9 (rev nil ?acc) ?acc)
+(=> rule10 (rev (cons ?hd ?tl) ?acc) (rev ?tl (list_append (cons ?hd nil) (?acc))))
+
+(=> rule11 (search nil ?e) false)
+(=> rule12 (search (cons ?hd ?tl) ?e) (ite (= ?hd ?e) true (search ?tl ?e)))
+
+(=> rule13 (delete9 nil) nil)
+(=> rule14 (delete9 (cons ?hd ?tl)) (ite (search ?tl ?hd) (delete9 ?tl) (list_append (cons ?hd nil) (delete9 ?tl))))
+
+(=> rule15 (sol9 ?lst) (fastrev (delete9 (fastrev ?lst))))
+
+(prove (forall ((lst Lst)) (= (ta1 lst) (sol9 lst))))

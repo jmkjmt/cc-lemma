@@ -32,3 +32,4 @@
 (=> rule13 (varExists ?var nil) false)
 (=> rule14 (varExists ?var (cons ?h ?t)) (ite (= ?var ?h) true (varExists ?var ?t)))
 
+(prove (forall ((l Lambda)) (= (ta1 l) (sol109 l))))

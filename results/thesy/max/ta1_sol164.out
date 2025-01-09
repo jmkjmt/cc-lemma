@@ -1,0 +1,49 @@
+03:11:31 [0m[33m[WARN] [0mCollecting statistics
+(plus zero ?y) => ?y
+(plus (succ ?x) ?y) => (succ (plus ?x ?y))
+(sub ?x zero) => ?x
+(sub zero ?y) => zero
+(sub (succ ?x) (succ ?y)) => (sub ?x ?y)
+(leq zero ?y) => true
+(leq (S ?x) zero) => false
+(leq (S ?x) (succ ?y)) => (leq ?x ?y)
+(lt ?x zero) => false
+(lt zero (succ ?y)) => true
+(lt (succ ?x) (succ ?y)) => (lt ?x ?y)
+(fold ?f nil ?a) => ?a
+(ta1 nil) => zero
+(ta1 (cons ?hd nil)) => ?hd
+(ta1 (cons ?hd ?tl)) => (ite (lt (ta1 ?tl) ?hd) ?hd (ta1 ?tl))
+(fold164 ?f nil ?a) => ?a
+(sol164 nil) => zero
+(sol164 (cons ?hd ?tl)) => (fold164 comp (cons ?hd ?tl) ?hd)
+(comp ?n1 ?n2) => (ite (lt ?n2 ?n1) ?n1 (ite (= ?n1 ?n2) ?n1 ?n2))
+Searcher: (sub ?autovar4 (succ ?autovar2))
+Searcher: (sub (succ ?autovar3) ?autovar5)
+Searcher: (leq (S ?autovar1) ?autovar3)
+Searcher: (leq (S ?autovar2) ?autovar3)
+Searcher: (lt ?autovar5 (succ ?autovar1))
+Searcher: (lt ?autovar5 (succ ?autovar3))
+Searcher: (lt zero ?autovar6)
+Searcher: (lt (succ ?autovar4) ?autovar6)
+03:11:31 [0m[33m[WARN] [0m ex is: zero
+03:11:31 [0m[33m[WARN] [0m ex is: (succ zero)
+03:11:31 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+03:11:31 [0m[33m[WARN] [0m ex is: nil
+03:11:31 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+03:11:31 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+03:11:31 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+03:11:31 [0m[33m[WARN] [0mProof mode: true
+03:11:31 [0m[33m[WARN] [0m ex is: zero
+03:11:31 [0m[33m[WARN] [0m ex is: (succ zero)
+03:11:31 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+03:11:31 [0m[33m[WARN] [0m ex is: nil
+03:11:31 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+03:11:31 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+03:11:31 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+03:11:31 [0m[33m[WARN] [0mProof mode: true
+03:11:31 [0m[33m[WARN] [0mproved: (comp ?ts_ph_Nat_0 zero) => ?ts_ph_Nat_0
+03:11:31 [0m[33m[WARN] [0mproved: (plus ?ts_ph_Nat_0 zero) => ?ts_ph_Nat_0
+03:11:31 [0m[33m[WARN] [0mproved: (comp ?ts_ph_Nat_0 ?ts_ph_Nat_0) => ?ts_ph_Nat_0
+03:11:31 [0m[33m[WARN] [0mproved: (sub ?ts_ph_Nat_0 ?ts_ph_Nat_0) => zero
+03:11:31 [0m[33m[WARN] [0mproved: (lt ?ts_ph_Nat_0 ?ts_ph_Nat_0) => false

@@ -1,0 +1,33 @@
+(datatype Nat () ((S Nat Nat) (Z Nat)))
+(datatype Lst () ((nil Lst) (cons Nat Lst Lst)))
+
+(declare-fun list_append (Lst Lst) Lst)
+(declare-fun list_rev (Lst) Lst)
+(declare-fun remove_elem_1 (Nat Lst) Lst)
+(declare-fun ta1 (Lst) Lst)
+
+(declare-fun sol20 (Lst) Lst)
+(declare-fun aux20 (Lst) Lst)
+(declare-fun find (Nat Lst) Bool)
+
+(=> rule0 (list_append nil           ?ys) ?ys                       )
+(=> rule1 (list_append (cons ?x ?xs) ?ys) (cons ?x (list_append ?xs ?ys)))
+
+(=> rule2 (list_rev nil          ) nil                             )
+(=> rule3 (list_rev (cons ?x ?xs)) (list_append (list_rev ?xs) (cons ?x nil)))
+
+
+(=> rule4 (remove_elem_1 ?e nil) nil)
+(=> rule5 (remove_elem_1 ?e (cons ?hd ?tl)) (ite (= ?e ?hd) (remove_elem_1 ?e ?tl) (cons ?hd (remove_elem_1 ?e ?tl))))
+
+
+(=> rule6 (ta1 nil) nil)
+(=> rule7 (ta1 (cons ?hd ?tl)) (cons ?hd (remove_elem_1 ?hd (ta1 ?tl))))
+
+(=> rule8 (sol20 ?lst) (aux20 (list_rev ?lst)))
+(=> rule9 (aux20 nil) nil)
+(=> rule10 (aux20 (cons ?hd ?tl)) (ite (find ?hd ?tl) (sol20 (list_rev ?tl)) (list_append (sol20 (list_rev ?tl)) (cons ?hd nil))))
+(=> rule11 (find ?x nil) false)
+(=> rule12 (find ?x (cons ?hd ?tl)) (or (= ?x ?hd) (find ?x ?tl)))
+
+(prove (forall ((lst Lst)) (= (ta1 lst) (sol20 lst))))

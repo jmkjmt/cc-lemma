@@ -1,0 +1,32 @@
+04:43:30 [WARN] Collecting statistics
+04:43:30 [WARN]  ex is: Z
+04:43:30 [WARN]  ex is: (S Z)
+04:43:30 [WARN]  ex is: (S (S Z))
+04:43:30 [WARN] Running exploration without proof mode, but goals were given
+04:43:30 [WARN] Proof mode: true
+04:43:30 [WARN]  ex is: Z
+04:43:30 [WARN]  ex is: (S Z)
+04:43:30 [WARN]  ex is: (S (S Z))
+04:43:30 [WARN] Running exploration without proof mode, but goals were given
+04:43:30 [WARN] Proof mode: true
+04:43:30 [WARN] proved: (mul1 ?ts_ph_Nat_0 Z) => Z
+04:43:30 [WARN] proved: (mul5 Z ?ts_ph_Nat_0) => Z
+04:43:30 [WARN] proved: (add1 ?ts_ph_Nat_0 Z) => (add2 Z ?ts_ph_Nat_0)
+04:43:30 [WARN] proved: (add2 Z ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 Z)
+04:43:30 [WARN] proved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (add2 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+04:43:30 [WARN] proved: (add2 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+04:43:30 [WARN] proved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+04:43:30 [WARN] proved: (mul1 ?ts_ph_Nat_0 (S Z)) => ?ts_ph_Nat_0
+04:43:30 [WARN] proved: (S ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 (S Z))
+04:43:30 [WARN] proved: (add1 ?ts_ph_Nat_0 (S Z)) => (S ?ts_ph_Nat_0)
+04:43:31 [WARN] proved: (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+04:43:31 [WARN] proved: (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
+04:43:31 [WARN] proved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+04:43:31 [WARN] proved: (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+04:43:31 [WARN] proved: (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (mul5 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+04:43:31 [WARN] proved: (mul5 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+04:43:31 [WARN] proved: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (add1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2))
+04:43:31 [WARN] proved: (add1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) => (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
+04:43:31 [WARN] proved: (add1 ?ts_ph_Nat_0 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (mul1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
+04:43:31 [WARN] proved: (mul1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (add1 ?ts_ph_Nat_0 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+04:43:31 [WARN] Found all lemmas

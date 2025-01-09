@@ -1,0 +1,45 @@
+(datatype Nat () ((succ Nat Nat) (zero Nat)))
+(datatype Lst () ((nil Lst) (cons Nat Lst Lst)))
+
+(declare-fun plus (Nat Nat) Nat)
+(declare-fun sub (Nat Nat) Nat)
+(declare-fun leq (Nat Nat) Bool)
+(declare-fun lt (Nat Nat) Bool)
+(declare-fun fold ((-> (Lst Nat) Nat) Lst Nat) Nat)
+(declare-fun ta1 (Lst) Nat)
+(declare-fun sol118 (Lst) Nat)
+(declare-fun loop (Nat Lst) Nat)
+(declare-fun fold164 ((-> (Nat Nat) Nat) Lst Nat) Nat)
+(declare-fun sol164 (Lst) Nat)
+(declare-fun comp (Nat Nat) Nat)
+
+(=> rule0 (plus zero      ?y) ?y             )
+(=> rule1 (plus (succ ?x) ?y) (succ (plus ?x ?y)))
+
+(=> rule2 (sub ?x zero)          ?x         )
+(=> rule3 (sub zero ?y)          zero          )
+(=> rule4 (sub (succ ?x) (succ ?y)) (sub ?x ?y))
+
+(=> rule5 (leq zero      ?y) true           )
+(=> rule6 (leq (S ?x) zero ) false          )
+(=> rule7 (leq (S ?x) (succ ?y)) (leq ?x ?y))
+
+(=> rule8 (lt ?x     zero     ) false     )
+(=> rule9 (lt zero      (succ ?y)) true      )
+(=> rule10 (lt (succ ?x) (succ ?y)) (lt ?x ?y))
+
+(=> rule11 (fold ?f nil ?a) ?a)
+(=> rule12 (fold ?f (cons ?hd ?tl) ?a) (ite (= ?tl nil) (?hd) (?f ?hd (fold ?f ?tl ?a))))
+
+(=> rule13 (ta1 nil) zero)
+(=> rule14 (ta1 (cons ?hd nil)) ?hd)
+(=> rule15 (ta1 (cons ?hd ?tl)) (ite (lt (ta1 ?tl) ?hd) (?hd) (ta1 ?tl)))
+
+
+(=> rule16 (fold164 ?f nil ?a) ?a)
+(=> rule17 (fold164 ?f (cons ?hd ?tl) ?a) (?f ?hd (fold164 ?f ?tl ?a)))
+(=> rule18 (sol164 nil) zero)
+(=> rule19 (sol164 (cons ?hd ?tl)) (fold164 comp (cons ?hd ?tl) ?hd))
+(=> rule20 (comp ?n1 ?n2) (ite (lt ?n2 ?n1) (?n1) (ite (= ?n1 ?n2) ?n1 ?n2)))
+
+(prove (forall ((lst Lst)) (= (ta1 lst) (sol164 lst))))

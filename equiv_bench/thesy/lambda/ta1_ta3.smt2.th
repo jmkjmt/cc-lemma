@@ -27,3 +27,5 @@
 (=> rule10 (check3 (V ?na) ?li) (mem ?na ?li))
 
 (=> rule11 (ta3 ?lambda) (check3 ?lambda nil))
+
+(prove (forall ((l Lambda)) (= (ta1 l) (ta3 l))))

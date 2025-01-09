@@ -1,0 +1,19 @@
+03:21:39 [WARN] Collecting statistics
+03:21:39 [WARN]  ex is: Z
+03:21:39 [WARN]  ex is: (S Z)
+03:21:39 [WARN]  ex is: (S (S Z))
+03:21:39 [WARN] Running exploration without proof mode, but goals were given
+03:21:39 [WARN] Proof mode: true
+03:21:39 [WARN]  ex is: Z
+03:21:39 [WARN]  ex is: (S Z)
+03:21:39 [WARN]  ex is: (S (S Z))
+03:21:39 [WARN] Running exploration without proof mode, but goals were given
+03:21:39 [WARN] Proof mode: true
+03:21:39 [WARN] proved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+03:21:39 [WARN] proved: (add1 ?ts_ph_Nat_0 (S Z)) => (S ?ts_ph_Nat_0)
+03:21:39 [WARN] proved: (S ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 (S Z))
+03:21:39 [WARN] proved: (add3 (add3 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (S Z)) => (add3 ?ts_ph_Nat_1 (S ?ts_ph_Nat_0))
+03:21:39 [WARN] proved: (add3 ?ts_ph_Nat_1 (S ?ts_ph_Nat_0)) => (add3 (add3 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (S Z))
+03:21:39 [WARN] proved: (S (add3 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (add3 (add3 ?ts_ph_Nat_0 Z) (S ?ts_ph_Nat_1))
+03:21:39 [WARN] proved: (add3 (add3 ?ts_ph_Nat_0 Z) (S ?ts_ph_Nat_1)) => (S (add3 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+03:21:39 [WARN] Found all lemmas

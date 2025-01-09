@@ -1,0 +1,40 @@
+01:01:00 [0m[33m[WARN] [0mCollecting statistics
+(append nil ?x) => ?x
+(append (cons ?x2 ?y) ?z) => (cons ?x2 (append ?y ?z))
+(mem ?n nil) => false
+(mem ?n (cons ?x ?xs)) => (ite (= ?n ?x) true (mem ?n ?xs))
+(check1 (V ?x) ?lst) => (mem ?x ?lst)
+(check1 (P ?x ?e) ?lst) => (check1 ?e (cons ?x ?lst))
+(check1 (C ?e1 ?e2) ?lst) => (and (check1 ?e1 ?lst) (check1 ?e2 ?lst))
+(ta1 ?lambda) => (check1 ?lambda nil)
+(ta2 (V ?x)) => false
+(ta2 (P ?x ?e)) => (check1 ?e (cons ?x nil))
+(ta2 (C ?e1 ?e2)) => (and (check1 ?e1 nil) (check1 ?e2 nil))
+01:01:00 [0m[33m[WARN] [0m ex is: zero
+01:01:00 [0m[33m[WARN] [0m ex is: (succ zero)
+01:01:00 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+01:01:00 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
+01:01:00 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+01:01:00 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+01:01:00 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+01:01:00 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+01:01:00 [0m[33m[WARN] [0m ex is: nil
+01:01:00 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+01:01:00 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:01:00 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+01:01:00 [0m[33m[WARN] [0mProof mode: true
+01:01:00 [0m[33m[WARN] [0m ex is: zero
+01:01:00 [0m[33m[WARN] [0m ex is: (succ zero)
+01:01:00 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+01:01:00 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
+01:01:00 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+01:01:00 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+01:01:00 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+01:01:00 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+01:01:00 [0m[33m[WARN] [0m ex is: nil
+01:01:00 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+01:01:00 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:01:00 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+01:01:00 [0m[33m[WARN] [0mProof mode: true
+01:01:00 [0m[33m[WARN] [0mFound all lemmas
+done in 3

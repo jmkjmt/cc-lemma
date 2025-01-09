@@ -1,9 +1,38 @@
 {
-    "filter": {
-        "ta1_sol121": {
+    "natmul": {
+        "ta1_sol90": {
             "status": false
         },
-        "ta1_sol171.stm2": {
+        "ta1_sol32": {
+            "status": false
+        },
+        "ta1_ta2": {
+            "status": true,
+            "info": 0.49101477800000004
+        },
+        "ta1_ta4": {
+            "status": true,
+            "info": 36.535131971
+        },
+        "ta1_sol6": {
+            "status": false
+        },
+        "ta1_ta5": {
+            "status": true,
+            "info": 0.473382
+        },
+        "ta1_ta3": {
+            "status": false
+        },
+        "ta1_ta6": {
+            "status": true,
+            "info": 2.620177874
+        },
+        "ta1_ta7": {
+            "status": true,
+            "info": 0.11637805100000001
+        },
+        "ta1_sol116": {
             "status": false
         }
     }

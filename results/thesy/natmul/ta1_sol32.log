@@ -1,0 +1,30 @@
+04:40:53 [WARN] Collecting statistics
+04:40:53 [WARN]  ex is: Z
+04:40:53 [WARN]  ex is: (S Z)
+04:40:53 [WARN]  ex is: (S (S Z))
+04:40:53 [WARN] Running exploration without proof mode, but goals were given
+04:40:53 [WARN] Proof mode: true
+04:40:53 [WARN]  ex is: Z
+04:40:53 [WARN]  ex is: (S Z)
+04:40:53 [WARN]  ex is: (S (S Z))
+04:40:53 [WARN] Running exploration without proof mode, but goals were given
+04:40:53 [WARN] Proof mode: true
+04:40:53 [WARN] proved: (mul1 ?ts_ph_Nat_0 Z) => Z
+04:40:53 [WARN] proved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+04:41:09 [WARN] proved: (add1 ?ts_ph_Nat_0 (S Z)) => (S ?ts_ph_Nat_0)
+04:41:09 [WARN] proved: (S ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 (S Z))
+04:41:09 [WARN] proved: (add3 (add3 ?ts_ph_Nat_0 ?ts_ph_Nat_1) Z) => (add3 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+04:41:09 [WARN] proved: (add3 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add3 (add3 ?ts_ph_Nat_0 ?ts_ph_Nat_1) Z)
+04:41:09 [WARN] proved: (sol32 ?ts_ph_Nat_1 (sol32 ?ts_ph_Nat_0 Z)) => (sol32 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) Z)
+04:41:09 [WARN] proved: (sol32 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) Z) => (sol32 ?ts_ph_Nat_1 (sol32 ?ts_ph_Nat_0 Z))
+04:41:10 [WARN] proved: (add3 (sol32 ?ts_ph_Nat_0 Z) Z) => Z
+04:41:10 [WARN] proved: (sol32 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) Z) => Z
+04:41:10 [WARN] proved: (sol32 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) Z) => Z
+04:41:10 [WARN] proved: (sol32 (sol32 ?ts_ph_Nat_0 Z) ?ts_ph_Nat_0) => Z
+04:41:10 [WARN] proved: (S (mul1 ?ts_ph_Nat_0 (S Z))) => (S ?ts_ph_Nat_0)
+04:41:10 [WARN] proved: (S ?ts_ph_Nat_0) => (S (mul1 ?ts_ph_Nat_0 (S Z)))
+04:41:10 [WARN] proved: (natmul-sub ?ts_ph_Nat_0 (S Z) Z) => (S Z)
+04:41:10 [WARN] proved: (add3 ?ts_ph_Nat_0 (sol32 ?ts_ph_Nat_0 Z)) => (add3 ?ts_ph_Nat_0 Z)
+04:41:10 [WARN] proved: (add3 ?ts_ph_Nat_0 Z) => (add3 ?ts_ph_Nat_0 (sol32 ?ts_ph_Nat_0 Z))
+04:41:11 [WARN] proved: (sol32 ?ts_ph_Nat_0 Z) => (sol32 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) Z)
+04:41:11 [WARN] proved: (sol32 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) Z) => (sol32 ?ts_ph_Nat_0 Z)

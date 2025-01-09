@@ -1,0 +1,15 @@
+(datatype Nat () ((S Nat Nat) (Z Nat)))
+
+(declare-fun add1 (Nat Nat) Nat)
+(declare-fun sol11 (Nat Nat) Nat)
+(declare-fun oneadd (Nat) Nat)
+
+(=> rule1 (add1 Z ?y) ?y)
+(=> rule2 (add1 (S ?x) ?y) (S (add1 ?x ?y)))
+
+(=> rule3 (sol11 ?a Z) (oneadd ?a))
+(=> rule4 (sol11 ?a (S ?b1)) (S (sol11 ?a ?b1)))
+(=> rule5 (oneadd Z) Z)
+(=> rule6 (oneadd (S ?a1)) (S (oneadd ?a1)))
+
+(prove (forall ((n Nat) (m Nat)) (= (add1 n m) (sol11 n m))))

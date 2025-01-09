@@ -23,3 +23,5 @@
 (=> rule8 (ta2 (V ?x)) false)
 (=> rule9 (ta2 (P ?x ?e)) (check1 ?e (cons ?x nil)))
 (=> rule10 (ta2 (C ?e1 ?e2)) (and (check1 ?e1 nil) (check1 ?e2 nil)))
+
+(prove (forall ((l Lambda)) (= (ta1 l) (ta2 l))))

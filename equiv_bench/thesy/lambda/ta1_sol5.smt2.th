@@ -31,3 +31,4 @@
 (=> rule13 (getStn (C ?m1 ?m2)) (append (getStn ?m1) (getStn ?m2)))
 (=> rule14 (aux ?n ?m) (not (= ?n ?m)))
 
+(prove (forall ((l Lambda)) (= (ta1 l) (sol5 l))))

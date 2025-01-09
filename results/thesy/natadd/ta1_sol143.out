@@ -1,0 +1,32 @@
+03:20:32 [0m[33m[WARN] [0mCollecting statistics
+(add1 Z ?y) => ?y
+(add1 (S ?x) ?y) => (S (add1 ?x ?y))
+(sol143 ?n1 ?n2) => (ite (eq ?n1 Z) (add ?n2 ?n1) (add ?n1 ?n2))
+(add ?a Z) => ?a
+(add ?a (S ?n)) => (add (S ?a) ?n)
+03:20:32 [0m[33m[WARN] [0m ex is: Z
+03:20:32 [0m[33m[WARN] [0m ex is: (S Z)
+03:20:32 [0m[33m[WARN] [0m ex is: (S (S Z))
+03:20:32 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+03:20:32 [0m[33m[WARN] [0mProof mode: true
+03:20:32 [0m[33m[WARN] [0m ex is: Z
+03:20:32 [0m[33m[WARN] [0m ex is: (S Z)
+03:20:32 [0m[33m[WARN] [0m ex is: (S (S Z))
+03:20:32 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+03:20:32 [0m[33m[WARN] [0mProof mode: true
+03:20:32 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+03:20:33 [0m[33m[WARN] [0mproved: (S (add ?ts_ph_Nat_1 ?ts_ph_Nat_0)) => (add ?ts_ph_Nat_1 (S ?ts_ph_Nat_0))
+03:20:33 [0m[33m[WARN] [0mproved: (add ?ts_ph_Nat_1 (S ?ts_ph_Nat_0)) => (S (add ?ts_ph_Nat_1 ?ts_ph_Nat_0))
+03:20:33 [0m[33m[WARN] [0mproved: (S (add ?ts_ph_Nat_1 ?ts_ph_Nat_0)) => (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+03:20:33 [0m[33m[WARN] [0mproved: (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (S (add ?ts_ph_Nat_1 ?ts_ph_Nat_0))
+03:20:33 [0m[33m[WARN] [0mproved: (S (add ?ts_ph_Nat_1 ?ts_ph_Nat_0)) => (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
+03:20:33 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (S (add ?ts_ph_Nat_1 ?ts_ph_Nat_0))
+03:20:33 [0m[33m[WARN] [0mproved: (add Z (S ?ts_ph_Nat_0)) => (S (sol143 Z ?ts_ph_Nat_0))
+03:20:33 [0m[33m[WARN] [0mproved: (S (sol143 Z ?ts_ph_Nat_0)) => (add Z (S ?ts_ph_Nat_0))
+03:20:39 [0m[33m[WARN] [0mproved: (add ?ts_ph_Nat_0 (S ?ts_ph_Nat_0)) => (S (sol143 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
+03:20:39 [0m[33m[WARN] [0mproved: (S (sol143 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (add ?ts_ph_Nat_0 (S ?ts_ph_Nat_0))
+03:20:39 [0m[33m[WARN] [0mgeneralized case_split proof as: (add (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2) -- (add (add ?ts_ph_Nat_1 ?ts_ph_Nat_0) ?ts_ph_Nat_2)
+03:20:39 [0m[33m[WARN] [0mproved: (add (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2) => (add (add ?ts_ph_Nat_1 ?ts_ph_Nat_0) ?ts_ph_Nat_2)
+03:20:39 [0m[33m[WARN] [0mproved: (add (add ?ts_ph_Nat_1 ?ts_ph_Nat_0) ?ts_ph_Nat_2) => (add (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2)
+03:20:39 [0m[33m[WARN] [0mFound all lemmas
+done in 6810

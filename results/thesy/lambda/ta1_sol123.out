@@ -1,0 +1,51 @@
+01:01:18 [0m[33m[WARN] [0mCollecting statistics
+(append nil ?x) => ?x
+(append (cons ?x2 ?y) ?z) => (cons ?x2 (append ?y ?z))
+(mem ?n nil) => false
+(mem ?n (cons ?x ?xs)) => (ite (= ?n ?x) true (mem ?n ?xs))
+(check1 (V ?x) ?lst) => (mem ?x ?lst)
+(check1 (P ?x ?e) ?lst) => (check1 ?e (cons ?x ?lst))
+(check1 (C ?e1 ?e2) ?lst) => (and (check1 ?e1 ?lst) (check1 ?e2 ?lst))
+(ta1 ?lambda) => (check1 ?lambda nil)
+(sol123 ?m) => (ite (is_connect ?m) (and (sol123 (get_left ?m)) (sol123 (get_right ?m))) (aux123 ?m))
+(aux123 (V ?n)) => false
+(aux123 (C ?l ?r)) => (and (sol123 ?l) (sol123 ?r))
+(aux123 (P ?v ?l)) => (match123 ?l ?v)
+(match123 (V ?s) ?var) => (ite (= ?var ?s) true false)
+(match123 (C ?l1 ?l2) ?var) => (and (sol123 (P ?var ?l1)) (sol123 (P ?var ?l2)))
+(match123 (P ?v ?l) ?var) => (or (sol123 (P ?var ?l)) (sol123 (P ?v ?l)))
+(get_right (V ?n)) => (V ?n)
+(get_right (C ?l1 ?l2)) => ?l2
+(get_right (P ?v ?l)) => (P ?v (get_right ?l))
+(get_left (V ?n)) => (V ?n)
+(get_left (C ?l1 ?l2)) => ?l1
+(get_left (P ?v ?l)) => (P ?v (get_left ?l))
+(is_connect (V ?n)) => false
+(is_connect (C ?l1 ?l2)) => true
+(is_connect (P ?v ?l)) => (is_connect ?l)
+01:01:18 [0m[33m[WARN] [0m ex is: zero
+01:01:18 [0m[33m[WARN] [0m ex is: (succ zero)
+01:01:18 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+01:01:18 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
+01:01:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+01:01:18 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+01:01:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+01:01:18 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+01:01:18 [0m[33m[WARN] [0m ex is: nil
+01:01:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+01:01:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:01:18 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+01:01:18 [0m[33m[WARN] [0mProof mode: true
+01:01:18 [0m[33m[WARN] [0m ex is: zero
+01:01:18 [0m[33m[WARN] [0m ex is: (succ zero)
+01:01:18 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+01:01:18 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
+01:01:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+01:01:18 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+01:01:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+01:01:18 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+01:01:18 [0m[33m[WARN] [0m ex is: nil
+01:01:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+01:01:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+01:01:18 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+01:01:18 [0m[33m[WARN] [0mProof mode: true

@@ -1,0 +1,18 @@
+05:35:41 [WARN] Collecting statistics
+05:35:41 [WARN]  ex is: Z
+05:35:41 [WARN]  ex is: (S Z)
+05:35:41 [WARN]  ex is: (S (S Z))
+05:35:41 [WARN]  ex is: nil
+05:35:41 [WARN]  ex is: (cons autovar_Nat_0 nil)
+05:35:41 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+05:35:41 [WARN] Running exploration without proof mode, but goals were given
+05:35:41 [WARN] Proof mode: true
+05:35:41 [WARN]  ex is: Z
+05:35:41 [WARN]  ex is: (S Z)
+05:35:41 [WARN]  ex is: (S (S Z))
+05:35:41 [WARN]  ex is: nil
+05:35:41 [WARN]  ex is: (cons autovar_Nat_0 nil)
+05:35:41 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+05:35:41 [WARN] Running exploration without proof mode, but goals were given
+05:35:41 [WARN] Proof mode: true
+05:35:41 [WARN] proved: (list_append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0

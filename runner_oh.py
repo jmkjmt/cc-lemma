@@ -14,7 +14,7 @@ import argparse
 # BENCHMARKS = ['uniq']
 
 TOOLS = ['thesy']
-BENCHMARKS = ['formula']
+BENCHMARKS = ['uniq']
 
 def parse_arguments():
     parser = argparse.ArgumentParser(

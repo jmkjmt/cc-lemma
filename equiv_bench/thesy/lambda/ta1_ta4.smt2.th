@@ -32,3 +32,5 @@
 (=> rule13 (ta4 (P ?st ?k)) (check4 ?k (cons ?st nil)))
 (=> rule14 (ta4 (C ?me1 ?me2)) (and (check4 ?me1 nil) (check4 ?me2 nil)))
 (=> rule15 (ta4 (V ?na)) false)
+
+(prove (forall ((l Lambda)) (= (ta1 l) (ta4 l))))

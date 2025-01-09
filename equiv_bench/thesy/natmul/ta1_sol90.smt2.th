@@ -1,0 +1,18 @@
+(datatype Nat () ((S Nat Nat) (Z Nat)))
+
+(declare-fun add1 (Nat Nat) Nat)
+(declare-fun mul1 (Nat Nat) Nat)
+(declare-fun sol90 (Nat Nat) Nat)
+(declare-fun innerLoop (Nat Nat Nat) Nat)
+
+(=> rule1 (add1 Z ?y) ?y)
+(=> rule2 (add1 (S ?x) ?y) (S (add1 ?x ?y)))
+
+(=> rule3 (mul1 Z ?n2) Z)
+(=> rule4 (mul1 (S ?n) ?n2) (add1 ?n2 (mul1 ?n ?n2)))
+
+(=> rule5 (sol90 ?n1 ?n2) (ite (or (= ?n1 Z) (= ?n2 Z)) (Z) (innerLoop ?n1 ?n2 ?n2)))
+(=> rule6 (innerLoop (S Z) ?n2 ?maintain) ?n2)
+(=> rule7 (innerLoop (S ?sub) ?n2 ?maintain) (innerLoop ?sub (add1 ?maintain ?n2) ?maintain))
+
+(prove (forall ((n Nat) (m Nat)) (= (mul1 n m) (sol90 n m))))

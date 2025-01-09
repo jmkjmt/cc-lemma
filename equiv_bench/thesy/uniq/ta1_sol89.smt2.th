@@ -1,0 +1,37 @@
+(datatype Nat () ((S Nat Nat) (Z Nat)))
+(datatype Lst () ((nil Lst) (cons Nat Lst Lst)))
+
+(declare-fun list_append (Lst Lst) Lst)
+(declare-fun list_rev (Lst) Lst)
+(declare-fun remove_elem_1 (Nat Lst) Lst)
+(declare-fun ta1 (Lst) Lst)
+
+(declare-fun sol89 (Lst) Lst)
+(declare-fun reverse89 (Lst Lst) Lst)
+(declare-fun checkdrop89 (Lst Lst) Lst)
+(declare-fun gtl (Nat Lst) Bool)
+
+
+(=> rule0 (list_append nil           ?ys) ?ys                       )
+(=> rule1 (list_append (cons ?x ?xs) ?ys) (cons ?x (list_append ?xs ?ys)))
+
+(=> rule2 (list_rev nil          ) nil                             )
+(=> rule3 (list_rev (cons ?x ?xs)) (list_append (list_rev ?xs) (cons ?x nil)))
+
+
+(=> rule4 (remove_elem_1 ?e nil) nil)
+(=> rule5 (remove_elem_1 ?e (cons ?hd ?tl)) (ite (= ?e ?hd) (remove_elem_1 ?e ?tl) (cons ?hd (remove_elem_1 ?e ?tl))))
+
+
+(=> rule6 (ta1 nil) nil)
+(=> rule7 (ta1 (cons ?hd ?tl)) (cons ?hd (remove_elem_1 ?hd (ta1 ?tl))))
+
+(=> rule8 (sol89 ?lst) (reverse89 (checkdrop89 ?lst nil) nil))
+(=> rule9 (reverse89 nil ?a) ?a)
+(=> rule10 (reverse89 (cons ?hd ?tl) ?a) (reverse89 ?tl (cons ?hd ?a)))
+(=> rule11 (checkdrop89 nil ?l) ?l)
+(=> rule12 (checkdrop89 (cons ?hd ?tl) ?l) (ite (gtl ?hd ?l) (checkdrop89 ?tl ?l) (checkdrop89 ?tl (cons ?hd ?l))))
+(=> rule13 (gtl ?e nil) false)
+(=> rule14 (gtl ?e (cons ?h ?t)) (ite (= ?e ?h) true (gtl ?e ?t)))
+
+(prove (forall ((lst Lst)) (= (ta1 lst) (sol89 lst))))
