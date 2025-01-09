@@ -1,4 +1,4 @@
-01:02:18 [0m[33m[WARN] [0mCollecting statistics
+08:33:22 [0m[33m[WARN] [0mCollecting statistics
 (append nil ?x) => ?x
 (append (cons ?x2 ?y) ?z) => (cons ?x2 (append ?y ?z))
 (mem ?n nil) => false
@@ -11,34 +11,34 @@
 (ck530 (V ?va) ?lst) => (ite (mem ?va ?lst) z (s z))
 (ck530 (C ?ex1 ?ex2) ?lst) => (plus (ck530 ?ex1 ?lst) (ck530 ?ex2 ?lst))
 (ck530 (P ?va ?ex) ?lst) => (ck530 ?ex (cons ?va ?lst))
-01:02:18 [0m[33m[WARN] [0m ex is: zero
-01:02:18 [0m[33m[WARN] [0m ex is: (succ zero)
-01:02:18 [0m[33m[WARN] [0m ex is: (succ (succ zero))
-01:02:18 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
-01:02:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
-01:02:18 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
-01:02:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:02:18 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:02:18 [0m[33m[WARN] [0m ex is: nil
-01:02:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
-01:02:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-01:02:18 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-01:02:18 [0m[33m[WARN] [0mProof mode: true
-01:02:18 [0m[33m[WARN] [0m ex is: zero
-01:02:18 [0m[33m[WARN] [0m ex is: (succ zero)
-01:02:18 [0m[33m[WARN] [0m ex is: (succ (succ zero))
-01:02:18 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
-01:02:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
-01:02:18 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
-01:02:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:02:18 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:02:18 [0m[33m[WARN] [0m ex is: nil
-01:02:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
-01:02:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-01:02:18 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-01:02:18 [0m[33m[WARN] [0mProof mode: true
-01:02:18 [0m[33m[WARN] [0mproved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
-01:02:55 [0m[33m[WARN] [0mgeneralized case_split proof as: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) -- (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
-01:02:55 [0m[33m[WARN] [0mproved: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
-01:02:55 [0m[33m[WARN] [0mproved: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) => (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
-done in 37219
+08:33:22 [0m[33m[WARN] [0m ex is: zero
+08:33:22 [0m[33m[WARN] [0m ex is: (succ zero)
+08:33:22 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+08:33:22 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
+08:33:22 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+08:33:22 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+08:33:22 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:33:22 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:33:22 [0m[33m[WARN] [0m ex is: nil
+08:33:22 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+08:33:22 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:33:22 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:33:22 [0m[33m[WARN] [0mProof mode: true
+08:33:22 [0m[33m[WARN] [0m ex is: zero
+08:33:22 [0m[33m[WARN] [0m ex is: (succ zero)
+08:33:22 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+08:33:22 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
+08:33:22 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+08:33:22 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+08:33:22 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:33:22 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:33:22 [0m[33m[WARN] [0m ex is: nil
+08:33:22 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+08:33:22 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:33:22 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:33:22 [0m[33m[WARN] [0mProof mode: true
+08:33:22 [0m[33m[WARN] [0mproved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
+08:33:59 [0m[33m[WARN] [0mgeneralized case_split proof as: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) -- (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
+08:33:59 [0m[33m[WARN] [0mproved: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
+08:33:59 [0m[33m[WARN] [0mproved: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) => (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
+done in 37155

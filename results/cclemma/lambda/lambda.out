@@ -2,12 +2,12 @@ Proving begin ta1-ta2: (ta1 l) === (ta2 l)
 Property accepted by cvec analysis
 proved lemma forall l: Lambda. (ta1 l) === (ta2 l) (ta1 (P l_50 l_51)) === (ta2 (P l_50 l_51))
 (uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
-ta1-ta2 uncyclic: VALID (17 ms)
+ta1-ta2 uncyclic: VALID (21 ms)
 Proving begin ta1-ta3: (ta1 l) === (ta3 l)
 Property accepted by cvec analysis
 proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
 (uncyclic) Theorized 8 lemmas, fully attempted 6 lemmas, proved 1 lemmas
-ta1-ta3 uncyclic: TIMEOUT (85983 ms)
+ta1-ta3 uncyclic: TIMEOUT (85723 ms)
 Proving begin ta1-ta4: (ta1 l) === (ta4 l)
 Property accepted by cvec analysis
 proved lemma forall v0: Lambda. (check4 v0 Nil) === (ta4 v0) (check4 (P v0_40 v0_41) Nil) === (ta4 (P v0_40 v0_41))
@@ -19,14 +19,14 @@ Reach the limit
 Reach the limit
 Reach the limit
 Reach the limit
-(uncyclic) Theorized 7 lemmas, fully attempted 6 lemmas, proved 3 lemmas
-ta1-ta4 uncyclic: TIMEOUT (91880 ms)
+(uncyclic) Theorized 11 lemmas, fully attempted 10 lemmas, proved 3 lemmas
+ta1-ta4 uncyclic: TIMEOUT (107957 ms)
 Proving begin ta1-sol5: (ta1 l) === (sol5 l)
 Property rejected by cvec analysis
-cvec: False,True,False,False,False,False,True,False,True,False,False,True,False,False,True,False,True,False,False,False,True,False,False,False,True,False,True,False,False,False
-cvec: False,(eqlist (list-filter aux (S Z) (ite ($ aux Z (S Z)) (Cons (S Z) Nil) Nil)) Nil),False,False,False,False,(eqlist (list-filter aux (S (S (S Z))) (list-filter aux Z (append (ite ($ aux Z Z) (Cons Z Nil) Nil) (Cons Z Nil)))) Nil),False,(eqlist (list-filter aux (S Z) (ite ($ aux (S Z) (S Z)) (Cons (S Z) Nil) Nil)) Nil),False,(eqlist (append (ite ($ aux Z (S Z)) (Cons (S Z) Nil) Nil) (ite ($ aux Z (S Z)) (Cons (S Z) Nil) Nil)) Nil),(eqlist (append (append (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (append (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z Nil) Nil)))) Nil),False,(eqlist (append (ite ($ aux (S (S Z)) Z) (Cons Z Nil) Nil) (ite ($ aux Z (S Z)) (Cons (S Z) Nil) Nil)) Nil),(eqlist (list-filter aux Z (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z Nil) Nil)))) (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z Nil) Nil))))) Nil),(eqlist (append (ite ($ aux (S (S Z)) (S Z)) (Cons (S Z) Nil) Nil) (Cons Z (append (ite ($ aux Z Z) (Cons Z Nil) Nil) (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil))))) Nil),(eqlist (list-filter aux Z (list-filter aux (S Z) (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)) (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)))) Nil),(eqlist (ite ($ aux (S (S (S Z))) Z) (Cons Z Nil) Nil) Nil),False,(eqlist (append (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil)))) (ite ($ aux (S Z) Z) (Cons Z (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil)))) (Cons Z Nil)) Nil),(eqlist (ite ($ aux (S (S Z)) (S (S Z))) (Cons (S (S Z)) Nil) Nil) Nil),(eqlist (append (list-filter aux (S Z) (append (ite ($ aux Z Z) (Cons Z Nil) Nil) (Cons Z (Cons Z Nil)))) (list-filter aux Z (append (ite ($ aux Z Z) (Cons Z Nil) Nil) (ite ($ aux Z Z) (Cons Z Nil) Nil)))) Nil),(eqlist (append (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)) (ite ($ aux (S Z) Z) (Cons Z Nil) Nil))) (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)) (ite ($ aux (S Z) Z) (Cons Z Nil) Nil))) (Cons (S (S Z)) Nil)) Nil),False,(eqlist (list-filter aux Z (list-filter aux Z (list-filter aux Z (ite ($ aux Z Z) (Cons Z Nil) Nil)))) Nil),False,(eqlist (append (list-filter aux Z (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (list-filter aux Z (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)) (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)))) Nil),False,False,(eqlist (list-filter aux (S (S (S Z))) (ite ($ aux (S Z) Z) (Cons Z (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil)))) Nil)
+cvec: False,False,False,False,False,False,False,False,False,True,True,True,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+cvec: False,(eqlist (ite ($ aux (S (S Z)) Z) (Cons Z (list-filter aux (S (S Z)) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (list-filter aux (S (S Z)) (ite ($ aux Z Z) (Cons Z Nil) Nil))) Nil),False,False,(eqlist (list-filter aux Z (ite ($ aux Z (S Z)) (Cons (S Z) Nil) Nil)) Nil),False,False,(eqlist (append (append (append (ite ($ aux Z Z) (Cons Z Nil) Nil) (Cons Z Nil)) (list-filter aux Z (ite ($ aux Z Z) (Cons Z Nil) Nil))) (list-filter aux Z (append (ite ($ aux Z Z) (Cons Z Nil) Nil) (Cons Z Nil)))) Nil),False,(eqlist (list-filter aux Z (list-filter aux Z (ite ($ aux Z Z) (Cons Z Nil) Nil))) Nil),(eqlist (list-filter aux (S Z) (list-filter aux (S (S Z)) (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z Nil) Nil)))) Nil),(eqlist (list-filter aux Z (list-filter aux Z (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil)))) Nil),(eqlist (ite ($ aux (S Z) (S (S Z))) (Cons (S (S Z)) Nil) Nil) Nil),False,(eqlist (ite ($ aux Z Z) (Cons Z Nil) Nil) Nil),(eqlist (list-filter aux (S (S (S Z))) (ite ($ aux (S Z) Z) (Cons Z (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil)))) Nil),(eqlist (list-filter aux (S Z) (ite ($ aux (S (S Z)) Z) (Cons Z (list-filter aux (S (S Z)) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (list-filter aux (S (S Z)) (ite ($ aux Z Z) (Cons Z Nil) Nil)))) Nil),(eqlist (ite ($ aux Z (S (S Z))) (Cons (S (S Z)) Nil) Nil) Nil),False,False,(eqlist (append (list-filter aux (S Z) (list-filter aux (S Z) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (Cons Z Nil)) Nil),(eqlist (list-filter aux (S Z) (append (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)) (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)) (append (ite ($ aux Z Z) (Cons Z Nil) Nil) (Cons Z (Cons Z Nil))))) Nil),False,(eqlist (ite ($ aux (S Z) (S Z)) (Cons (S Z) (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)) (ite ($ aux (S Z) Z) (Cons Z Nil) Nil))) (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)) (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)))) (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)) (ite ($ aux (S Z) Z) (Cons Z Nil) Nil))) (ite ($ aux (S Z) Z) (Cons Z (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)) (ite ($ aux (S Z) Z) (Cons Z Nil) Nil)))) Nil),(eqlist (list-filter aux Z (ite ($ aux (S (S Z)) (S Z)) (Cons (S Z) Nil) Nil)) Nil),False,(eqlist (ite ($ aux (S (S (S Z))) (S Z)) (Cons (S Z) Nil) Nil) Nil),(eqlist (list-filter aux (S (S Z)) (list-filter aux (S Z) (append (ite ($ aux Z Z) (Cons Z Nil) Nil) (Cons Z (Cons Z Nil))))) Nil),(eqlist (append (list-filter aux Z (ite ($ aux Z Z) (Cons Z (ite ($ aux Z Z) (Cons Z Nil) Nil)) (ite ($ aux Z Z) (Cons Z Nil) Nil))) (Cons Z Nil)) Nil),False
 (uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
-ta1-sol5 uncyclic: INVALID (24 ms)
+ta1-sol5 uncyclic: INVALID (824 ms)
 Proving begin ta1-sol50: (ta1 l) === (sol50 l)
 Property accepted by cvec analysis
 proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
@@ -34,7 +34,7 @@ proved lemma forall v0: Nat. v1: Nat. (eq v0 v1) === (eq v1 v0) (eq (S v0_140) (
 Reach the limit
 Reach the limit
 (uncyclic) Theorized 3 lemmas, fully attempted 3 lemmas, proved 2 lemmas
-ta1-sol50 uncyclic: TIMEOUT (66063 ms)
+ta1-sol50 uncyclic: TIMEOUT (70498 ms)
 Proving begin ta1-sol57: (ta1 l) === (sol57 l)
 Property accepted by cvec analysis
 proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
@@ -49,31 +49,23 @@ Reach the limit
 Reach the limit
 Reach the limit
 Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-Reach the limit
-(uncyclic) Theorized 3 lemmas, fully attempted 3 lemmas, proved 2 lemmas
-ta1-sol57 uncyclic: TIMEOUT (61743 ms)
+(uncyclic) Theorized 6 lemmas, fully attempted 6 lemmas, proved 2 lemmas
+ta1-sol57 uncyclic: TIMEOUT (60663 ms)
 Proving begin ta1-sol101: (ta1 l) === (sol101 l)
 Property rejected by cvec analysis
-cvec: False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,True,False,True,True,True
-cvec: (and (ite ($ aux101 Z (Cons Z (Cons (S Z) (Cons Z Nil)))) True False) (and (ite ($ aux101 Z (Cons (S (S Z)) Nil)) True False) (ite ($ aux101 Z (Cons (S (S Z)) Nil)) True False))),(ite ($ aux101 Z Nil) True False),(and (ite ($ aux101 Z (Cons Z Nil)) True False) (and (ite ($ aux101 Z (Cons Z (Cons Z Nil))) True False) (ite ($ aux101 Z (Cons (S Z) Nil)) True False))),(and (and (and (ite ($ aux101 Z (Cons (S Z) Nil)) True False) (ite ($ aux101 Z (Cons (S Z) Nil)) True False)) (ite ($ aux101 Z (Cons (S Z) Nil)) True False)) (and (and (ite ($ aux101 Z (Cons Z Nil)) True False) (and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z Nil) True False))) (ite ($ aux101 Z Nil) True False))),(ite ($ aux101 (S (S Z)) (Cons (S (S Z)) Nil)) True False),(and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z (Cons (S Z) (Cons (S (S Z)) Nil))) True False)),(and (ite ($ aux101 Z (Cons Z (Cons Z Nil))) True False) (ite ($ aux101 Z Nil) True False)),(and (ite ($ aux101 (S (S Z)) Nil) True False) (ite ($ aux101 (S Z) Nil) True False)),(ite ($ aux101 (S Z) Nil) True False),(ite ($ aux101 (S (S Z)) Nil) True False),(ite ($ aux101 (S (S Z)) (Cons (S Z) Nil)) True False),(ite ($ aux101 Z (Cons (S (S Z)) Nil)) True False),(and (ite ($ aux101 (S (S Z)) Nil) True False) (ite ($ aux101 Z (Cons Z Nil)) True False)),(ite ($ aux101 (S (S (S Z))) Nil) True False),(and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 (S Z) Nil) True False)),(and (and (and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z (Cons Z Nil)) True False)) (and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z (Cons Z Nil)) True False))) (ite ($ aux101 (S Z) (Cons Z Nil)) True False)),(and (ite ($ aux101 Z (Cons (S Z) Nil)) True False) (ite ($ aux101 Z (Cons (S Z) Nil)) True False)),(and (and (ite ($ aux101 Z Nil) True False) (and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z (Cons Z Nil)) True False))) (and (and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z (Cons Z Nil)) True False)) (ite ($ aux101 Z (Cons Z Nil)) True False))),(and (and (ite ($ aux101 Z (Cons Z (Cons (S Z) Nil))) True False) (ite ($ aux101 Z (Cons (S Z) Nil)) True False)) (and (ite ($ aux101 Z (Cons (S Z) Nil)) True False) (ite ($ aux101 Z (Cons (S Z) Nil)) True False))),(and (and (ite ($ aux101 Z (Cons Z (Cons (S Z) Nil))) True False) (ite ($ aux101 Z (Cons (S Z) Nil)) True False)) (and (ite ($ aux101 Z (Cons Z (Cons Z Nil))) True False) (and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z (Cons Z Nil)) True False)))),(and (ite ($ aux101 Z (Cons (S Z) Nil)) True False) (ite ($ aux101 (S Z) (Cons (S Z) Nil)) True False)),(ite ($ aux101 (S (S Z)) (Cons (S (S (S Z))) Nil)) True False),(and (ite ($ aux101 (S Z) Nil) True False) (ite ($ aux101 (S (S Z)) Nil) True False)),(and (ite ($ aux101 Z (Cons Z (Cons Z (Cons (S (S Z)) Nil)))) True False) (ite ($ aux101 Z (Cons Z (Cons Z (Cons (S (S Z)) Nil)))) True False)),(and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z (Cons (S (S Z)) Nil)) True False)),(ite ($ aux101 Z (Cons Z Nil)) True False),(and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z (Cons Z (Cons (S Z) Nil))) True False)),(and (ite ($ aux101 Z (Cons Z (Cons Z (Cons Z Nil)))) True False) (ite ($ aux101 Z (Cons Z (Cons Z (Cons Z Nil)))) True False)),(ite ($ aux101 Z (Cons (S Z) (Cons Z (Cons Z Nil)))) True False),(and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z (Cons Z (Cons (S Z) (Cons Z Nil)))) True False))
+cvec: False,False,False,True,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,True,True
+cvec: (and (and (and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z Nil) True False)) (ite ($ aux101 Z (Cons (S Z) Nil)) True False)) (ite ($ aux101 Z Nil) True False)),(and (ite ($ aux101 Z Nil) True False) (and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z (Cons Z (Cons (S Z) Nil))) True False))),(and (ite ($ aux101 (S (S Z)) Nil) True False) (ite ($ aux101 (S Z) Nil) True False)),(and (ite ($ aux101 Z (Cons Z Nil)) True False) (and (and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z (Cons Z Nil)) True False)) (ite ($ aux101 Z (Cons Z Nil)) True False))),(and (ite ($ aux101 Z (Cons Z (Cons (S Z) (Cons Z Nil)))) True False) (ite ($ aux101 (S Z) (Cons Z Nil)) True False)),(and (and (ite ($ aux101 Z (Cons Z (Cons Z Nil))) True False) (ite ($ aux101 Z (Cons Z (Cons Z Nil))) True False)) (ite ($ aux101 (S Z) (Cons Z Nil)) True False)),(and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z (Cons Z (Cons Z (Cons Z Nil)))) True False)),(and (ite ($ aux101 (S Z) Nil) True False) (and (and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z (Cons Z Nil)) True False)) (and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z (Cons Z Nil)) True False)))),(and (and (and (ite ($ aux101 Z (Cons (S (S (S Z))) Nil)) True False) (ite ($ aux101 Z (Cons (S (S (S Z))) Nil)) True False)) (ite ($ aux101 Z (Cons Z (Cons (S (S (S Z))) Nil))) True False)) (and (ite ($ aux101 Z (Cons (S (S (S Z))) Nil)) True False) (and (ite ($ aux101 Z (Cons (S (S (S Z))) Nil)) True False) (ite ($ aux101 Z (Cons (S (S (S Z))) Nil)) True False)))),(and (ite ($ aux101 Z (Cons (S Z) (Cons (S (S (S Z))) Nil))) True False) (ite ($ aux101 Z (Cons (S (S (S Z))) Nil)) True False)),(and (and (ite ($ aux101 Z (Cons Z (Cons (S Z) Nil))) True False) (ite ($ aux101 Z (Cons (S Z) Nil)) True False)) (and (ite ($ aux101 Z (Cons (S Z) Nil)) True False) (ite ($ aux101 Z (Cons (S Z) Nil)) True False))),(ite ($ aux101 (S Z) (Cons (S Z) (Cons Z Nil))) True False),(and (and (ite ($ aux101 Z (Cons Z (Cons Z Nil))) True False) (ite ($ aux101 Z (Cons (S Z) Nil)) True False)) (ite ($ aux101 Z Nil) True False)),(and (and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z (Cons Z Nil)) True False)) (and (ite ($ aux101 Z (Cons Z (Cons Z Nil))) True False) (ite ($ aux101 Z Nil) True False))),(and (ite ($ aux101 (S Z) (Cons Z Nil)) True False) (and (ite ($ aux101 Z (Cons (S Z) Nil)) True False) (ite ($ aux101 Z Nil) True False))),(and (and (ite ($ aux101 (S Z) Nil) True False) (and (and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z Nil) True False)) (and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z Nil) True False)))) (and (ite ($ aux101 Z (Cons (S Z) Nil)) True False) (ite ($ aux101 Z (Cons Z (Cons (S Z) Nil))) True False))),(and (ite ($ aux101 Z (Cons Z (Cons Z Nil))) True False) (ite ($ aux101 (S Z) (Cons Z Nil)) True False)),(and (and (ite ($ aux101 Z (Cons Z (Cons (S Z) Nil))) True False) (and (ite ($ aux101 Z Nil) True False) (ite ($ aux101 Z (Cons Z Nil)) True False))) (ite ($ aux101 Z Nil) True False)),(and (ite ($ aux101 (S Z) (Cons (S Z) Nil)) True False) (and (ite ($ aux101 Z Nil) True False) (and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z Nil) True False)))),(and (ite ($ aux101 Z (Cons (S (S Z)) (Cons (S (S Z)) Nil))) True False) (ite ($ aux101 Z (Cons Z (Cons (S (S Z)) (Cons (S (S Z)) Nil)))) True False)),(ite ($ aux101 (S Z) Nil) True False),(and (ite ($ aux101 (S Z) (Cons Z Nil)) True False) (ite ($ aux101 (S Z) (Cons Z Nil)) True False)),(ite ($ aux101 (S (S (S Z))) Nil) True False),(and (ite ($ aux101 Z (Cons (S Z) (Cons (S Z) Nil))) True False) (and (ite ($ aux101 Z (Cons (S Z) (Cons (S Z) Nil))) True False) (ite ($ aux101 Z (Cons (S Z) (Cons (S Z) Nil))) True False))),(and (ite ($ aux101 (S Z) (Cons Z Nil)) True False) (and (and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z (Cons Z Nil)) True False)) (ite ($ aux101 Z (Cons Z Nil)) True False))),(ite ($ aux101 Z Nil) True False),(and (ite ($ aux101 Z (Cons (S Z) (Cons Z Nil))) True False) (and (and (ite ($ aux101 Z (Cons Z Nil)) True False) (ite ($ aux101 Z (Cons Z Nil)) True False)) (ite ($ aux101 Z (Cons Z Nil)) True False))),(and (ite ($ aux101 (S (S Z)) Nil) True False) (ite ($ aux101 Z Nil) True False)),(and (and (ite ($ aux101 Z (Cons (S Z) (Cons Z Nil))) True False) (ite ($ aux101 Z (Cons (S Z) (Cons Z Nil))) True False)) (and (ite ($ aux101 Z (Cons (S Z) (Cons Z Nil))) True False) (ite ($ aux101 Z (Cons (S Z) (Cons Z Nil))) True False))),(ite ($ aux101 Z (Cons Z (Cons (S Z) (Cons Z Nil)))) True False)
 (uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
-ta1-sol101 uncyclic: INVALID (114 ms)
+ta1-sol101 uncyclic: INVALID (105 ms)
 Proving begin ta1-sol109: (ta1 l) === (sol109 l)
 Property accepted by cvec analysis
 proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
-(uncyclic) Theorized 9 lemmas, fully attempted 6 lemmas, proved 1 lemmas
-ta1-sol109 uncyclic: TIMEOUT (61372 ms)
+(uncyclic) Theorized 17 lemmas, fully attempted 13 lemmas, proved 1 lemmas
+ta1-sol109 uncyclic: TIMEOUT (68516 ms)
 Proving begin ta1-sol123: (ta1 l) === (sol123 l)
 Property accepted by cvec analysis
 (uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
-ta1-sol123 uncyclic: INVALID (93017 ms)
+ta1-sol123 uncyclic: INVALID (93082 ms)
 Proving begin ta1-sol530: (ta1 l) === (sol530 l)
 Property accepted by cvec analysis
 proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
@@ -86,6 +78,13 @@ Reach the limit
 Reach the limit
 Reach the limit
 Reach the limit
+proved lemma forall (S Z) === (ite (eq g_4 Z) Z (S Z)) (S Z) === (ite (eq True Z) Z (S Z))
+proved lemma forall (S Z) === (ite (eq g_66 Z) Z (S Z)) (S Z) === (ite (eq g_66 Z) Z (S Z))
+proved lemma forall (S Z) === (ite (eq (plus g_41 g_15) Z) Z (S Z)) (S Z) === (ite (eq (plus True g_15) Z) Z (S Z))
+proved lemma forall (S Z) === (ite (eq (plus g_17 g_15) Z) Z (S Z)) (S Z) === (ite (eq (plus g_17 g_15) Z) Z (S Z))
+proved lemma forall v0: Lambda. (S Z) === (ite (and (check1 v0 Nil) g_12) Z (S Z)) (S Z) === (ite (and (check1 v0 Nil) g_12) Z (S Z))
+proved lemma forall v0: Lambda. (S Z) === (ite (and g_30 (check1 v0 Nil)) Z (S Z)) (S Z) === (ite (and g_30 (check1 v0 Nil)) Z (S Z))
+proved lemma forall (S Z) === (ite (and (ite g_9 True False) g_12) Z (S Z)) (S Z) === (ite (and (ite g_9 True False) g_12) Z (S Z))
 Reach the limit
 Reach the limit
 Reach the limit
@@ -120,7 +119,38 @@ Reach the limit
 Reach the limit
 Reach the limit
 Reach the limit
-(uncyclic) Theorized 4 lemmas, fully attempted 4 lemmas, proved 2 lemmas
-ta1-sol530 uncyclic: TIMEOUT (60529 ms)
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+Reach the limit
+(uncyclic) Theorized 33 lemmas, fully attempted 33 lemmas, proved 9 lemmas
+ta1-sol530 uncyclic: TIMEOUT (61843 ms)
 Attempted 10 goals:
   1 solved (no cyclic)

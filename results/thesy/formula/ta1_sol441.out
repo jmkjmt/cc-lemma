@@ -1,4 +1,4 @@
-08:51:12 [0m[33m[WARN] [0mCollecting statistics
+08:33:22 [0m[33m[WARN] [0mCollecting statistics
 (add zero ?n) => ?n
 (add (succ ?n) ?m) => (succ (add ?n ?m))
 (sub zero ?m) => zero
@@ -39,47 +39,47 @@ Searcher: (sub ?autovar6 zero)
 Searcher: (sub ?autovar6 (succ ?autovar3))
 Searcher: (sub (succ ?autovar4) ?autovar7)
 Searcher: (sub (succ ?autovar5) ?autovar7)
-08:51:12 [0m[33m[WARN] [0m ex is: zero
-08:51:12 [0m[33m[WARN] [0m ex is: (succ zero)
-08:51:12 [0m[33m[WARN] [0m ex is: (succ (succ zero))
-08:51:12 [0m[33m[WARN] [0m ex is: True
-08:51:12 [0m[33m[WARN] [0m ex is: False
-08:51:12 [0m[33m[WARN] [0m ex is: (Equal autovar_Exp_0 autovar_Exp_1)
-08:51:12 [0m[33m[WARN] [0m ex is: (Not (Equal autovar_Exp_0 autovar_Exp_1))
-08:51:12 [0m[33m[WARN] [0m ex is: (AndAlso (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
-08:51:12 [0m[33m[WARN] [0m ex is: (OrElse (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
-08:51:12 [0m[33m[WARN] [0m ex is: (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
-08:51:12 [0m[33m[WARN] [0m ex is: (Not (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
-08:51:12 [0m[33m[WARN] [0m ex is: (AndAlso (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
-08:51:12 [0m[33m[WARN] [0m ex is: (OrElse (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
-08:51:12 [0m[33m[WARN] [0m ex is: (Imply (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
-08:51:12 [0m[33m[WARN] [0m ex is: (Num autovar_Nat_0)
-08:51:12 [0m[33m[WARN] [0m ex is: (Plus (Num autovar_Nat_0) (Num autovar_Nat_0))
-08:51:12 [0m[33m[WARN] [0m ex is: (Minus (Num autovar_Nat_0) (Num autovar_Nat_0))
-08:51:12 [0m[33m[WARN] [0m ex is: (Plus (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)))
-08:51:12 [0m[33m[WARN] [0m ex is: (Minus (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)))
-08:51:12 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-08:51:12 [0m[33m[WARN] [0mProof mode: true
-08:51:12 [0m[33m[WARN] [0m ex is: zero
-08:51:12 [0m[33m[WARN] [0m ex is: (succ zero)
-08:51:12 [0m[33m[WARN] [0m ex is: (succ (succ zero))
-08:51:12 [0m[33m[WARN] [0m ex is: True
-08:51:12 [0m[33m[WARN] [0m ex is: False
-08:51:12 [0m[33m[WARN] [0m ex is: (Equal autovar_Exp_0 autovar_Exp_1)
-08:51:12 [0m[33m[WARN] [0m ex is: (Not (Equal autovar_Exp_0 autovar_Exp_1))
-08:51:12 [0m[33m[WARN] [0m ex is: (AndAlso (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
-08:51:12 [0m[33m[WARN] [0m ex is: (OrElse (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
-08:51:12 [0m[33m[WARN] [0m ex is: (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
-08:51:12 [0m[33m[WARN] [0m ex is: (Not (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
-08:51:12 [0m[33m[WARN] [0m ex is: (AndAlso (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
-08:51:12 [0m[33m[WARN] [0m ex is: (OrElse (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
-08:51:12 [0m[33m[WARN] [0m ex is: (Imply (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
-08:51:12 [0m[33m[WARN] [0m ex is: (Num autovar_Nat_0)
-08:51:12 [0m[33m[WARN] [0m ex is: (Plus (Num autovar_Nat_0) (Num autovar_Nat_0))
-08:51:12 [0m[33m[WARN] [0m ex is: (Minus (Num autovar_Nat_0) (Num autovar_Nat_0))
-08:51:12 [0m[33m[WARN] [0m ex is: (Plus (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)))
-08:51:12 [0m[33m[WARN] [0m ex is: (Minus (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)))
-08:51:12 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-08:51:12 [0m[33m[WARN] [0mProof mode: true
-08:51:12 [0m[33m[WARN] [0mFound all lemmas
+08:33:22 [0m[33m[WARN] [0m ex is: zero
+08:33:22 [0m[33m[WARN] [0m ex is: (succ zero)
+08:33:22 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+08:33:22 [0m[33m[WARN] [0m ex is: True
+08:33:22 [0m[33m[WARN] [0m ex is: False
+08:33:22 [0m[33m[WARN] [0m ex is: (Equal autovar_Exp_0 autovar_Exp_1)
+08:33:22 [0m[33m[WARN] [0m ex is: (Not (Equal autovar_Exp_0 autovar_Exp_1))
+08:33:22 [0m[33m[WARN] [0m ex is: (AndAlso (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+08:33:22 [0m[33m[WARN] [0m ex is: (OrElse (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+08:33:22 [0m[33m[WARN] [0m ex is: (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+08:33:22 [0m[33m[WARN] [0m ex is: (Not (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+08:33:22 [0m[33m[WARN] [0m ex is: (AndAlso (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+08:33:22 [0m[33m[WARN] [0m ex is: (OrElse (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+08:33:22 [0m[33m[WARN] [0m ex is: (Imply (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+08:33:22 [0m[33m[WARN] [0m ex is: (Num autovar_Nat_0)
+08:33:22 [0m[33m[WARN] [0m ex is: (Plus (Num autovar_Nat_0) (Num autovar_Nat_0))
+08:33:22 [0m[33m[WARN] [0m ex is: (Minus (Num autovar_Nat_0) (Num autovar_Nat_0))
+08:33:22 [0m[33m[WARN] [0m ex is: (Plus (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)))
+08:33:22 [0m[33m[WARN] [0m ex is: (Minus (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)))
+08:33:22 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:33:22 [0m[33m[WARN] [0mProof mode: true
+08:33:22 [0m[33m[WARN] [0m ex is: zero
+08:33:22 [0m[33m[WARN] [0m ex is: (succ zero)
+08:33:22 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+08:33:22 [0m[33m[WARN] [0m ex is: True
+08:33:22 [0m[33m[WARN] [0m ex is: False
+08:33:22 [0m[33m[WARN] [0m ex is: (Equal autovar_Exp_0 autovar_Exp_1)
+08:33:22 [0m[33m[WARN] [0m ex is: (Not (Equal autovar_Exp_0 autovar_Exp_1))
+08:33:22 [0m[33m[WARN] [0m ex is: (AndAlso (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+08:33:22 [0m[33m[WARN] [0m ex is: (OrElse (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+08:33:22 [0m[33m[WARN] [0m ex is: (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1))
+08:33:22 [0m[33m[WARN] [0m ex is: (Not (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+08:33:22 [0m[33m[WARN] [0m ex is: (AndAlso (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+08:33:22 [0m[33m[WARN] [0m ex is: (OrElse (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+08:33:22 [0m[33m[WARN] [0m ex is: (Imply (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)) (Imply (Equal autovar_Exp_0 autovar_Exp_1) (Equal autovar_Exp_0 autovar_Exp_1)))
+08:33:22 [0m[33m[WARN] [0m ex is: (Num autovar_Nat_0)
+08:33:22 [0m[33m[WARN] [0m ex is: (Plus (Num autovar_Nat_0) (Num autovar_Nat_0))
+08:33:22 [0m[33m[WARN] [0m ex is: (Minus (Num autovar_Nat_0) (Num autovar_Nat_0))
+08:33:22 [0m[33m[WARN] [0m ex is: (Plus (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)))
+08:33:22 [0m[33m[WARN] [0m ex is: (Minus (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)) (Minus (Num autovar_Nat_0) (Num autovar_Nat_0)))
+08:33:22 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:33:22 [0m[33m[WARN] [0mProof mode: true
+08:33:22 [0m[33m[WARN] [0mFound all lemmas
 done in 5

@@ -1,20 +1,20 @@
-05:34:04 [WARN] Collecting statistics
-05:34:04 [WARN]  ex is: Z
-05:34:04 [WARN]  ex is: (S Z)
-05:34:04 [WARN]  ex is: (S (S Z))
-05:34:04 [WARN]  ex is: nil
-05:34:04 [WARN]  ex is: (cons autovar_Nat_0 nil)
-05:34:04 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-05:34:04 [WARN] Running exploration without proof mode, but goals were given
-05:34:04 [WARN] Proof mode: true
-05:34:04 [WARN]  ex is: Z
-05:34:04 [WARN]  ex is: (S Z)
-05:34:04 [WARN]  ex is: (S (S Z))
-05:34:04 [WARN]  ex is: nil
-05:34:04 [WARN]  ex is: (cons autovar_Nat_0 nil)
-05:34:04 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-05:34:04 [WARN] Running exploration without proof mode, but goals were given
-05:34:04 [WARN] Proof mode: true
-05:34:04 [WARN] proved: (list_append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
-05:34:04 [WARN] proved: (list_rev ?ts_ph_Lst_0) => (reverse ?ts_ph_Lst_0)
-05:34:04 [WARN] proved: (reverse ?ts_ph_Lst_0) => (list_rev ?ts_ph_Lst_0)
+08:56:39 [WARN] Collecting statistics
+08:56:39 [WARN]  ex is: Z
+08:56:39 [WARN]  ex is: (S Z)
+08:56:39 [WARN]  ex is: (S (S Z))
+08:56:39 [WARN]  ex is: nil
+08:56:39 [WARN]  ex is: (cons autovar_Nat_0 nil)
+08:56:39 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:56:39 [WARN] Running exploration without proof mode, but goals were given
+08:56:39 [WARN] Proof mode: true
+08:56:39 [WARN]  ex is: Z
+08:56:39 [WARN]  ex is: (S Z)
+08:56:39 [WARN]  ex is: (S (S Z))
+08:56:39 [WARN]  ex is: nil
+08:56:39 [WARN]  ex is: (cons autovar_Nat_0 nil)
+08:56:39 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:56:39 [WARN] Running exploration without proof mode, but goals were given
+08:56:39 [WARN] Proof mode: true
+08:56:39 [WARN] proved: (list_rev ?ts_ph_Lst_0) => (reverse ?ts_ph_Lst_0)
+08:56:39 [WARN] proved: (reverse ?ts_ph_Lst_0) => (list_rev ?ts_ph_Lst_0)
+08:56:39 [WARN] proved: (list_append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0

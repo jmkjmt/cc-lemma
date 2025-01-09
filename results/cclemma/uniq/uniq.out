@@ -16,41 +16,30 @@ Reach the limit
 Reach the limit
 Reach the limit
 (uncyclic) Theorized 6 lemmas, fully attempted 4 lemmas, proved 2 lemmas
-ta1-ta3 uncyclic: TIMEOUT (60903 ms)
+ta1-ta3 uncyclic: TIMEOUT (62573 ms)
 Proving begin ta1-ta4: (ta1 lst) === (ta4 lst)
 Property accepted by cvec analysis
 proved lemma forall v0: Bool. (ite v0 False True) === (ite v0 False (ite v0 False True)) (ite True False True) === (ite True False (ite True False True))
 proved lemma forall v0: Bool. (ite v0 False True) === (ite v0 False (ite v0 g_33 True)) (ite True False True) === (ite True False (ite True g_33 True))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z v0) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z v0))) (remove-elem-1 Z (Cons v0_50 v0_51)) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (Cons v0_50 v0_51))))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (ta1 v0)))) === (remove-elem-1 Z (ta1 v0))
-proved lemma forall v0: Nat. v1: (List Nat). (remove-elem-1 Z (remove-elem-1 v0 v1)) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 v0 v1))) (remove-elem-1 Z (remove-elem-1 v0 (Cons v1_60 v1_61))) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 v0 (Cons v1_60 v1_61))))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (ta1 v0))) === (remove-elem-1 Z (ta1 v0))
-proved lemma forall v0: Nat. v1: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 (S v0) v1))) === (remove-elem-1 Z (remove-elem-1 (S v0) v1))
-proved lemma forall v0: Nat. v1: Nat. True === (ite (eq (S v0) v1) True True) True === (ite (eq (S v0) v1) True True)
+proved lemma forall v0: Nat. True === (ite (eq Z v0) (eq Z v0) True) True === (ite (eq Z v0) (eq Z v0) True)
 proved lemma forall v0: Bool. v1: Nat. v2: Nat. v0 === (ite (eq (S v1) v2) v0 v0) v0 === (ite (eq (S v1) v2) v0 v0)
-proved lemma forall v0: a. v1: Nat. v2: Nat. v0 === (ite (eq v1 v2) v0 v0) v0 === (ite (eq v1 v2) v0 v0)
-proved lemma forall v0: a. v1: Nat. v0 === (ite (eq Z v1) v0 v0) v0 === (ite (eq Z v1) v0 v0)
-(uncyclic) Theorized 195 lemmas, fully attempted 150 lemmas, proved 11 lemmas
-ta1-ta4 uncyclic: TIMEOUT (60433 ms)
+proved lemma forall v0: (List Nat). (remove-elem-1 Z v0) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z v0)))) (remove-elem-1 Z (Cons v0_60 v0_61)) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (Cons v0_60 v0_61)))))
+proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (ta1 v0))))) === (remove-elem-1 Z (ta1 v0))
+(uncyclic) Theorized 239 lemmas, fully attempted 168 lemmas, proved 6 lemmas
+ta1-ta4 uncyclic: TIMEOUT (60176 ms)
 Proving begin ta1-sol4: (ta1 lst) === (sol4 lst)
 Property accepted by cvec analysis
-proved lemma forall v0: (List Nat). (remove-elem-1 Z v0) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z v0))) (remove-elem-1 Z (Cons v0_50 v0_51)) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (Cons v0_50 v0_51))))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (ta1 v0)))) === (remove-elem-1 Z (ta1 v0))
-proved lemma forall v0: Nat. v1: (List Nat). (remove-elem-1 Z (remove-elem-1 v0 v1)) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 v0 v1))) (remove-elem-1 Z (remove-elem-1 v0 (Cons v1_60 v1_61))) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 v0 (Cons v1_60 v1_61))))
-proved lemma forall v0: Nat. v1: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 (S v0) v1))) === (remove-elem-1 Z (remove-elem-1 (S v0) v1))
+proved lemma forall v0: (List Nat). (remove-elem-1 Z v0) === (remove-elem-1 Z (remove-elem-1 Z v0)) (remove-elem-1 Z (Cons v0_40 v0_41)) === (remove-elem-1 Z (remove-elem-1 Z (Cons v0_40 v0_41)))
 proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (ta1 v0))) === (remove-elem-1 Z (ta1 v0))
-proved lemma forall v0: (List Nat). v1: Nat. (remove-elem-1 Z (app v0 (Cons v1 Nil))) === (remove-elem-1 Z (remove-elem-1 Z (app v0 (Cons v1 Nil)))) (remove-elem-1 Z (app (Cons v0_100 v0_101) (Cons v1 Nil))) === (remove-elem-1 Z (remove-elem-1 Z (app (Cons v0_100 v0_101) (Cons v1 Nil))))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (app v0 Nil)) === (remove-elem-1 Z (remove-elem-1 Z (app v0 Nil))) (remove-elem-1 Z (app (Cons v0_60 (Cons v0_61_150 v0_61_151)) Nil)) === (remove-elem-1 Z (remove-elem-1 Z (app (Cons v0_60 (Cons v0_61_150 v0_61_151)) Nil)))
 proved lemma forall v0: (List a). v1: Nat. v2: Nat. v0 === (ite (eq (S v1) v2) v0 v0) v0 === (ite (eq (S v1) v2) v0 v0)
 proved lemma forall v0: (List Nat). v1: (List a). v2: Nat. v3: Nat. (app v0 v1) === (app v0 (ite (eq (S v2) v3) v1 v1)) (app v0 v1) === (app v0 (ite (eq (S v2) v3) v1 v1))
 proved lemma forall v0: (List a). v1: Nat. v2: Nat. v0 === (ite (eq v1 v2) v0 v0) v0 === (ite (eq v1 v2) v0 v0)
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) v0)) === (remove-elem-1 (S Z) (remove-elem-1 Z v0)) (remove-elem-1 Z (remove-elem-1 (S Z) (Cons v0_100 v0_101))) === (remove-elem-1 (S Z) (remove-elem-1 Z (Cons v0_100 v0_101)))
+proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) v0)) === (remove-elem-1 (S Z) (remove-elem-1 Z v0)) (remove-elem-1 Z (remove-elem-1 (S Z) (Cons v0_90 v0_91))) === (remove-elem-1 (S Z) (remove-elem-1 Z (Cons v0_90 v0_91)))
 proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (ta1 v0)))) === (remove-elem-1 Z (remove-elem-1 (S Z) (ta1 v0))) (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (ta1 v0)))) === (remove-elem-1 Z (remove-elem-1 (S Z) (ta1 v0)))
 proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) (app v0 Nil))) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (app v0 Nil)))) (remove-elem-1 Z (remove-elem-1 (S Z) (app v0 Nil))) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (app v0 Nil))))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) v0)) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z v0))) (remove-elem-1 Z (remove-elem-1 (S Z) (Cons v0_120 v0_121))) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (Cons v0_120 v0_121))))
-proved lemma forall v0: (List Nat). v1: Nat. (remove-elem-1 Z (app v0 (Cons Z (Cons v1 Nil)))) === (remove-elem-1 Z (remove-elem-1 Z (app v0 (Cons Z (Cons v1 Nil))))) (remove-elem-1 Z (app v0 (Cons Z (Cons v1 Nil)))) === (remove-elem-1 Z (remove-elem-1 Z (app v0 (Cons Z (Cons v1 Nil)))))
-(uncyclic) Theorized 154 lemmas, fully attempted 98 lemmas, proved 15 lemmas
-ta1-sol4 uncyclic: TIMEOUT (60049 ms)
+proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) v0)) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z v0))) (remove-elem-1 Z (remove-elem-1 (S Z) (Cons v0_110 v0_111))) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (Cons v0_110 v0_111))))
+(uncyclic) Theorized 139 lemmas, fully attempted 92 lemmas, proved 9 lemmas
+ta1-sol4 uncyclic: TIMEOUT (60074 ms)
 Proving begin ta1-sol9: (ta1 lst) === (sol9 lst)
 Property accepted by cvec analysis
 proved lemma forall v0: (List Nat). (remove-elem-1 Z v0) === (remove-elem-1 Z (remove-elem-1 Z v0)) (remove-elem-1 Z (Cons v0_40 v0_41)) === (remove-elem-1 Z (remove-elem-1 Z (Cons v0_40 v0_41)))
@@ -58,29 +47,22 @@ proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (ta1 v0)))
 proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (rev (delete9 v0) Nil))) === (remove-elem-1 Z (rev (delete9 v0) Nil)) (remove-elem-1 Z (remove-elem-1 Z (rev (delete9 v0) Nil))) === (remove-elem-1 Z (rev (delete9 v0) Nil))
 proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
 proved lemma forall v0: Bool. (ite v0 True False) === (ite v0 True (ite v0 True False)) (ite True True False) === (ite True True (ite True True False))
-(uncyclic) Theorized 40 lemmas, fully attempted 28 lemmas, proved 5 lemmas
-ta1-sol9 uncyclic: TIMEOUT (70379 ms)
+Reach the limit
+(uncyclic) Theorized 23 lemmas, fully attempted 11 lemmas, proved 5 lemmas
+ta1-sol9 uncyclic: TIMEOUT (84800 ms)
 Proving begin ta1-sol20: (ta1 lst) === (sol20 lst)
 Property accepted by cvec analysis
-proved lemma forall v0: (List Nat). (remove-elem-1 Z v0) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z v0))) (remove-elem-1 Z (Cons v0_50 v0_51)) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (Cons v0_50 v0_51))))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (ta1 v0)))) === (remove-elem-1 Z (ta1 v0))
-proved lemma forall v0: Nat. v1: (List Nat). (remove-elem-1 Z (remove-elem-1 v0 v1)) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 v0 v1))) (remove-elem-1 Z (remove-elem-1 v0 (Cons v1_60 v1_61))) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 v0 (Cons v1_60 v1_61))))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (ta1 v0))) === (remove-elem-1 Z (ta1 v0))
-proved lemma forall v0: Nat. v1: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 (S v0) v1))) === (remove-elem-1 Z (remove-elem-1 (S v0) v1))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (aux20 (list-rev v0))) === (remove-elem-1 Z (remove-elem-1 Z (aux20 (list-rev v0)))) (remove-elem-1 Z (aux20 (list-rev (Cons v0_60 (Cons v0_61_160 v0_61_161))))) === (remove-elem-1 Z (remove-elem-1 Z (aux20 (list-rev (Cons v0_60 (Cons v0_61_160 v0_61_161))))))
 proved lemma forall v0: Nat. v1: Nat. (eq v0 v1) === (eq v1 v0) (eq (S v0_40) (S v1_80)) === (eq (S v1_80) (S v0_40))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) v0)) === (remove-elem-1 (S Z) (remove-elem-1 Z v0)) (remove-elem-1 Z (remove-elem-1 (S Z) (Cons v0_100 v0_101))) === (remove-elem-1 (S Z) (remove-elem-1 Z (Cons v0_100 v0_101)))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (ta1 v0)))) === (remove-elem-1 Z (remove-elem-1 (S Z) (ta1 v0))) (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (ta1 v0)))) === (remove-elem-1 Z (remove-elem-1 (S Z) (ta1 v0)))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) (aux20 (list-rev v0)))) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (aux20 (list-rev v0))))) (remove-elem-1 Z (remove-elem-1 (S Z) (aux20 (list-rev v0)))) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (aux20 (list-rev v0)))))
-proved lemma forall v0: (List Nat). v1: Nat. (remove-elem-1 Z (aux20 (list-append (list-rev v0) (Cons v1 Nil)))) === (remove-elem-1 Z (remove-elem-1 Z (aux20 (list-append (list-rev v0) (Cons v1 Nil))))) (remove-elem-1 Z (aux20 (list-append (list-rev v0) (Cons v1 Nil)))) === (remove-elem-1 Z (remove-elem-1 Z (aux20 (list-append (list-rev v0) (Cons v1 Nil)))))
-(uncyclic) Theorized 127 lemmas, fully attempted 91 lemmas, proved 11 lemmas
-ta1-sol20 uncyclic: TIMEOUT (60015 ms)
+proved lemma forall v0: (List Nat). (remove-elem-1 Z v0) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z v0)))) (remove-elem-1 Z (Cons v0_60 v0_61)) === (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (Cons v0_60 v0_61)))))
+proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (remove-elem-1 Z (ta1 v0))))) === (remove-elem-1 Z (ta1 v0))
+(uncyclic) Theorized 170 lemmas, fully attempted 99 lemmas, proved 3 lemmas
+ta1-sol20 uncyclic: TIMEOUT (60078 ms)
 Proving begin ta1-sol43: (ta1 lst) === (sol43 lst)
 Property rejected by cvec analysis
-cvec: (Cons Z Nil),Nil,(Cons (S (S Z)) (Cons (S Z) Nil)),(Cons (S (S (S Z))) Nil),(Cons (S (S Z)) (Cons Z Nil)),Nil,(Cons (S Z) (Cons Z Nil)),(Cons Z (Cons (S Z) Nil)),(Cons Z Nil),(Cons (S Z) (Cons Z Nil)),(Cons (S (S Z)) Nil),(Cons Z (Cons (S (S Z)) (Cons (S Z) Nil))),(Cons (S Z) Nil),(Cons (S Z) (Cons Z Nil)),(Cons (S Z) (Cons Z Nil)),(Cons (S (S Z)) Nil),(Cons (S (S (S Z))) (Cons (S Z) (Cons Z Nil))),(Cons (S (S (S Z))) (Cons Z Nil)),(Cons Z (Cons (S Z) Nil)),(Cons Z (Cons (S Z) Nil)),(Cons Z (Cons (S (S Z)) Nil)),(Cons Z Nil),(Cons (S Z) Nil),(Cons (S Z) (Cons (S (S Z)) Nil)),(Cons Z Nil),(Cons (S (S Z)) Nil),(Cons (S (S Z)) (Cons (S Z) (Cons Z Nil))),(Cons Z (Cons (S Z) Nil)),(Cons (S (S (S Z))) (Cons Z Nil)),(Cons (S Z) Nil)
-cvec: (Cons Z (sol43 (ite ($ aux43 Z Z) (Cons Z Nil) Nil))),Nil,(Cons (S (S Z)) (sol43 (ite ($ aux43 (S Z) (S (S Z))) (Cons (S Z) Nil) Nil))),(Cons (S (S (S Z))) Nil),(Cons (S (S Z)) (sol43 (ite ($ aux43 Z (S (S Z))) (Cons Z Nil) Nil))),Nil,(Cons (S Z) (sol43 (ite ($ aux43 (S Z) (S Z)) (Cons (S Z) (ite ($ aux43 Z (S Z)) (Cons Z (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))) (ite ($ aux43 Z (S Z)) (Cons Z (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))))),(Cons Z (sol43 (ite ($ aux43 (S Z) Z) (Cons (S Z) Nil) Nil))),(Cons Z (sol43 (ite ($ aux43 Z Z) (Cons Z (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil)))),(Cons (S Z) (sol43 (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))),(Cons (S (S Z)) (sol43 (ite ($ aux43 (S (S Z)) (S (S Z))) (Cons (S (S Z)) Nil) Nil))),(Cons Z (sol43 (ite ($ aux43 (S (S Z)) Z) (Cons (S (S Z)) (ite ($ aux43 (S Z) Z) (Cons (S Z) (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil))) (ite ($ aux43 (S Z) Z) (Cons (S Z) (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil))))),(Cons (S Z) Nil),(Cons (S Z) (sol43 (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))),(Cons (S Z) (sol43 (ite ($ aux43 Z (S Z)) (Cons Z (ite ($ aux43 Z (S Z)) (Cons Z (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))) (ite ($ aux43 Z (S Z)) (Cons Z (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))))),(Cons (S (S Z)) Nil),(Cons (S (S (S Z))) (sol43 (ite ($ aux43 (S Z) (S (S (S Z)))) (Cons (S Z) (ite ($ aux43 Z (S (S (S Z)))) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S (S (S Z)))) (Cons Z Nil) Nil)))),(Cons (S (S (S Z))) (sol43 (ite ($ aux43 Z (S (S (S Z)))) (Cons Z Nil) Nil))),(Cons Z (sol43 (ite ($ aux43 (S Z) Z) (Cons (S Z) (ite ($ aux43 (S Z) Z) (Cons (S Z) (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil))) (ite ($ aux43 (S Z) Z) (Cons (S Z) (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil))))),(Cons Z (sol43 (ite ($ aux43 (S Z) Z) (Cons (S Z) (ite ($ aux43 Z Z) (Cons Z (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil))) (ite ($ aux43 Z Z) (Cons Z (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil))))),(Cons Z (sol43 (ite ($ aux43 (S (S Z)) Z) (Cons (S (S Z)) Nil) Nil))),(Cons Z (sol43 (ite ($ aux43 Z Z) (Cons Z (ite ($ aux43 Z Z) (Cons Z (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil))) (ite ($ aux43 Z Z) (Cons Z (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil))))),(Cons (S Z) Nil),(Cons (S Z) (sol43 (ite ($ aux43 (S (S Z)) (S Z)) (Cons (S (S Z)) Nil) Nil))),(Cons Z Nil),(Cons (S (S Z)) (sol43 (ite ($ aux43 (S (S Z)) (S (S Z))) (Cons (S (S Z)) Nil) Nil))),(Cons (S (S Z)) (sol43 (ite ($ aux43 (S Z) (S (S Z))) (Cons (S Z) (ite ($ aux43 Z (S (S Z))) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S (S Z))) (Cons Z Nil) Nil)))),(Cons Z (sol43 (ite ($ aux43 (S Z) Z) (Cons (S Z) (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil)))),(Cons (S (S (S Z))) (sol43 (ite ($ aux43 Z (S (S (S Z)))) (Cons Z (ite ($ aux43 Z (S (S (S Z)))) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S (S (S Z)))) (Cons Z Nil) Nil)))),(Cons (S Z) Nil)
+cvec: (Cons Z Nil),(Cons (S (S Z)) (Cons Z Nil)),(Cons Z (Cons (S Z) Nil)),Nil,(Cons (S (S Z)) Nil),(Cons (S (S Z)) Nil),(Cons Z (Cons (S Z) Nil)),(Cons (S Z) Nil),(Cons (S Z) (Cons (S (S Z)) Nil)),(Cons (S (S (S Z))) Nil),(Cons (S (S Z)) (Cons (S Z) Nil)),(Cons Z (Cons (S Z) Nil)),Nil,(Cons (S Z) (Cons Z Nil)),(Cons Z Nil),(Cons Z (Cons (S (S Z)) Nil)),(Cons (S Z) Nil),(Cons (S Z) (Cons Z Nil)),(Cons (S (S (S Z))) Nil),(Cons (S (S (S Z))) (Cons (S Z) Nil)),Nil,Nil,(Cons Z (Cons (S Z) Nil)),(Cons (S (S Z)) (Cons (S Z) Nil)),(Cons (S Z) (Cons (S (S Z)) (Cons Z Nil))),(Cons (S (S (S Z))) (Cons Z Nil)),(Cons Z Nil),Nil,(Cons (S Z) (Cons Z Nil)),Nil
+cvec: (Cons Z Nil),(Cons (S (S Z)) (sol43 (ite ($ aux43 Z (S (S Z))) (Cons Z Nil) Nil))),(Cons Z (sol43 (ite ($ aux43 (S Z) Z) (Cons (S Z) Nil) Nil))),Nil,(Cons (S (S Z)) Nil),(Cons (S (S Z)) (sol43 (ite ($ aux43 (S (S Z)) (S (S Z))) (Cons (S (S Z)) Nil) Nil))),(Cons Z (sol43 (ite ($ aux43 (S Z) Z) (Cons (S Z) (ite ($ aux43 Z Z) (Cons Z (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil))) (ite ($ aux43 Z Z) (Cons Z (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil))))),(Cons (S Z) Nil),(Cons (S Z) (sol43 (ite ($ aux43 (S (S Z)) (S Z)) (Cons (S (S Z)) Nil) Nil))),(Cons (S (S (S Z))) Nil),(Cons (S (S Z)) (sol43 (ite ($ aux43 (S Z) (S (S Z))) (Cons (S Z) Nil) Nil))),(Cons Z (sol43 (ite ($ aux43 (S Z) Z) (Cons (S Z) (ite ($ aux43 Z Z) (Cons Z Nil) Nil)) (ite ($ aux43 Z Z) (Cons Z Nil) Nil)))),Nil,(Cons (S Z) (sol43 (ite ($ aux43 Z (S Z)) (Cons Z (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil)))),(Cons Z (sol43 (ite ($ aux43 Z Z) (Cons Z Nil) Nil))),(Cons Z (sol43 (ite ($ aux43 (S (S Z)) Z) (Cons (S (S Z)) Nil) Nil))),(Cons (S Z) (sol43 (ite ($ aux43 (S Z) (S Z)) (Cons (S Z) Nil) Nil))),(Cons (S Z) (sol43 (ite ($ aux43 Z (S Z)) (Cons Z (ite ($ aux43 (S Z) (S Z)) (Cons (S Z) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))) (ite ($ aux43 (S Z) (S Z)) (Cons (S Z) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))))),(Cons (S (S (S Z))) Nil),(Cons (S (S (S Z))) (sol43 (ite ($ aux43 (S Z) (S (S (S Z)))) (Cons (S Z) Nil) Nil))),Nil,Nil,(Cons Z (sol43 (ite ($ aux43 Z Z) (Cons Z (ite ($ aux43 (S Z) Z) (Cons (S Z) Nil) Nil)) (ite ($ aux43 (S Z) Z) (Cons (S Z) Nil) Nil)))),(Cons (S (S Z)) (sol43 (ite ($ aux43 (S Z) (S (S Z))) (Cons (S Z) (ite ($ aux43 (S Z) (S (S Z))) (Cons (S Z) Nil) Nil)) (ite ($ aux43 (S Z) (S (S Z))) (Cons (S Z) Nil) Nil)))),(Cons (S Z) (sol43 (ite ($ aux43 (S (S Z)) (S Z)) (Cons (S (S Z)) (ite ($ aux43 (S Z) (S Z)) (Cons (S Z) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))) (ite ($ aux43 (S Z) (S Z)) (Cons (S Z) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil)) (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))))),(Cons (S (S (S Z))) (sol43 (ite ($ aux43 Z (S (S (S Z)))) (Cons Z Nil) Nil))),(Cons Z Nil),Nil,(Cons (S Z) (sol43 (ite ($ aux43 Z (S Z)) (Cons Z Nil) Nil))),Nil
 (uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
-ta1-sol43 uncyclic: INVALID (13 ms)
+ta1-sol43 uncyclic: INVALID (12 ms)
 Proving begin ta1-sol57: (ta1 lst) === (sol57 lst)
 Property accepted by cvec analysis
 proved lemma forall v0: (List Nat). (remove-elem-1 Z v0) === (remove-elem-1 Z (remove-elem-1 Z v0)) (remove-elem-1 Z (Cons v0_40 v0_41)) === (remove-elem-1 Z (remove-elem-1 Z (Cons v0_40 v0_41)))
@@ -92,23 +74,22 @@ proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) v0)) =
 proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (ta1 v0)))) === (remove-elem-1 Z (remove-elem-1 (S Z) (ta1 v0))) (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (ta1 v0)))) === (remove-elem-1 Z (remove-elem-1 (S Z) (ta1 v0)))
 proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) (putIn v0 Nil))) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (putIn v0 Nil)))) (remove-elem-1 Z (remove-elem-1 (S Z) (putIn v0 Nil))) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (putIn v0 Nil))))
 proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 (S Z) v0)) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z v0))) (remove-elem-1 Z (remove-elem-1 (S Z) (Cons v0_110 v0_111))) === (remove-elem-1 Z (remove-elem-1 (S Z) (remove-elem-1 Z (Cons v0_110 v0_111))))
-(uncyclic) Theorized 134 lemmas, fully attempted 87 lemmas, proved 9 lemmas
-ta1-sol57 uncyclic: TIMEOUT (60101 ms)
+(uncyclic) Theorized 144 lemmas, fully attempted 96 lemmas, proved 9 lemmas
+ta1-sol57 uncyclic: TIMEOUT (60067 ms)
 Proving begin ta1-sol75: (ta1 lst) === (sol75 lst)
 Property accepted by cvec analysis
 proved lemma forall v0: (List Nat). (remove-elem-1 Z v0) === (remove-elem-1 Z (remove-elem-1 Z v0)) (remove-elem-1 Z (Cons v0_40 v0_41)) === (remove-elem-1 Z (remove-elem-1 Z (Cons v0_40 v0_41)))
-proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (reverse v0))) === (remove-elem-1 Z (reverse v0))
 proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (ta1 v0))) === (remove-elem-1 Z (ta1 v0))
+proved lemma forall v0: (List Nat). (remove-elem-1 Z (remove-elem-1 Z (reverse v0))) === (remove-elem-1 Z (reverse v0))
 proved lemma forall v0: Nat. (eq v0 Z) === (eq Z v0) (eq (S v0_40) Z) === (eq Z (S v0_40))
 proved lemma forall v0: Nat. v1: Nat. (eq Z v0) === (ite (eq v1 v0) (eq Z v1) (eq Z v0)) (eq Z (S v0_90)) === (ite (eq (S v1_190) (S v0_90)) (eq Z (S v1_190)) (eq Z (S v0_90)))
 proved lemma forall v0: Nat. v1: Nat. True === (ite (eq v0 v1) True True) True === (ite (eq v0 v1) True True)
 proved lemma forall v0: Bool. v1: Nat. v2: Nat. v0 === (ite (eq v1 v2) v0 v0) v0 === (ite (eq v1 v2) v0 v0)
-proved lemma forall True === (ite (ite g_164 True False) True True) True === (ite (ite g_164 True False) True True)
-proved lemma forall v0: Bool. v0 === (ite (ite g_164 v0 False) v0 v0) v0 === (ite (ite g_164 v0 False) v0 v0)
 proved lemma forall v0: Bool. v0 === (ite (ite g_164 g_182 False) v0 v0) v0 === (ite (ite g_164 g_182 False) v0 v0)
 proved lemma forall v0: Bool. v0 === (ite (ite g_164 True False) v0 v0) v0 === (ite (ite g_164 True False) v0 v0)
-(uncyclic) Theorized 298 lemmas, fully attempted 245 lemmas, proved 11 lemmas
-ta1-sol75 uncyclic: TIMEOUT (60079 ms)
+proved lemma forall v0: Bool. v0 === (ite (ite g_164 v0 False) v0 v0) v0 === (ite (ite g_164 v0 False) v0 v0)
+(uncyclic) Theorized 364 lemmas, fully attempted 307 lemmas, proved 10 lemmas
+ta1-sol75 uncyclic: TIMEOUT (60317 ms)
 Proving begin ta1-sol89: (ta1 lst) === (sol89 lst)
 Property accepted by cvec analysis
 proved lemma forall v0: Bool. v0 === (ite v0 True False) True === (ite True True False)
@@ -201,11 +182,11 @@ Reach the limit
 Reach the limit
 Reach the limit
 (uncyclic) Theorized 2 lemmas, fully attempted 2 lemmas, proved 2 lemmas
-ta1-sol89 uncyclic: TIMEOUT (60021 ms)
+ta1-sol89 uncyclic: TIMEOUT (60016 ms)
 Proving begin ta1-sol101: (ta1 lst) === (sol101 lst)
 Property rejected by cvec analysis
-cvec: (Cons Z (Cons (S (S Z)) Nil)),(Cons (S (S Z)) Nil),(Cons (S Z) (Cons Z Nil)),(Cons Z Nil),(Cons Z (Cons (S (S Z)) Nil)),(Cons (S (S Z)) Nil),(Cons Z (Cons (S Z) Nil)),(Cons Z Nil),(Cons (S Z) (Cons (S (S Z)) Nil)),(Cons (S Z) (Cons Z Nil)),(Cons (S Z) (Cons Z Nil)),(Cons (S (S Z)) (Cons Z Nil)),(Cons (S Z) (Cons Z Nil)),(Cons (S (S (S Z))) (Cons Z (Cons (S Z) Nil))),(Cons (S Z) (Cons (S (S Z)) (Cons Z Nil))),(Cons Z (Cons (S Z) Nil)),(Cons Z (Cons (S (S Z)) (Cons (S Z) Nil))),(Cons (S (S (S Z))) (Cons Z Nil)),(Cons (S Z) (Cons Z Nil)),(Cons (S (S (S Z))) (Cons (S Z) (Cons Z Nil))),(Cons Z (Cons (S Z) Nil)),(Cons Z Nil),(Cons Z Nil),(Cons (S (S Z)) (Cons (S Z) Nil)),Nil,(Cons (S Z) Nil),(Cons Z (Cons (S Z) Nil)),(Cons Z (Cons (S (S Z)) (Cons (S Z) Nil))),Nil,(Cons (S Z) Nil)
-cvec: ($ aux101 ($ aux101 Nil Z) (S (S Z))),($ aux101 Nil (S (S Z))),($ aux101 ($ aux101 ($ aux101 Nil (S Z)) Z) (S Z)),($ aux101 ($ aux101 Nil Z) Z),($ aux101 ($ aux101 ($ aux101 Nil Z) (S (S Z))) Z),($ aux101 Nil (S (S Z))),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil Z) (S Z)) Z) Z),($ aux101 ($ aux101 ($ aux101 Nil Z) Z) Z),($ aux101 ($ aux101 Nil (S Z)) (S (S Z))),($ aux101 ($ aux101 Nil (S Z)) Z),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil (S Z)) (S Z)) Z) Z),($ aux101 ($ aux101 Nil (S (S Z))) Z),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil (S Z)) Z) Z) Z),($ aux101 ($ aux101 ($ aux101 Nil (S (S (S Z)))) Z) (S Z)),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil (S Z)) (S (S Z))) Z) Z),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil Z) Z) (S Z)) Z),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil Z) (S (S Z))) (S Z)) Z),($ aux101 ($ aux101 Nil (S (S (S Z)))) Z),($ aux101 ($ aux101 ($ aux101 Nil (S Z)) Z) Z),($ aux101 ($ aux101 ($ aux101 Nil (S (S (S Z)))) (S Z)) Z),($ aux101 ($ aux101 Nil Z) (S Z)),($ aux101 Nil Z),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil Z) Z) Z) Z),($ aux101 ($ aux101 Nil (S (S Z))) (S Z)),Nil,($ aux101 ($ aux101 Nil (S Z)) (S Z)),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil Z) (S Z)) (S Z)) Z),($ aux101 ($ aux101 ($ aux101 Nil Z) (S (S Z))) (S Z)),Nil,($ aux101 Nil (S Z))
+cvec: (Cons Z (Cons (S Z) Nil)),(Cons Z Nil),(Cons Z (Cons (S (S Z)) (Cons (S Z) Nil))),(Cons Z (Cons (S (S Z)) Nil)),(Cons Z (Cons (S (S Z)) Nil)),Nil,(Cons Z (Cons (S Z) Nil)),(Cons (S Z) (Cons Z Nil)),(Cons (S (S (S Z))) (Cons Z Nil)),(Cons (S (S (S Z))) (Cons (S Z) (Cons Z Nil))),(Cons (S Z) (Cons Z Nil)),(Cons (S (S (S Z))) Nil),(Cons (S (S (S Z))) (Cons Z Nil)),(Cons (S (S (S Z))) (Cons (S Z) Nil)),(Cons (S Z) (Cons (S (S Z)) Nil)),(Cons Z Nil),(Cons (S (S Z)) Nil),(Cons (S (S (S Z))) (Cons (S (S Z)) (Cons (S Z) Nil))),(Cons Z (Cons (S Z) Nil)),(Cons (S (S Z)) (Cons (S Z) (Cons Z Nil))),(Cons Z Nil),(Cons (S (S Z)) (Cons (S Z) Nil)),(Cons (S (S (S Z))) (Cons (S (S Z)) (Cons Z Nil))),(Cons (S (S (S Z))) (Cons (S Z) Nil)),(Cons Z Nil),(Cons (S (S (S Z))) (Cons Z Nil)),(Cons (S (S (S Z))) (Cons Z (Cons (S Z) Nil))),Nil,(Cons (S Z) (Cons (S (S Z)) (Cons Z Nil))),(Cons (S Z) Nil)
+cvec: ($ aux101 ($ aux101 Nil Z) (S Z)),($ aux101 ($ aux101 ($ aux101 Nil Z) Z) Z),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil Z) (S (S Z))) (S Z)) Z),($ aux101 ($ aux101 Nil Z) (S (S Z))),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil Z) (S (S Z))) Z) Z),Nil,($ aux101 ($ aux101 ($ aux101 Nil Z) Z) (S Z)),($ aux101 ($ aux101 ($ aux101 Nil (S Z)) Z) Z),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil (S (S (S Z)))) Z) Z) Z),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil (S (S (S Z)))) (S Z)) (S Z)) Z),($ aux101 ($ aux101 Nil (S Z)) Z),($ aux101 Nil (S (S (S Z)))),($ aux101 ($ aux101 ($ aux101 Nil (S (S (S Z)))) Z) Z),($ aux101 ($ aux101 Nil (S (S (S Z)))) (S Z)),($ aux101 ($ aux101 Nil (S Z)) (S (S Z))),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil Z) Z) Z) Z),($ aux101 Nil (S (S Z))),($ aux101 ($ aux101 ($ aux101 Nil (S (S (S Z)))) (S (S Z))) (S Z)),($ aux101 ($ aux101 ($ aux101 Nil Z) (S Z)) Z),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil (S (S Z))) (S Z)) (S Z)) Z),($ aux101 Nil Z),($ aux101 ($ aux101 ($ aux101 Nil (S (S Z))) (S Z)) (S Z)),($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil (S (S (S Z)))) (S (S Z))) Z) Z),($ aux101 ($ aux101 ($ aux101 Nil (S (S (S Z)))) (S Z)) (S Z)),($ aux101 ($ aux101 Nil Z) Z),($ aux101 ($ aux101 Nil (S (S (S Z)))) Z),($ aux101 ($ aux101 ($ aux101 Nil (S (S (S Z)))) Z) (S Z)),Nil,($ aux101 ($ aux101 ($ aux101 ($ aux101 Nil (S Z)) (S (S Z))) (S Z)) Z),($ aux101 Nil (S Z))
 (uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
 ta1-sol101 uncyclic: INVALID (10 ms)
 Attempted 10 goals:

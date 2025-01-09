@@ -1,4 +1,4 @@
-03:20:39 [0m[33m[WARN] [0mCollecting statistics
+08:41:00 [0m[33m[WARN] [0mCollecting statistics
 (add1 Z ?y) => ?y
 (add1 (S ?x) ?y) => (S (add1 ?x ?y))
 (sol4 (S ?x) (S ?y)) => (S (S (sol4 ?x ?y)))
@@ -13,37 +13,47 @@ Searcher: (sol4 (S ?autovar5) ?autovar8)
 Searcher: (sol4 (S ?autovar6) ?autovar8)
 Searcher: (sol4 Z ?autovar8)
 Searcher: (sol4 Z ?autovar8)
-03:20:39 [0m[33m[WARN] [0m ex is: Z
-03:20:39 [0m[33m[WARN] [0m ex is: (S Z)
-03:20:39 [0m[33m[WARN] [0m ex is: (S (S Z))
-03:20:39 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-03:20:39 [0m[33m[WARN] [0mProof mode: true
-03:20:39 [0m[33m[WARN] [0m ex is: Z
-03:20:39 [0m[33m[WARN] [0m ex is: (S Z)
-03:20:39 [0m[33m[WARN] [0m ex is: (S (S Z))
-03:20:39 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-03:20:39 [0m[33m[WARN] [0mProof mode: true
-03:20:39 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
-03:20:39 [0m[33m[WARN] [0mproved: (sol4 Z ?ts_ph_Nat_0) => ?ts_ph_Nat_0
-03:21:32 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 (S Z)) => (S ?ts_ph_Nat_0)
-03:21:32 [0m[33m[WARN] [0mproved: (S ?ts_ph_Nat_0) => (sol4 ?ts_ph_Nat_0 (S Z))
-03:21:32 [0m[33m[WARN] [0mproved: (sol4 (S Z) ?ts_ph_Nat_0) => (S ?ts_ph_Nat_0)
-03:21:32 [0m[33m[WARN] [0mproved: (S ?ts_ph_Nat_0) => (sol4 (S Z) ?ts_ph_Nat_0)
-03:21:32 [0m[33m[WARN] [0mproved: (sol4 (S ?ts_ph_Nat_0) ?ts_ph_Nat_0) => (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-03:21:32 [0m[33m[WARN] [0mproved: (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (sol4 (S ?ts_ph_Nat_0) ?ts_ph_Nat_0)
-03:21:32 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0)) => (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-03:21:32 [0m[33m[WARN] [0mproved: (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0))
-03:21:32 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
-03:21:32 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
-03:21:32 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
-03:21:32 [0m[33m[WARN] [0mproved: (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
-03:21:32 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_1 (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) => (sol4 ?ts_ph_Nat_0 (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
-03:21:32 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (sol4 ?ts_ph_Nat_1 (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_2))
-03:21:35 [0m[33m[WARN] [0mStopped case split due to node limit
-03:21:36 [0m[33m[WARN] [0mStopped case split due to node limit
-03:21:36 [0m[33m[WARN] [0mStopped case split due to node limit
-03:21:36 [0m[33m[WARN] [0mStopped case split due to node limit
-03:21:37 [0m[33m[WARN] [0mStopped case split due to node limit
-03:21:37 [0m[33m[WARN] [0mStopped case split due to node limit
-03:21:38 [0m[33m[WARN] [0mStopped case split due to node limit
-03:21:38 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:00 [0m[33m[WARN] [0m ex is: Z
+08:41:00 [0m[33m[WARN] [0m ex is: (S Z)
+08:41:00 [0m[33m[WARN] [0m ex is: (S (S Z))
+08:41:00 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:41:00 [0m[33m[WARN] [0mProof mode: true
+08:41:00 [0m[33m[WARN] [0m ex is: Z
+08:41:00 [0m[33m[WARN] [0m ex is: (S Z)
+08:41:00 [0m[33m[WARN] [0m ex is: (S (S Z))
+08:41:00 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:41:00 [0m[33m[WARN] [0mProof mode: true
+08:41:00 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+08:41:00 [0m[33m[WARN] [0mproved: (sol4 Z ?ts_ph_Nat_0) => ?ts_ph_Nat_0
+08:41:48 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 (S Z)) => (S ?ts_ph_Nat_0)
+08:41:48 [0m[33m[WARN] [0mproved: (S ?ts_ph_Nat_0) => (sol4 ?ts_ph_Nat_0 (S Z))
+08:41:49 [0m[33m[WARN] [0mproved: (sol4 (S Z) ?ts_ph_Nat_0) => (S ?ts_ph_Nat_0)
+08:41:49 [0m[33m[WARN] [0mproved: (S ?ts_ph_Nat_0) => (sol4 (S Z) ?ts_ph_Nat_0)
+08:41:49 [0m[33m[WARN] [0mproved: (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (sol4 (S ?ts_ph_Nat_0) ?ts_ph_Nat_0)
+08:41:49 [0m[33m[WARN] [0mproved: (sol4 (S ?ts_ph_Nat_0) ?ts_ph_Nat_0) => (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
+08:41:49 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0)) => (sol4 (S ?ts_ph_Nat_0) ?ts_ph_Nat_0)
+08:41:49 [0m[33m[WARN] [0mproved: (sol4 (S ?ts_ph_Nat_0) ?ts_ph_Nat_0) => (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0))
+08:41:49 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+08:41:49 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+08:41:49 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+08:41:49 [0m[33m[WARN] [0mproved: (S (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (sol4 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
+08:41:49 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_0 (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (sol4 ?ts_ph_Nat_1 (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_2))
+08:41:49 [0m[33m[WARN] [0mproved: (sol4 ?ts_ph_Nat_1 (sol4 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) => (sol4 ?ts_ph_Nat_0 (sol4 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
+08:41:52 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:52 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:53 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:53 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:54 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:54 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:55 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:55 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:55 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:56 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:56 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:57 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:57 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:58 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:58 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:59 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:59 [0m[33m[WARN] [0mStopped case split due to node limit
+08:41:59 [0m[33m[WARN] [0mStopped case split due to node limit

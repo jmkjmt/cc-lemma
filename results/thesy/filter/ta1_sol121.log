@@ -1,22 +1,26 @@
-06:10:39 [WARN] Collecting statistics
-06:10:39 [WARN]  ex is: zero
-06:10:39 [WARN]  ex is: (succ zero)
-06:10:39 [WARN]  ex is: (succ (succ zero))
-06:10:39 [WARN]  ex is: nil
-06:10:39 [WARN]  ex is: (cons autovar_Nat_0 nil)
-06:10:39 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-06:10:39 [WARN] Proof mode: false
-06:10:39 [WARN]  ex is: zero
-06:10:39 [WARN]  ex is: (succ zero)
-06:10:39 [WARN]  ex is: (succ (succ zero))
-06:10:39 [WARN]  ex is: nil
-06:10:39 [WARN]  ex is: (cons autovar_Nat_0 nil)
-06:10:39 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-06:10:39 [WARN] Proof mode: false
-06:10:39 [WARN] proved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
-06:10:40 [WARN] proved: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
-06:10:40 [WARN] proved: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) => (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
-06:10:40 [WARN] proved: (reverse ?ts_ph_Lst_1 ?ts_ph_Lst_0) => (reverse (reverse ?ts_ph_Lst_0 ?ts_ph_Lst_1) nil)
-06:10:40 [WARN] proved: (reverse (reverse ?ts_ph_Lst_0 ?ts_ph_Lst_1) nil) => (reverse ?ts_ph_Lst_1 ?ts_ph_Lst_0)
-06:10:40 [WARN] proved: (append (reverse ?ts_ph_Lst_0 nil) ?ts_ph_Lst_1) => (reverse ?ts_ph_Lst_0 ?ts_ph_Lst_1)
-06:10:40 [WARN] proved: (reverse ?ts_ph_Lst_0 ?ts_ph_Lst_1) => (append (reverse ?ts_ph_Lst_0 nil) ?ts_ph_Lst_1)
+08:33:21 [WARN] Collecting statistics
+08:33:21 [WARN]  ex is: zero
+08:33:21 [WARN]  ex is: (succ zero)
+08:33:21 [WARN]  ex is: (succ (succ zero))
+08:33:21 [WARN]  ex is: nil
+08:33:21 [WARN]  ex is: (cons autovar_Nat_0 nil)
+08:33:21 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:33:21 [WARN] Proof mode: false
+08:33:21 [WARN]  ex is: zero
+08:33:21 [WARN]  ex is: (succ zero)
+08:33:21 [WARN]  ex is: (succ (succ zero))
+08:33:21 [WARN]  ex is: nil
+08:33:21 [WARN]  ex is: (cons autovar_Nat_0 nil)
+08:33:21 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:33:21 [WARN] Proof mode: false
+08:33:21 [WARN] proved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
+08:33:22 [WARN] generalized case_split proof as: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) -- (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
+08:33:22 [WARN] proved: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
+08:33:22 [WARN] proved: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) => (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
+08:33:22 [WARN] proved: (reverse (reverse ?ts_ph_Lst_0 ?ts_ph_Lst_1) nil) => (reverse ?ts_ph_Lst_1 ?ts_ph_Lst_0)
+08:33:22 [WARN] proved: (reverse ?ts_ph_Lst_1 ?ts_ph_Lst_0) => (reverse (reverse ?ts_ph_Lst_0 ?ts_ph_Lst_1) nil)
+08:33:22 [WARN] proved: (reverse ?ts_ph_Lst_0 (cons ?ts_ph_Nat_0 ?ts_ph_Lst_1)) => (append (reverse ?ts_ph_Lst_0 nil) (cons ?ts_ph_Nat_0 ?ts_ph_Lst_1))
+08:33:22 [WARN] proved: (append (reverse ?ts_ph_Lst_0 nil) (cons ?ts_ph_Nat_0 ?ts_ph_Lst_1)) => (reverse ?ts_ph_Lst_0 (cons ?ts_ph_Nat_0 ?ts_ph_Lst_1))
+08:33:22 [WARN] generalized case_split proof as: (reverse ?ts_ph_Lst_0 (reverse ?ts_ph_Lst_1 ?ts_ph_Lst_2)) -- (append (reverse ?ts_ph_Lst_0 nil) (reverse ?ts_ph_Lst_1 ?ts_ph_Lst_2))
+08:33:22 [WARN] proved: (reverse ?ts_ph_Lst_0 (reverse ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (append (reverse ?ts_ph_Lst_0 nil) (reverse ?ts_ph_Lst_1 ?ts_ph_Lst_2))
+08:33:22 [WARN] proved: (append (reverse ?ts_ph_Lst_0 nil) (reverse ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (reverse ?ts_ph_Lst_0 (reverse ?ts_ph_Lst_1 ?ts_ph_Lst_2))

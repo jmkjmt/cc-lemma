@@ -1,4 +1,4 @@
-03:11:31 [0m[33m[WARN] [0mCollecting statistics
+08:38:00 [0m[33m[WARN] [0mCollecting statistics
 (plus zero ?y) => ?y
 (plus (succ ?x) ?y) => (succ (plus ?x ?y))
 (sub ?x zero) => ?x
@@ -26,24 +26,24 @@ Searcher: (lt ?autovar5 (succ ?autovar1))
 Searcher: (lt ?autovar5 (succ ?autovar3))
 Searcher: (lt zero ?autovar6)
 Searcher: (lt (succ ?autovar4) ?autovar6)
-03:11:31 [0m[33m[WARN] [0m ex is: zero
-03:11:31 [0m[33m[WARN] [0m ex is: (succ zero)
-03:11:31 [0m[33m[WARN] [0m ex is: (succ (succ zero))
-03:11:31 [0m[33m[WARN] [0m ex is: nil
-03:11:31 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
-03:11:31 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-03:11:31 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-03:11:31 [0m[33m[WARN] [0mProof mode: true
-03:11:31 [0m[33m[WARN] [0m ex is: zero
-03:11:31 [0m[33m[WARN] [0m ex is: (succ zero)
-03:11:31 [0m[33m[WARN] [0m ex is: (succ (succ zero))
-03:11:31 [0m[33m[WARN] [0m ex is: nil
-03:11:31 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
-03:11:31 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-03:11:31 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-03:11:31 [0m[33m[WARN] [0mProof mode: true
-03:11:31 [0m[33m[WARN] [0mproved: (comp ?ts_ph_Nat_0 zero) => ?ts_ph_Nat_0
-03:11:31 [0m[33m[WARN] [0mproved: (plus ?ts_ph_Nat_0 zero) => ?ts_ph_Nat_0
-03:11:31 [0m[33m[WARN] [0mproved: (comp ?ts_ph_Nat_0 ?ts_ph_Nat_0) => ?ts_ph_Nat_0
-03:11:31 [0m[33m[WARN] [0mproved: (sub ?ts_ph_Nat_0 ?ts_ph_Nat_0) => zero
-03:11:31 [0m[33m[WARN] [0mproved: (lt ?ts_ph_Nat_0 ?ts_ph_Nat_0) => false
+08:38:00 [0m[33m[WARN] [0m ex is: zero
+08:38:00 [0m[33m[WARN] [0m ex is: (succ zero)
+08:38:00 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+08:38:00 [0m[33m[WARN] [0m ex is: nil
+08:38:00 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+08:38:00 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:38:00 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:38:00 [0m[33m[WARN] [0mProof mode: true
+08:38:00 [0m[33m[WARN] [0m ex is: zero
+08:38:00 [0m[33m[WARN] [0m ex is: (succ zero)
+08:38:00 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+08:38:00 [0m[33m[WARN] [0m ex is: nil
+08:38:00 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+08:38:00 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:38:00 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:38:00 [0m[33m[WARN] [0mProof mode: true
+08:38:00 [0m[33m[WARN] [0mproved: (plus ?ts_ph_Nat_0 zero) => ?ts_ph_Nat_0
+08:38:00 [0m[33m[WARN] [0mproved: (comp ?ts_ph_Nat_0 zero) => ?ts_ph_Nat_0
+08:38:00 [0m[33m[WARN] [0mproved: (comp ?ts_ph_Nat_0 ?ts_ph_Nat_0) => ?ts_ph_Nat_0
+08:38:00 [0m[33m[WARN] [0mproved: (lt ?ts_ph_Nat_0 ?ts_ph_Nat_0) => false
+08:38:00 [0m[33m[WARN] [0mproved: (sub ?ts_ph_Nat_0 ?ts_ph_Nat_0) => zero

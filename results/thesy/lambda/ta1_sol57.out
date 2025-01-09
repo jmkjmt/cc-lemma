@@ -1,4 +1,4 @@
-01:01:05 [0m[33m[WARN] [0mCollecting statistics
+08:33:59 [0m[33m[WARN] [0mCollecting statistics
 (append nil ?x) => ?x
 (append (cons ?x2 ?y) ?z) => (cons ?x2 (append ?y ?z))
 (mem ?n nil) => false
@@ -13,42 +13,42 @@
 (listStation (C ?m1 ?m2)) => (append (listStation ?m1) (listStation ?m2))
 (deleteAll nil ?target) => nil
 (deleteAll (cons ?hd ?tl) ?target) => (ite (= ?hd ?target) (deleteAll ?tl ?target) (cons ?hd (deleteAll ?tl ?target)))
-01:01:05 [0m[33m[WARN] [0m ex is: zero
-01:01:05 [0m[33m[WARN] [0m ex is: (succ zero)
-01:01:05 [0m[33m[WARN] [0m ex is: (succ (succ zero))
-01:01:05 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
-01:01:05 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
-01:01:05 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
-01:01:05 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:01:05 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:01:05 [0m[33m[WARN] [0m ex is: nil
-01:01:05 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
-01:01:05 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-01:01:05 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-01:01:05 [0m[33m[WARN] [0mProof mode: true
-01:01:05 [0m[33m[WARN] [0m ex is: zero
-01:01:05 [0m[33m[WARN] [0m ex is: (succ zero)
-01:01:05 [0m[33m[WARN] [0m ex is: (succ (succ zero))
-01:01:05 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
-01:01:05 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
-01:01:05 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
-01:01:05 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:01:05 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:01:05 [0m[33m[WARN] [0m ex is: nil
-01:01:05 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
-01:01:05 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-01:01:05 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-01:01:05 [0m[33m[WARN] [0mProof mode: true
-01:01:05 [0m[33m[WARN] [0mproved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
-01:01:13 [0m[33m[WARN] [0mgeneralized case_split proof as: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) -- (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
-01:01:13 [0m[33m[WARN] [0mproved: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) => (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
-01:01:13 [0m[33m[WARN] [0mproved: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
-01:01:13 [0m[33m[WARN] [0mproved: (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1) => (deleteAll (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1) ?ts_ph_Nat_1)
-01:01:13 [0m[33m[WARN] [0mproved: (deleteAll (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1) ?ts_ph_Nat_1) => (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1)
-01:01:14 [0m[33m[WARN] [0mproved: (deleteAll (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Nat_1) => (append
-  (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1)
-  (deleteAll ?ts_ph_Lst_1 ?ts_ph_Nat_1))
-01:01:14 [0m[33m[WARN] [0mproved: (append
+08:33:59 [0m[33m[WARN] [0m ex is: zero
+08:33:59 [0m[33m[WARN] [0m ex is: (succ zero)
+08:33:59 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+08:33:59 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
+08:33:59 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+08:33:59 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+08:33:59 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:33:59 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:33:59 [0m[33m[WARN] [0m ex is: nil
+08:33:59 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+08:33:59 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:33:59 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:33:59 [0m[33m[WARN] [0mProof mode: true
+08:33:59 [0m[33m[WARN] [0m ex is: zero
+08:33:59 [0m[33m[WARN] [0m ex is: (succ zero)
+08:33:59 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+08:33:59 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
+08:33:59 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+08:33:59 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+08:33:59 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:33:59 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:33:59 [0m[33m[WARN] [0m ex is: nil
+08:33:59 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+08:33:59 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:33:59 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:33:59 [0m[33m[WARN] [0mProof mode: true
+08:33:59 [0m[33m[WARN] [0mproved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
+08:34:07 [0m[33m[WARN] [0mgeneralized case_split proof as: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) -- (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
+08:34:07 [0m[33m[WARN] [0mproved: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) => (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
+08:34:07 [0m[33m[WARN] [0mproved: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
+08:34:07 [0m[33m[WARN] [0mproved: (deleteAll (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1) ?ts_ph_Nat_1) => (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1)
+08:34:07 [0m[33m[WARN] [0mproved: (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1) => (deleteAll (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1) ?ts_ph_Nat_1)
+08:34:08 [0m[33m[WARN] [0mproved: (append
   (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1)
   (deleteAll ?ts_ph_Lst_1 ?ts_ph_Nat_1)) => (deleteAll (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Nat_1)
-done in 8671
+08:34:08 [0m[33m[WARN] [0mproved: (deleteAll (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Nat_1) => (append
+  (deleteAll ?ts_ph_Lst_0 ?ts_ph_Nat_1)
+  (deleteAll ?ts_ph_Lst_1 ?ts_ph_Nat_1))
+done in 8661

@@ -1,0 +1,10 @@
+Proving begin sol1-sol121: (filter pred lst) === (sol121 pred lst)
+Property accepted by cvec analysis
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+sol1-sol121 uncyclic: TIMEOUT (60022 ms)
+Proving begin sol1-sol171: (filter pred lst) === (sol171 pred lst)
+Property accepted by cvec analysis
+(uncyclic) Theorized 0 lemmas, fully attempted 0 lemmas, proved 0 lemmas
+sol1-sol171 uncyclic: TIMEOUT (60020 ms)
+Attempted 2 goals:
+  0 solved (no cyclic)

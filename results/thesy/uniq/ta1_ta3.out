@@ -1,4 +1,4 @@
-05:33:04 [0m[33m[WARN] [0mCollecting statistics
+08:55:39 [0m[33m[WARN] [0mCollecting statistics
 (list_append nil ?ys) => ?ys
 (list_append (cons ?x ?xs) ?ys) => (cons ?x (list_append ?xs ?ys))
 (list_rev nil) => nil
@@ -12,20 +12,20 @@
 (unique3 nil ?lst2) => ?lst2
 (unique3 (cons ?hd ?tl) ?lst2) => (ite (isin3 ?lst2 ?hd) (unique3 ?tl ?lst2) (unique3 ?tl (list_append ?lst2 (cons ?hd nil))))
 (ta3 ?lst) => (unique3 ?lst nil)
-05:33:04 [0m[33m[WARN] [0m ex is: Z
-05:33:04 [0m[33m[WARN] [0m ex is: (S Z)
-05:33:04 [0m[33m[WARN] [0m ex is: (S (S Z))
-05:33:04 [0m[33m[WARN] [0m ex is: nil
-05:33:04 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
-05:33:04 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-05:33:04 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-05:33:04 [0m[33m[WARN] [0mProof mode: true
-05:33:04 [0m[33m[WARN] [0m ex is: Z
-05:33:04 [0m[33m[WARN] [0m ex is: (S Z)
-05:33:04 [0m[33m[WARN] [0m ex is: (S (S Z))
-05:33:04 [0m[33m[WARN] [0m ex is: nil
-05:33:04 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
-05:33:04 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-05:33:04 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-05:33:04 [0m[33m[WARN] [0mProof mode: true
-05:33:04 [0m[33m[WARN] [0mproved: (list_append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
+08:55:39 [0m[33m[WARN] [0m ex is: Z
+08:55:39 [0m[33m[WARN] [0m ex is: (S Z)
+08:55:39 [0m[33m[WARN] [0m ex is: (S (S Z))
+08:55:39 [0m[33m[WARN] [0m ex is: nil
+08:55:39 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+08:55:39 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:55:39 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:55:39 [0m[33m[WARN] [0mProof mode: true
+08:55:39 [0m[33m[WARN] [0m ex is: Z
+08:55:39 [0m[33m[WARN] [0m ex is: (S Z)
+08:55:39 [0m[33m[WARN] [0m ex is: (S (S Z))
+08:55:39 [0m[33m[WARN] [0m ex is: nil
+08:55:39 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+08:55:39 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:55:39 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:55:39 [0m[33m[WARN] [0mProof mode: true
+08:55:39 [0m[33m[WARN] [0mproved: (list_append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0

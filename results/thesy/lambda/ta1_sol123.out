@@ -1,4 +1,4 @@
-01:01:18 [0m[33m[WARN] [0mCollecting statistics
+08:36:59 [0m[33m[WARN] [0mCollecting statistics
 (append nil ?x) => ?x
 (append (cons ?x2 ?y) ?z) => (cons ?x2 (append ?y ?z))
 (mem ?n nil) => false
@@ -23,29 +23,29 @@
 (is_connect (V ?n)) => false
 (is_connect (C ?l1 ?l2)) => true
 (is_connect (P ?v ?l)) => (is_connect ?l)
-01:01:18 [0m[33m[WARN] [0m ex is: zero
-01:01:18 [0m[33m[WARN] [0m ex is: (succ zero)
-01:01:18 [0m[33m[WARN] [0m ex is: (succ (succ zero))
-01:01:18 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
-01:01:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
-01:01:18 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
-01:01:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:01:18 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:01:18 [0m[33m[WARN] [0m ex is: nil
-01:01:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
-01:01:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-01:01:18 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-01:01:18 [0m[33m[WARN] [0mProof mode: true
-01:01:18 [0m[33m[WARN] [0m ex is: zero
-01:01:18 [0m[33m[WARN] [0m ex is: (succ zero)
-01:01:18 [0m[33m[WARN] [0m ex is: (succ (succ zero))
-01:01:18 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
-01:01:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
-01:01:18 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
-01:01:18 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:01:18 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:01:18 [0m[33m[WARN] [0m ex is: nil
-01:01:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
-01:01:18 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-01:01:18 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-01:01:18 [0m[33m[WARN] [0mProof mode: true
+08:36:59 [0m[33m[WARN] [0m ex is: zero
+08:36:59 [0m[33m[WARN] [0m ex is: (succ zero)
+08:36:59 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+08:36:59 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
+08:36:59 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+08:36:59 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+08:36:59 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:36:59 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:36:59 [0m[33m[WARN] [0m ex is: nil
+08:36:59 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+08:36:59 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:36:59 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:36:59 [0m[33m[WARN] [0mProof mode: true
+08:36:59 [0m[33m[WARN] [0m ex is: zero
+08:36:59 [0m[33m[WARN] [0m ex is: (succ zero)
+08:36:59 [0m[33m[WARN] [0m ex is: (succ (succ zero))
+08:36:59 [0m[33m[WARN] [0m ex is: (V autovar_Nat_0)
+08:36:59 [0m[33m[WARN] [0m ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+08:36:59 [0m[33m[WARN] [0m ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+08:36:59 [0m[33m[WARN] [0m ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:36:59 [0m[33m[WARN] [0m ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:36:59 [0m[33m[WARN] [0m ex is: nil
+08:36:59 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_0 nil)
+08:36:59 [0m[33m[WARN] [0m ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:36:59 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:36:59 [0m[33m[WARN] [0mProof mode: true

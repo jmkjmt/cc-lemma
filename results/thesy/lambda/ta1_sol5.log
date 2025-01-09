@@ -1,39 +1,38 @@
-01:04:00 [WARN] Collecting statistics
-01:04:00 [WARN]  ex is: zero
-01:04:00 [WARN]  ex is: (succ zero)
-01:04:00 [WARN]  ex is: (succ (succ zero))
-01:04:00 [WARN]  ex is: (V autovar_Nat_0)
-01:04:00 [WARN]  ex is: (P autovar_Nat_1 (V autovar_Nat_0))
-01:04:00 [WARN]  ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
-01:04:00 [WARN]  ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:04:00 [WARN]  ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:04:00 [WARN]  ex is: nil
-01:04:00 [WARN]  ex is: (cons autovar_Nat_0 nil)
-01:04:00 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-01:04:00 [WARN] Running exploration without proof mode, but goals were given
-01:04:00 [WARN] Proof mode: true
-01:04:00 [WARN]  ex is: zero
-01:04:00 [WARN]  ex is: (succ zero)
-01:04:00 [WARN]  ex is: (succ (succ zero))
-01:04:00 [WARN]  ex is: (V autovar_Nat_0)
-01:04:00 [WARN]  ex is: (P autovar_Nat_1 (V autovar_Nat_0))
-01:04:00 [WARN]  ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
-01:04:00 [WARN]  ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:04:00 [WARN]  ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
-01:04:00 [WARN]  ex is: nil
-01:04:00 [WARN]  ex is: (cons autovar_Nat_0 nil)
-01:04:00 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
-01:04:00 [WARN] Running exploration without proof mode, but goals were given
-01:04:00 [WARN] Proof mode: true
-01:04:00 [WARN] proved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
-01:04:37 [WARN] generalized case_split proof as: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) -- (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
-01:04:37 [WARN] proved: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
-01:04:37 [WARN] proved: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) => (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
-01:04:37 [WARN] proved: (list_filter
-  ?ts_ph_POfn_PONat_NatPC_BoolPC_1
-  ?ts_ph_Nat_1
-  (list_filter ?ts_ph_POfn_PONat_NatPC_BoolPC_1 ?ts_ph_Nat_1 ?ts_ph_Lst_0)) => (list_filter ?ts_ph_POfn_PONat_NatPC_BoolPC_1 ?ts_ph_Nat_1 ?ts_ph_Lst_0)
-01:04:37 [WARN] proved: (list_filter ?ts_ph_POfn_PONat_NatPC_BoolPC_1 ?ts_ph_Nat_1 ?ts_ph_Lst_0) => (list_filter
+08:36:21 [WARN] Collecting statistics
+08:36:21 [WARN]  ex is: zero
+08:36:21 [WARN]  ex is: (succ zero)
+08:36:21 [WARN]  ex is: (succ (succ zero))
+08:36:21 [WARN]  ex is: (V autovar_Nat_0)
+08:36:21 [WARN]  ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+08:36:21 [WARN]  ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+08:36:21 [WARN]  ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:36:21 [WARN]  ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:36:21 [WARN]  ex is: nil
+08:36:21 [WARN]  ex is: (cons autovar_Nat_0 nil)
+08:36:21 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:36:21 [WARN] Running exploration without proof mode, but goals were given
+08:36:21 [WARN] Proof mode: true
+08:36:21 [WARN]  ex is: zero
+08:36:21 [WARN]  ex is: (succ zero)
+08:36:21 [WARN]  ex is: (succ (succ zero))
+08:36:21 [WARN]  ex is: (V autovar_Nat_0)
+08:36:21 [WARN]  ex is: (P autovar_Nat_1 (V autovar_Nat_0))
+08:36:21 [WARN]  ex is: (C (V autovar_Nat_0) (V autovar_Nat_0))
+08:36:21 [WARN]  ex is: (P autovar_Nat_2 (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:36:21 [WARN]  ex is: (C (C (V autovar_Nat_0) (V autovar_Nat_0)) (C (V autovar_Nat_0) (V autovar_Nat_0)))
+08:36:21 [WARN]  ex is: nil
+08:36:21 [WARN]  ex is: (cons autovar_Nat_0 nil)
+08:36:21 [WARN]  ex is: (cons autovar_Nat_1 (cons autovar_Nat_0 nil))
+08:36:21 [WARN] Running exploration without proof mode, but goals were given
+08:36:21 [WARN] Proof mode: true
+08:36:21 [WARN] proved: (append ?ts_ph_Lst_0 nil) => ?ts_ph_Lst_0
+08:36:59 [WARN] proved: (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2)) => (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2)
+08:36:59 [WARN] proved: (append (append ?ts_ph_Lst_0 ?ts_ph_Lst_1) ?ts_ph_Lst_2) => (append ?ts_ph_Lst_0 (append ?ts_ph_Lst_1 ?ts_ph_Lst_2))
+08:36:59 [WARN] proved: (list_filter ?ts_ph_POfn_PONat_NatPC_BoolPC_1 ?ts_ph_Nat_1 ?ts_ph_Lst_0) => (list_filter
   ?ts_ph_POfn_PONat_NatPC_BoolPC_1
   ?ts_ph_Nat_1
   (list_filter ?ts_ph_POfn_PONat_NatPC_BoolPC_1 ?ts_ph_Nat_1 ?ts_ph_Lst_0))
+08:36:59 [WARN] proved: (list_filter
+  ?ts_ph_POfn_PONat_NatPC_BoolPC_1
+  ?ts_ph_Nat_1
+  (list_filter ?ts_ph_POfn_PONat_NatPC_BoolPC_1 ?ts_ph_Nat_1 ?ts_ph_Lst_0)) => (list_filter ?ts_ph_POfn_PONat_NatPC_BoolPC_1 ?ts_ph_Nat_1 ?ts_ph_Lst_0)

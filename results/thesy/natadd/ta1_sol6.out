@@ -1,51 +1,39 @@
-03:20:31 [0m[33m[WARN] [0mCollecting statistics
+08:42:00 [0m[33m[WARN] [0mCollecting statistics
 (add1 Z ?y) => ?y
 (add1 (S ?x) ?y) => (S (add1 ?x ?y))
 (sol6 Z ?y) => ?y
 (sol6 (S ?x) ?y) => (S (sol6 ?y ?x))
-03:20:31 [0m[33m[WARN] [0m ex is: Z
-03:20:31 [0m[33m[WARN] [0m ex is: (S Z)
-03:20:31 [0m[33m[WARN] [0m ex is: (S (S Z))
-03:20:31 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-03:20:31 [0m[33m[WARN] [0mProof mode: true
-03:20:31 [0m[33m[WARN] [0m ex is: Z
-03:20:31 [0m[33m[WARN] [0m ex is: (S Z)
-03:20:31 [0m[33m[WARN] [0m ex is: (S (S Z))
-03:20:31 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-03:20:31 [0m[33m[WARN] [0mProof mode: true
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
-03:20:31 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
-03:20:31 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
-03:20:31 [0m[33m[WARN] [0mproved: (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
-03:20:31 [0m[33m[WARN] [0mproved: (S ?ts_ph_Nat_0) => (sol6 ?ts_ph_Nat_0 (S Z))
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 (S Z)) => (S ?ts_ph_Nat_0)
-03:20:31 [0m[33m[WARN] [0mproved: (S (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (sol6 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0)) => (S (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mproved: (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (sol6 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0)) => (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mgeneralized case_split proof as: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2) -- (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
-03:20:31 [0m[33m[WARN] [0mproved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2) => (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
-03:20:31 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2)
-03:20:31 [0m[33m[WARN] [0mproved: (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1) => (sol6 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1)
-03:20:31 [0m[33m[WARN] [0mproved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1) => (sol6 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1)
-03:20:31 [0m[33m[WARN] [0mproved: (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1) => (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0)
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0) => (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1)
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (sol6 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (sol6 ?ts_ph_Nat_1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1) => (sol6 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1)
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1) => (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1)
-03:20:31 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (sol6 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_0)
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mproved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S ?ts_ph_Nat_0)) => (sol6 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S ?ts_ph_Nat_0)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mgeneralized case_split proof as: (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) -- (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (sol6 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
-03:20:31 [0m[33m[WARN] [0mproved: (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) => (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (sol6 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
-03:20:31 [0m[33m[WARN] [0mproved: (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (sol6 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2))
-03:20:31 [0m[33m[WARN] [0mgeneralized case_split proof as: (add1 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2) (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) -- (add1 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mproved: (add1 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2) (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (add1 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mproved: (add1 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (add1 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2) (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-03:20:31 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
-03:20:31 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
-done in 546
+08:42:00 [0m[33m[WARN] [0m ex is: Z
+08:42:00 [0m[33m[WARN] [0m ex is: (S Z)
+08:42:00 [0m[33m[WARN] [0m ex is: (S (S Z))
+08:42:00 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:42:00 [0m[33m[WARN] [0mProof mode: true
+08:42:00 [0m[33m[WARN] [0m ex is: Z
+08:42:00 [0m[33m[WARN] [0m ex is: (S Z)
+08:42:00 [0m[33m[WARN] [0m ex is: (S (S Z))
+08:42:00 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+08:42:00 [0m[33m[WARN] [0mProof mode: true
+08:42:00 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+08:42:00 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+08:42:00 [0m[33m[WARN] [0mgeneralized case_split proof as: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2) -- (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
+08:42:00 [0m[33m[WARN] [0mproved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2) => (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
+08:42:00 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2)
+08:42:00 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0)
+08:42:00 [0m[33m[WARN] [0mproved: (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0) => (sol6 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+08:42:00 [0m[33m[WARN] [0mproved: (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1) => (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0)
+08:42:00 [0m[33m[WARN] [0mproved: (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0) => (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1)
+08:42:00 [0m[33m[WARN] [0mproved: (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S ?ts_ph_Nat_1)) => (S (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0))
+08:42:00 [0m[33m[WARN] [0mproved: (S (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0)) => (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S ?ts_ph_Nat_1))
+08:42:00 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0)) => (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S Z))
+08:42:00 [0m[33m[WARN] [0mproved: (add1 (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S Z)) => (sol6 ?ts_ph_Nat_0 (S ?ts_ph_Nat_0))
+08:42:00 [0m[33m[WARN] [0mproved: (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
+08:42:00 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+08:42:00 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+08:42:00 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+08:42:00 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)
+08:42:00 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) => (sol6 ?ts_ph_Nat_0 ?ts_ph_Nat_0)
+08:42:00 [0m[33m[WARN] [0mproved: (sol6 ?ts_ph_Nat_0 (S Z)) => (S ?ts_ph_Nat_0)
+08:42:00 [0m[33m[WARN] [0mproved: (S ?ts_ph_Nat_0) => (sol6 ?ts_ph_Nat_0 (S Z))
+08:42:00 [0m[33m[WARN] [0mproved: (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (S ?ts_ph_Nat_1)) => (S (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_1)))
+08:42:00 [0m[33m[WARN] [0mproved: (S (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_1))) => (sol6 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (S ?ts_ph_Nat_1))
+done in 618
