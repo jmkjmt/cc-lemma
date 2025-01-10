@@ -1,14 +1,14 @@
-08:42:00 [WARN] Collecting statistics
-08:42:00 [WARN]  ex is: Z
-08:42:00 [WARN]  ex is: (S Z)
-08:42:00 [WARN]  ex is: (S (S Z))
-08:42:00 [WARN] Running exploration without proof mode, but goals were given
-08:42:00 [WARN] Proof mode: true
-08:42:00 [WARN]  ex is: Z
-08:42:00 [WARN]  ex is: (S Z)
-08:42:00 [WARN]  ex is: (S (S Z))
-08:42:00 [WARN] Running exploration without proof mode, but goals were given
-08:42:00 [WARN] Proof mode: true
-08:42:01 [WARN] proved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
-08:42:01 [WARN] proved: (mul1 ?ts_ph_Nat_0 Z) => Z
-08:42:01 [WARN] proved: (innerLoop ?ts_ph_Nat_0 ?ts_ph_Nat_1 Z) => ?ts_ph_Nat_1
+03:35:09 [WARN] Collecting statistics
+03:35:09 [WARN]  ex is: Z
+03:35:09 [WARN]  ex is: (S Z)
+03:35:09 [WARN]  ex is: (S (S Z))
+03:35:09 [WARN] Running exploration without proof mode, but goals were given
+03:35:09 [WARN] Proof mode: true
+03:35:09 [WARN]  ex is: Z
+03:35:09 [WARN]  ex is: (S Z)
+03:35:09 [WARN]  ex is: (S (S Z))
+03:35:09 [WARN] Running exploration without proof mode, but goals were given
+03:35:09 [WARN] Proof mode: true
+03:35:09 [WARN] proved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+03:35:10 [WARN] proved: (mul1 ?ts_ph_Nat_0 Z) => Z
+03:35:10 [WARN] proved: (innerLoop ?ts_ph_Nat_0 ?ts_ph_Nat_1 Z) => ?ts_ph_Nat_1

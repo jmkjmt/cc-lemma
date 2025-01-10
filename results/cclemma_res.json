@@ -1,45 +1,8 @@
 {
-    "filter": {
-        "filter": {
-            "status": false
-        }
-    },
-    "formula": {
-        "formula": {
-            "status": false
-        }
-    },
-    "lambda": {
-        "lambda": {
-            "status": true,
-            "info": 0.021
-        }
-    },
-    "max": {
-        "max": {
-            "status": false
-        }
-    },
-    "natadd": {
-        "natadd": {
-            "status": true,
-            "info": 0.004
-        }
-    },
     "natmul": {
         "natmul": {
             "status": true,
-            "info": 0.061
-        }
-    },
-    "sigma": {
-        "sigma": {
-            "status": false
-        }
-    },
-    "uniq": {
-        "uniq": {
-            "status": false
+            "info": 0.037
         }
     }
 }

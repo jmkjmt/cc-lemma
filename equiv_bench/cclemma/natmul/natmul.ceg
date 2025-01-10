@@ -13,6 +13,20 @@
 (let eq ((S ?x) Z     ) False     )
 (let eq ((S ?x) (S ?y)) (eq ?x ?y))
 
+(:: not (-> (Bool) Bool))
+(let not (True) False)
+(let not (False) True)
+
+(:: and (-> (Bool Bool) Bool))
+(let and (False ?y) False)
+(let and (?x False) False)
+(let and (True True) True)
+
+(:: or (-> (Bool Bool) Bool))
+(let or (True ?y) True)
+(let or (?x True) True)
+(let or (False False) False)
+
 (:: ite (-> (Bool a a) a))
 (let ite (True ?x ?y ) ?x)
 (let ite (False ?x ?y) ?y)

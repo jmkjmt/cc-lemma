@@ -1,4 +1,4 @@
-08:43:41 [0m[33m[WARN] [0mCollecting statistics
+03:37:32 [0m[33m[WARN] [0mCollecting statistics
 (add1 Z ?y) => ?y
 (add1 (S ?x) ?y) => (S (add1 ?x ?y))
 (mul1 Z ?n2) => Z
@@ -7,43 +7,36 @@
 (natmul-helper ?n1 Z ?result) => ?result
 (natmul-helper Z ?n2 ?result) => ?result
 (natmul-helper (S ?v1) ?n2 ?result) => (natmul-helper ?v1 ?n2 (add1 ?result ?n2))
-08:43:41 [0m[33m[WARN] [0m ex is: Z
-08:43:41 [0m[33m[WARN] [0m ex is: (S Z)
-08:43:41 [0m[33m[WARN] [0m ex is: (S (S Z))
-08:43:41 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-08:43:41 [0m[33m[WARN] [0mProof mode: true
-08:43:41 [0m[33m[WARN] [0m ex is: Z
-08:43:41 [0m[33m[WARN] [0m ex is: (S Z)
-08:43:41 [0m[33m[WARN] [0m ex is: (S (S Z))
-08:43:41 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-08:43:41 [0m[33m[WARN] [0mProof mode: true
-08:43:41 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 Z) => Z
-08:43:41 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
-08:43:44 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
-08:43:44 [0m[33m[WARN] [0mproved: (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
-08:43:45 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 (S Z)) => ?ts_ph_Nat_0
-08:43:45 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_0)
-08:43:45 [0m[33m[WARN] [0mproved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-08:43:45 [0m[33m[WARN] [0mproved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S ?ts_ph_Nat_1)) => (S (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)))
-08:43:45 [0m[33m[WARN] [0mproved: (S (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S ?ts_ph_Nat_1))
-08:43:45 [0m[33m[WARN] [0mproved: (natmul-helper ?ts_ph_Nat_1 (S Z) (S ?ts_ph_Nat_0)) => (natmul-helper (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (S Z) (S Z))
-08:43:45 [0m[33m[WARN] [0mproved: (natmul-helper (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (S Z) (S Z)) => (natmul-helper ?ts_ph_Nat_1 (S Z) (S ?ts_ph_Nat_0))
-08:43:45 [0m[33m[WARN] [0mproved: (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (natmul-helper (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S Z) (S Z))
-08:43:45 [0m[33m[WARN] [0mproved: (natmul-helper (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S Z) (S Z)) => (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-08:43:49 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
-08:43:49 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
-08:43:50 [0m[33m[WARN] [0mproved: (sol116 ?ts_ph_Nat_0 (S Z)) => ?ts_ph_Nat_0
-08:43:51 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (add1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2))
-08:43:51 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) => (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
-08:43:53 [0m[33m[WARN] [0mproved: (natmul-helper ?ts_ph_Nat_1 (S Z) ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
-08:43:53 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (natmul-helper ?ts_ph_Nat_1 (S Z) ?ts_ph_Nat_0)
-08:43:56 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (mul1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
-08:43:56 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (add1 ?ts_ph_Nat_0 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
-08:44:00 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (mul1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
-08:44:00 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
-08:44:07 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (mul1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_1))
-08:44:07 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_1)) => (mul1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-08:44:20 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) => (add1 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (mul1 ?ts_ph_Nat_2 ?ts_ph_Nat_1))
-08:44:20 [0m[33m[WARN] [0mproved: (add1 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (mul1 ?ts_ph_Nat_2 ?ts_ph_Nat_1)) => (mul1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2))
-08:44:35 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (mul1 ?ts_ph_Nat_1 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
-08:44:35 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_1 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (mul1 ?ts_ph_Nat_0 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+03:37:32 [0m[33m[WARN] [0m ex is: Z
+03:37:32 [0m[33m[WARN] [0m ex is: (S Z)
+03:37:32 [0m[33m[WARN] [0m ex is: (S (S Z))
+03:37:32 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+03:37:32 [0m[33m[WARN] [0mProof mode: true
+03:37:32 [0m[33m[WARN] [0m ex is: Z
+03:37:32 [0m[33m[WARN] [0m ex is: (S Z)
+03:37:32 [0m[33m[WARN] [0m ex is: (S (S Z))
+03:37:32 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+03:37:32 [0m[33m[WARN] [0mProof mode: true
+03:37:32 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 Z) => Z
+03:37:32 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+03:37:41 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 (S Z)) => ?ts_ph_Nat_0
+03:37:41 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (S Z)) => (S ?ts_ph_Nat_0)
+03:37:41 [0m[33m[WARN] [0mproved: (S ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 (S Z))
+03:37:41 [0m[33m[WARN] [0mgeneralized case_split proof as: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) -- (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2)
+03:37:41 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2)
+03:37:41 [0m[33m[WARN] [0mproved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_2) => (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
+03:37:42 [0m[33m[WARN] [0mproved: (natmul-helper ?ts_ph_Nat_1 (S Z) (S ?ts_ph_Nat_0)) => (natmul-helper (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (S Z) (S Z))
+03:37:42 [0m[33m[WARN] [0mproved: (natmul-helper (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (S Z) (S Z)) => (natmul-helper ?ts_ph_Nat_1 (S Z) (S ?ts_ph_Nat_0))
+03:37:50 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+03:37:50 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+03:37:52 [0m[33m[WARN] [0mproved: (sol116 ?ts_ph_Nat_0 (S Z)) => ?ts_ph_Nat_0
+03:37:55 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (natmul-helper ?ts_ph_Nat_0 (S Z) ?ts_ph_Nat_1)
+03:37:55 [0m[33m[WARN] [0mproved: (natmul-helper ?ts_ph_Nat_0 (S Z) ?ts_ph_Nat_1) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+03:38:00 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (add1 ?ts_ph_Nat_0 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+03:38:00 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (mul1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
+03:38:07 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (mul1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+03:38:07 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+03:38:16 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (mul1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_1))
+03:38:16 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_1)) => (mul1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
+03:38:32 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) => (add1 (mul1 ?ts_ph_Nat_1 ?ts_ph_Nat_2) (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+03:38:32 [0m[33m[WARN] [0mproved: (add1 (mul1 ?ts_ph_Nat_1 ?ts_ph_Nat_2) (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (mul1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2))

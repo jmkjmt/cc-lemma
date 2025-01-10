@@ -1,105 +1,22 @@
 {
-    "filter": {
-        "ta1_sol171": {
-            "status": false
-        },
-        "ta1_sol121": {
-            "status": false
-        }
-    },
-    "formula": {
-        "ta1_sol441": {
-            "status": true,
-            "info": 0.0013376730000000002
-        }
-    },
-    "lambda": {
-        "ta1_sol530": {
-            "status": false
-        },
-        "ta1_sol57": {
-            "status": false
-        },
-        "ta1_ta3": {
-            "status": false
-        },
-        "ta1_ta4": {
-            "status": false
-        },
-        "ta1_sol101": {
-            "status": false
-        },
-        "ta1_sol50": {
-            "status": false
-        },
-        "ta1_sol109": {
-            "status": false
-        },
-        "ta1_sol5": {
-            "status": false
-        },
-        "ta1_sol123": {
-            "status": false
-        },
-        "ta1_ta2": {
-            "status": true,
-            "info": 0.0007983580000000001
-        }
-    },
-    "max": {
-        "ta1_sol164": {
-            "status": false
-        },
-        "ta1_sol118": {
-            "status": false
-        }
-    },
-    "natadd": {
-        "ta1_sol143": {
-            "status": false
-        },
-        "ta1_sol11": {
-            "status": true,
-            "info": 0.017902144000000002
-        },
-        "ta1_sol4": {
-            "status": false
-        },
-        "ta1_ta3": {
-            "status": true,
-            "info": 0.051616146
-        },
-        "ta1_ta4": {
-            "status": true,
-            "info": 0.056694897
-        },
-        "ta1_sol6": {
-            "status": false
-        },
-        "ta1_ta2": {
-            "status": true,
-            "info": 0.014253559
-        }
-    },
     "natmul": {
         "ta1_sol90": {
             "status": false
         },
         "ta1_ta6": {
-            "status": true,
-            "info": 2.040099493
+            "status": false
         },
         "ta1_ta7": {
             "status": true,
-            "info": 0.142829734
+            "info": 0.7732437090000001
         },
         "ta1_ta3": {
             "status": true,
-            "info": 0.23735148800000003
+            "info": 0.630695248
         },
         "ta1_ta4": {
             "status": true,
-            "info": 38.199008974
+            "info": 21.542399833
         },
         "ta1_sol116": {
             "status": false
@@ -112,65 +29,11 @@
         },
         "ta1_ta2": {
             "status": true,
-            "info": 0.7077435310000001
+            "info": 7.305679989
         },
         "ta1_ta5": {
-            "status": false
-        }
-    },
-    "sigma": {
-        "ta1_sol573": {
-            "status": false
-        },
-        "ta1_sol225": {
-            "status": false
-        },
-        "ta1_sol8": {
-            "status": false
-        },
-        "ta1_ta3": {
-            "status": false
-        },
-        "ta1_ta2": {
-            "status": false
-        }
-    },
-    "uniq": {
-        "ta1_sol89": {
-            "status": false
-        },
-        "ta1_sol20": {
-            "status": false
-        },
-        "ta1_sol9": {
-            "status": false
-        },
-        "ta1_sol57": {
-            "status": false
-        },
-        "ta1_sol4": {
-            "status": false
-        },
-        "ta1_ta3": {
-            "status": false
-        },
-        "ta1_sol75": {
-            "status": false
-        },
-        "ta1_ta4": {
-            "status": false
-        },
-        "ta1_sol101": {
-            "status": false
-        },
-        "ta1_sol43": {
-            "status": false
-        },
-        "ta1_sol5": {
-            "status": false
-        },
-        "ta1_ta2": {
-            "status": false
+            "status": true,
+            "info": 0.77915502
         }
     }
 }

@@ -1,4 +1,4 @@
-08:42:00 [0m[33m[WARN] [0mCollecting statistics
+03:35:09 [0m[33m[WARN] [0mCollecting statistics
 (add1 Z ?y) => ?y
 (add1 (S ?x) ?y) => (S (add1 ?x ?y))
 (mul1 Z ?n2) => Z
@@ -6,16 +6,16 @@
 (sol90 ?n1 ?n2) => (ite (or (= ?n1 Z) (= ?n2 Z)) Z (innerLoop ?n1 ?n2 ?n2))
 (innerLoop (S Z) ?n2 ?maintain) => ?n2
 (innerLoop (S ?sub) ?n2 ?maintain) => (innerLoop ?sub (add1 ?maintain ?n2) ?maintain)
-08:42:00 [0m[33m[WARN] [0m ex is: Z
-08:42:00 [0m[33m[WARN] [0m ex is: (S Z)
-08:42:00 [0m[33m[WARN] [0m ex is: (S (S Z))
-08:42:00 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-08:42:00 [0m[33m[WARN] [0mProof mode: true
-08:42:00 [0m[33m[WARN] [0m ex is: Z
-08:42:00 [0m[33m[WARN] [0m ex is: (S Z)
-08:42:00 [0m[33m[WARN] [0m ex is: (S (S Z))
-08:42:00 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
-08:42:00 [0m[33m[WARN] [0mProof mode: true
-08:42:01 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
-08:42:01 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 Z) => Z
-08:42:01 [0m[33m[WARN] [0mproved: (innerLoop ?ts_ph_Nat_0 ?ts_ph_Nat_1 Z) => ?ts_ph_Nat_1
+03:35:09 [0m[33m[WARN] [0m ex is: Z
+03:35:09 [0m[33m[WARN] [0m ex is: (S Z)
+03:35:09 [0m[33m[WARN] [0m ex is: (S (S Z))
+03:35:09 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+03:35:09 [0m[33m[WARN] [0mProof mode: true
+03:35:09 [0m[33m[WARN] [0m ex is: Z
+03:35:09 [0m[33m[WARN] [0m ex is: (S Z)
+03:35:09 [0m[33m[WARN] [0m ex is: (S (S Z))
+03:35:09 [0m[33m[WARN] [0mRunning exploration without proof mode, but goals were given
+03:35:09 [0m[33m[WARN] [0mProof mode: true
+03:35:09 [0m[33m[WARN] [0mproved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+03:35:10 [0m[33m[WARN] [0mproved: (mul1 ?ts_ph_Nat_0 Z) => Z
+03:35:10 [0m[33m[WARN] [0mproved: (innerLoop ?ts_ph_Nat_0 ?ts_ph_Nat_1 Z) => ?ts_ph_Nat_1

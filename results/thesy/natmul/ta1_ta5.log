@@ -1,34 +1,39 @@
-08:46:42 [WARN] Collecting statistics
-08:46:42 [WARN]  ex is: Z
-08:46:42 [WARN]  ex is: (S Z)
-08:46:42 [WARN]  ex is: (S (S Z))
-08:46:42 [WARN] Running exploration without proof mode, but goals were given
-08:46:42 [WARN] Proof mode: true
-08:46:42 [WARN]  ex is: Z
-08:46:42 [WARN]  ex is: (S Z)
-08:46:42 [WARN]  ex is: (S (S Z))
-08:46:42 [WARN] Running exploration without proof mode, but goals were given
-08:46:42 [WARN] Proof mode: true
-08:46:42 [WARN] proved: (add2 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
-08:46:42 [WARN] proved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (add2 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
-08:46:42 [WARN] proved: (mul1 ?ts_ph_Nat_0 Z) => Z
-08:46:42 [WARN] proved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
-08:46:42 [WARN] proved: (mul5 Z ?ts_ph_Nat_0) => Z
-08:46:42 [WARN] proved: (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
-08:46:42 [WARN] proved: (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
-08:46:42 [WARN] proved: (mul1 ?ts_ph_Nat_0 (S Z)) => ?ts_ph_Nat_0
-08:46:42 [WARN] proved: (mul5 (S Z) ?ts_ph_Nat_0) => ?ts_ph_Nat_0
-08:46:42 [WARN] proved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0))
-08:46:42 [WARN] proved: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0)
-08:46:42 [WARN] proved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1) => (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
-08:46:42 [WARN] proved: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1)
-08:46:42 [WARN] proved: (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
-08:46:42 [WARN] proved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
-08:46:42 [WARN] proved: (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (mul5 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
-08:46:42 [WARN] proved: (mul5 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
-08:46:43 [WARN] proved: (mul1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1) => (mul1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_1))
-08:46:43 [WARN] proved: (mul1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_1)) => (mul1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) ?ts_ph_Nat_1)
-08:46:43 [WARN] proved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
-08:46:43 [WARN] proved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2))
-08:46:43 [WARN] proved: (add1 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (mul1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_1))
-08:46:43 [WARN] proved: (mul1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_1)) => (add1 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+03:40:40 [WARN] Collecting statistics
+03:40:40 [WARN]  ex is: Z
+03:40:40 [WARN]  ex is: (S Z)
+03:40:40 [WARN]  ex is: (S (S Z))
+03:40:40 [WARN] Running exploration without proof mode, but goals were given
+03:40:40 [WARN] Proof mode: true
+03:40:40 [WARN]  ex is: Z
+03:40:40 [WARN]  ex is: (S Z)
+03:40:40 [WARN]  ex is: (S (S Z))
+03:40:40 [WARN] Running exploration without proof mode, but goals were given
+03:40:40 [WARN] Proof mode: true
+03:40:40 [WARN] proved: (add2 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+03:40:40 [WARN] proved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (add2 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+03:40:40 [WARN] proved: (add1 ?ts_ph_Nat_0 Z) => ?ts_ph_Nat_0
+03:40:40 [WARN] proved: (mul1 ?ts_ph_Nat_0 Z) => Z
+03:40:40 [WARN] proved: (mul5 Z ?ts_ph_Nat_0) => (mul1 ?ts_ph_Nat_0 Z)
+03:40:40 [WARN] proved: (mul1 ?ts_ph_Nat_0 Z) => (mul5 Z ?ts_ph_Nat_0)
+03:40:40 [WARN] proved: (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+03:40:40 [WARN] proved: (S (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (add1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
+03:40:40 [WARN] proved: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)) => (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0)
+03:40:40 [WARN] proved: (add1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0))
+03:40:40 [WARN] proved: (mul5 (S Z) (S ?ts_ph_Nat_0)) => (S (mul1 ?ts_ph_Nat_0 (S Z)))
+03:40:40 [WARN] proved: (S (mul1 ?ts_ph_Nat_0 (S Z))) => (mul5 (S Z) (S ?ts_ph_Nat_0))
+03:40:40 [WARN] proved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) => (mul5 (S Z) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
+03:40:40 [WARN] proved: (mul5 (S Z) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)
+03:40:41 [WARN] proved: (mul1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S Z)) => (mul5 (S Z) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
+03:40:41 [WARN] proved: (mul5 (S Z) (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (mul1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S Z))
+03:40:41 [WARN] proved: (mul5 (S Z) (mul5 ?ts_ph_Nat_0 ?ts_ph_Nat_0)) => (mul1 (mul5 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S Z))
+03:40:41 [WARN] proved: (mul1 (mul5 ?ts_ph_Nat_0 ?ts_ph_Nat_0) (S Z)) => (mul5 (S Z) (mul5 ?ts_ph_Nat_0 ?ts_ph_Nat_0))
+03:40:41 [WARN] proved: (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+03:40:41 [WARN] proved: (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+03:40:41 [WARN] proved: (mul5 ?ts_ph_Nat_1 ?ts_ph_Nat_0) => (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)
+03:40:41 [WARN] proved: (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1) => (mul5 ?ts_ph_Nat_1 ?ts_ph_Nat_0)
+03:40:41 [WARN] proved: (mul1 ?ts_ph_Nat_0 (S Z)) => ?ts_ph_Nat_0
+03:40:41 [WARN] proved: (add1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2)) => (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2))
+03:40:41 [WARN] proved: (add1 ?ts_ph_Nat_0 (add1 ?ts_ph_Nat_1 ?ts_ph_Nat_2)) => (add1 ?ts_ph_Nat_1 (add1 ?ts_ph_Nat_0 ?ts_ph_Nat_2))
+03:40:41 [WARN] proved: (add1 ?ts_ph_Nat_0 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1)) => (mul1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1))
+03:40:41 [WARN] proved: (mul1 ?ts_ph_Nat_0 (S ?ts_ph_Nat_1)) => (add1 ?ts_ph_Nat_0 (mul1 ?ts_ph_Nat_0 ?ts_ph_Nat_1))
+03:40:41 [WARN] Found all lemmas
