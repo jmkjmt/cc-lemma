@@ -371,9 +371,12 @@
 (// TODO: Needs conditional rewrite
     sorted x => sorted (insort y x)
 )
+(//
 (=== clam_14 (x) ((List Nat))
   (sorted (sort x))
   True
+)
+
 )
 
 

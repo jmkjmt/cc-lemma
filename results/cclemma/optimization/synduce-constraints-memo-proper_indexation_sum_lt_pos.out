@@ -1,0 +1,14 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: IDList. v0 === (tf11 v0 v0) (Icons v0_20 v0_21 v0_22) === (tf11 (Icons v0_20 v0_21 v0_22) (Icons v0_20 v0_21 v0_22))
+proved lemma forall v0: Nat. (Succ v0) === (plus v0 (Succ Zero)) (Succ (Succ v0_50)) === (plus (Succ v0_50) (Succ Zero))
+proved lemma forall v0: IDList. (snd3 (tf13 v0)) === (tf1 v0)
+proved lemma forall v0: Nat. v1: Nat. v2: IDList. (Icons v0 v1 v2) === (Icons v0 v1 (tf11 v2 v2)) (Icons v0 v1 v2) === (Icons v0 v1 (tf11 v2 v2))
+proved lemma forall v0: IDList. (tf1 v0) === (tf7 (tf5 (tf11 v0 v0))) (tf1 (Icons v0_60 v0_61 v0_62)) === (tf7 (tf5 (tf11 (Icons v0_60 v0_61 v0_62) (Icons v0_60 v0_61 v0_62))))
+proved lemma forall v0: Nat. v1: Nat. v2: Nat. v3: Nat. (ite2 (gq v0 v1) v2 v3) === (ite2 (leq v0 v1) v3 v2) (ite2 (gq (Succ v0_80) (Succ v1_180)) v2 v3) === (ite2 (leq (Succ v0_80) (Succ v1_180)) v3 v2)
+proved lemma forall v0: Bool. v1: IDList. (ite2 v0 (fst3 (tf13 v1)) Zero) === (ite2 v0 (tf9 (tf5 (tf11 v1 v1))) Zero) (ite2 True (fst3 (tf13 (Icons v1_120 v1_121 v1_122))) Zero) === (ite2 True (tf9 (tf5 (tf11 (Icons v1_120 v1_121 v1_122) (Icons v1_120 v1_121 v1_122)))) Zero)
+proved lemma forall inp0: IDList. (main inp0) === (mainNew inp0)
+(uncyclic) Theorized 28 lemmas, fully attempted 20 lemmas, proved 7 lemmas
+optimize uncyclic: VALID (39881 ms)
+Attempted 1 goals:
+  1 solved (no cyclic)

@@ -1,0 +1,19 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (ite2 (gq v0 Zero) v0 Zero) (Succ v0_40) === (ite2 (gq (Succ v0_40) Zero) (Succ v0_40) Zero)
+proved lemma forall v0: IDList. v0 === (tf9 v0 v0) (Icons v0_20 v0_21 v0_22) === (tf9 (Icons v0_20 v0_21 v0_22) (Icons v0_20 v0_21 v0_22))
+proved lemma forall v0: IDList. (snd3 (tf11 v0)) === (tf1 v0) (snd3 (tf11 (Icons v0_40 v0_41 v0_42))) === (tf1 (Icons v0_40 v0_41 v0_42))
+proved lemma forall v0: Nat. v1: Nat. v2: IDList. (Icons v0 v1 v2) === (Icons v0 v1 (tf9 v2 v2)) (Icons v0 v1 v2) === (Icons v0 v1 (tf9 v2 v2))
+proved lemma forall v0: Nat. v0 === (plus v0 Zero) (Succ v0_100) === (plus (Succ v0_100) Zero)
+proved lemma forall v0: Nat. (gq v0 Zero) === (gq (plus v0 Zero) Zero)
+proved lemma forall v0: Nat. (Succ v0) === (plus v0 (Succ Zero)) (Succ (Succ v0_230)) === (plus (Succ v0_230) (Succ Zero))
+proved lemma forall v0: IDList. True === (gq (plus (tf1 v0) (Succ Zero)) Zero) True === (gq (plus (tf1 v0) (Succ Zero)) Zero)
+proved lemma forall v0: IDList. True === (gq (plus (snd3 (tf11 v0)) (Succ Zero)) Zero) True === (gq (plus (snd3 (tf11 v0)) (Succ Zero)) Zero)
+proved lemma forall v0: Tuple3. v0 === (MakeTuple3 (fst3 v0) (snd3 v0)) (MakeTuple3 v0_40 v0_41) === (MakeTuple3 (fst3 (MakeTuple3 v0_40 v0_41)) (snd3 (MakeTuple3 v0_40 v0_41)))
+proved lemma forall v0: IDList. (MakeTuple3 (fst3 (tf11 v0)) (snd3 (tf11 v0))) === (tf11 v0)
+proved lemma forall v0: IDList. (MakeTuple3 (fst3 (tf11 v0)) (tf1 v0)) === (tf11 v0)
+proved lemma forall v0: Nat. v1: Nat. (ite2 (gq (plus v0 v1) Zero) (plus v0 v1) Zero) === (plus v0 v1) (ite2 (gq (plus v0 v1) Zero) (plus v0 v1) Zero) === (plus v0 v1)
+(uncyclic) Theorized 30 lemmas, fully attempted 21 lemmas, proved 13 lemmas
+optimize uncyclic: TIMEOUT (61814 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

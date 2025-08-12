@@ -1,0 +1,20 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Tree. v0 === (tf9 v0) (Node v0_20 v0_21 v0_22) === (tf9 (Node v0_20 v0_21 v0_22))
+proved lemma forall v0: Tree. (snd2 (tf7 v0)) === (tf1 v0) (snd2 (tf7 (Node v0_50 v0_51 v0_52))) === (tf1 (Node v0_50 v0_51 v0_52))
+proved lemma forall v0: Tree. (fst2 (tf7 v0)) === (tf3 v0) (fst2 (tf7 (Node v0_50 v0_51 v0_52))) === (tf3 (Node v0_50 v0_51 v0_52))
+proved lemma forall v0: Bool. v0 === (and v0 True) True === (and True True)
+proved lemma forall v0: Nat. (and (geq Zero v0) True) === (geq Zero v0) (and (geq Zero v0) True) === (geq Zero v0)
+proved lemma forall v0: Tuple2. v0 === (MakeTuple2 (fst2 v0) (snd2 v0)) (MakeTuple2 v0_40 v0_41) === (MakeTuple2 (fst2 (MakeTuple2 v0_40 v0_41)) (snd2 (MakeTuple2 v0_40 v0_41)))
+proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
+proved lemma forall v0: Tree. (and True (tf5 v0)) === (tf5 v0) (and True (tf5 v0)) === (tf5 v0)
+proved lemma forall v0: Nat. v0 === (ite1 (lq Zero v0) v0 Zero) (Succ v0_80) === (ite1 (lq Zero (Succ v0_80)) (Succ v0_80) Zero)
+proved lemma forall v0: Tree. (MakeTuple2 (fst2 (tf11 v0)) (snd2 (tf11 v0))) === (tf11 v0) (MakeTuple2 (fst2 (tf11 (Node v0_60 v0_61 v0_62))) (snd2 (tf11 (Node v0_60 v0_61 v0_62)))) === (tf11 (Node v0_60 v0_61 v0_62))
+proved lemma forall v0: Nat. Zero === (ite1 (lq Zero v0) Zero v0) Zero === (ite1 (lq Zero (Succ v0_180)) Zero (Succ v0_180))
+proved lemma forall v0: Nat. v1: Nat. Zero === (ite1 (lq Zero (ite1 (lq v0 v1) v0 v1)) Zero (ite1 (lq v0 v1) v0 v1)) Zero === (ite1 (lq Zero (ite1 (lq v0 v1) v0 v1)) Zero (ite1 (lq v0 v1) v0 v1))
+proved lemma forall v0: Nat. (Succ Zero) === (ite1 (lq Zero v0) (Succ Zero) (Succ v0)) (Succ Zero) === (ite1 (lq Zero (Succ v0_260)) (Succ Zero) (Succ (Succ v0_260)))
+proved lemma forall v0: Nat. (lq Zero v0) === (lq Zero (ite1 (lq (Succ Zero) v0) (Succ Zero) v0)) (lq Zero (Succ v0_250)) === (lq Zero (ite1 (lq (Succ Zero) (Succ v0_250)) (Succ Zero) (Succ v0_250)))
+(uncyclic) Theorized 112 lemmas, fully attempted 96 lemmas, proved 14 lemmas
+optimize uncyclic: TIMEOUT (60524 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

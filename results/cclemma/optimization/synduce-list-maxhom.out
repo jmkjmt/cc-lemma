@@ -1,0 +1,12 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (ite2 (gq v0 Zero) v0 Zero) (Succ v0_40) === (ite2 (gq (Succ v0_40) Zero) (Succ v0_40) Zero)
+proved lemma forall v0: Nat. (Succ v0) === (ite2 (gq v0 Zero) (Succ v0) (Succ Zero)) (Succ (Succ v0_180)) === (ite2 (gq (Succ v0_180) Zero) (Succ (Succ v0_180)) (Succ Zero))
+proved lemma forall v0: Bool. v1: Nat. v0 === (gq (ite2 v0 (Succ v1) Zero) Zero) True === (gq (ite2 True (Succ v1) Zero) Zero)
+proved lemma forall v0: Nat. (Succ Zero) === (ite2 (gq v0 Zero) (Succ Zero) (Succ Zero)) (Succ Zero) === (ite2 (gq (Succ v0_150) Zero) (Succ Zero) (Succ Zero))
+proved lemma forall v0: Nat. v1: Nat. True === (gq (ite2 (gq v0 Zero) (Succ v1) (Succ Zero)) Zero) True === (gq (ite2 (gq (Succ v0_240) Zero) (Succ v1) (Succ Zero)) Zero)
+proved lemma forall v0: Nat. v1: Nat. True === (gq (ite2 (gq v0 Zero) (Succ v1) (Succ (Succ Zero))) Zero) True === (gq (ite2 (gq (Succ v0_300) Zero) (Succ v1) (Succ (Succ Zero))) Zero)
+(uncyclic) Theorized 152 lemmas, fully attempted 118 lemmas, proved 6 lemmas
+optimize uncyclic: TIMEOUT (60112 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

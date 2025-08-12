@@ -1,0 +1,16 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: Nat. v0 === (plus v0 Zero) (Succ v0_30) === (plus (Succ v0_30) Zero)
+proved lemma forall v0: List. v1: UList. (tf1 v0 v1) === (tf1 v0 (tf11 v1)) (tf1 v0 (Usplit v1_50 v1_51 v1_52 v1_53)) === (tf1 v0 (tf11 (Usplit v1_50 v1_51 v1_52 v1_53)))
+proved lemma forall v0: UList. (tf11 v0) === (tf11 (tf11 v0)) (tf11 (Usplit v0_30 v0_31 v0_32 v0_33)) === (tf11 (tf11 (Usplit v0_30 v0_31 v0_32 v0_33)))
+proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
+proved lemma forall v0: List. (and True (tf3 Zero v0)) === (tf3 Zero v0) (and True (tf3 Zero v0)) === (tf3 Zero v0)
+proved lemma forall v0: List. (tf5 Zero v0) === (tf7 v0) (tf5 Zero (Cons v0_90 v0_91)) === (tf7 (Cons v0_90 v0_91))
+proved lemma forall v0: UList. (tf13 v0) === (tf13 (tf11 v0)) (tf13 (Usplit v0_90 v0_91 v0_92 v0_93)) === (tf13 (tf11 (Usplit v0_90 v0_91 v0_92 v0_93)))
+proved lemma forall v0: Nat. v1: Nat. (Succ (plus v0 v1)) === (plus v0 (Succ v1)) (Succ (plus (Succ v0_140) v1)) === (plus (Succ v0_140) (Succ v1))
+proved lemma forall v0: Nat. v1: Nat. v2: Nat. (plus v0 (plus v1 v2)) === (plus v1 (plus v2 v0)) (plus (Succ v0_160) (plus v1 v2)) === (plus v1 (plus v2 (Succ v0_160)))
+Reach the limit
+(uncyclic) Theorized 101 lemmas, fully attempted 48 lemmas, proved 9 lemmas
+optimize uncyclic: TIMEOUT (60648 ms)
+Attempted 1 goals:
+  0 solved (no cyclic)

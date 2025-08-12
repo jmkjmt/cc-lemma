@@ -1,0 +1,22 @@
+Proving begin optimize: (main inp0) === (mainNew inp0)
+Property accepted by cvec analysis
+proved lemma forall v0: List. (snd3 (tf3 v0)) === (tf1 v0) (snd3 (tf3 (Elt (Succ v0_40_100)))) === (tf1 (Elt (Succ v0_40_100)))
+proved lemma forall v0: Nat. v1: List. (plus v0 (snd3 (tf3 v1))) === (plus v0 (tf1 v1)) (plus v0 (snd3 (tf3 v1))) === (plus v0 (tf1 v1))
+proved lemma forall v0: List. (fst3 (tf3 v0)) === (third3 (tf3 v0)) (fst3 (tf3 (Elt (Succ v0_40_100)))) === (third3 (tf3 (Elt (Succ v0_40_100))))
+proved lemma forall v0: Bool. v0 === (and True v0) True === (and True True)
+proved lemma forall v0: Nat. (and True (lq Zero v0)) === (lq Zero v0) (and True (lq Zero v0)) === (lq Zero v0)
+proved lemma forall v0: IdxList. (snd3 (tf3 (tf5 v0))) === (snd4 (tf7 v0)) (snd3 (tf3 (tf5 (Icons v0_60 v0_61 v0_62)))) === (snd4 (tf7 (Icons v0_60 v0_61 v0_62)))
+proved lemma forall v0: IdxList. v1: Nat. (lq (snd4 (tf7 v0)) v1) === (lq (tf1 (tf5 v0)) v1) (lq (snd4 (tf7 v0)) v1) === (lq (tf1 (tf5 v0)) v1)
+proved lemma forall v0: Nat. v1: Nat. v0 === (ite2 (lq v1 v1) v0 v0) v0 === (ite2 (lq (Succ v1_70) (Succ v1_70)) v0 v0)
+proved lemma forall v0: Nat. v0 === (ite2 (lq v0 v0) v0 v0)
+proved lemma forall v0: Nat. False === (lq v0 v0) False === (lq (Succ v0_80) (Succ v0_80))
+proved lemma forall v0: Nat. v1: Nat. v2: List. v0 === (ite2 (lq v1 v1) (tf1 v2) v0) (Succ v0_210) === (ite2 (lq v1 v1) (tf1 v2) (Succ v0_210))
+proved lemma forall v0: Nat. v1: List. v0 === (ite2 (lq v0 v0) (tf1 v1) v0)
+proved lemma forall v0: Nat. v1: Nat. (Succ (plus v0 v1)) === (plus v0 (Succ v1)) (Succ (plus (Succ v0_270) v1)) === (plus (Succ v0_270) (Succ v1))
+proved lemma forall v0: Nat. v1: Nat. (lq v0 v0) === (lq (Succ (plus v1 v0)) v0)
+proved lemma forall v0: List. (snd3 (tf3 v0)) === (third3 (tf3 v0))
+proved lemma forall inp0: IdxList. (main inp0) === (mainNew inp0) (main (Icons Zero inp0_151 (Icons inp0_152_900 inp0_152_901 inp0_152_902))) === (mainNew (Icons Zero inp0_151 (Icons inp0_152_900 inp0_152_901 inp0_152_902)))
+(uncyclic) Theorized 86 lemmas, fully attempted 52 lemmas, proved 15 lemmas
+optimize uncyclic: VALID (16304 ms)
+Attempted 1 goals:
+  1 solved (no cyclic)
