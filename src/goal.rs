@@ -336,7 +336,7 @@ fn find_generalizations_prop(
   let lhs_nontrivial_subexprs = nontrivial_sexp_subexpressions_containing_vars(&prop.eq.lhs);
   let rhs_nontrivial_subexprs = nontrivial_sexp_subexpressions_containing_vars(&prop.eq.rhs);
   let mut output = vec![];
-  // println!("Trying to generalize {} = {}", raw_eq.eq.lhs, raw_eq.eq.rhs);
+  // println!("Trying to generalize {} = {}", prop.eq.lhs, prop.eq.rhs);
   for (rhs_subexpr_str, subexpr) in &rhs_nontrivial_subexprs {
     // should be the same subexpr so we don't need to bind it
     if lhs_nontrivial_subexprs.get(rhs_subexpr_str).is_some() {
