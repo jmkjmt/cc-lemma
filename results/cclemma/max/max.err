@@ -1,4 +1,4 @@
 
 thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
+fatal runtime error: stack overflow, aborting
 Aborted (core dumped)

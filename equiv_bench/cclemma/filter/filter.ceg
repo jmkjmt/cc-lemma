@@ -62,5 +62,9 @@
         (filter pred lst)
         (sol171 pred lst)    
     )
+    (=== sol121-sol171 (lst pred) ((List a) (-> (a) Bool))
+        (sol121 pred lst)
+        (sol171 pred lst)    
+    )
 
 )

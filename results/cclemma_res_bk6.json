@@ -1,0 +1,13 @@
+{
+    "lambda": {
+        "lambda": {
+            "status": false
+        }
+    },
+    "natmul": {
+        "natmul": {
+            "status": true,
+            "info": 0.019
+        }
+    }
+}

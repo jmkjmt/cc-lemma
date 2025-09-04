@@ -107,4 +107,8 @@
         (ta1 lst)
         (sol164 lst)
     )
+    (=== sol118-sol164 (lst) ((List Nat))
+        (sol118 lst)
+        (sol164 lst)
+    )
 )
