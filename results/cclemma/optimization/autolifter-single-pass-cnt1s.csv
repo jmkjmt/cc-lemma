@@ -1,2 +1,2 @@
 name,result,time,num_lemmas,num_lemmas_attempted,num_lemmas_proven,result_cyclic,time_cyclic,num_lemmas_cyclic,num_attempted_lemmas_cyclic,num_proven_lemmas_cyclic
-optimize,Timeout,60043.594,308,215,4,Unknown,0,0,0,0
+optimize,Timeout,60047.79,289,201,4,Unknown,0,0,0,0

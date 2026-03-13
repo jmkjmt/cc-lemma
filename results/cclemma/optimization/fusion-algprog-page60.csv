@@ -1,2 +1,2 @@
 name,result,time,num_lemmas,num_lemmas_attempted,num_lemmas_proven,result_cyclic,time_cyclic,num_lemmas_cyclic,num_attempted_lemmas_cyclic,num_proven_lemmas_cyclic
-optimize,Valid,1451.9131,44,23,3,Unknown,0,0,0,0
+optimize,Valid,1650.3252,41,20,3,Unknown,0,0,0,0

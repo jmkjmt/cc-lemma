@@ -1,3 +1,0 @@
-Proving begin ta1-sol118: (ta1 lst) === (sol118 lst)
-Property accepted by cvec analysis
-proved lemma forall v0: (List Nat). (loop Z v0) === (ta1 v0) (loop Z (Cons v0_40 v0_41)) === (ta1 (Cons v0_40 v0_41))
