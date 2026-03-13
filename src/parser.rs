@@ -196,6 +196,7 @@ impl ParserState {
       roots.push(premise_rhs);
     }
     let (names, mut rules) = self.used_names_and_definitions(&roots);
+
     let filtered_defns = self
       .defns
       .iter()

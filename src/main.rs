@@ -1,5 +1,6 @@
 use ast::{Equation, Prop};
 use colored::Colorize;
+use core::panic;
 use std::fs::*;
 use std::io::{Result, Write};
 use std::time::{Duration, Instant};
@@ -45,7 +46,7 @@ fn main() -> Result<()> {
       if &raw_goal.name != prop_name {
         continue;
       }
-    }
+    } 
     let global_search_state = GlobalSearchState::new(
       &parser_state.env,
       &parser_state.context,

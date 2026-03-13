@@ -18,7 +18,9 @@ def _run_cclemma(task_name, inp_file, output_path, extra_flag):
     util.create_path(oup_file)
     command = ["cd", config.cclemma_path, ";",
                'ulimit -v ' + str(config.memory_limit * 1024 * 1024) + ';',
-               os.path.join(config.cclemma_path, "target/release/cc-lemma"), inp_file, config.cclemma_args, "-t", str(config.timeout), ">", oup_file, "2>" + err_file]
+               os.path.join(config.cclemma_path, "target/release/cc-lemma"), inp_file, config.cclemma_args, "-t", str(config.timeout), ">", oup_file, "2>" + err_file]    
+    print(f"Command: {' '.join(command)}")
+    
     try:
         result = subprocess.run(' '.join(command), shell=True, check=True)
     except subprocess.CalledProcessError as e:

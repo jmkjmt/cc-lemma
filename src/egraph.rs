@@ -101,11 +101,13 @@ pub fn collect_expressions_with_loops_aux<L: Language, A: Analysis<L>>(
   depth: usize,
   trace: &mut HashMap<Id, usize>,
 ) -> Vec<(ExtractInfo, RecExpr<L>)> {
+  // println!("Visiting eclass {:?} at depth {}, loop_num {}", id, depth, loop_num);
   let mut res = Vec::new();
   if depth > CONFIG.extraction_max_depth {
     return res;
   }
   let class = &egraph[id];
+ 
   if loop_num > CONFIG.extraction_loop_limit {
     if CONFIG.extraction_allow_end_loop {
       for node in class.nodes.iter() {
@@ -167,6 +169,7 @@ pub fn collect_expressions_with_loops_aux<L: Language, A: Analysis<L>>(
         continue;
       }
       let expr = local_node.join_recexprs(|id| sub_expr[usize::from(id)].1.clone());
+      println!("expr : {:?}", expr);
       res.push((new_info, expr));
       if res.len() > CONFIG.extraction_max_num {
         println!("Reach the limit");
@@ -188,6 +191,7 @@ pub fn collect_expressions_with_loops<L: Language, A: Analysis<L>>(
   let mut trace: HashMap<Id, _> = egraph.classes().map(|class| (class.id, 0usize)).collect();
   //println!("start collect");
   let res = collect_expressions_with_loops_aux(egraph, id, 0, 0, &mut trace);
+
   res.into_iter().map(|(_, expr)| expr).collect()
 }
 
@@ -195,11 +199,13 @@ pub fn get_all_expressions_with_loop<L: Language, A: Analysis<L>>(
   egraph: &EGraph<L, A>,
   roots: Vec<Id>,
 ) -> Denotation<L> {
+  
   let mut memo = BTreeMap::new();
   for root in roots {
+    let value = collect_expressions_with_loops(egraph, root);
     memo.insert(
       root,
-      collect_expressions_with_loops(egraph, egraph.find(root)),
+      value,
     );
   }
   memo

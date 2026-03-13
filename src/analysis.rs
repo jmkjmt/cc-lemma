@@ -238,6 +238,7 @@ impl CvecAnalysis {
         // For now, we don't pass weights in
         let new_sexp = random_term_from_type(ty, env, ctx, self.term_max_depth);
         let new_term = new_sexp.to_string().parse().unwrap();
+       
         let new_id = self.cvec_egraph.borrow_mut().add_expr(&new_term);
         // If we haven't generated this already or we're out of tries,
         // add the term and break.
@@ -269,10 +270,6 @@ impl CvecAnalysis {
   }
 
   pub fn saturate(&mut self) {
-    /*println!("reductions");
-    for rewrite in self.reductions.iter() {
-      println!("  {:?}", rewrite);
-    }*/
     self.cvec_egraph.replace_with(|egraph| {
       let runner = Runner::default()
         .with_egraph(egraph.to_owned())

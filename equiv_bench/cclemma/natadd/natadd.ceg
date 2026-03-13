@@ -57,7 +57,7 @@
 (let add (?a Z) ?a)
 (let add (?a (S ?n)) (add (S ?a) ?n))
 
-
+(//
 (=== ta1-ta2 (n m) (Nat Nat)
     (add1 n m)
     (add2 n m)
@@ -169,5 +169,11 @@
 (=== sol11-sol143 (n m) (Nat Nat)
     (sol11 n m)
     (sol143 n m)
+)
+//)
+
+(=== add3-sol6 (n m) (Nat Nat)
+    (add3 n m)
+    (sol6 n m)
 )
 )

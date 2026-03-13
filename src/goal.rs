@@ -6,6 +6,7 @@ use log::warn;
 
 use std::collections::{BTreeMap, VecDeque};
 use std::collections::{BTreeSet, HashMap, HashSet};
+use std::f32::consts::E;
 use std::fmt::Display;
 use std::iter::zip;
 use std::str::FromStr;
@@ -210,11 +211,11 @@ impl<'a> SearchCondition<SymbolLang, CycleggAnalysis> for TypeRestriction {
       // println!("unknown type of variable {} {:?}", op, egraph.analysis.local_ctx);
     }
     if CONFIG.verbose && !res {
-      println!(
-        "reject rewrite on {} {}",
-        egraph[eclass].nodes.first().unwrap().op,
-        self.ty
-      );
+      // println!(
+      //   "reject rewrite on {} {}",
+      //   egraph[eclass].nodes.first().unwrap().op,
+      //   self.ty
+      // );
     }
     res
   }
@@ -336,7 +337,7 @@ fn find_generalizations_prop(
   let lhs_nontrivial_subexprs = nontrivial_sexp_subexpressions_containing_vars(&prop.eq.lhs);
   let rhs_nontrivial_subexprs = nontrivial_sexp_subexpressions_containing_vars(&prop.eq.rhs);
   let mut output = vec![];
-  // println!("Trying to generalize {} = {}", prop.eq.lhs, prop.eq.rhs);
+  // println!("Trying to generalize {} = {}", prop.eq.lhs, prop.eq.rhs);  
   for (rhs_subexpr_str, subexpr) in &rhs_nontrivial_subexprs {
     // should be the same subexpr so we don't need to bind it
     if lhs_nontrivial_subexprs.get(rhs_subexpr_str).is_some() {
@@ -366,7 +367,6 @@ fn find_generalizations_prop(
         lhs_vars.contains(&var.to_string()) || rhs_vars.contains(&var.to_string())
       });
       new_params.push((var_symb, ty));
-      // println!("Generalization candidate: {} = {}", new_lhs, new_rhs);
       output.push(Prop::new(Equation::new(new_lhs, new_rhs), new_params));
     }
   }
@@ -793,11 +793,12 @@ impl<'a> Goal<'a> {
     exclude_wildcards: bool,
   ) -> (BTreeMap<String, Rw>, Vec<LemmaRewrite<CycleggAnalysis>>) {
     let exprs = get_all_expressions_with_loop(&self.egraph, vec![lhs_id, rhs_id]);
+ 
     let is_var = |v| self.local_context.contains_key(v);
     let mut rewrites = self.lemmas.clone();
     let mut lemma_rws = vec![];
     for lhs_expr in exprs.get(&lhs_id).unwrap() {
-      let lhs: Pattern<SymbolLang> = to_pattern(lhs_expr, is_var);
+      let lhs: Pattern<SymbolLang> = to_pattern(lhs_expr, is_var);     
       if (CONFIG.irreducible_only && self.is_reducible(lhs_expr)) || has_guard_wildcards(&lhs) {
         continue;
       }
@@ -1660,6 +1661,20 @@ impl<'a> Goal<'a> {
         &filename.to_string_lossy(),
       ])
       .unwrap();
+    
+    let cvec_egraph = self.egraph.analysis.cvec_analysis.cvec_egraph.borrow_mut();
+    let cvec_dot = cvec_egraph.dot();
+    cvec_dot
+      .run_dot([
+        "-Tpng",
+        verbosity.as_str(),
+        "-o",
+        &CONFIG
+          .output_directory
+          .join(format!("{}_cvec.png", self.name))
+          .to_string_lossy(),
+      ])
+      .unwrap();
   }
 
   /// Given a polymorphic constructor and a concrete instantiation of a
@@ -1736,6 +1751,7 @@ impl<'a> Goal<'a> {
   /// These are lemmas we propose from subterms in the e-graph that our concrete
   /// analysis deems equal on some set of random terms.
   fn search_for_cc_lemmas(&mut self, timer: &Timer, lemmas_state: &mut LemmasState) -> Vec<Prop> {
+    println!("extract_max_num : {} {} {} {}", CONFIG.extraction_loop_limit, CONFIG.extraction_max_depth, CONFIG.extraction_max_num, CONFIG.extraction_max_size);
     let mut lemmas = vec![];
     self.egraph.analysis.cvec_analysis.saturate();
     let resolved_lhs_id = self.egraph.find(self.eq.lhs.id);
@@ -1824,6 +1840,7 @@ impl<'a> Goal<'a> {
             .collect();
           // We used to check the egraph to see if the lemma helped us, but now
           // we just throw it into our list. We do that check in try_prove_lemmas.
+
           if new_rewrite_eqs.is_empty() {
             continue;
           }
@@ -1834,21 +1851,22 @@ impl<'a> Goal<'a> {
               if timer.timeout() {
                 return lemmas;
               }
-              lemmas.extend(find_generalizations_prop(
+              let new_lemma = find_generalizations_prop(
                 new_rewrite_eq,
                 self.global_search_state.context,
                 fresh_name.clone(),
-              ));
+              );
+              lemmas.extend(new_lemma);
             }
           }
 
           // Optimization: skip adding any lemmas that would be subsumed by a cyclic lemma
           //for lemma in new_rewrite_eqs.iter() {
           //  println!("raw lemmas {}", lemma)
-          //}
+          //}          println!("only_generalize: {}", CONFIG.only_generalize);
           if !CONFIG.only_generalize
-            && !(class_1_id == resolved_lhs_id && class_2_id == resolved_rhs_id
-              || class_1_id == resolved_rhs_id && class_2_id == resolved_lhs_id)
+            // && !(class_1_id == resolved_lhs_id && class_2_id == resolved_rhs_id
+            //   || class_1_id == resolved_rhs_id && class_2_id == resolved_lhs_id)
           {
             lemmas.extend(new_rewrite_eqs);
           }
@@ -1865,20 +1883,16 @@ impl<'a> Goal<'a> {
 
     let exprs = get_all_expressions(&self.egraph, vec![lhs_id, rhs_id]);
 
-    println!("LHS Exprs:");
     for lhs_expr in exprs.get(&lhs_id).unwrap() {
       if CONFIG.irreducible_only && self.is_reducible(lhs_expr) {
         continue;
       }
-      println!("{}", lhs_expr);
     }
 
-    println!("RHS Exprs:");
     for rhs_expr in exprs.get(&rhs_id).unwrap() {
       if CONFIG.irreducible_only && self.is_reducible(rhs_expr) {
         continue;
       }
-      println!("{}", rhs_expr);
     }
   }
 
@@ -2521,8 +2535,10 @@ impl<'a> LemmaProofState<'a> {
   ) -> Option<(Vec<(usize, Prop)>, Vec<GoalInfo>)> {
     let pos = self.get_info_index(info);
     let goal = self.goals.get_mut(pos).unwrap();
-
+    
+    goal._print_lhs_rhs();
     goal.saturate(&lemmas_state.lemma_rewrites);
+    
 
     if CONFIG.save_graphs {
       goal.save_egraph();
@@ -2573,7 +2589,6 @@ impl<'a> LemmaProofState<'a> {
       (blocking_vars, blocking_exprs)
     };
 
-    // println!("searching for generalized lemmas");
     let mut related_lemmas = Vec::new();
     if CONFIG.generalization {
       let lemma_indices = lemmas_state.add_lemmas(
@@ -2582,13 +2597,15 @@ impl<'a> LemmaProofState<'a> {
       );
       related_lemmas.extend(lemma_indices);
     }
-    // println!("searching for cc lemmas");
+   
     if CONFIG.cc_lemmas {
-      let possible_lemmas = goal.search_for_cc_lemmas(timer, lemmas_state);
+      let possible_lemmas = goal.search_for_cc_lemmas(timer, lemmas_state);      
+    
       let lemma_indices = lemmas_state.add_lemmas(possible_lemmas, self.proof_depth + 1);
+
       related_lemmas.extend(lemma_indices);
+      
     }
-    // println!("done searching for cc lemmas");
     // This ends up being really slow so we'll just take the lemma duplication for now
     // It's unclear that it lets us prove that much more anyway.
     // state.add_cyclic_lemmas(&goal);
@@ -2596,6 +2613,7 @@ impl<'a> LemmaProofState<'a> {
     goal.debug_search_for_patterns_in_egraph();
 
     if let Some(scrutinee) = goal.next_scrutinee(blocking_vars) {
+
       if CONFIG.verbose {
         println!(
           "{}: {}",
@@ -2722,7 +2740,7 @@ impl<'a> ProofState<'a> {
         let lemma_number = scheduler.get_lemma_number(&lemma_index);
 
         if let Some(lemma_proof_state) = self.lemma_proofs.get(&lemma_number) {
-          //println!("info {} {:?}", lemma_proof_state.prop, lemma_proof_state.outcome);
+          // println!("info {} {:?}", lemma_proof_state.prop, lemma_proof_state.outcome);
           // This lemma has been declared valid/invalid
           if lemma_proof_state.outcome.is_some()
             && lemma_proof_state.outcome != Some(Outcome::Unknown)
@@ -2889,7 +2907,13 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
     {
       frontier.retain(|info| self.progress_set.contains(&info.lemma_id));
     }
-    if let Some(optimal) = frontier.into_iter().min_by_key(|info| info.size) {
+      println!("progress set: {:?}\n\n", self.progress_set);
+      
+      if let Some(optimal) = frontier.into_iter().min_by_key(|info| info.size) {
+      println!(
+        "report next goal {} from {}",
+        optimal.full_exp, self.prop_map[&optimal.lemma_id]
+      );
       self.next_goal = Some(optimal.clone());
       if self.progress_set.contains(&optimal.lemma_id) {
         self.progress_set.remove(&optimal.lemma_id);
@@ -2943,17 +2967,24 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
 
     let step_res =
       lemma_proof_state.try_goal(&info, &proof_state.timer, &mut proof_state.lemmas_state);
+    // here trying to prove the goal
 
     if let Some((raw_related_lemmas, related_goals)) = step_res {
       let mut related_lemmas = raw_related_lemmas;
       if CONFIG.exclude_bid_reachable {
+        println!("before exclude bid reachable lemmas  {}", related_lemmas.len());
+        for lemma in related_lemmas.iter() {
+          println!(
+            "  ({}) {}",
+            sexp_size(&lemma.1.eq.lhs) + sexp_size(&lemma.1.eq.rhs),
+            lemma.1
+          );
+        }
         let _pre_size = related_lemmas.len();
         related_lemmas = self
           .goal_graph
           .exclude_bid_reachable_lemmas(&related_lemmas);
-        /*if pre_size > related_lemmas.len() {
-          println!("Reduce from {} to {}", pre_size, related_lemmas.len());
-        }*/
+        println!("after exclude bid reachable lemmas  {}", related_lemmas.len());
       }
 
       if CONFIG.verbose {
@@ -2979,6 +3010,7 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
           .goal_graph
           .record_node_status(&info, GraphProveStatus::Valid);
         self.progress_set.insert(info.lemma_id);
+        println!("insert parent goal {}",info.lemma_id);
       } else if lemma_proof_state.outcome == Some(Outcome::Invalid) {
         self
           .goal_graph
@@ -3059,6 +3091,7 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
           .goal_graph
           .record_node_status(&goal, GraphProveStatus::Valid);
         self.progress_set.insert(goal.lemma_id);
+        println!("insert proved goal {}",goal.lemma_id);
         if self.goal_graph.is_lemma_proved(goal.lemma_id)
           && !directly_improved_lemmas.contains(&goal.lemma_id)
         {

@@ -36,7 +36,7 @@ pub struct Args {
   #[clap(long = "verbose-proofs")]
   pub verbose_proofs: bool,
   /// Where to save outputs other than proofs
-  #[clap(short = 'o', long = "output-directory", default_value = "target")]
+  #[clap(short = 'o', long = "output-directory", default_value = "/home/mingyujo/cc-lemma/target")]
   pub output_directory: PathBuf,
   /// Where to save proofs
   #[clap(long = "proofs-directory", default_value = "target/proofs")]
