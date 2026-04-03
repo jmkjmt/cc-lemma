@@ -1,4 +1,4 @@
 name,result,time,num_lemmas,num_lemmas_attempted,num_lemmas_proven,result_cyclic,time_cyclic,num_lemmas_cyclic,num_attempted_lemmas_cyclic,num_proven_lemmas_cyclic
-sol1-sol121,Invalid,63394.07,0,0,0,Unknown,0,0,0,0
-sol1-sol171,Timeout,124166.5,0,0,0,Unknown,0,0,0,0
-sol121-sol171,Invalid,120042.766,0,0,0,Unknown,0,0,0,0
+sol1-sol121,Invalid,3.8275878,0,0,0,Unknown,0,0,0,0
+sol1-sol171,Invalid,2.084828,0,0,0,Unknown,0,0,0,0
+sol121-sol171,Invalid,3.651705,0,0,0,Unknown,0,0,0,0

@@ -169,7 +169,7 @@ pub fn collect_expressions_with_loops_aux<L: Language, A: Analysis<L>>(
         continue;
       }
       let expr = local_node.join_recexprs(|id| sub_expr[usize::from(id)].1.clone());
-      println!("expr : {:?}", expr);
+      // println!("expr : {:?}", expr);
       res.push((new_info, expr));
       if res.len() > CONFIG.extraction_max_num {
         println!("Reach the limit");

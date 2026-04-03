@@ -1,8 +1,13 @@
 {
-    "optimize2": {
-        "autolifter-single-pass-mps": {
+    "natmul": {
+        "natmul": {
+            "status": false
+        }
+    },
+    "uniq": {
+        "uniq": {
             "status": true,
-            "info": 0.137
+            "info": 8.252
         }
     }
 }

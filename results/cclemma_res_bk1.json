@@ -1,8 +1,12 @@
 {
     "natmul": {
         "natmul": {
-            "status": true,
-            "info": 0.037
+            "status": false
+        }
+    },
+    "uniq": {
+        "uniq": {
+            "status": false
         }
     }
 }

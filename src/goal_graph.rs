@@ -220,7 +220,10 @@ impl GoalGraph {
   pub fn add_bid_rewrites(&mut self, lhs: Rewrite<SymbolLang, ()>, rhs: Rewrite<SymbolLang, ()>) {
     self.lemma_rewrites.push(lhs);
     self.lemma_rewrites.push(rhs);
+ 
+
     self.relink_related_lemmas();
+
   }
 
   pub fn record_related_lemmas(&mut self, from: &GoalInfo, lemmas: &Vec<(GoalInfo, Prop)>) {

@@ -358,6 +358,7 @@ fn find_generalizations_prop(
       let generalized_var = Sexp::String(fresh_name.clone());
       let new_lhs = substitute_sexp(&prop.eq.lhs, subexpr, &generalized_var);
       let new_rhs = substitute_sexp(&prop.eq.rhs, subexpr, &generalized_var);
+
       // FIXME: hacky way to find variables
       let lhs_vars = sexp_leaves(&new_lhs);
       let rhs_vars = sexp_leaves(&new_rhs);
@@ -802,6 +803,7 @@ impl<'a> Goal<'a> {
       if (CONFIG.irreducible_only && self.is_reducible(lhs_expr)) || has_guard_wildcards(&lhs) {
         continue;
       }
+
       for rhs_expr in exprs.get(&rhs_id).unwrap() {
         if timer.timeout() {
           return (rewrites, lemma_rws);
@@ -1525,7 +1527,8 @@ impl<'a> Goal<'a> {
           .filter(|&x| x.to_string().contains("block_"))
           .cloned()
           .collect();
-
+        
+        // println!("searching with pattern {}", new_sexp);
         let matches = mod_searcher.search(&self.egraph);
 
         // let extractor = Extractor::new(&self.egraph, AstSize);
@@ -1751,7 +1754,7 @@ impl<'a> Goal<'a> {
   /// These are lemmas we propose from subterms in the e-graph that our concrete
   /// analysis deems equal on some set of random terms.
   fn search_for_cc_lemmas(&mut self, timer: &Timer, lemmas_state: &mut LemmasState) -> Vec<Prop> {
-    println!("extract_max_num : {} {} {} {}", CONFIG.extraction_loop_limit, CONFIG.extraction_max_depth, CONFIG.extraction_max_num, CONFIG.extraction_max_size);
+    // println!("extract_max_num : {} {} {} {}", CONFIG.extraction_loop_limit, CONFIG.extraction_max_depth, CONFIG.extraction_max_num, CONFIG.extraction_max_size);
     let mut lemmas = vec![];
     self.egraph.analysis.cvec_analysis.saturate();
     let resolved_lhs_id = self.egraph.find(self.eq.lhs.id);
@@ -2345,7 +2348,7 @@ impl LemmasState {
     let is_proven = self.proven_lemmas.contains_leq(prop);
     let is_invalid = self.invalid_lemmas.contains_geq(prop);
     let is_too_big = CONFIG.max_lemma_size > 0
-      && sexp_size(&prop.eq.lhs) + sexp_size(&prop.eq.rhs) > CONFIG.max_lemma_size;
+      && sexp_size(&prop.eq.lhs) + sexp_size(&prop.eq.rhs) > CONFIG.max_lemma_size;   
     !is_proven && !is_invalid && !is_too_big
   }
 
@@ -2586,6 +2589,7 @@ impl<'a> LemmaProofState<'a> {
       if CONFIG.verbose {
         println!("blocking vars: {:?}", blocking_vars);
       }
+      
       (blocking_vars, blocking_exprs)
     };
 
@@ -2602,6 +2606,9 @@ impl<'a> LemmaProofState<'a> {
       let possible_lemmas = goal.search_for_cc_lemmas(timer, lemmas_state);      
     
       let lemma_indices = lemmas_state.add_lemmas(possible_lemmas, self.proof_depth + 1);
+      // for (lemma_index, lemma_prop) in lemma_indices.iter() {
+      //   println!("Adding candidate cc lemma {}: {}", lemma_index, lemma_prop);
+      // }
 
       related_lemmas.extend(lemma_indices);
       
@@ -2895,6 +2902,7 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
     if CONFIG.verbose {
       let _goals = self.goal_graph.get_lemma(0).goals.clone();
       println!("\n\n================= current queue ==============");
+      frontier.sort_by_key(|i| i.size);
       for info in frontier.iter() {
         println!("[{}] {}", info.size, info.full_exp);
         println!("  ({}) {}", info.lemma_id, self.prop_map[&info.lemma_id]);
@@ -2907,13 +2915,13 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
     {
       frontier.retain(|info| self.progress_set.contains(&info.lemma_id));
     }
-      println!("progress set: {:?}\n\n", self.progress_set);
+      // println!("progress set: {:?}\n\n", self.progress_set);
       
       if let Some(optimal) = frontier.into_iter().min_by_key(|info| info.size) {
-      println!(
-        "report next goal {} from {}",
-        optimal.full_exp, self.prop_map[&optimal.lemma_id]
-      );
+      // println!(
+      //   "report next goal {} from {}",
+      //   optimal.full_exp, self.prop_map[&optimal.lemma_id]
+      // );
       self.next_goal = Some(optimal.clone());
       if self.progress_set.contains(&optimal.lemma_id) {
         self.progress_set.remove(&optimal.lemma_id);
@@ -2972,19 +2980,19 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
     if let Some((raw_related_lemmas, related_goals)) = step_res {
       let mut related_lemmas = raw_related_lemmas;
       if CONFIG.exclude_bid_reachable {
-        println!("before exclude bid reachable lemmas  {}", related_lemmas.len());
-        for lemma in related_lemmas.iter() {
-          println!(
-            "  ({}) {}",
-            sexp_size(&lemma.1.eq.lhs) + sexp_size(&lemma.1.eq.rhs),
-            lemma.1
-          );
-        }
+        // println!("before exclude bid reachable lemmas  {}", related_lemmas.len());
+        // for lemma in related_lemmas.iter() {
+        //   println!(
+        //     "  ({}) {}",
+        //     sexp_size(&lemma.1.eq.lhs) + sexp_size(&lemma.1.eq.rhs),
+        //     lemma.1
+        //   );
+        // }
         let _pre_size = related_lemmas.len();
         related_lemmas = self
           .goal_graph
           .exclude_bid_reachable_lemmas(&related_lemmas);
-        println!("after exclude bid reachable lemmas  {}", related_lemmas.len());
+        // println!("after exclude bid reachable lemmas  {}", related_lemmas.len());
       }
 
       if CONFIG.verbose {
@@ -3010,7 +3018,7 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
           .goal_graph
           .record_node_status(&info, GraphProveStatus::Valid);
         self.progress_set.insert(info.lemma_id);
-        println!("insert parent goal {}",info.lemma_id);
+        // println!("insert parent goal {}",info.lemma_id);
       } else if lemma_proof_state.outcome == Some(Outcome::Invalid) {
         self
           .goal_graph
@@ -3021,30 +3029,31 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
       {
         let state = proof_state.lemma_proofs.get_mut(&info.lemma_id).unwrap();
         state.outcome = Some(Outcome::Valid);
-        println!("proved lemma {} {}", state.prop, info.full_exp);
-
+       
         if CONFIG.exclude_bid_reachable {
           state.rw_no_analysis.clone().map(|rw| {
-            if rw.lhs_to_rhs.is_some() && rw.rhs_to_lhs.is_some() {
+            if rw.lhs_to_rhs.is_some() && rw.rhs_to_lhs.is_some() {              
               self
                 .goal_graph
                 .add_bid_rewrites(rw.lhs_to_rhs.unwrap().1, rw.rhs_to_lhs.unwrap().1);
             }
           });
-        }
-      }
+        }    
+      
+      }      
       if let Some(outcome) = proof_state
         .lemma_proofs
         .get(&info.lemma_id)
         .unwrap()
         .outcome
         .clone()
-      {
+      {         
         self.is_found_new_lemma = true;
         if outcome == Outcome::Valid {
           self
             .goal_graph
             .set_lemma_res(info.lemma_id, GraphProveStatus::Valid);
+           
         } else if outcome == Outcome::Invalid {
           self
             .goal_graph
@@ -3057,6 +3066,8 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
   }
 
   fn on_proven_lemma(&mut self, _lemma: usize, proof_state: &mut ProofState<'_>) {
+    println!("on proven lemma {}", self.prop_map[&_lemma]);
+
     let mut new_lemma = HashSet::new();
     new_lemma.insert(_lemma);
 
@@ -3073,7 +3084,7 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
           state.try_finish(info, &mut proof_state.lemmas_state)
         })
         .collect();
-
+        
       new_lemma.clear();
 
       let mut directly_improved_lemmas = HashSet::new();
@@ -3086,12 +3097,12 @@ impl BreadthFirstScheduler for GoalLevelPriorityQueue {
       }
 
       for goal in proved_goals.into_iter() {
-        // println!("  retry and prove ({}) {}", goal.lemma_id, goal.full_exp);
+        println!("  retry and prove ({}) {}", goal.lemma_id, goal.full_exp);
         self
           .goal_graph
           .record_node_status(&goal, GraphProveStatus::Valid);
         self.progress_set.insert(goal.lemma_id);
-        println!("insert proved goal {}",goal.lemma_id);
+        // println!("insert proved goal {}",goal.lemma_id);
         if self.goal_graph.is_lemma_proved(goal.lemma_id)
           && !directly_improved_lemmas.contains(&goal.lemma_id)
         {

@@ -115,21 +115,19 @@
     (mul1 n m)
     (mul4 n m)
 )
-
 (=== ta1-ta5 (n m) (Nat Nat)
     (mul1 n m)
     (mul5 n m)
 )
-
 (=== ta1-ta6 (n m) (Nat Nat)
     (mul1 n m)
     (mul6 n m)
 )
-
 (=== ta1-ta7 (n m) (Nat Nat)
     (mul1 n m)
     (mul7 n m)
 )
+
 (=== ta1-sol32 (n m) (Nat Nat)
     (mul1 n m)
     (sol32 n m)
@@ -154,10 +152,12 @@
     (mul2 n m)
     (mul5 n m)
 )
+//)
 (=== ta2-ta6 (n m) (Nat Nat)
     (mul2 n m)
     (mul6 n m)
 )
+(//
 (=== ta2-ta7 (n m) (Nat Nat)
     (mul2 n m)
     (mul7 n m)
@@ -193,6 +193,7 @@
     (mul7 n m)
 )
 
+
 (=== ta3-sol32 (n m) (Nat Nat)
     (mul3 n m)
     (sol32 n m)
@@ -209,6 +210,7 @@
     (mul4 n m)
     (mul5 n m)
 )
+//)
 (=== ta4-ta6 (n m) (Nat Nat)
     (mul4 n m)
     (mul6 n m)
@@ -280,7 +282,6 @@
     (sol90 n m)
     (sol116 n m)
 )
-//)
 (=== ta2-sol143 (n m) (Nat Nat)
     (add2 n m)
     (sol143 n m)
