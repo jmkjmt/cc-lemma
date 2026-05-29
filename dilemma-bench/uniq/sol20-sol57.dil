@@ -52,7 +52,7 @@
 (:: drop2 (-> (List Nat) List))
 (let drop2 (Nil ?n) Nil)
 (let drop2 ((Cons ?hd ?tl) ?n) (ite-list (eq ?hd ?n) (drop2 ?tl ?n) (Cons ?hd (drop2 ?tl ?n))))
-(:: ta2 (-> (List) Nat))
+(:: ta2 (-> (List) List))
 (let ta2 (Nil) Nil)
 (let ta2 ((Cons ?hd ?tl)) (Cons ?hd (ta2 (drop2 ?tl ?hd))))
 (:: isin3 (-> (List Nat) Bool))

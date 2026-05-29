@@ -1,17 +1,19 @@
 import subprocess
 import os
 import argparse
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import sys
-from threading import Lock
 import re
 import psutil
 import time
 import threading
-from concurrent.futures import ProcessPoolExecutor, as_completed
 
 ROOT = "./"
 BENCHMARK = ["dilemma-bench"]
+
+# ---------------------------
+# Memory Control Utilities
+# ---------------------------
 
 def kill_tree(pid):
     try:
@@ -25,7 +27,6 @@ def kill_tree(pid):
                 pass
 
         parent.kill()
-
         psutil.wait_procs([parent] + children, timeout=1)
 
     except psutil.NoSuchProcess:
@@ -57,13 +58,20 @@ def monitor_memory(pid, limit_bytes, stop_event, result):
             return
 
         time.sleep(0.2)
-        
+
+
+# ---------------------------
+# Execution
+# ---------------------------
+
 def run_single_file(cmd, time_budget, mem_limit_gb):
     proc = subprocess.Popen(
         cmd,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
+        stdin=subprocess.DEVNULL,
         text=True,
+        bufsize=1,
         start_new_session=True,
     )
 
@@ -100,6 +108,7 @@ def run_single_file(cmd, time_budget, mem_limit_gb):
         if t:
             t.join(timeout=1)
 
+    # status priority
     if result["memout"]:
         return "Memout"
     if result["timeout"]:
@@ -107,6 +116,9 @@ def run_single_file(cmd, time_budget, mem_limit_gb):
 
     value = None
     contents = stdout.strip()
+
+    if proc.returncode != 0:
+        print("stderr:", stderr.strip())
 
     for line in contents.split("\n"):
         if "uncyclic:" not in line:
@@ -117,20 +129,21 @@ def run_single_file(cmd, time_budget, mem_limit_gb):
     return value if value is not None else "NoResult"
 
 
+# ---------------------------
+# Benchmark Runner
+# ---------------------------
+
 def run_benchmark(extra_flags, selected_benchmarks, time_budget, threads, mem_limit):
     results = {}
-    results_lock = Lock()
-    print(extra_flags)
 
     for benchmark in selected_benchmarks:
         results[benchmark] = {}
 
-    jobs = []  # (benchmark, group, file, file_path)
+    jobs = []
 
     for benchmark in selected_benchmarks:
         benchmark_path = os.path.join(ROOT, benchmark)
 
-        # dilemma-bench / optimization 은 그룹 존재
         if benchmark in ("dilemma-bench", "optimization"):
             for group in os.listdir(benchmark_path):
                 group_path = os.path.join(benchmark_path, group)
@@ -144,20 +157,18 @@ def run_benchmark(extra_flags, selected_benchmarks, time_budget, threads, mem_li
                     if file.endswith(".dil"):
                         file_path = os.path.join(group_path, file)
                         jobs.append((benchmark, group, file, file_path))
-
         else:
             for file in os.listdir(benchmark_path):
                 if file.endswith(".dil"):
                     file_path = os.path.join(benchmark_path, file)
                     jobs.append((benchmark, None, file, file_path))
 
-
+    # Process-based parallelism
     with ProcessPoolExecutor(max_workers=threads) as executor:
         future_map = {}
+
         for benchmark, group, file, file_path in jobs:
-            print(
-                f"▶ Running benchmark: {benchmark}/{group + '/' if group else ''}{file}"
-            )
+            print(f"▶ Running: {benchmark}/{group + '/' if group else ''}{file}")
 
             cmd = [
                 "./target/release/cc-lemma",
@@ -168,60 +179,68 @@ def run_benchmark(extra_flags, selected_benchmarks, time_budget, threads, mem_li
                 run_single_file,
                 cmd,
                 time_budget,
-                mem_limit,   # 추가
+                mem_limit,
             )
+
             future_map[future] = (benchmark, group, file)
 
         for future in as_completed(future_map):
             benchmark, group, file = future_map[future]
             result_value = future.result()
 
-            with results_lock:
-                if group is None:
-                    # no group
-                    results[benchmark][file] = result_value
-                else:
-                    results[benchmark][group][file] = result_value
+            print(f"✔ Done: {benchmark}/{group + '/' if group else ''}{file} → {result_value}")
+
+            if group is None:
+                results[benchmark][file] = result_value
+            else:
+                results[benchmark][group][file] = result_value
 
     return results
 
-priority = {
-    "ta": 0,
-    "sol": 1,
-}
+
+# ---------------------------
+# Sorting / Printing
+# ---------------------------
+
+priority = {"ta": 0, "sol": 1}
 
 def parse_token(token):
-    m = re.match(r'([a-zA-Z]+)(\d+)', token)
+    m = re.match(r"([a-zA-Z]+)(\d+)", token)
     prefix, num = m.group(1), int(m.group(2))
     return (priority[prefix], num)
 
 def sort_key(name):
-    core = name.rsplit('.', 1)[0]      # 확장자 제거
-    tokens = core.split('-')           # '-' 기준 분리
+    core = name.rsplit(".", 1)[0]
+    tokens = core.split("-")
     return [parse_token(t) for t in tokens]
 
 
-    
 def print_benchmark_result(all_results, benchmark_name, out):
     print(f"\n--- {benchmark_name} ---", file=out)
+
     if benchmark_name in ("dilemma-bench", "optimization"):
-        all_results[benchmark_name] = dict(sorted(all_results[benchmark_name].items(), key=lambda x: x[0]))
+        all_results[benchmark_name] = dict(
+            sorted(all_results[benchmark_name].items(), key=lambda x: x[0])
+        )
+
         for group in all_results[benchmark_name]:
             print(f"\n  >> Group: {group}", file=out)
-            if benchmark_name == "optimization":
-                # optimization 은 파일 이름 정렬 방식이 다름
-                sorted_files = sorted(all_results[benchmark_name][group].keys())
-            else:
-                sorted_files = sorted(all_results[benchmark_name][group].keys(), key=sort_key)
+
+            sorted_files = sorted(
+                all_results[benchmark_name][group].keys(), key=sort_key
+            )
+
             for file in sorted_files:
                 r = all_results[benchmark_name][group][file]
                 print(f"{file} \t {r}", file=out)
+
     else:
         sorted_files = sorted(all_results[benchmark_name].keys())
         for file in sorted_files:
             r = all_results[benchmark_name][file]
             print(f"{benchmark_name}/{file} \t {r}", file=out)
-        
+
+
 def print_summary(all_results, file_name):
     for benchmark in all_results:
         if file_name:
@@ -229,44 +248,53 @@ def print_summary(all_results, file_name):
                 print_benchmark_result(all_results, benchmark, out)
         else:
             print_benchmark_result(all_results, benchmark, sys.stdout)
-                
-                
+
+
+# ---------------------------
+# Main
+# ---------------------------
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run dilemma benchmarks")
-   
+
     parser.add_argument(
         "--benchmarks",
         type=str,
         nargs="+",
         choices=BENCHMARK,
         default=BENCHMARK,
-        help="Select benchmarks to run",
     )
-    parser.add_argument(
-        "--time",
-        type=int,
-        default=0,
-        help="Time budget for each theorem in seconds (0 means no limit)",
-    )
-    parser.add_argument(
-        "--threads",
-        type=int,
-        default=1,
-        help="Number of threads to run benchmarks in parallel",
-    )
+
+    parser.add_argument("--time", type=int, default=0)
+
+    parser.add_argument("--threads", type=int, default=1)
+
     parser.add_argument(
         "--mem-limit",
         type=int,
         default=0,
         help="Memory limit per process in GB (0 means no limit)",
     )
+
     args = parser.parse_args()
 
-    extra_flags = ["--no-generalization", "--exclude-bid-reachable", "--saturate-only-parent", "--no-destructive-rewrites"]
-    time_budget = args.time if args.time else 0
-    threads = max(1, args.threads)              
-    all_results = run_benchmark(extra_flags, args.benchmarks, time_budget, threads, mem_limit=args.mem_limit)
-     
-    print_summary(all_results, None)
+    extra_flags = [
+        "--no-generalization",
+        "--exclude-bid-reachable",
+        "--saturate-only-parent",
+        "--no-destructive-rewrites",
+    ]
 
-        
+    time_budget = args.time if args.time else 0
+    threads = max(1, args.threads)
+    mem_limit = args.mem_limit
+
+    all_results = run_benchmark(
+        extra_flags,
+        args.benchmarks,
+        time_budget,
+        threads,
+        mem_limit,
+    )
+
+    print_summary(all_results, None)
