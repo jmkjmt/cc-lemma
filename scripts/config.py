@@ -24,5 +24,5 @@ hipspec_expensive_props = {
 cvc4_args = "--quant-ind --quant-cf --conjecture-gen --conjecture-gen-per-round=3 --full-saturate-quant --stats"
 hipspec_args = "--auto --verbosity=85 --cg -luU"
 hipspec_expensive_args = "--pvars --size 7"
-cclemma_args = "--no-generalization --exclude-bid-reachable --saturate-only-parent -r --no-destructive-rewrites"
+cclemma_args = "--no-generalization --exclude-bid-reachable --saturate-only-parent -r"
 thesy_args = ""

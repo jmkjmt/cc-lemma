@@ -8,8 +8,8 @@ import psutil
 import time
 import threading
 
-ROOT = "./"
-BENCHMARK = ["dilemma-bench"]
+ROOT = ""
+BENCHMARK = ["../dilemma-benchmark/clam/cclemma"]
 
 # ---------------------------
 # Memory Control Utilities
@@ -282,7 +282,7 @@ if __name__ == "__main__":
         "--no-generalization",
         "--exclude-bid-reachable",
         "--saturate-only-parent",
-        "--no-destructive-rewrites",
+        "-r"
     ]
 
     time_budget = args.time if args.time else 0
